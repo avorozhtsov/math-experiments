@@ -10,11 +10,13 @@
     "bytes": 53759
   },
   "english_prompt": "Use case: text-localization. Edit the provided original YouTube mathematics thumbnail to English. Keep the original style, composition, colors, mathematical diagrams, graph geometry, axes, logo positions, and original Wolfram Mathematica logo/lettering. Translate every channel label \"Математические Эксперименты\" to \"Math Experiments\" in the same white bold two-line box, preserving its original red, orange or magenta background. No additional branding, no new decorations, no redesigned charts. All foreground copy must be clean fluent English. Output landscape 16:9 with no black letterboxing; if input has black outer bars, use only the existing 16:9 artwork between them and fill the canvas. Prefer 1280x720. Fit translated text in the original zones without overlap or clipping. Blue title \"Catalan Numbers\". Lower orange question in two lines \"Do You Have a Passion\" / \"for Programming?\" Preserve lattice path graphic.",
-  "english_sha256": "117e2bc80cf7af1c8358b6c90ec439c95b4d5ba6893d9f16d0cf96ceb1a61109",
+  "english_sha256": "0c2726e30132cbca468e885e6272cf469a21e43d1efbbcbc3f32f579a499898f",
   "russian_sha256": "c8a3ecc60c29c53bc52a8ad2f2122bf69e40f5546a0a47981201d94d22dd28bb",
   "english_resolution": [
     1280,
     720
   ],
-  "review": "Visually inspected for English copy, layout, branding and readable mathematical notation. Raster artwork may differ in fine details from the original."
+  "review": "Visually inspected for English copy, layout, branding and readable mathematical notation. Raster artwork may differ in fine details from the original.",
+  "english_copy": "Do You Have a Passion for Coding?",
+  "user_requested_copy_revision": "Programming -> Coding"
 }
