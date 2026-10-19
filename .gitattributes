@@ -1,0 +1,4 @@
+# Preserve original Mathematica caches and source subtitle/description whitespace.
+*.nb -whitespace
+videos/*/captions/* -whitespace
+videos/*/description.*.md -whitespace
