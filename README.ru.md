@@ -38,3 +38,7 @@
 - `ASSET-AUDIT.md`: source coverage and gaps.
 
 Descriptions retain the existing text and chapter timestamps. Repository links are additive. Audio masters and intermediate API logs are deliberately stored outside Git.
+
+## YouTube publication / Применение в YouTube
+
+All 20 English thumbnails and all 40 RU/EN repository links in descriptions were applied and verified on 19 October 2026. Все 20 английских обложек и ссылки в 40 описаниях RU/EN применены и проверены. See [publication-status.json](publication-status.json).

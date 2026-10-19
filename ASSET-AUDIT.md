@@ -11,3 +11,7 @@ Source thumbnails and actual ru/en titles/descriptions were fetched from YouTube
 Original editable thumbnails were recovered for 13 videos. Remaining thumbnail editable originals have not been located; downloaded originals are retained.
 
 English thumbnail edits are generated from the downloaded original artwork. They preserve the visual design, while some raster details may be redrawn.
+
+## Application status
+
+All 20 English thumbnail uploads and all 40 RU/EN description links were completed and independently verified. The Russian default artwork of videos 002.2 and 006 was reuploaded without visual changes because Studio required an explicit default thumbnail before enabling a localized thumbnail.

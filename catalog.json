@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-19T13:53:08.276180+00:00",
+  "updated_at": "2026-10-19T14:29:23.756761+00:00",
   "scope": "The 20 videos selected for English Cedar dubbing; not the complete channel.",
   "repository": "https://github.com/avorozhtsov/math-experiments",
   "videos": [
@@ -38,7 +38,9 @@
       "thumbnail_editable_sources": [],
       "metadata_source": "YouTube Data API videos.list; actual existing ru/en localizations; fetched 2026-10-19T13:37:26.821577+00:00",
       "english_thumbnail_method": "Image generation edit of the original, with explicit translation and style preservation",
-      "description_link_status": "prepared; YouTube application tracked separately"
+      "description_link_status": "APPLIED_TO_YOUTUBE_RU_AND_EN_VERIFIED",
+      "english_thumbnail_status": "APPLIED_TO_YOUTUBE_VERIFIED",
+      "youtube_verified_at": "2026-10-19T14:29:23.756761+00:00"
     },
     {
       "number": "017",
@@ -80,7 +82,9 @@
       ],
       "metadata_source": "YouTube Data API videos.list; actual existing ru/en localizations; fetched 2026-10-19T13:37:26.821577+00:00",
       "english_thumbnail_method": "Image generation edit of the original, with explicit translation and style preservation",
-      "description_link_status": "prepared; YouTube application tracked separately"
+      "description_link_status": "APPLIED_TO_YOUTUBE_RU_AND_EN_VERIFIED",
+      "english_thumbnail_status": "APPLIED_TO_YOUTUBE_VERIFIED",
+      "youtube_verified_at": "2026-10-19T14:29:23.756761+00:00"
     },
     {
       "number": "016",
@@ -122,7 +126,9 @@
       ],
       "metadata_source": "YouTube Data API videos.list; actual existing ru/en localizations; fetched 2026-10-19T13:37:26.821577+00:00",
       "english_thumbnail_method": "Image generation edit of the original, with explicit translation and style preservation",
-      "description_link_status": "prepared; YouTube application tracked separately"
+      "description_link_status": "APPLIED_TO_YOUTUBE_RU_AND_EN_VERIFIED",
+      "english_thumbnail_status": "APPLIED_TO_YOUTUBE_VERIFIED",
+      "youtube_verified_at": "2026-10-19T14:29:23.756761+00:00"
     },
     {
       "number": "008",
@@ -165,7 +171,9 @@
       ],
       "metadata_source": "YouTube Data API videos.list; actual existing ru/en localizations; fetched 2026-10-19T13:37:26.821577+00:00",
       "english_thumbnail_method": "Image generation edit of the original, with explicit translation and style preservation",
-      "description_link_status": "prepared; YouTube application tracked separately"
+      "description_link_status": "APPLIED_TO_YOUTUBE_RU_AND_EN_VERIFIED",
+      "english_thumbnail_status": "APPLIED_TO_YOUTUBE_VERIFIED",
+      "youtube_verified_at": "2026-10-19T14:29:23.756761+00:00"
     },
     {
       "number": "002.1",
@@ -201,7 +209,9 @@
       "thumbnail_editable_sources": [],
       "metadata_source": "YouTube Data API videos.list; actual existing ru/en localizations; fetched 2026-10-19T13:37:26.821577+00:00",
       "english_thumbnail_method": "Image generation edit of the original, with explicit translation and style preservation",
-      "description_link_status": "prepared; YouTube application tracked separately"
+      "description_link_status": "APPLIED_TO_YOUTUBE_RU_AND_EN_VERIFIED",
+      "english_thumbnail_status": "APPLIED_TO_YOUTUBE_VERIFIED",
+      "youtube_verified_at": "2026-10-19T14:29:23.756761+00:00"
     },
     {
       "number": "018.1",
@@ -243,7 +253,9 @@
       ],
       "metadata_source": "YouTube Data API videos.list; actual existing ru/en localizations; fetched 2026-10-19T13:37:26.821577+00:00",
       "english_thumbnail_method": "Image generation edit of the original, with explicit translation and style preservation",
-      "description_link_status": "prepared; YouTube application tracked separately"
+      "description_link_status": "APPLIED_TO_YOUTUBE_RU_AND_EN_VERIFIED",
+      "english_thumbnail_status": "APPLIED_TO_YOUTUBE_VERIFIED",
+      "youtube_verified_at": "2026-10-19T14:29:23.756761+00:00"
     },
     {
       "number": "023",
@@ -289,7 +301,9 @@
       ],
       "metadata_source": "YouTube Data API videos.list; actual existing ru/en localizations; fetched 2026-10-19T13:37:26.821577+00:00",
       "english_thumbnail_method": "Image generation edit of the original, with explicit translation and style preservation",
-      "description_link_status": "prepared; YouTube application tracked separately"
+      "description_link_status": "APPLIED_TO_YOUTUBE_RU_AND_EN_VERIFIED",
+      "english_thumbnail_status": "APPLIED_TO_YOUTUBE_VERIFIED",
+      "youtube_verified_at": "2026-10-19T14:29:23.756761+00:00"
     },
     {
       "number": "019.1",
@@ -331,7 +345,9 @@
       ],
       "metadata_source": "YouTube Data API videos.list; actual existing ru/en localizations; fetched 2026-10-19T13:37:26.821577+00:00",
       "english_thumbnail_method": "Image generation edit of the original, with explicit translation and style preservation",
-      "description_link_status": "prepared; YouTube application tracked separately"
+      "description_link_status": "APPLIED_TO_YOUTUBE_RU_AND_EN_VERIFIED",
+      "english_thumbnail_status": "APPLIED_TO_YOUTUBE_VERIFIED",
+      "youtube_verified_at": "2026-10-19T14:29:23.756761+00:00"
     },
     {
       "number": "015.1",
@@ -374,7 +390,9 @@
       ],
       "metadata_source": "YouTube Data API videos.list; actual existing ru/en localizations; fetched 2026-10-19T13:37:26.821577+00:00",
       "english_thumbnail_method": "Image generation edit of the original, with explicit translation and style preservation",
-      "description_link_status": "prepared; YouTube application tracked separately"
+      "description_link_status": "APPLIED_TO_YOUTUBE_RU_AND_EN_VERIFIED",
+      "english_thumbnail_status": "APPLIED_TO_YOUTUBE_VERIFIED",
+      "youtube_verified_at": "2026-10-19T14:29:23.756761+00:00"
     },
     {
       "number": "019.3",
@@ -416,7 +434,9 @@
       ],
       "metadata_source": "YouTube Data API videos.list; actual existing ru/en localizations; fetched 2026-10-19T13:37:26.821577+00:00",
       "english_thumbnail_method": "Image generation edit of the original, with explicit translation and style preservation",
-      "description_link_status": "prepared; YouTube application tracked separately"
+      "description_link_status": "APPLIED_TO_YOUTUBE_RU_AND_EN_VERIFIED",
+      "english_thumbnail_status": "APPLIED_TO_YOUTUBE_VERIFIED",
+      "youtube_verified_at": "2026-10-19T14:29:23.756761+00:00"
     },
     {
       "number": "021",
@@ -458,7 +478,9 @@
       ],
       "metadata_source": "YouTube Data API videos.list; actual existing ru/en localizations; fetched 2026-10-19T13:37:26.821577+00:00",
       "english_thumbnail_method": "Image generation edit of the original, with explicit translation and style preservation",
-      "description_link_status": "prepared; YouTube application tracked separately"
+      "description_link_status": "APPLIED_TO_YOUTUBE_RU_AND_EN_VERIFIED",
+      "english_thumbnail_status": "APPLIED_TO_YOUTUBE_VERIFIED",
+      "youtube_verified_at": "2026-10-19T14:29:23.756761+00:00"
     },
     {
       "number": "022",
@@ -500,7 +522,9 @@
       ],
       "metadata_source": "YouTube Data API videos.list; actual existing ru/en localizations; fetched 2026-10-19T13:37:26.821577+00:00",
       "english_thumbnail_method": "Image generation edit of the original, with explicit translation and style preservation",
-      "description_link_status": "prepared; YouTube application tracked separately"
+      "description_link_status": "APPLIED_TO_YOUTUBE_RU_AND_EN_VERIFIED",
+      "english_thumbnail_status": "APPLIED_TO_YOUTUBE_VERIFIED",
+      "youtube_verified_at": "2026-10-19T14:29:23.756761+00:00"
     },
     {
       "number": "002",
@@ -536,7 +560,9 @@
       "thumbnail_editable_sources": [],
       "metadata_source": "YouTube Data API videos.list; actual existing ru/en localizations; fetched 2026-10-19T13:37:26.821577+00:00",
       "english_thumbnail_method": "Image generation edit of the original, with explicit translation and style preservation",
-      "description_link_status": "prepared; YouTube application tracked separately"
+      "description_link_status": "APPLIED_TO_YOUTUBE_RU_AND_EN_VERIFIED",
+      "english_thumbnail_status": "APPLIED_TO_YOUTUBE_VERIFIED",
+      "youtube_verified_at": "2026-10-19T14:29:23.756761+00:00"
     },
     {
       "number": "002.2",
@@ -572,7 +598,9 @@
       "thumbnail_editable_sources": [],
       "metadata_source": "YouTube Data API videos.list; actual existing ru/en localizations; fetched 2026-10-19T13:37:26.821577+00:00",
       "english_thumbnail_method": "Image generation edit of the original, with explicit translation and style preservation",
-      "description_link_status": "prepared; YouTube application tracked separately"
+      "description_link_status": "APPLIED_TO_YOUTUBE_RU_AND_EN_VERIFIED",
+      "english_thumbnail_status": "APPLIED_TO_YOUTUBE_VERIFIED",
+      "youtube_verified_at": "2026-10-19T14:29:23.756761+00:00"
     },
     {
       "number": "006",
@@ -608,7 +636,9 @@
       "thumbnail_editable_sources": [],
       "metadata_source": "YouTube Data API videos.list; actual existing ru/en localizations; fetched 2026-10-19T13:37:26.821577+00:00",
       "english_thumbnail_method": "Image generation edit of the original, with explicit translation and style preservation",
-      "description_link_status": "prepared; YouTube application tracked separately"
+      "description_link_status": "APPLIED_TO_YOUTUBE_RU_AND_EN_VERIFIED",
+      "english_thumbnail_status": "APPLIED_TO_YOUTUBE_VERIFIED",
+      "youtube_verified_at": "2026-10-19T14:29:23.756761+00:00"
     },
     {
       "number": "005",
@@ -644,7 +674,9 @@
       "thumbnail_editable_sources": [],
       "metadata_source": "YouTube Data API videos.list; actual existing ru/en localizations; fetched 2026-10-19T13:37:26.821577+00:00",
       "english_thumbnail_method": "Image generation edit of the original, with explicit translation and style preservation",
-      "description_link_status": "prepared; YouTube application tracked separately"
+      "description_link_status": "APPLIED_TO_YOUTUBE_RU_AND_EN_VERIFIED",
+      "english_thumbnail_status": "APPLIED_TO_YOUTUBE_VERIFIED",
+      "youtube_verified_at": "2026-10-19T14:29:23.756761+00:00"
     },
     {
       "number": "003.1",
@@ -684,7 +716,9 @@
       "thumbnail_editable_sources": [],
       "metadata_source": "YouTube Data API videos.list; actual existing ru/en localizations; fetched 2026-10-19T13:37:26.821577+00:00",
       "english_thumbnail_method": "Image generation edit of the original, with explicit translation and style preservation",
-      "description_link_status": "prepared; YouTube application tracked separately"
+      "description_link_status": "APPLIED_TO_YOUTUBE_RU_AND_EN_VERIFIED",
+      "english_thumbnail_status": "APPLIED_TO_YOUTUBE_VERIFIED",
+      "youtube_verified_at": "2026-10-19T14:29:23.756761+00:00"
     },
     {
       "number": "009",
@@ -727,7 +761,9 @@
       ],
       "metadata_source": "YouTube Data API videos.list; actual existing ru/en localizations; fetched 2026-10-19T13:37:26.821577+00:00",
       "english_thumbnail_method": "Image generation edit of the original, with explicit translation and style preservation",
-      "description_link_status": "prepared; YouTube application tracked separately"
+      "description_link_status": "APPLIED_TO_YOUTUBE_RU_AND_EN_VERIFIED",
+      "english_thumbnail_status": "APPLIED_TO_YOUTUBE_VERIFIED",
+      "youtube_verified_at": "2026-10-19T14:29:23.756761+00:00"
     },
     {
       "number": "019.2",
@@ -773,7 +809,9 @@
       ],
       "metadata_source": "YouTube Data API videos.list; actual existing ru/en localizations; fetched 2026-10-19T13:37:26.821577+00:00",
       "english_thumbnail_method": "Image generation edit of the original, with explicit translation and style preservation",
-      "description_link_status": "prepared; YouTube application tracked separately"
+      "description_link_status": "APPLIED_TO_YOUTUBE_RU_AND_EN_VERIFIED",
+      "english_thumbnail_status": "APPLIED_TO_YOUTUBE_VERIFIED",
+      "youtube_verified_at": "2026-10-19T14:29:23.756761+00:00"
     },
     {
       "number": "012",
@@ -816,7 +854,9 @@
       ],
       "metadata_source": "YouTube Data API videos.list; actual existing ru/en localizations; fetched 2026-10-19T13:37:26.821577+00:00",
       "english_thumbnail_method": "Image generation edit of the original, with explicit translation and style preservation",
-      "description_link_status": "prepared; YouTube application tracked separately"
+      "description_link_status": "APPLIED_TO_YOUTUBE_RU_AND_EN_VERIFIED",
+      "english_thumbnail_status": "APPLIED_TO_YOUTUBE_VERIFIED",
+      "youtube_verified_at": "2026-10-19T14:29:23.756761+00:00"
     }
   ]
 }

@@ -1,0 +1,24 @@
+{
+  "status": "COMPLETED",
+  "checked_at": "2026-10-19T14:29:23.756761+00:00",
+  "english_thumbnails_verified": 20,
+  "english_description_repository_links_verified": 20,
+  "russian_description_repository_links_verified": 20,
+  "default_description_repository_links_verified": 20,
+  "thumbnail_copy_revision": {
+    "video_id": "zNNWmJF46rE",
+    "text": "Do You Have a Passion for Coding?"
+  },
+  "default_thumbnail_prerequisites": [
+    "tG8PWeDY_0g",
+    "dB6OrpgN78s"
+  ],
+  "default_thumbnail_prerequisite_method": "Reuploaded the existing Russian image, preserving its appearance, to enable localized thumbnail upload.",
+  "verification": "YouTube Studio freshly reopened Languages rows for thumbnails; fresh YouTube Data API localizations and snippet for all 40 descriptions. Published RU/EN text exactly matches archived target metadata after ignoring terminal newlines.",
+  "notebook_source_gaps": [
+    "006",
+    "008",
+    "009",
+    "015.1"
+  ]
+}

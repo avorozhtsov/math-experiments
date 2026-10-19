@@ -38,5 +38,7 @@
   ],
   "metadata_source": "YouTube Data API videos.list; actual existing ru/en localizations; fetched 2026-10-19T13:37:26.821577+00:00",
   "english_thumbnail_method": "Image generation edit of the original, with explicit translation and style preservation",
-  "description_link_status": "prepared; YouTube application tracked separately"
+  "description_link_status": "APPLIED_TO_YOUTUBE_RU_AND_EN_VERIFIED",
+  "english_thumbnail_status": "APPLIED_TO_YOUTUBE_VERIFIED",
+  "youtube_verified_at": "2026-10-19T14:29:23.756761+00:00"
 }
