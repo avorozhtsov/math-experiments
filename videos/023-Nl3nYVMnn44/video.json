@@ -1,0 +1,46 @@
+{
+  "number": "023",
+  "video_id": "Nl3nYVMnn44",
+  "youtube_url": "https://www.youtube.com/watch?v=Nl3nYVMnn44",
+  "directory": "videos/023-Nl3nYVMnn44",
+  "locales": {
+    "ru": {
+      "title": "23. Geometric Algebra.  Уравнения Максвелла в одну строчку (English Subtitles)",
+      "metadata_file": "metadata.ru.json",
+      "title_file": "title.ru.txt",
+      "description_file": "description.ru.md",
+      "captions_file": "captions/ru.vtt",
+      "thumbnail_file": "thumbnails/ru.jpg"
+    },
+    "en": {
+      "title": "23. Geometric Algebra.  Maxwell equation in one line (English Subtitles)",
+      "metadata_file": "metadata.en.json",
+      "title_file": "title.en.txt",
+      "description_file": "description.en.md",
+      "captions_file": "captions/en.vtt",
+      "thumbnail_file": "thumbnails/en.jpg"
+    }
+  },
+  "tags_file": "tags.json",
+  "notebooks": [
+    {
+      "path": "yt-channel/023-geometric_algebra.nb",
+      "relationship": "primary"
+    },
+    {
+      "path": "yt-channel/GA.nb",
+      "relationship": "primary"
+    }
+  ],
+  "exact_notebook_source_found": true,
+  "thumbnail_editable_sources": [
+    {
+      "path": "thumbnail-sources/023.ru.key",
+      "kind": "Keynote",
+      "language": "ru"
+    }
+  ],
+  "metadata_source": "YouTube Data API videos.list; actual existing ru/en localizations; fetched 2026-10-19T13:37:26.821577+00:00",
+  "english_thumbnail_method": "Image generation edit of the original, with explicit translation and style preservation",
+  "description_link_status": "prepared; YouTube application tracked separately"
+}

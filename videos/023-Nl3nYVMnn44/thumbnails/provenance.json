@@ -1,0 +1,20 @@
+{
+  "method": "built-in image_gen image edit, original artwork as reference, followed by JPEG resize/export with FFmpeg",
+  "source": {
+    "prefix": "023-Nl3nYVMnn44",
+    "source_url": "https://i.ytimg.com/vi/Nl3nYVMnn44/sddefault.jpg",
+    "source_resolution": [
+      640,
+      480
+    ],
+    "bytes": 51134
+  },
+  "english_prompt": "Use case: text-localization. Edit the provided original YouTube mathematics thumbnail to English. Keep the original style, composition, colors, mathematical diagrams, graph geometry, axes, logo positions, and original Wolfram Mathematica logo/lettering. Translate every channel label \"Математические Эксперименты\" to \"Math Experiments\" in the same white bold two-line box, preserving its original red, orange or magenta background. No additional branding, no new decorations, no redesigned charts. All foreground copy must be clean fluent English. Output landscape 16:9 with no black letterboxing; if input has black outer bars, use only the existing 16:9 artwork between them and fill the canvas. Prefer 1280x720. Fit translated text in the original zones without overlap or clipping. Keep the already-English main headline verbatim \"Geometric Algebra\" and \"Implementation in\" / \"Wolfram Mathematica\"; translate only the Russian channel label. Preserve code background.",
+  "english_sha256": "3a55cfd5c926cf75d3266b4ce86b569ab3c20a8ff83bb7746e3a934b771197f8",
+  "russian_sha256": "8b5932e01ec32a114e562ce50a3b9beb7105446d7b5ebaba03d0460808f156ca",
+  "english_resolution": [
+    1280,
+    720
+  ],
+  "review": "Visually inspected for English copy, layout, branding and readable mathematical notation. Raster artwork may differ in fine details from the original."
+}

@@ -1,0 +1,36 @@
+{
+  "number": "002.2",
+  "video_id": "tG8PWeDY_0g",
+  "youtube_url": "https://www.youtube.com/watch?v=tG8PWeDY_0g",
+  "directory": "videos/002.2-tG8PWeDY_0g",
+  "locales": {
+    "ru": {
+      "title": "2. Бонус 2. Комплексные числа и преобразования плоскости. Красота – страшная сила (English subs)",
+      "metadata_file": "metadata.ru.json",
+      "title_file": "title.ru.txt",
+      "description_file": "description.ru.md",
+      "captions_file": "captions/ru.vtt",
+      "thumbnail_file": "thumbnails/ru.jpg"
+    },
+    "en": {
+      "title": "2: BONUS 2. Complex Numbers and Plane Transformations. Beauty rules (English subtitles)",
+      "metadata_file": "metadata.en.json",
+      "title_file": "title.en.txt",
+      "description_file": "description.en.md",
+      "captions_file": "captions/en.vtt",
+      "thumbnail_file": "thumbnails/en.jpg"
+    }
+  },
+  "tags_file": "tags.json",
+  "notebooks": [
+    {
+      "path": "yt-channel/002-fib.nb",
+      "relationship": "primary"
+    }
+  ],
+  "exact_notebook_source_found": true,
+  "thumbnail_editable_sources": [],
+  "metadata_source": "YouTube Data API videos.list; actual existing ru/en localizations; fetched 2026-10-19T13:37:26.821577+00:00",
+  "english_thumbnail_method": "Image generation edit of the original, with explicit translation and style preservation",
+  "description_link_status": "prepared; YouTube application tracked separately"
+}

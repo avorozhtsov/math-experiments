@@ -1,0 +1,23 @@
+{
+  "scope": "YouTube tags are video-wide, not independently localized. This list is the exact current global tag list.",
+  "tags": [
+    "wolfram mathematica",
+    "number theory",
+    "legendre symbol",
+    "quadratic reciprocity",
+    "квадратичный закон взаимности",
+    "символ лежандра",
+    "математика"
+  ],
+  "ru_or_mixed": [
+    "квадратичный закон взаимности",
+    "символ лежандра",
+    "математика"
+  ],
+  "en_or_language_neutral": [
+    "wolfram mathematica",
+    "number theory",
+    "legendre symbol",
+    "quadratic reciprocity"
+  ]
+}

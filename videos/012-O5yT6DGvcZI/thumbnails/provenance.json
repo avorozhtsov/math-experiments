@@ -1,0 +1,20 @@
+{
+  "method": "built-in image_gen image edit, original artwork as reference, followed by JPEG resize/export with FFmpeg",
+  "source": {
+    "prefix": "012-O5yT6DGvcZI",
+    "source_url": "https://i.ytimg.com/vi/O5yT6DGvcZI/maxresdefault.jpg",
+    "source_resolution": [
+      1280,
+      720
+    ],
+    "bytes": 124209
+  },
+  "english_prompt": "Use case: text-localization. Edit the provided original YouTube mathematics thumbnail to English. Keep the original style, composition, colors, mathematical diagrams, graph geometry, axes, logo positions, and original Wolfram Mathematica logo/lettering. Translate every channel label \"Математические Эксперименты\" to \"Math Experiments\" in the same white bold two-line box, preserving its original red, orange or magenta background. No additional branding, no new decorations, no redesigned charts. All foreground copy must be clean fluent English. Output landscape 16:9 with no black letterboxing; if input has black outer bars, use only the existing 16:9 artwork between them and fill the canvas. Prefer 1280x720. Fit translated text in the original zones without overlap or clipping. White main title two centered lines: \"From sin(x)\" / \"to the Zeta Function\". Preserve original multicolored function plots and axes exactly.",
+  "english_sha256": "db32a45c67729f1bf26fe7f90d2f2557ffb0e58e7a085acfab5abd5d5afbf338",
+  "russian_sha256": "2d0b6b71e085be0337c346178fb649e930852da1c65735ca1ec88135d6294971",
+  "english_resolution": [
+    1280,
+    720
+  ],
+  "review": "Visually inspected for English copy, layout, branding and readable mathematical notation. Raster artwork may differ in fine details from the original."
+}

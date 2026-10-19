@@ -1,0 +1,46 @@
+{
+  "number": "019.2",
+  "video_id": "5LbcZXEbPZo",
+  "youtube_url": "https://www.youtube.com/watch?v=5LbcZXEbPZo",
+  "directory": "videos/019.2-5LbcZXEbPZo",
+  "locales": {
+    "ru": {
+      "title": "19. Часть 2. ML в теории чисел? Открываем квадратичный закон взаимности.",
+      "metadata_file": "metadata.ru.json",
+      "title_file": "title.ru.txt",
+      "description_file": "description.ru.md",
+      "captions_file": "captions/ru.vtt",
+      "thumbnail_file": "thumbnails/ru.jpg"
+    },
+    "en": {
+      "title": "Part 2. Machine Learning in Number Theory? The Quadratic Reciprocity Law (English subtitles)",
+      "metadata_file": "metadata.en.json",
+      "title_file": "title.en.txt",
+      "description_file": "description.en.md",
+      "captions_file": "captions/en.vtt",
+      "thumbnail_file": "thumbnails/en.jpg"
+    }
+  },
+  "tags_file": "tags.json",
+  "notebooks": [
+    {
+      "path": "yt-channel/019.1-finite_fields_qreciprocity.nb",
+      "relationship": "primary"
+    },
+    {
+      "path": "yt-channel/019-finite_fields.nb",
+      "relationship": "primary"
+    }
+  ],
+  "exact_notebook_source_found": true,
+  "thumbnail_editable_sources": [
+    {
+      "path": "thumbnail-sources/019.2.ru.key",
+      "kind": "Keynote",
+      "language": "ru"
+    }
+  ],
+  "metadata_source": "YouTube Data API videos.list; actual existing ru/en localizations; fetched 2026-10-19T13:37:26.821577+00:00",
+  "english_thumbnail_method": "Image generation edit of the original, with explicit translation and style preservation",
+  "description_link_status": "prepared; YouTube application tracked separately"
+}

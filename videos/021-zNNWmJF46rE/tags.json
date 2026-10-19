@@ -1,0 +1,33 @@
+{
+  "scope": "YouTube tags are video-wide, not independently localized. This list is the exact current global tag list.",
+  "tags": [
+    "wolfram mathematica",
+    "catalan numbers",
+    "recursion",
+    "memoization",
+    "combinatorics",
+    "комбинаторика",
+    "математика",
+    "числа каталана",
+    "рекурсия",
+    "динамическое программирование",
+    "формула стирлинга",
+    "программирование"
+  ],
+  "ru_or_mixed": [
+    "комбинаторика",
+    "математика",
+    "числа каталана",
+    "рекурсия",
+    "динамическое программирование",
+    "формула стирлинга",
+    "программирование"
+  ],
+  "en_or_language_neutral": [
+    "wolfram mathematica",
+    "catalan numbers",
+    "recursion",
+    "memoization",
+    "combinatorics"
+  ]
+}

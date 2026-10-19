@@ -1,0 +1,19 @@
+{
+  "recovered_notebooks": [
+    {
+      "path": "yt-channel/005-legendre.nb",
+      "origin": "Author local archive, located by filename and inspected notebook content; original notebook code was not modified or executed.",
+      "sha256": "5d28632c94ce60578a17075f9b013fd5a803848960e6ab9a78a337c308af4141"
+    },
+    {
+      "path": "yt-channel/012-sin-zeta.nb",
+      "origin": "Author local archive, located by filename and inspected notebook content; original notebook code was not modified or executed.",
+      "sha256": "506b251b38246ccb3094e3db2c463a1232fd0486dc37ca727c81e4a7f59deb95"
+    },
+    {
+      "path": "yt-channel/019.1-finite_fields_qreciprocity.nb",
+      "origin": "Author local archive, located by filename and inspected notebook content; original notebook code was not modified or executed.",
+      "sha256": "fea95c4179faa6fe25d4d592a4215a7554cbbd4ae180f829f24d84c1996dfdc6"
+    }
+  ]
+}

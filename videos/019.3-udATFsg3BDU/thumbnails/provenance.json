@@ -1,0 +1,20 @@
+{
+  "method": "built-in image_gen image edit, original artwork as reference, followed by JPEG resize/export with FFmpeg",
+  "source": {
+    "prefix": "019.3-udATFsg3BDU",
+    "source_url": "https://i.ytimg.com/vi/udATFsg3BDU/sddefault.jpg",
+    "source_resolution": [
+      640,
+      480
+    ],
+    "bytes": 60276
+  },
+  "english_prompt": "Use case: text-localization. Edit the provided original YouTube mathematics thumbnail to English. Keep the original style, composition, colors, mathematical diagrams, graph geometry, axes, logo positions, and original Wolfram Mathematica logo/lettering. Translate every channel label \"Математические Эксперименты\" to \"Math Experiments\" in the same white bold two-line box, preserving its original red, orange or magenta background. No additional branding, no new decorations, no redesigned charts. All foreground copy must be clean fluent English. Output landscape 16:9 with no black letterboxing; if input has black outer bars, use only the existing 16:9 artwork between them and fill the canvas. Prefer 1280x720. Fit translated text in the original zones without overlap or clipping. Magenta title \"Finite Fields\". Lower magenta numbered lines: \"1. Quadratic and Cubic Extensions\" and \"2. Counting Irreducible Polynomials\". Preserve central mathematical field labels exactly F_{5²}, F_{5³}, F_{5⁴}, … using proper subscripts and superscripts.",
+  "english_sha256": "dbbbc0836234b12e5f90c92acdff6fb6a1bac20aca63c1a2f2664aa85b54b7c8",
+  "russian_sha256": "39e11e4e66b68f7a11a224d9288f42b94a75962b156725ba1bfd86ed247ffff6",
+  "english_resolution": [
+    1280,
+    720
+  ],
+  "review": "Visually inspected for English copy, layout, branding and readable mathematical notation. Raster artwork may differ in fine details from the original."
+}

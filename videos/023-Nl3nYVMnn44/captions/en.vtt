@@ -1,0 +1,2188 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:01.339 --> 00:00:05.633
+Hello everyone!
+This is the "Mathematical Experiments" channel.
+
+00:00:05.633 --> 00:00:09.360
+Today, I'm going to talk about geometric algebra.
+
+00:00:09.360 --> 00:00:14.985
+There is algebraic geometry - one of the most advanced fields in mathematics.
+
+00:00:14.985 --> 00:00:21.567
+And, there is also geometric algebra, which is something completely different,  although also a trendy thing with applications in physics.
+
+00:00:21.567 --> 00:00:27.154
+You can find many videos online about the geometric algebra.
+
+00:00:27.154 --> 00:00:30.995
+Title on the video "Swift Introduction"  has somewhat like definition of geometric product, but it is incorrect.
+
+00:00:30.995 --> 00:00:33.778
+But still, the video is good, I recommend it.
+
+00:00:33.778 --> 00:00:37.805
+These videos has pictures, animations, and beautiful examples.
+
+00:00:37.805 --> 00:00:48.080
+In particular, many of the videos provide this impressing example of how to write Maxwell's equations in one line using the geometric product.
+
+00:00:48.080 --> 00:00:51.260
+I will also try to get to this example in todays's video
+
+00:00:51.260 --> 00:00:54.986
+And I want to pursue my way of telling about geometric algebra via Wolfram Mathematica (WM).
+
+00:00:54.986 --> 00:01:00.000
+As you might guess, I will show how to implement Clifford algebra in Wolfram Mathematica (WM).
+
+00:01:00.000 --> 00:01:05.620
+I won't mislead you, this is not school material at all.
+
+00:01:05.620 --> 00:01:10.971
+And the complexity is primarily in the question:
+"Why?"  or "What are all these constructs for?"
+
+00:01:10.971 --> 00:01:18.248
+Or ... maybe not. if you've heard about matrix determinants, vector products,
+
+00:01:18.248 --> 00:01:24.789
+if you know the concept of factorization, for example, what is a factor group.
+
+00:01:24.789 --> 00:01:28.499
+Or, if you know how to integrate over a surface,
+
+00:01:28.499 --> 00:01:31.601
+and familiar with differential forms.
+
+00:01:31.601 --> 00:01:40.691
+THEN, you might see the reasoning behind these constructs.
+
+00:01:40.691 --> 00:01:43.310
+And, it may also be interesting for programmers,
+
+00:01:43.310 --> 00:01:51.849
+who will learn how to define new operators or redefine existing ones in the Wolfram language.
+
+00:01:51.849 --> 00:01:54.582
+That's also an interesting topic.
+
+00:01:54.582 --> 00:02:00.572
+And the way you define operators in WM is completely different from how it's done in traditional programming languages, like  C++, Java, or Python.
+
+00:02:00.572 --> 00:02:07.096
+That's because Wolfram Mathematica is not an imperative programming language.
+
+00:02:07.096 --> 00:02:11.858
+It is a term rewriting system.
+
+00:02:11.858 --> 00:02:14.438
+It is based on rules on transformations of expressions.
+
+00:02:14.438 --> 00:02:19.274
+Literally, calculations in WM are not the execution of step-by-step instructions,
+
+00:02:19.274 --> 00:02:23.885
+but a step-by-step application of expression simplification rules.
+
+00:02:23.885 --> 00:02:29.004
+For example, this expression is simplified to the following.
+
+00:02:29.004 --> 00:02:31.068
+It is reduced to some expression that can not be reduced any further.
+
+00:02:31.068 --> 00:02:34.823
+So, b multiplied by 5 is reduced to  5 b.
+
+00:02:34.823 --> 00:02:37.011
+And this collapses to 32.
+
+00:02:37.011 --> 00:02:38.276
+Let's go.
+
+00:02:38.276 --> 00:02:42.856
+The first important concept is the concept of a multivector.
+
+00:02:42.856 --> 00:02:46.721
+Suppose we have some vector space.
+
+00:02:46.721 --> 00:02:48.375
+For example, three-dimensional.
+
+00:02:48.375 --> 00:02:52.260
+And it has basis vectors e₁, e₂, e₃.
+
+00:02:52.260 --> 00:02:56.949
+So we will write down these formal expressions:
+
+00:02:56.949 --> 00:03:01.023
+e₁ ^ e₂
+
+00:03:01.023 --> 00:03:05.142
+The " ^ " is the Wedge operator.
+We will define some rules for this operator.
+
+00:03:05.142 --> 00:03:07.598
+In English, it is called Wedge. And it stands for special product, called exterior- or outer- product.
+
+00:03:07.598 --> 00:03:13.022
+When it is applied in a unary way,
+it remains the word Wedge.
+
+00:03:13.022 --> 00:03:18.038
+And when it is applied to two operands or more,
+
+00:03:18.038 --> 00:03:22.775
+then it is displayed  as  ^.
+
+00:03:22.775 --> 00:03:26.899
+Nothing is clear yet, and it shouldn't be. Just follow me.
+
+00:03:26.899 --> 00:03:31.268
+In short, besides the vectors e₁, e₂, e₃,
+
+00:03:31.268 --> 00:03:38.441
+we will also consider  bivectors  e₁ ^ e₂ , e₂ ^ e₃ , etc
+
+00:03:38.441 --> 00:03:40.559
+And trivectors like e₁ ^ e₂ ^ e₃ .
+
+00:03:40.559 --> 00:03:48.363
+And we will also consider scalars - numbers, like 1, 2, -0.5, etc.
+
+00:03:48.363 --> 00:03:58.215
+In order to remove word Wedge
+when Wedge is applied in a unary way,
+we will add such a rule...
+
+00:03:58.215 --> 00:04:02.016
+Ok, here I probably need to draw some more examples...
+
+00:04:07.544 --> 00:04:13.240
+In general, one can write any combination of basic vectors connected by the wedge symbol " ^ "  and treat it as new basic vector.
+
+00:04:13.240 --> 00:04:19.601
+These are our new basic vectors.
+Now we have an extended vector basis.
+
+00:04:19.601 --> 00:04:26.304
+In addition to the vectors e₁, e₂, e₃,
+we also have bivectors, trivectors, and so on.
+
+00:04:26.304 --> 00:04:33.161
+This is an basic vector multiplied by a given number.
+
+00:04:33.161 --> 00:04:38.062
+And this is a linear combination of
+basic vectors multiplied by numbers.
+
+00:04:38.062 --> 00:04:44.069
+Here we have formal sum of a scalar, a vector, and a trivector.
+
+00:04:44.069 --> 00:04:50.512
+A regular vector is written in this way.
+Its a vector with coordinates x, y, z.
+
+00:04:50.512 --> 00:04:54.204
+Well, we also have bivectors and function B3 for generating them.
+
+00:04:54.204 --> 00:05:00.853
+tAnd we have this thing P3. in three-dimensional space it is called pseudoscalar.
+
+00:05:00.853 --> 00:05:10.461
+In general, the space of ALL multivectors is
+the space of linear combinations of these four expressions
+
+00:05:10.461 --> 00:05:15.712
+So, now we want to endow " ^ " operator with some properties.
+
+00:05:15.712 --> 00:05:18.948
+First, we want it to be like multiplication.
+
+00:05:18.948 --> 00:05:22.962
+Namely, we want to be able to expand these braces according to rule we learned in school – distributive low.
+
+00:05:22.962 --> 00:05:29.600
+Each element from one expression
+ must be "multiplied" via " ^ " by each element from the second expression.
+
+00:05:29.600 --> 00:05:35.654
+To apply this distributive law,
+WM has a Distribute function.
+
+00:05:35.654 --> 00:05:41.728
+It interprets the expression given inside as multiplication.
+
+00:05:41.728 --> 00:05:47.838
+That is, any function f,
+it will treat as multiplication.
+
+00:05:47.838 --> 00:05:52.172
+And expand it, as if it were the multiplication of two expressions.
+
+00:05:53.392 --> 00:05:57.514
+Let's check that this works not only for f
+ but also for " ^ ".
+
+00:05:57.514 --> 00:05:59.488
+Here, it works.
+
+00:06:00.409 --> 00:06:04.550
+We want this distributivity to be applied automatically.
+
+00:06:04.550 --> 00:06:12.144
+And we also want these numbers: 3, 13, to be pulled to the left and multiplied.
+
+00:06:12.144 --> 00:06:20.731
+So, from " ^ " we demand: associativity,
+so that it doesn't matter how we arrange the braces.
+
+00:06:20.731 --> 00:06:25.561
+The distributivity with respect to addition,
+as if " ^ " was multiplication.
+
+00:06:25.561 --> 00:06:30.000
+Numbers should be brought to the left, as a common factor.
+
+00:06:30.000 --> 00:06:38.754
+And also, " ^ " should be such that when multiplied by a number, that number is also brought to the left.
+
+00:06:38.754 --> 00:06:44.018
+And finally, the most important part about " ^ " is that it is anticommutative.
+
+00:06:44.018 --> 00:06:54.008
+So, when we have defined all that we have just defined, we have essentially defined the exterior Grassmann algebra.
+
+00:06:54.008 --> 00:06:56.019
+These are the laws.
+
+00:06:56.941 --> 00:07:02.161
+When we defined anticommutativity, what automatically appeared?
+
+00:07:02.161 --> 00:07:05.957
+What automatically appeared was that eᵢ ^ eᵢ == 0
+
+00:07:05.957 --> 00:07:07.397
+Why?
+
+00:07:07.397 --> 00:07:14.897
+Because... well, let's take i instead of j, move everything to one side,
+ and we get 2 eᵢ ^ eᵢ == 0.
+
+00:07:14.897 --> 00:07:17.726
+This means that eᵢ ^ eᵢ == 0.
+
+00:07:18.417 --> 00:07:25.904
+It follows from the commutativity, we can't have two identical eᵢ
+ in the product through " ^ ".
+
+00:07:25.904 --> 00:07:29.444
+We can, but the expression will be equal to zero.
+
+00:07:29.444 --> 00:07:39.756
+Therefore, the effective number of the basis vectors
+ in the exterior Grassmann algebra over R³ is 8.
+
+00:07:39.756 --> 00:07:41.592
+We have scalars.
+
+00:07:41.592 --> 00:07:46.253
+We have three basis vectors from the usual vector space.
+
+00:07:46.253 --> 00:07:50.000
+Three bivectors and one trivector.
+
+00:07:50.000 --> 00:07:54.446
+Why is there only one? Why isn't there e₂ ^ e₁ ^ e₃?
+
+00:07:54.446 --> 00:07:59.091
+There is, but we can permute the elements
+
+00:07:59.091 --> 00:08:06.768
+and therefore, all combinations of permutations of the indices 1, 2, 3, ultimately reduce to this vector.
+
+00:08:06.768 --> 00:08:11.746
+By using permutation and bringing out the -1.
+
+00:08:14.234 --> 00:08:22.591
+Let's consider the simplest implementation
+ of the exterior algebra in WM in 3-dimensional space.
+
+00:08:22.591 --> 00:08:28.714
+This implementation literally fits on one screen.
+With comments.
+
+00:08:28.714 --> 00:08:35.004
+Forget everything we knew about the Wedge operator and say that it is flat.
+
+00:08:35.004 --> 00:08:40.356
+This is how associativity is denoted in WM.
+
+00:08:40.356 --> 00:08:43.629
+Distributivity is done like this:
+
+00:08:43.629 --> 00:08:57.589
+We say that if we have Wedge of " a " multiplied by something and this " a " is an expression with a head plus, that is an expression where something plus something,
+
+00:08:57.589 --> 00:09:01.507
+then we must apply the Distribute function.
+
+00:09:01.507 --> 00:09:09.260
+Let's temporarily denote Wedge as tmpV,
+as such... some temporary symbol.
+
+00:09:09.260 --> 00:09:17.764
+We ask WM to interpret this symbol as multiplication and perform distribution
+ with respect to addition.
+
+00:09:18.185 --> 00:09:20.754
+This is interpreted as multiplication.
+
+00:09:20.754 --> 00:09:28.865
+There are also two additional arguments in the Distribute function,
+which specify what to replace plus with (with plus)
+
+00:09:28.865 --> 00:09:32.535
+and what to replace what we perceive as a multiplication with.
+
+00:09:32.535 --> 00:09:34.474
+The answer is Wedge.
+
+00:09:34.474 --> 00:09:35.960
+Next.
+
+00:09:35.960 --> 00:09:44.423
+If there is some prefix inside Wedge - some number of arguments...
+
+00:09:44.423 --> 00:09:49.311
+Three underscores mean some number of arguments: 0, 1 or more.
+
+00:09:49.311 --> 00:09:51.919
+That is a sequence of arguments.
+
+00:09:51.919 --> 00:09:58.434
+Then there is an argument that represents multiplying a number by something,
+
+00:09:58.434 --> 00:10:01.667
+and then another sequence of the arguments.
+
+00:10:01.667 --> 00:10:06.058
+...so ultimately we have to simplify this expression to this,
+
+00:10:06.058 --> 00:10:08.126
+that is, to factor out the x multiplier from the expression.
+
+00:10:09.766 --> 00:10:10.734
+Next.
+
+00:10:11.186 --> 00:10:17.140
+If we encounter just a number, it should also be factored out of the expression.
+
+00:10:17.140 --> 00:10:21.619
+And then the rule of anticommutativity goes:
+
+00:10:21.619 --> 00:10:25.710
+We say that eᵢ ^ eᵢ == 0...
+
+00:10:25.710 --> 00:10:27.616
+Here, Wolfram understands such patterns.
+
+00:10:27.616 --> 00:10:34.769
+It understands that this index is any number,
+but it should be the same number in both places.
+
+00:10:35.972 --> 00:10:41.593
+Next, we say that e₂ ^ e₁ should be turned into e₁ ^ e₂,
+
+00:10:41.593 --> 00:10:45.080
+e₃ ^ e₁ should be turned into e₁ ^ e₃,
+
+00:10:45.080 --> 00:10:47.569
+and e₃ ^ e₂ should be turned into e₂ ^ e₃.
+
+00:10:47.569 --> 00:10:57.235
+So essentially what we're saying here is that when we search for neighbors
+inside Wedge arguments with indices in the wrong order,
+
+00:10:57.235 --> 00:11:00.784
+we need to arrange those indices in the correct order.
+
+00:11:00.784 --> 00:11:04.243
+And the "-1" comes from anti-commutativity.
+
+00:11:04.243 --> 00:11:06.307
+Wedge[a_] is just equal to "a";
+
+00:11:06.307 --> 00:11:13.908
+We're saying here that the unary Wedge[a] is the argument "a" itself.
+
+00:11:13.908 --> 00:11:17.833
+And Wedge of nothing is equal to one:
+Wedge[] := 1;
+
+00:11:17.833 --> 00:11:21.457
+In the end... everything works.
+
+00:11:21.457 --> 00:11:28.163
+And at this point, after a one-page definition,
+we get something useful and applicable.
+
+00:11:28.163 --> 00:11:36.996
+We get that with the help of the wedge product,
+we can write determinant of a matrix formed by three vectors.
+
+00:11:36.996 --> 00:11:47.817
+The wedge product of three vectors gives us a pseudoscalar with length equal to the determinant of the matrix.
+
+00:11:49.809 --> 00:11:56.453
+Let's learn more about attributes.
+
+00:11:56.453 --> 00:11:59.805
+For example, here's the built-in operator "+".
+
+00:11:59.805 --> 00:12:06.442
+It has the name "Plus",
+And "a + b" is just the neat way to write Plus[a, b].
+
+00:12:06.442 --> 00:12:12.070
+So, the Plus operator has the following attributes.
+
+00:12:12.070 --> 00:12:18.320
+The first: it is Flat - which means that (a + b) + c,
+ where the braces are placed like this,
+
+00:12:18.320 --> 00:12:23.223
+becomes Plus of three arguments.
+
+00:12:23.223 --> 00:12:29.648
+In general, any hierarchy of Plus-es
+becomes Plus with n arguments.
+
+00:12:29.648 --> 00:12:31.662
+That's what Flat means.
+
+00:12:31.662 --> 00:12:34.514
+And yes, it's not the associativity property.
+It is not the definition of associativity property.
+
+00:12:34.514 --> 00:12:38.710
+It's about making the hierarchy one level deep.
+
+00:12:40.000 --> 00:12:46.246
+If we allow such flattening,
+then the operator should be associative.
+
+00:12:46.246 --> 00:12:54.393
+Next. Listable is a convenient attribute
+that allows to apply this function or operator directly to a list.
+
+00:12:54.393 --> 00:12:59.592
+A list plus a number is a list where each element has this number added to it.
+
+00:12:59.592 --> 00:13:02.856
+NumericFunction == number in then numbers out.
+
+00:13:02.856 --> 00:13:10.664
+OneIdentity means that the unary
+Plus operator applied to x gives x.
+
+00:13:10.664 --> 00:13:16.684
+Orderless is an indication of commutativity.
+
+00:13:16.684 --> 00:13:27.022
+It means that Plus with any number of arguments
+automatically becomes Plus with the sorted arguments.
+
+00:13:27.022 --> 00:13:29.816
+And yes, again, it's not commutativity itself.
+
+00:13:29.816 --> 00:13:33.198
+It's the transformation rule.
+
+00:13:33.198 --> 00:13:39.160
+And if the operator is commutative,
+then we allow such transformation.
+
+00:13:39.160 --> 00:13:44.681
+Protected means that we cannot redefine this operator.
+
+00:13:44.681 --> 00:13:46.609
+Regarding the last one, it's simple.
+
+00:13:46.609 --> 00:13:49.246
+Imagine we want 1 + 2 to be equal to 4.
+
+00:13:49.246 --> 00:13:50.575
+Wolfram says No.
+
+00:13:50.575 --> 00:13:58.978
+But if we do Unprotect Plus,
+then we can redefine the Plus operation for some cases.
+
+00:13:58.978 --> 00:14:02.145
+Let's step-by-step see how all this works.
+
+00:14:02.145 --> 00:14:06.852
+Let's consider some operator CirclePlus "⊕", for example.
+
+00:14:09.261 --> 00:14:14.230
+Currently, it doesn't know what to do with this expression
+and no calculations are performed.
+
+00:14:14.230 --> 00:14:18.392
+It doesn't have any rules about the CirclePlus operator.
+
+00:14:18.392 --> 00:14:22.582
+But as soon as we assign the Flat attribute,
+
+00:14:22.582 --> 00:14:24.582
+it starts performing some transformations.
+
+00:14:24.582 --> 00:14:31.900
+And the hierarchy of depth two is transformed into a single-level expression
+ of the three arguments.
+
+00:14:33.558 --> 00:14:35.262
+Like this.
+
+00:14:35.262 --> 00:14:39.724
+If we set Orderless, then Wolfram automatically sorts arguments.
+
+00:14:39.724 --> 00:14:40.822
+See?
+
+00:14:40.822 --> 00:14:42.908
+It was 3 ⊕ 2 ⊕ 1, and now it's 1 ⊕ 2 ⊕ 3.
+
+00:14:42.908 --> 00:14:52.293
+And this allows it to know that these expressions are equal,
+without performing any calculations.
+
+00:14:55.333 --> 00:14:59.641
+So CirclePlus[3].
+It doesn't know what to do with this yet,
+
+00:14:59.641 --> 00:15:03.003
+but we can say that OneIdentity is fulfilled.
+
+00:15:03.003 --> 00:15:07.200
+Which means that the unary CirclePlus operator doesn't change its argument.
+
+00:15:08.088 --> 00:15:12.080
+But, truthfully, I found out that it doesn't quite understand this.
+
+00:15:12.080 --> 00:15:17.597
+If you want to explicitly make the transformation
+of CirclePlus from " a " to " a ",
+
+00:15:17.597 --> 00:15:21.025
+then you need to write this rule.
+
+00:15:21.025 --> 00:15:26.657
+For complex reasons, you have to write Verbatim here,
+I won't explain why.
+
+00:15:26.657 --> 00:15:27.801
+Here!
+
+00:15:29.552 --> 00:15:39.117
+Thus, if you want to define some properties of any operator,
+partially it can be done via setting attributes.
+
+00:15:39.117 --> 00:15:43.801
+And part of it can be done with rules,
+
+00:15:43.801 --> 00:15:48.247
+like these.
+
+00:15:48.247 --> 00:15:49.050
+Next.
+
+00:15:49.050 --> 00:15:52.247
+I want to tell you a little bit about mathematics.
+
+00:15:52.247 --> 00:15:55.630
+About what tensor algebra, free algebra is.
+
+00:15:55.630 --> 00:15:57.881
+And what factorization is.
+
+00:15:59.447 --> 00:16:03.437
+Tensor algebra is a very simple thing.
+
+00:16:04.414 --> 00:16:11.865
+And the main misunderstanding can arise with
+ the question of why all of this is being done, this strange thing.
+
+00:16:12.925 --> 00:16:16.118
+So here it is.
+Why is all of this being done?
+
+00:16:16.634 --> 00:16:24.736
+Tensor algebra is a raw blank thing,
+from which you can later make whatever algebra you want.
+
+00:16:25.185 --> 00:16:27.356
+How it is constructed.
+
+00:16:27.356 --> 00:16:34.702
+Let's you have a number field K and some vector space over this field.
+
+00:16:34.702 --> 00:16:38.564
+And of course, there are operators for adding vectors.
+
+00:16:38.564 --> 00:16:41.674
+And multiplying vectors by numbers.
+
+00:16:41.674 --> 00:16:43.275
+What you do.
+
+00:16:43.275 --> 00:16:48.536
+You add an operator of tensor multiplication,
+
+00:16:48.536 --> 00:16:54.588
+which is associative, distributive,
+ and linear with respect to multiplication by numbers.
+
+00:16:54.588 --> 00:16:55.925
+What does this mean?
+
+00:16:55.925 --> 00:17:00.312
+This means that it is not so important how the parentheses are arranged here.
+
+00:17:00.312 --> 00:17:06.754
+What needs to be done is to expand such expressions as if it were multiplication.
+
+00:17:06.754 --> 00:17:08.728
+I didn't write it here...
+
+00:17:10.340 --> 00:17:17.596
+And that numbers can be taken out and multiplied with each other.
+
+00:17:18.888 --> 00:17:23.912
+Tensor algebra consists of expressions of this type.
+
+00:17:23.912 --> 00:17:26.603
+Sum. A formal sum of a scalar,
+
+00:17:26.603 --> 00:17:29.335
+some numbers multiplied by eᵢ.
+
+00:17:29.335 --> 00:17:34.481
+Some numbers multiplied by eᵢ ⊗ eⱼ, and so on.
+
+00:17:34.481 --> 00:17:38.756
+How to multiply two such formal sums?
+
+00:17:38.756 --> 00:17:45.424
+In very intuitive way. Each element from the first expression is multiplied by each element from the second expression.
+
+00:17:45.424 --> 00:17:55.980
+Then 3e₃⊗3e₁e₃ turns into 9 times e₃⊗e₁⊗e₃.
+
+00:17:57.546 --> 00:17:58.561
+Just like that.
+
+00:17:59.344 --> 00:18:05.335
+Two numbers 3 were factored out, multiplied,
+and became a multiplier for this expression.
+
+00:18:06.475 --> 00:18:08.885
+This is recorded as follows:
+
+00:18:08.885 --> 00:18:15.123
+Tensor algebra over V denoted as T(V) is the direct infinite sum of spaces.
+
+00:18:15.123 --> 00:18:19.666
+The first is the number field K itself. The second is the original vector space V.
+
+00:18:19.666 --> 00:18:26.422
+then V² and V³ go and so on.
+
+00:18:28.921 --> 00:18:32.112
+For this sample formal sum we have
+
+00:18:32.112 --> 00:18:35.308
+2 belongs to the component K.
+
+00:18:35.308 --> 00:18:38.571
+This subexpression belongs to the component V.
+
+00:18:38.571 --> 00:18:43.325
+This bivector belongs to the component V², and so on.
+
+00:18:43.325 --> 00:18:45.529
+This is called grades.
+
+00:18:45.529 --> 00:18:49.760
+And all this stuff is just a formal sum,
+
+00:18:49.760 --> 00:18:53.395
+constructed over eᵢ as if they were variables,
+
+00:18:53.395 --> 00:18:57.245
+and instead of multiplication we use sign "⊗". Which is not commutative in general.
+
+00:18:57.245 --> 00:19:00.000
+Just a formal sum.
+
+00:19:02.101 --> 00:19:05.898
+Sometimes it's hard to explain the concept of formal sums.
+
+00:19:05.898 --> 00:19:09.207
+People just starve for answer:
+
+00:19:09.207 --> 00:19:12.451
+What is the result of this tensor multiplication?
+
+00:19:12.451 --> 00:19:15.630
+It's difficult.
+
+00:19:15.630 --> 00:19:20.539
+We don't expand this multiplication
+because there is no answer to this question.
+
+00:19:20.539 --> 00:19:21.822
+Let's say...
+
+00:19:22.513 --> 00:19:24.623
+There is a joke like this:
+
+00:19:25.821 --> 00:19:32.453
+There are ten types of people:
+those who understand binary arithmetic and those who don't.
+
+00:19:32.453 --> 00:19:36.711
+I think we can come up with a similar joke about formal sums:
+
+00:19:36.711 --> 00:19:42.786
+There are people who understand formal sums and
+those who don't understand them,
+
+00:19:42.786 --> 00:19:43.872
+Or better like this:
+
+00:19:43.872 --> 00:19:46.805
+There are different types of people:
+
+00:19:46.805 --> 00:19:49.770
+those who don't care about formal sums,
+
+00:19:49.770 --> 00:19:52.258
+those who don't understand them,
+
+00:19:52.258 --> 00:19:53.872
+those who understand them,
+
+00:19:53.872 --> 00:19:57.460
+those who don't understand them twice,
+
+00:19:57.460 --> 00:19:59.756
+those who don't understand, but later understand,
+
+00:19:59.756 --> 00:20:00.973
+understand, and then don't understand,
+
+00:20:00.973 --> 00:20:04.559
+understand twice.
+
+00:20:04.559 --> 00:20:09.250
+And so people are divided into these total number of types.
+
+00:20:09.250 --> 00:20:18.857
+In summary:
+Tensor algebra is an algebra of formal expressions constructed on vectors e₁, e₂, e₃, eₙ,
+
+00:20:18.857 --> 00:20:26.750
+where the multiplication sign looks like this.
+It is associative, distributive, and numbers are factored to the left.
+
+00:20:28.354 --> 00:20:29.342
+Now...
+
+00:20:30.547 --> 00:20:32.996
+When we
+
+00:20:32.996 --> 00:20:37.956
+postulate the anti-commutativity of this multiplication,
+
+00:20:37.956 --> 00:20:41.753
+we immediately obtain the Grassmann algebra.
+
+00:20:42.628 --> 00:20:46.881
+And the moment we postulate this, we need to change tensor product symbol to this wedge symbol
+
+00:20:46.881 --> 00:20:47.848
+And that's it!
+
+00:20:48.815 --> 00:20:53.238
+On a mathematical language, it is written as follows:
+
+00:20:53.238 --> 00:21:01.382
+The exterior product of a vector space with itself is the tensor product V ⊗ V,
+
+00:21:01.382 --> 00:21:06.055
+factored by expressions of the form v ⊗ v.
+
+00:21:06.055 --> 00:21:14.358
+In other words, we are saying that two elements inside the tensor algebra V ⊗ V are considered the same,
+
+00:21:14.358 --> 00:21:19.352
+if they do differ by v ⊗ v.
+
+00:21:20.642 --> 00:21:23.604
+Or an equivalent definition of the exterior algebra.
+
+00:21:24.894 --> 00:21:25.724
+Once again.
+
+00:21:26.922 --> 00:21:34.658
+The exterior algebra over the vector space V is the tensor algebra T(V).
+So it ingerits from  T(V) all its properties.
+
+00:21:34.658 --> 00:21:39.008
+Then we replace the tensor multiplication symbol with Wedge.
+
+00:21:40.000 --> 00:21:42.185
+This replacement is the most important thing, apparently.
+
+00:21:42.185 --> 00:21:51.161
+We also postulated anti-commutativity when we take the exterior multiplication of two vectors from V.
+
+00:21:51.161 --> 00:21:54.312
+Or two basis vectors from V.
+
+00:21:56.569 --> 00:21:58.010
+So...
+
+00:21:58.010 --> 00:22:01.504
+The formal sum looks the same as before.
+
+00:22:01.504 --> 00:22:04.676
+But there are some new aspects in the multiplication of expressions.
+
+00:22:05.091 --> 00:22:08.151
+Let's take a look at this.
+
+00:22:08.151 --> 00:22:10.584
+And what will be in the end?
+
+00:22:10.584 --> 00:22:11.783
+In the end, it will be...
+
+00:22:14.378 --> 00:22:16.874
+Well, it seems like I have some errors here ...
+
+00:22:20.329 --> 00:22:23.226
+Here we have 1 and 3
+
+00:22:25.108 --> 00:22:32.841
+So, in the end, we have 1 multiplied by each element in this expression, resulting in this.
+
+00:22:32.841 --> 00:22:38.454
+-2e₂ multiplied by each element in this expression results in this.
+
+00:22:38.454 --> 00:22:41.534
+And 3e₃ does the same.
+
+00:22:42.087 --> 00:22:44.032
+What do we do next?
+
+00:22:44.032 --> 00:22:50.000
+Next, we see that this equals zero because e₂ ^ e₂ = 0.
+
+00:22:50.000 --> 00:22:56.901
+Next, here we order the indices and swap e₂ and e₁.
+
+00:22:56.901 --> 00:23:04.311
+We mentally draw brackets around them, swap them, a minus sign appears, which cancels out the previous minus sign.
+
+00:23:04.311 --> 00:23:06.357
+Resulting in 6.
+
+00:23:08.799 --> 00:23:16.980
+And here this term disappears because e₃ ^ e₃ appears in it.
+
+00:23:16.980 --> 00:23:20.595
+How can we prove that this expression equals zero?
+
+00:23:20.595 --> 00:23:25.359
+First, we draw brackets around it, swap them, the minus sign appears,
+
+00:23:25.359 --> 00:23:27.359
+and now e₃ is here.
+
+00:23:27.359 --> 00:23:34.054
+Then we draw brackets around e₃ ^ e₃ and it equals zero,
+
+00:23:34.054 --> 00:23:39.077
+the zero flies out as a common factor, so this term is also eliminated.
+
+00:23:40.828 --> 00:23:42.183
+That's how it is.
+
+00:23:43.750 --> 00:23:51.811
+A small addition about anticommutativity and from the general blank, tensor algebra, we obtained the exterior algebra of Grassmann.
+
+00:23:51.811 --> 00:23:58.173
+And here we have this interesting result that the exterior product of three vectors
+
+00:23:58.173 --> 00:24:01.576
+gives us a pseudovector with a determinant in front of it.
+
+00:24:01.576 --> 00:24:10.391
+Clifford algebra is constructed similarly to factorization over T(V).
+
+00:24:10.391 --> 00:24:13.643
+There is a wrong approach to defining Clifford algebra.
+
+00:24:13.643 --> 00:24:15.326
+Like this.
+
+00:24:15.326 --> 00:24:21.451
+Let's define the operator " ∘ " (geometric product)
+using " ^ " and " · ".
+
+00:24:21.451 --> 00:24:24.350
+And a dot " · " represents a scalar product.
+
+00:24:24.350 --> 00:24:29.176
+But no. This is the wrong approach.
+This expression cannot be the definition.
+
+00:24:29.176 --> 00:24:32.465
+This expression is true in specific cases.
+
+00:24:32.465 --> 00:24:34.921
+It's like a consequence for some specific cases.
+
+00:24:34.921 --> 00:24:39.106
+And the definition of Clifford algebra is as follows:
+
+00:24:39.106 --> 00:24:42.845
+We take the tensor algebra T(V) again,
+
+00:24:42.845 --> 00:24:49.129
+and postulate that for any vector " a " in V,
+
+00:24:49.129 --> 00:24:58.785
+" a ∘ a " gives us a number, a scalar, equal to the
+quadratic form of the vector " a ".
+
+00:24:58.785 --> 00:25:02.076
+Usually, the ordinary form is taken as the quadratic form,
+
+00:25:02.076 --> 00:25:11.014
+which returns the number 1 for all unit vectors in space V.
+
+00:25:11.014 --> 00:25:12.159
+Or in other words:
+
+00:25:12.159 --> 00:25:18.766
+Clifford algebra is the factorization of the algebra T(V)
+over the set of such expressions.
+
+00:25:19.770 --> 00:25:24.711
+The words may be unclear, but what to do in practice
+is very understandable.
+
+00:25:24.711 --> 00:25:25.838
+I'll show you now.
+
+00:25:26.391 --> 00:25:31.221
+So, let our quadratic form Q be equal to 1
+for our unit vectors.
+
+00:25:31.221 --> 00:25:36.722
+Then eᵢ ∘ eᵢ - Q(eᵢ) should be equal to zero.
+
+00:25:36.722 --> 00:25:40.798
+What does this mean?
+This means that eᵢ ∘ eᵢ = 1.
+
+00:25:41.628 --> 00:25:43.419
+Okay.
+
+00:25:43.419 --> 00:25:50.267
+Next, let's write this expression,
+which should be equal to zero, for eᵢ + eⱼ.
+
+00:25:50.267 --> 00:25:52.267
+This is what we will get.
+
+00:25:53.188 --> 00:25:55.450
+Moving Q to the other side.
+
+00:25:55.450 --> 00:26:01.240
+Understanding that the square of the length of this vector is 2.
+
+00:26:01.240 --> 00:26:06.324
+This is the square of the hypotenuse in
+a right triangle with legs of length 1, 1.
+
+00:26:07.061 --> 00:26:09.521
+As a result, we get...
+
+00:26:09.521 --> 00:26:13.153
+We expand these brackets according to the distributive law.
+
+00:26:13.153 --> 00:26:16.014
+We get this expression.
+
+00:26:16.014 --> 00:26:22.529
+We set it equal to 2 and obtain the anticommutativity of our
+basic vectors.
+
+00:26:22.529 --> 00:26:25.956
+You see:
+we postulated this,
+
+00:26:25.956 --> 00:26:28.787
+and as a consequence, we obtained anticommutativity.
+
+00:26:28.787 --> 00:26:30.971
+Just like in exterior algebra.
+
+00:26:30.971 --> 00:26:34.555
+But in exterior algebra, eᵢ ^ eᵢ = 0.
+
+00:26:34.555 --> 00:26:39.432
+While for us, eᵢ ∘ eᵢ = 1.
+
+00:26:39.432 --> 00:26:42.952
+That is, anticommutativity holds for different unit vectors,
+
+00:26:42.952 --> 00:26:51.971
+and unity holds for the square of one specific vector.
+
+00:26:51.971 --> 00:26:55.912
+In the end, we have the following thing:
+
+00:26:55.912 --> 00:26:58.438
+let's say we have such a long expression,
+
+00:26:58.438 --> 00:27:05.045
+where through the circle are multiplied some unit
+vectors from the original space V.
+
+00:27:05.045 --> 00:27:11.015
+Then with the help of such permutations of adjacent elements,
+
+00:27:11.015 --> 00:27:18.539
+we can move any of these vectors in any direction.
+
+00:27:18.539 --> 00:27:23.990
+And in particular, if we have two identical factors, eᵢ and eᵢ here too,
+
+00:27:23.990 --> 00:27:29.472
+then we can move eᵢ closer in some number of steps.
+
+00:27:29.472 --> 00:27:36.790
+When we connect them and draw them side by side,
+ we can draw brackets around them
+
+00:27:36.790 --> 00:27:41.139
+and perform this multiplication according to this rule.
+
+00:27:41.139 --> 00:27:49.240
+As a result, we can collapse identical eᵢ in this product.
+
+00:27:49.240 --> 00:27:58.677
+In the end, our effective basis consists only of
+ products of different eᵢ.
+
+00:27:58.677 --> 00:28:07.864
+Just like in exterior algebra, we end up
+with 8 basic vectors in this tensor algebra.
+
+00:28:13.162 --> 00:28:14.938
+Let's move on.
+
+00:28:14.938 --> 00:28:18.601
+Here I just showed that it's possible to redefine multiplication,
+
+00:28:18.601 --> 00:28:20.759
+the star operator " * ",
+
+00:28:20.759 --> 00:28:22.846
+for example, like this:
+
+00:28:22.846 --> 00:28:28.009
+by introducing the special letter tau " τ " to represent unit vectors...
+
+00:28:28.009 --> 00:28:32.885
+I didn't use " e " here to avoid spoiling " e ".
+
+00:28:32.885 --> 00:28:40.900
+...and saying that the multiplication of two vectors equals 1 if i=j, and 0 otherwise.
+
+00:28:40.900 --> 00:28:49.738
+So this thing allows us to immediately
+get the scalar (inner) product of vectors.
+
+00:28:49.738 --> 00:28:55.054
+Okay. A lot of time has passed and I haven't told you anything interesting yet.
+
+00:28:56.406 --> 00:29:05.932
+Here I carefully define the exterior algebra and
+define the Wedge operator for the exterior product
+
+00:29:05.932 --> 00:29:10.691
+and the CenterDot operator for the scalar (inner) product.
+
+00:29:10.691 --> 00:29:13.027
+A lot of things are repeated here.
+
+00:29:13.027 --> 00:29:18.488
+In fact, I repeat all the same things that we had.
+
+00:29:18.488 --> 00:29:22.112
+I make convenient functions to generate:
+
+00:29:22.112 --> 00:29:27.524
+bivectors or just vectors, or pseudovectors
+of the general type.
+
+00:29:29.437 --> 00:29:32.829
+Here's the definition you've already seen.
+
+00:29:32.829 --> 00:29:34.868
+I just repeat it here.
+
+00:29:34.868 --> 00:29:40.794
+CenterDot, the scalar (inner) product, is defined in a similar way.
+
+00:29:40.794 --> 00:29:47.541
+Everything is the same. Distributivity. The ability to pull numbers out of brackets.
+
+00:29:47.541 --> 00:29:51.360
+But a little different here.
+
+00:29:51.360 --> 00:29:55.379
+Scalar (inner) product with a number always gives 0.
+
+00:29:55.379 --> 00:29:58.589
+The unary operator CentorDot gives 0.
+
+00:29:58.589 --> 00:30:03.560
+The operator applied to an empty set also gives zero.
+
+00:30:03.560 --> 00:30:06.890
+And it is also postulated that it is orthogonal.
+
+00:30:09.272 --> 00:30:16.287
+Here you might wonder: why does e₁ • e₁ equal 1 when this rule exists?
+
+00:30:16.287 --> 00:30:18.239
+The answer is complicated.
+
+00:30:18.239 --> 00:30:22.340
+This rule takes precedence because it is simpler.
+
+00:30:22.340 --> 00:30:24.817
+I won't go into detail.
+
+00:30:26.730 --> 00:30:34.890
+The scalar (inner) product is understood as being constructed in grade 1, within the space V.
+
+00:30:34.890 --> 00:30:39.304
+But how do we define it in V² or V³?
+
+00:30:39.304 --> 00:30:48.512
+The answer is: however you like,
+but it is usually accepted to define the scalar (inner) product in this way.
+
+00:30:48.512 --> 00:30:56.219
+The scalar product of a bivector with itself is -1.
+
+00:30:56.909 --> 00:31:00.294
+The scalar product of a unit bivector with itself is -1.
+
+00:31:01.800 --> 00:31:05.024
+The scalar product of a trivector with itself is also -1.
+
+00:31:05.024 --> 00:31:07.867
+The scalar product of a four-vector with itself is 1.
+
+00:31:07.867 --> 00:31:11.373
+There such rule is used...
+
+00:31:11.373 --> 00:31:15.794
+You need to understand it in your mind like this:
+
+00:31:15.794 --> 00:31:19.336
+Let's move this eₖ to the left twice.
+
+00:31:19.336 --> 00:31:20.789
+Moved.
+
+00:31:20.789 --> 00:31:24.061
+And we have eₖ here and eₖ here
+
+00:31:24.061 --> 00:31:27.779
+and we mentally draw brackets here and get 1.
+
+00:31:27.779 --> 00:31:31.185
+And our eₖ annihilates itself.
+
+00:31:31.185 --> 00:31:34.418
+Then we move eⱼ to the left.
+
+00:31:34.418 --> 00:31:39.213
+And again eⱼ • eⱼ annihilates each other.
+
+00:31:40.000 --> 00:31:44.759
+In short, practice permutation in your mind here
+
+00:31:44.759 --> 00:31:54.474
+and when two vectors are close to each other through a dot, they annihilate each other if it is the same unit vector eᵢ.
+
+00:31:54.474 --> 00:31:55.546
+Next.
+
+00:31:55.546 --> 00:32:03.513
+The scalar product of a vector from V and a vector from V² works like this.
+
+00:32:03.513 --> 00:32:09.440
+eᵢ appears to collapse with eᵢ, resulting in 1. Only eₖ remains.
+
+00:32:09.440 --> 00:32:16.638
+And here, in order to collapse eᵢ with this eᵢ, we need to first rearrange the elements inside the bracket, and the -1 will come out of the bracket.
+
+00:32:16.638 --> 00:32:19.207
+In short, this is probably all complicated,
+
+00:32:19.207 --> 00:32:25.429
+but this is how we need to correctly define the scalar product.
+
+00:32:28.162 --> 00:32:34.843
+In principle, instead of a set of rules, we could write one rule in a general form.
+
+00:32:34.843 --> 00:32:37.015
+Multiplying eⱼ, eₖ, and eᵢ
+
+00:32:37.015 --> 00:32:42.319
+and writing that j is equal to k and what if is not equal, etc.
+
+00:32:43.686 --> 00:32:46.655
+We check that all this works...
+
+00:32:50.936 --> 00:32:55.178
+So, something didn't work here, we'll fix it now...
+
+00:32:56.232 --> 00:33:01.009
+I just didn't execute this block. We continue checking...
+
+00:33:02.435 --> 00:33:04.798
+We execute: this is 0,
+
+00:33:04.798 --> 00:33:06.993
+this is -1,
+
+00:33:06.993 --> 00:33:08.993
+this is -e₃.
+
+00:33:08.993 --> 00:33:14.625
+e₁ ^ e₂ collapsed with e₁ ^ e₂ and gave -1
+
+00:33:14.625 --> 00:33:18.471
+Because this is -1.
+
+00:33:18.471 --> 00:33:21.024
+And this gives e₃.
+
+00:33:21.849 --> 00:33:24.900
+Because first we move e₃ twice to the end,
+
+00:33:24.900 --> 00:33:27.743
+then e₂ annihilates and e₁ annihilates.
+
+00:33:28.953 --> 00:33:34.189
+These definitions could be given through the signature of the permutation.
+
+00:33:36.323 --> 00:33:38.457
+For example, let's look here.
+
+00:33:38.457 --> 00:33:40.887
+We could do the following:
+
+00:33:40.887 --> 00:33:44.917
+The outer product eᵢ ^ eⱼ ^ eₖ is equal to...
+
+00:33:46.139 --> 00:33:52.437
+If all of these indices are different, that is, i, j, k are 1, 2, 3 in some order.
+
+00:33:52.437 --> 00:33:59.494
+This product should be equal to e₁ ^ e₂ ^ e₃ multiplied by 1 or -1,
+
+00:33:59.494 --> 00:34:05.366
+depending on how many permutations
+of adjacent elements are needed to obtain 1, 2, 3.
+
+00:34:05.366 --> 00:34:07.975
+This is called the signature of a permutation.
+
+00:34:07.975 --> 00:34:10.545
+But here we encounter an unpleasant surprise:
+
+00:34:10.545 --> 00:34:19.183
+When we write down this rule, we get e₁ ^ e₂ ^ e₃ on the right,
+and this rule is applied to that expression again.
+
+00:34:19.183 --> 00:34:22.114
+This results in infinite recursion.
+
+00:34:22.114 --> 00:34:28.589
+To avoid this, we need to write something on the right-hand side
+that doesn't fit this pattern.
+
+00:34:28.589 --> 00:34:34.321
+In some packages, this is done as follows:
+
+00:34:34.321 --> 00:34:41.459
+This product is written as " e " with a set of indices,
+where the set of indices is already ordered.
+
+00:34:43.833 --> 00:34:48.353
+This is one possible approach, but I didn't go down this path.
+
+00:34:49.095 --> 00:34:52.306
+So, let's check that everything is working...
+
+00:34:52.306 --> 00:34:54.852
+The numbers are outside the brackets.
+
+00:34:54.852 --> 00:35:00.741
+But there's a problem with x.
+It doesn't know that x is a number. It could be a vector too.
+
+00:35:00.741 --> 00:35:09.480
+We would like it to eventually realize that x is a number
+ and take it outside the brackets.
+
+00:35:09.480 --> 00:35:11.427
+We'll do that now.
+
+00:35:11.427 --> 00:35:13.700
+Here's how it's done.
+
+00:35:13.700 --> 00:35:23.776
+So you see, it calculates the determinant of the matrix, but if we add
+abstract symbolic coordinates x1, y1, z1, etc.,
+
+00:35:23.776 --> 00:35:28.207
+we won't get the determinant formula, but we want to.
+
+00:35:28.207 --> 00:35:35.618
+To do this, instead of defining it like this,
+
+00:35:35.618 --> 00:35:44.133
+where we require x to be a number and then take x outside the brackets,
+we will require x to be a non-vector.
+
+00:35:45.305 --> 00:35:48.223
+And we will take the non-vector outside the brackets.
+
+00:35:48.223 --> 00:35:50.000
+Here's how it's done...
+
+00:35:52.928 --> 00:36:04.223
+We say that a vector is an expression that begins with CenterDot or
+an expression that begins with Wedge or the basic vector e.
+
+00:36:05.590 --> 00:36:10.989
+And everything else, Except[VectorT], is not a vector.
+
+00:36:10.989 --> 00:36:16.291
+Yes, and we also say
+that an expression that begins with Plus is also not a vector.
+
+00:36:16.291 --> 00:36:21.750
+We want Plus to be handled through the distributive law
+
+00:36:21.750 --> 00:36:27.807
+and therefore do not consider sums as non-vectors.
+
+00:36:29.798 --> 00:36:33.281
+We check what matches what
+
+00:36:33.281 --> 00:36:42.505
+and see that e₃ is a vector and NOT a non-vector.
+
+00:36:42.505 --> 00:36:45.484
+But this expression is kind of meaningless.
+
+00:36:45.484 --> 00:36:51.648
+It is neither an expression of type VectorT nor of type NVectorT.
+
+00:36:53.913 --> 00:36:55.901
+Next.
+
+00:36:55.901 --> 00:37:00.348
+I define CenterDot,
+
+00:37:00.348 --> 00:37:04.999
+now using NVectorT instead of Q-number.
+
+00:37:06.277 --> 00:37:08.180
+Well, as I already said.
+
+00:37:08.180 --> 00:37:13.931
+We check:
+ " 123 " is taken out of the bracket and " abc " is also taken out of the bracket.
+
+00:37:15.298 --> 00:37:19.507
+We check...
+
+00:37:19.507 --> 00:37:26.880
+It considers this a non-vector,
+ and when a vector is scalar multiplied by a non-vector, it always equals zero.
+
+00:37:26.880 --> 00:37:34.878
+So we postulated here. There is no secret.
+
+00:37:34.878 --> 00:37:35.378
+Next.
+
+00:37:35.378 --> 00:37:43.019
+We want it to collect identical terms while doing symbolic computations.
+
+00:37:43.019 --> 00:37:46.643
+Like here, for example, where 1+a is collected when x is used.
+
+00:37:46.643 --> 00:37:57.390
+We want the same thing to happen in this expression,
+
+00:37:57.390 --> 00:38:02.123
+so that these two terms are combined into one term.
+
+00:38:02.123 --> 00:38:10.969
+To do this, we define the function tE,
+ which performs a Collect operation on the expression.
+
+00:38:10.969 --> 00:38:17.186
+And the second argument of Collect is the patterns that should be treated as variables.
+
+00:38:17.186 --> 00:38:25.793
+We are saying something like:
+we need to collect all expressions with these variables.
+
+00:38:25.793 --> 00:38:27.938
+Let's check...
+
+00:38:27.938 --> 00:38:41.066
+Here is an important milestone: using Grassmann algebra, we obtained a symbolic expression for the determinant of a 3x3 matrix.
+
+00:38:43.356 --> 00:38:48.765
+Let's check that everything works as expected.
+
+00:38:48.765 --> 00:38:53.809
+Here, the product of this and this gives us this.
+
+00:38:53.809 --> 00:38:59.393
+Because the product of this and this is zero,
+
+00:38:59.393 --> 00:39:01.556
+and only this part remains.
+
+00:39:02.101 --> 00:39:04.312
+Good. Everything is correct.
+
+00:39:04.312 --> 00:39:10.548
+Another way to obtain a symbolic expression for the determinant is to perform a mixed product of three vectors.
+
+00:39:10.548 --> 00:39:20.515
+Here it is transformed into an outer product of two vectors multiplied by a bivector.
+
+00:39:21.575 --> 00:39:23.699
+What else I wanted to tell you here.
+
+00:39:23.699 --> 00:39:29.175
+I wanted to tell you how you can leave some things until the end.
+
+00:39:29.175 --> 00:39:36.393
+That is, some laws, transformations,
+you write them using " := ",
+
+00:39:36.393 --> 00:39:43.042
+and some can be postponed until the very end,
+at the time of executing the tE function.
+
+00:39:43.042 --> 00:39:50.570
+In this function, there is a hidden Collect operation and also, for example,
+some rules for simplification.
+
+00:39:50.570 --> 00:40:00.273
+Here I use this arrow, not that one,
+because I want the right-hand side computations
+
+00:40:00.273 --> 00:40:03.185
+to be performed each time,
+
+00:40:03.185 --> 00:40:11.220
+and not that we first memorize these rules, compute the right-hand side and then substitute the computed value.
+
+00:40:11.220 --> 00:40:14.745
+No. We will calculate the right-hand side in the rules every time.
+
+00:40:14.745 --> 00:40:18.350
+The difference between these two arrows is well visible in these two examples.
+
+00:40:21.465 --> 00:40:26.673
+I have to say that I don't really need this, it all works without it.
+
+00:40:26.673 --> 00:40:31.851
+I just didn't get it to work at first and I thought it would be useful.
+
+00:40:31.851 --> 00:40:37.787
+In short, some final transformation rules can be left until the last stage.
+
+00:40:38.544 --> 00:40:42.433
+Now let's define the Clifford algebra.
+
+00:40:42.433 --> 00:40:47.724
+Using the SmallCircle symbol "∘".
+
+00:40:47.724 --> 00:40:49.724
+I'll say it again,
+
+00:40:49.724 --> 00:40:57.298
+there is a temptation to define SmallCircle
+using the dot symbol "•" and the exterior product "^",
+
+00:40:57.298 --> 00:41:00.277
+but it doesn't work.
+
+00:41:00.277 --> 00:41:03.108
+It works, but only for small grades.
+
+00:41:03.108 --> 00:41:09.208
+Therefore, for SmallCircle, for geometric product,
+we need to start from scratch.
+
+00:41:09.208 --> 00:41:16.959
+Now we will use SmallCircle to create multivectors.
+
+00:41:16.959 --> 00:41:20.196
+We write that SmallCircle[v_] := v;
+
+00:41:20.196 --> 00:41:26.413
+Yes, and here I tried not to make the attribute Flat,
+but to define the concept of Flat myself.
+
+00:41:26.413 --> 00:41:31.302
+The concept of Flat can be defined manually like this.
+
+00:41:31.302 --> 00:41:34.825
+Any hierarchy of SmallCircle turns into a flat thing.
+
+00:41:34.825 --> 00:41:37.645
+SmallCircle of many arguments.
+
+00:41:37.645 --> 00:41:46.337
+Here, it is written that if one of the arguments inside SmallCircle is again SmallCircle, then SmallCircle must be applied to all these arguments.
+
+00:41:46.337 --> 00:41:53.115
+Three underscores represent some sequence
+of arguments of length 0, 1, or more.
+
+00:41:53.115 --> 00:41:57.653
+And one underscore represents one argument.
+
+00:41:57.653 --> 00:42:04.740
+Here, in the sequence, they are expanded as sequences, not as a list.
+
+00:42:04.740 --> 00:42:07.418
+So, if s1 has three arguments,
+
+00:42:07.418 --> 00:42:11.137
+then here we have SmallCircle of: one, two, three...
+
+00:42:11.137 --> 00:42:12.668
+the fourth argument,
+
+00:42:12.668 --> 00:42:14.005
+some number of arguments here
+
+00:42:14.005 --> 00:42:16.278
+and some number of arguments here.
+
+00:42:17.331 --> 00:42:18.300
+Moving on.
+
+00:42:18.300 --> 00:42:21.855
+Because I didn't specify that SmallCircle is Flat,
+
+00:42:21.855 --> 00:42:23.529
+I manually defined it,
+
+00:42:23.529 --> 00:42:25.802
+and now I have to struggle with it.
+
+00:42:25.802 --> 00:42:27.997
+I have to state that:
+
+00:42:27.997 --> 00:42:36.580
+any pair eᵢ, eⱼ inside SmallCircle should be represented in such a way
+that the indices are in increasing order.
+
+00:42:41.305 --> 00:42:46.297
+Numbers are taken outside the brackets.
+Number " a " is taken outside the brackets.
+
+00:42:46.297 --> 00:42:52.774
+If number " a " is in the second position,
+the operator is also taken outside the brackets.
+
+00:42:55.429 --> 00:43:00.703
+If it's just a number, it's taken outside the brackets.
+
+00:43:00.703 --> 00:43:05.985
+And if we encounter a Plus, we need to apply Distribute.
+
+00:43:07.509 --> 00:43:13.711
+Now I want it to work for
+both exterior and geometric products.
+
+00:43:14.570 --> 00:43:23.139
+I consider all these things as basic variables,
+which we need to build expressions from.
+
+00:43:25.209 --> 00:43:27.396
+I'm checking that everything works...
+
+00:43:30.270 --> 00:43:34.667
+I forgot to execute this...
+
+00:43:36.697 --> 00:43:38.580
+Checking again...
+
+00:43:38.580 --> 00:43:40.836
+Alright, now everything works.
+
+00:43:42.564 --> 00:43:48.353
+And we get the correct expression.
+
+00:43:48.353 --> 00:43:53.070
+The product of any formal sums becomes a formal sum,
+
+00:43:53.070 --> 00:43:59.153
+where the elements are such products of eᵢ with different indices,
+
+00:43:59.153 --> 00:44:06.424
+and they are multiplied by some numbers that are no longer vectors.
+
+00:44:06.424 --> 00:44:11.180
+And tE does here an important operation called Collect.
+
+00:44:11.180 --> 00:44:18.133
+And when we have the same basis multivectors, we accumulate expressions.
+
+00:44:20.000 --> 00:44:24.750
+Here, I multiplied two general multivectors,
+
+00:44:24.750 --> 00:44:27.570
+and got a very long expression.
+
+00:44:30.381 --> 00:44:31.631
+Well...
+
+00:44:31.631 --> 00:44:34.514
+Here, I want to clarify again.
+
+00:44:34.514 --> 00:44:38.060
+Where does this expression come from?
+
+00:44:38.060 --> 00:44:41.015
+It comes from the fact that it's true.
+
+00:44:41.015 --> 00:44:45.553
+Indeed, eᵢ • eᵢ = 1.
+
+00:44:45.553 --> 00:44:48.560
+And the left side equals the right.
+
+00:44:48.560 --> 00:44:55.127
+And when i and j are different, then this is true.
+
+00:44:55.127 --> 00:45:05.134
+Since this expression is true for basic vectors, it's true for any vector in V
+ due to the bilinearity of this, this, and this.
+
+00:45:07.828 --> 00:45:09.305
+Moving on.
+
+00:45:09.305 --> 00:45:15.037
+We, in a way, postulate that this multiplication, the "∘" circle,
+
+00:45:15.037 --> 00:45:20.434
+in the case when it's multiplied by a number, is equal to ordinary multiplication by a number.
+
+00:45:20.434 --> 00:45:31.906
+That is, if there is 10 ∘ eᵢ here, then a vector of length 10 in the direction of the basic vector eᵢ is obtained.
+
+00:45:31.906 --> 00:45:36.614
+From this statement, it immediately follows that
+
+00:45:36.614 --> 00:45:44.470
+the scalar product of 1 • eᵢ must be zero,
+ because this expression already equals eᵢ,
+
+00:45:44.470 --> 00:45:47.017
+so this remainder must be zero.
+
+00:45:47.017 --> 00:45:54.494
+This is precisely why the intuition arose that
+the scalar product of a number with a vector is zero.
+
+00:45:54.494 --> 00:46:01.150
+Well, here I am just explaining various intuitions
+that were used
+
+00:46:01.150 --> 00:46:06.809
+ to understand how to correctly define
+the scalar product on multivectors.
+
+00:46:06.809 --> 00:46:08.832
+About application.
+
+00:46:08.832 --> 00:46:12.235
+It's been a while, it's time to talk about the application.
+
+00:46:12.235 --> 00:46:18.007
+Most likely, what I've said so far doesn't make sense and is not clear.
+
+00:46:18.007 --> 00:46:21.033
+But my goal is to spark an interest.
+
+00:46:21.033 --> 00:46:30.397
+You need to carefully read this notebook to truly understand how everything is done, how everything is implemented.
+
+00:46:30.397 --> 00:46:33.460
+There are many examples. I will talk about the most basic ones.
+
+00:46:33.460 --> 00:46:41.743
+Firstly, using the concept of geometric product,
+ you can implement complex numbers.
+
+00:46:41.743 --> 00:46:51.428
+To do this, you need to take the Clifford algebra, where the quadratic form gives -1,
+ and the initial vector space is one-dimensional.
+
+00:46:51.428 --> 00:46:54.638
+Simply put, it's just one real number.
+
+00:46:54.638 --> 00:47:05.907
+So, we say that the quadratic form is equal to -1
+ on the only basic vector in the space V.
+
+00:47:05.907 --> 00:47:12.967
+And then, of course, we get that this multiplication corresponds to the multiplication of complex numbers,
+
+00:47:12.967 --> 00:47:18.598
+and the basic vector e₁ corresponds to the imaginary unit " i ".
+
+00:47:18.598 --> 00:47:25.631
+We could take the Clifford algebra in a two-dimensional space R²
+
+00:47:25.631 --> 00:47:34.554
+with the ordinary Euclidean scalar product, where eᵢ ∘ eᵢ = 1, not -1.
+
+00:47:34.554 --> 00:47:39.288
+But in this algebra, we would only need to take bivectors.
+
+00:47:39.288 --> 00:47:43.904
+Well, more precisely, there is only one e₁ ∘ e₂.
+
+00:47:43.904 --> 00:47:50.000
+e₂ ∘ e₁ also exists, but it is equal to - e₁ ∘ e₂.
+
+00:47:50.000 --> 00:48:02.280
+That is, in the Clifford algebra Cl₂,₀(R), we could consider a space consisting of a linear combination of a scalar and a bivector.
+
+00:48:02.280 --> 00:48:09.772
+We only consider bivectors and scalars, and then in this space, we get complex numbers.
+
+00:48:10.514 --> 00:48:12.698
+Let's check...
+
+00:48:12.698 --> 00:48:14.698
+The same multiplication formula.
+
+00:48:14.698 --> 00:48:19.549
+Both e₁ and e₂ should be seen as imaginary units.
+
+00:48:19.549 --> 00:48:30.260
+We took the tensor algebra. Only its even part, where we take K, V², V⁴, etc.
+
+00:48:30.260 --> 00:48:33.569
+We don't take V and V³.
+
+00:48:33.569 --> 00:48:35.668
+The next application:
+
+00:48:35.668 --> 00:48:38.665
+Quaternions.
+
+00:48:38.665 --> 00:48:41.430
+Quaternions can be realized in this way:
+
+00:48:41.430 --> 00:48:44.250
+Take the Clifford algebra,
+
+00:48:44.250 --> 00:48:50.311
+where the squares of all vectors are equal to -1.
+
+00:48:50.311 --> 00:48:54.029
+And also postulate these three equations.
+
+00:48:54.029 --> 00:48:57.318
+And we get a quaternion.
+
+00:48:57.318 --> 00:49:03.249
+That is, make an additional factorization of the Clifford algebra
+according to these three relationships.
+
+00:49:03.249 --> 00:49:05.561
+And then we'll have a quaternion.
+
+00:49:05.561 --> 00:49:13.129
+But there is another option: again, we can consider the even subalgebra
+ in the Clifford algebra 3,0.
+
+00:49:13.129 --> 00:49:19.096
+It was 0,3 because we took -1 three times.
+
+00:49:19.096 --> 00:49:25.899
+e₁² yields -1, e₂² yields -1, and e₃² yields -1.
+
+00:49:25.899 --> 00:49:30.872
+And here we took vectors whose squares are equal to one,
+
+00:49:30.872 --> 00:49:37.792
+but again, we only considered linear combinations of scalars and bivectors.
+
+00:49:37.792 --> 00:49:41.211
+We only looked at these expressions.
+
+00:49:42.500 --> 00:49:51.333
+The product of these things again yields a vector
+consisting of scalars and bivectors.
+
+00:49:52.738 --> 00:49:56.946
+That's a scalar...
+
+00:49:58.548 --> 00:50:00.821
+Here's a scalar,
+
+00:50:00.821 --> 00:50:04.773
+and here are the three components of a bivector.
+
+00:50:04.773 --> 00:50:08.736
+And this is the correct multiplication of quaternions.
+
+00:50:08.736 --> 00:50:15.152
+Let me illustrate this with the well-known rotation formula.
+
+00:50:15.152 --> 00:50:17.053
+To rotate a vector v:
+
+00:50:17.053 --> 00:50:18.662
+you need to multiply it on the left by this,
+
+00:50:18.662 --> 00:50:20.232
+and on the right by this.
+
+00:50:20.232 --> 00:50:26.489
+Then, the result will be a rotation by angle " α " around vector " u ".
+
+00:50:26.489 --> 00:50:29.683
+Vector " u " needs to be represented as a bivector.
+
+00:50:31.206 --> 00:50:32.630
+Okay...
+
+00:50:33.801 --> 00:50:35.801
+In short,
+
+00:50:35.801 --> 00:50:39.348
+Clifford algebra is the general case.
+
+00:50:39.348 --> 00:50:42.675
+And as a special case, you can implement complex numbers.
+
+00:50:42.675 --> 00:50:48.463
+For example, either like this,
+or even subalgebra in Clifford algebra R².
+
+00:50:48.463 --> 00:50:54.575
+Quaternions can be implemented
+as the even subalgebra in Clifford algebra 3,0.
+
+00:50:54.575 --> 00:51:01.066
+Or as the Clifford algebra 0,3 with additional relations.
+
+00:51:01.066 --> 00:51:02.418
+Oh, and let me explain again:
+
+00:51:02.418 --> 00:51:07.916
+the notation Cl p,q means that we take a quadratic form Q,
+
+00:51:07.916 --> 00:51:12.688
+where the first p vectors have norm 1,
+
+00:51:12.688 --> 00:51:16.367
+and the next q vectors have norm -1.
+
+00:51:18.397 --> 00:51:22.296
+Here are two implementations of the quaternions.
+
+00:51:22.296 --> 00:51:24.248
+Moving on. Maxwell's equation.
+
+00:51:24.248 --> 00:51:27.360
+Can be written in one line...
+
+00:51:27.360 --> 00:51:32.358
+Here, actually, multiplication through a circle " ∘ " is used.
+
+00:51:32.358 --> 00:51:33.207
+Like this.
+
+00:51:33.207 --> 00:51:37.980
+...where F is an electromagnetic field,
+
+00:51:37.980 --> 00:51:40.526
+composed of vector E
+
+00:51:40.526 --> 00:51:43.720
+and bivector B.
+
+00:51:43.720 --> 00:51:49.189
+This symbol "∇" means the differentiation operator.
+
+00:51:50.485 --> 00:51:59.121
+Here is the differentiation operator, which is perceived as a number, and basic vectors are simply multiplied on the left by the differentiation operator.
+
+00:51:59.121 --> 00:52:09.452
+And J is a multivector consisting of the scalar density of charge
+ and the vector of current j.
+
+00:52:09.452 --> 00:52:16.213
+And you can verify that when you expand this expression, you will have precisely the Maxwell's equations.
+
+00:52:17.189 --> 00:52:18.380
+Well, and the determinant...
+
+00:52:18.380 --> 00:52:22.332
+Let me tell you about Maxwell's equations right now.
+
+00:52:22.332 --> 00:52:25.366
+Here's what I just said.
+
+00:52:25.366 --> 00:52:27.960
+The electromagnetic field F,
+
+00:52:27.960 --> 00:52:29.960
+the differentiation operator d,
+
+00:52:29.960 --> 00:52:33.258
+and the multivector J,
+
+00:52:33.258 --> 00:52:34.789
+consisting of the charge density
+
+00:52:34.789 --> 00:52:37.687
+and the current vector.
+
+00:52:37.687 --> 00:52:39.687
+Let's check...
+
+00:52:39.687 --> 00:52:41.143
+And we get...
+
+00:52:43.369 --> 00:52:46.385
+This expression equals zero.
+
+00:52:46.385 --> 00:52:50.508
+It equals zero when the scalar is zero.
+
+00:52:50.508 --> 00:52:52.815
+Here's the scalar.
+
+00:52:52.815 --> 00:52:56.517
+When the bivector is zero.
+
+00:52:56.517 --> 00:53:01.142
+These three components are equal to zero.
+
+00:53:01.142 --> 00:53:04.509
+And when the vector part, this one here, equals zero.
+
+00:53:04.509 --> 00:53:06.587
+That is, when e₁, e₂, e₃.
+
+00:53:06.587 --> 00:53:10.813
+And when the pseudoscalar is also equal to zero.
+
+00:53:10.813 --> 00:53:15.422
+Then the divergence of the magnetic field, this one here, equals zero.
+
+00:53:15.422 --> 00:53:19.491
+The divergence of the E field equals the charge density ρ.
+
+00:53:19.491 --> 00:53:22.819
+Everything is written correctly.
+
+00:53:22.819 --> 00:53:28.265
+Next, the rotor of E gives H.
+
+00:53:28.265 --> 00:53:38.309
+And the rotor of H gives the derivative of E (with respect to time t) and j.
+
+00:53:38.309 --> 00:53:47.048
+In one equation, we are able to write two scalar equations
+ about the divergence of E and H,
+
+00:53:47.048 --> 00:53:52.952
+and three vector equations about the rotor of E and H.
+
+00:53:52.952 --> 00:53:59.426
+Here we were able to implement the Maxwell equation in Clifford algebra 3,0 over R.
+
+00:53:59.426 --> 00:54:08.806
+But it is more correct to implement it in the four-dimensional space R⁴,
+where the quadratic form has a signature of 1,3.
+
+00:54:08.806 --> 00:54:11.241
+I won't do this.
+
+00:54:11.241 --> 00:54:19.056
+Explicitly, it is necessary to determine that e₁² equals 1,
+and e₂², e₃², e₄² equals -1.
+
+00:54:19.056 --> 00:54:24.492
+I have ready-made implementations of the Clifford algebra in this file, ready to go.
+
+00:54:24.492 --> 00:54:29.069
+Although, nothing works, because I already messed up the symbol " e ".
+
+00:54:29.069 --> 00:54:31.420
+But nevertheless, let's try.
+
+00:54:31.420 --> 00:54:33.556
+Maybe it will still work.
+
+00:54:34.766 --> 00:54:44.039
+There is a ready-made implementation of the Clifford algebra in the most general form for various quadratic forms Q.
+
+00:54:44.039 --> 00:54:47.319
+I recommend using it.
+
+00:54:47.319 --> 00:54:49.124
+With this package.
+
+00:54:51.115 --> 00:54:53.943
+Let's check...
+
+00:54:53.943 --> 00:54:59.169
+Here is the signature of our quadratic form.
+
+00:54:59.169 --> 00:55:03.590
+This is an ordinary vector.
+
+00:55:03.590 --> 00:55:08.658
+Here we have the recording of the electromagnetic field F,
+
+00:55:08.658 --> 00:55:11.110
+the differentiation operator,
+
+00:55:11.110 --> 00:55:14.750
+and the current multivector J.
+
+00:55:14.750 --> 00:55:17.219
+The four-vector J.
+
+00:55:17.219 --> 00:55:20.958
+And we get the same result again.
+
+00:55:20.958 --> 00:55:25.477
+It is correct to express Maxwell's equations in the Clifford algebra 1,3.
+
+00:55:26.913 --> 00:55:28.154
+That's all for today.
+
+00:55:28.154 --> 00:55:30.917
+It was a very difficult topic.
+
+00:55:32.682 --> 00:55:35.541
+Requiring independent study.
+
+00:55:35.541 --> 00:55:42.295
+Yes, don't expect that just by watching a YouTube video, something will remain in your head.
+
+00:55:42.295 --> 00:55:48.905
+Something will remain only if you take a pen and paper or the WM language
+and do something with your own hands.
+
+00:55:48.905 --> 00:55:54.263
+Wolfram Mathematica is an unusual programming language.
+It is a term reduction system.
+
+00:55:54.263 --> 00:56:01.807
+And it is probably suitable for implementing various factor algebras of the free algebras.
+
+00:56:01.807 --> 00:56:04.572
+T(V) is a free tensor algebra,
+
+00:56:04.572 --> 00:56:10.390
+and the Clifford algebra is a factor algebra by this relationship.
+
+00:56:10.390 --> 00:56:18.990
+And this notation Clp,q means that the quadratic form Q we have chosen has signature p,q.
+
+00:56:19.810 --> 00:56:26.357
+The Clifford algebra is actively used by physicists and this is one of the most vivid examples - the Maxwell equations.
+
+00:56:26.670 --> 00:56:33.408
+Simpler examples are quaternions and complex numbers, which can be implemented through the Clifford algebra.
+
+00:56:33.838 --> 00:56:40.289
+Perhaps all of these arguments seem
+extremely complicated and unnatural,
+
+00:56:40.289 --> 00:56:47.989
+and this is not accidental,
+because the Clifford algebra has a long history of thought, spanning centuries.
+
+00:56:47.989 --> 00:56:53.108
+And naturalness arises when you know all this backstory.
+
+00:56:53.108 --> 00:56:59.536
+Then this calculus in the Clifford algebra looks understandable.
+
+00:56:59.536 --> 00:57:04.761
+It is clear that it really generalizes many things
+that have been encountered before.
+
+00:57:04.761 --> 00:57:10.588
+External vector product,
+external differential form product, etc.
+
+00:57:10.588 --> 00:57:16.902
+That's all for today. I hope it was interesting.
+At least I've got you interested.
+
+00:57:16.902 --> 00:57:19.492
+I do not hope that something was understandable.
+
+00:57:19.492 --> 00:57:25.791
+To make it clear, please read the notebook
+whose link I left in the description below.
+
+00:57:25.791 --> 00:57:27.578
+Good luck to everyone! Bye!
+

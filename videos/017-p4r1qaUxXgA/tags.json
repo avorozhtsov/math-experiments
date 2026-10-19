@@ -1,0 +1,23 @@
+{
+  "scope": "YouTube tags are video-wide, not independently localized. This list is the exact current global tag list.",
+  "tags": [
+    "wolfram mathematica",
+    "mathematica",
+    "математика",
+    "гипотеза римана",
+    "логарифмический интеграл",
+    "logarithmic integral",
+    "prime counting function"
+  ],
+  "ru_or_mixed": [
+    "математика",
+    "гипотеза римана",
+    "логарифмический интеграл"
+  ],
+  "en_or_language_neutral": [
+    "wolfram mathematica",
+    "mathematica",
+    "logarithmic integral",
+    "prime counting function"
+  ]
+}

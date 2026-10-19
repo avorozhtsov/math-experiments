@@ -1,0 +1,43 @@
+{
+  "number": "012",
+  "video_id": "O5yT6DGvcZI",
+  "youtube_url": "https://www.youtube.com/watch?v=O5yT6DGvcZI",
+  "directory": "videos/012-O5yT6DGvcZI",
+  "locales": {
+    "ru": {
+      "title": "12. От sin(x) до значений дзета функции ζ(-1), ζ(-2), ... (часть 1)",
+      "metadata_file": "metadata.ru.json",
+      "title_file": "title.ru.txt",
+      "description_file": "description.ru.md",
+      "captions_file": "captions/ru.vtt",
+      "thumbnail_file": "thumbnails/ru.jpg"
+    },
+    "en": {
+      "title": "12. From sin(x) to the values of the zeta function ζ(-1), ζ(-2), ... (English subtitles)",
+      "metadata_file": "metadata.en.json",
+      "title_file": "title.en.txt",
+      "description_file": "description.en.md",
+      "captions_file": "captions/en.vtt",
+      "thumbnail_file": "thumbnails/en.jpg"
+    }
+  },
+  "tags_file": "tags.json",
+  "notebooks": [
+    {
+      "path": "yt-channel/012-sin-zeta.nb",
+      "relationship": "primary"
+    }
+  ],
+  "exact_notebook_source_found": true,
+  "thumbnail_editable_sources": [
+    {
+      "path": "thumbnail-sources/pictures-4.ru.pptx",
+      "slide": 5,
+      "kind": "PowerPoint",
+      "language": "ru"
+    }
+  ],
+  "metadata_source": "YouTube Data API videos.list; actual existing ru/en localizations; fetched 2026-10-19T13:37:26.821577+00:00",
+  "english_thumbnail_method": "Image generation edit of the original, with explicit translation and style preservation",
+  "description_link_status": "prepared; YouTube application tracked separately"
+}

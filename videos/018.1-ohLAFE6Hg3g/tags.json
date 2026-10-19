@@ -1,0 +1,25 @@
+{
+  "scope": "YouTube tags are video-wide, not independently localized. This list is the exact current global tag list.",
+  "tags": [
+    "wolfram mathematica",
+    "zeta function",
+    "mathematica",
+    "zeros of zeta functions",
+    "riemann hypothesys",
+    "riemann hypothesis",
+    "гипотеза римана",
+    "нули дзета функции"
+  ],
+  "ru_or_mixed": [
+    "гипотеза римана",
+    "нули дзета функции"
+  ],
+  "en_or_language_neutral": [
+    "wolfram mathematica",
+    "zeta function",
+    "mathematica",
+    "zeros of zeta functions",
+    "riemann hypothesys",
+    "riemann hypothesis"
+  ]
+}

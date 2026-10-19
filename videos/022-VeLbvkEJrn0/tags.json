@@ -1,0 +1,21 @@
+{
+  "scope": "YouTube tags are video-wide, not independently localized. This list is the exact current global tag list.",
+  "tags": [
+    "wolfram mathematica",
+    "number theory",
+    "catalan numbers",
+    "prime numbers",
+    "prime number theorem",
+    "распределение простых чисел"
+  ],
+  "ru_or_mixed": [
+    "распределение простых чисел"
+  ],
+  "en_or_language_neutral": [
+    "wolfram mathematica",
+    "number theory",
+    "catalan numbers",
+    "prime numbers",
+    "prime number theorem"
+  ]
+}

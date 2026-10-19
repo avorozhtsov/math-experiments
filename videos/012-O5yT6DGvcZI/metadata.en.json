@@ -1,0 +1,4 @@
+{
+  "title": "12. From sin(x) to the values of the zeta function ζ(-1), ζ(-2), ... (English subtitles)",
+  "description": "Continue our exploration of approximating sin(x) with the sum((-1)^k / (x - k pi)).\nAt some point, we will reach an infinite series, with coefficients hiding the values of ζ(-1), ζ(-2), ... closely related to the Bernoulli numbers.\nThis video is for the most indefatigable. Good luck!\n\n\n\n02:04 Introduction\n11:11 Subtraction and Division\n20:27 Video Plan\n22:23 A More Complete Approach to Approximation\n26:58 Swapping Numerator and Denominator (It works better this way)\n39:41 Another Formula for Pi\n42:28 Intermediate Summary\n43:32 Discovering the Truth with Mathematica\n49:09 Conclusion. To be continued...\n\nMaterials, code and Mathematica notebooks: https://github.com/avorozhtsov/math-experiments/tree/main/videos/012-O5yT6DGvcZI"
+}

@@ -1,0 +1,1270 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:01.051 --> 00:00:03.392
+Hello everyone! This is Artem Vorozhtsov.
+
+00:00:03.392 --> 00:00:06.585
+And in this bonus video, we're going to talk about the Fibonacci numbers and matrices.
+
+00:00:06.585 --> 00:00:10.864
+Let's recall how we defined the function F in our last video.
+
+00:00:10.864 --> 00:00:12.864
+Here are the first 20 Fibonacci numbers.
+
+00:00:12.864 --> 00:00:14.523
+They start with 1, 1
+
+00:00:14.523 --> 00:00:16.551
+Then come 2, 3, 5...
+
+00:00:16.551 --> 00:00:19.886
+Each subsequent number is the sum of the two previous ones.
+
+00:00:19.886 --> 00:00:23.022
+And this is exactly what we see in the definition:
+
+00:00:23.022 --> 00:00:26.016
+How to compute F[n_] ?
+
+00:00:26.016 --> 00:00:29.862
+We need to take F[n-1] + F[n-2],
+
+00:00:29.862 --> 00:00:34.106
+put everything into the dictionary F, and this is the memoization.
+
+00:00:34.106 --> 00:00:36.561
+Then return the resulting value.
+
+00:00:36.561 --> 00:00:41.145
+And separately in the dictionary F, 
+values for zero and one are saved,
+
+00:00:41.145 --> 00:00:43.173
+so that this recursion is not infinite.
+
+00:00:43.173 --> 00:00:46.751
+SetAttributes[F, Listable] makes the function F "threadable over lists":
+
+00:00:46.751 --> 00:00:53.608
+if F is applied to a list, then we get a list of elements from the list,
+
+00:00:53.608 --> 00:00:58.356
+with function F applied to each element of that list.
+
+00:00:58.356 --> 00:01:02.386
+The idea of getting an explicit formula was this:
+
+00:01:02.386 --> 00:01:06.170
+Let's try to find a geometric progression
+
+00:01:06.170 --> 00:01:10.315
+that satisfies the same relation as the Fibonacci numbers.
+
+00:01:11.309 --> 00:01:13.394
+Let's define ff.
+
+00:01:13.394 --> 00:01:15.825
+This is a geometric progression.
+
+00:01:15.825 --> 00:01:19.515
+There may be some factor b0 here, but it's not that important.
+
+00:01:20.755 --> 00:01:24.168
+The identity that is true for Fibonacci numbers
+
+00:01:24.168 --> 00:01:26.939
+here turns into this identity.
+
+00:01:26.939 --> 00:01:30.849
+It can be seen that it can be reduced by b0 and λⁿ.
+
+00:01:30.849 --> 00:01:34.324
+But we'll try to solve it directly.
+
+00:01:34.324 --> 00:01:35.586
+Yes, it can be solved.
+
+00:01:35.586 --> 00:01:36.911
+And look what happened:
+
+00:01:36.911 --> 00:01:41.089
+we found two values of λ that fit.
+
+00:01:41.089 --> 00:01:44.631
+That is, there are two values of λ
+
+00:01:44.631 --> 00:01:49.915
+such that λ^n fits this identity.
+
+00:01:49.915 --> 00:01:54.000
+The second element λ is called phi – the golden ratio.
+
+00:01:54.000 --> 00:01:58.395
+And the first element, which can be checked explicitly, is -1/phi.
+
+00:01:58.395 --> 00:02:01.479
+Lets check...
+
+00:02:01.479 --> 00:02:02.339
+True.
+
+00:02:02.339 --> 00:02:03.840
+Further the reasoning goes as follows:
+
+00:02:03.840 --> 00:02:09.091
+We have two geometric progressions that satisfy this identity...
+
+00:02:09.091 --> 00:02:10.808
+...here.
+
+00:02:10.808 --> 00:02:15.368
+Then their sum will also satisfy this identity.
+
+00:02:15.368 --> 00:02:19.178
+It's not an obvious statement, but think about it.
+
+00:02:19.178 --> 00:02:20.648
+Moving on...
+
+00:02:20.648 --> 00:02:23.855
+Let's take these two progressions.
+
+00:02:23.855 --> 00:02:27.598
+One is "a" times phi^n ...
+
+00:02:27.598 --> 00:02:35.765
+... and the other is "b" times (-1/phi)^n.
+
+00:02:35.765 --> 00:02:44.103
+The sum of these two geometric progressions also satisfies the Fibonacci identity.
+
+00:02:44.103 --> 00:02:50.434
+So let's find values for "a" and "b" such that the zero-th element of this sum is equal to one...
+
+00:02:50.434 --> 00:02:56.121
+...and the first element of this sum of geometric progressions is also equal to one.
+
+00:02:56.121 --> 00:02:57.317
+Solving...
+
+00:02:57.317 --> 00:03:01.998
+The first argument of the Solve function 
+ is a list of equations or inequalities.
+
+00:03:01.998 --> 00:03:10.701
+The second argument of the Solve function 
+ is a list of variables to solve for.
+
+00:03:10.701 --> 00:03:14.176
+And it successfully solves it.
+
+00:03:15.114 --> 00:03:16.511
+Here are two curly braces...
+
+00:03:16.511 --> 00:03:21.059
+...basically, here could have been multiple pairs of "a" and "b", but we only get one pair here.
+
+00:03:21.059 --> 00:03:26.234
+We define the function F3 and verify that it works.
+
+00:03:26.234 --> 00:03:30.613
+Checking the 10th Fibonacci number, 
+ we get the familiar number 89.
+
+00:03:30.613 --> 00:03:33.753
+Moving on. What I didn't mention in the previous video...
+
+00:03:33.753 --> 00:03:36.177
+...is that this coefficient...
+
+00:03:36.177 --> 00:03:39.115
+...and this coefficient can be simplified ...
+
+00:03:39.115 --> 00:03:41.852
+...or rather, more beautifully.
+
+00:03:41.852 --> 00:03:46.500
+Let's multiply the numerator and denominator by 5-√5.
+
+00:03:46.500 --> 00:03:49.304
+This is what we get for this case.
+
+00:03:50.175 --> 00:03:52.816
+Simplifying...
+
+00:03:52.816 --> 00:03:55.221
+The first coefficient is equal to this.
+
+00:03:55.221 --> 00:03:58.395
+The second coefficient is 2/(5+√5).
+
+00:03:58.395 --> 00:04:01.970
+We multiply again by 5-√5
+
+00:04:01.970 --> 00:04:03.836
+and...
+
+00:04:03.836 --> 00:04:08.852
+It's clear that we get this.
+
+00:04:08.852 --> 00:04:20.649
+Thus, here's a more elegant expression
+for the explicit formula of Fibonacci numbers.
+
+00:04:20.649 --> 00:04:22.280
+We check if it works or not.
+
+00:04:22.280 --> 00:04:23.476
+It works.
+
+00:04:23.476 --> 00:04:29.548
+So, Fibonacci numbers are the sum 
+ of two geometric progressions.
+
+00:04:29.548 --> 00:04:35.536
+And we know that the first number is approximately 1.618...,
+
+00:04:35.536 --> 00:04:38.776
+the second number is -0.618...
+
+00:04:38.776 --> 00:04:44.443
+The powers of these two geometric progressions
+are drawn here.
+
+00:04:44.443 --> 00:04:48.790
+One has a magnitude greater than one, the other less than one.
+
+00:04:48.790 --> 00:04:57.741
+This term corresponds to the geometric progression 
+ with a power of -0.618...
+
+00:04:57.741 --> 00:05:06.957
+When we raise -0.618 to the power of n, 
+ we get smaller and smaller numbers with increasing n.
+
+00:05:08.130 --> 00:05:20.721
+In the end, we know that the ratio of two adjacent large Fibonacci numbers is approximately phi.
+
+00:05:20.721 --> 00:05:21.888
+Not by chance.
+
+00:05:21.888 --> 00:05:27.206
+Because for large n we can kind of discard this term
+
+00:05:27.206 --> 00:05:32.792
+and then Fibonacci numbers are approximately equal to:
+some number multiplied by phiⁿ,
+
+00:05:32.792 --> 00:05:39.048
+and the ratio of two neighbors becomes
+equal to a number that is close to phi.
+
+00:05:39.048 --> 00:05:42.959
+The larger n is, the closer the ratio is to phi.
+
+00:05:43.428 --> 00:05:49.097
+Let's check that the function F3
+correctly computes Fibonacci numbers.
+
+00:05:49.097 --> 00:05:51.097
+We've already checked that...
+
+00:05:55.454 --> 00:05:58.658
+What is a geometric progression.
+
+00:05:58.658 --> 00:06:00.000
+Example:
+
+00:06:00.000 --> 00:06:07.295
+Let the zeroth element be 3,
+and each subsequent one is the previous one multiplied by 2.
+
+00:06:07.295 --> 00:06:14.192
+3, 6, 12 - here's an example of an ordinary
+geometric progression.
+
+00:06:14.192 --> 00:06:17.832
+And now I will write something scary 
+ and incomprehensible here...
+
+00:06:17.832 --> 00:06:22.246
+"b" is such a row vector (1 0).
+
+00:06:22.246 --> 00:06:31.116
+"Q" is a 2x2 square matrix. 
+ Two rows and two columns with elements 1 1 1 0.
+
+00:06:31.116 --> 00:06:33.485
+And we will write:
+
+00:06:33.485 --> 00:06:34.781
+b0...
+
+00:06:34.781 --> 00:06:36.000
+(Here is dot instead of multiplication)
+
+00:06:36.000 --> 00:06:41.862
+b0.(q.q)
+
+00:06:41.862 --> 00:06:46.049
+One q here, two q here, three q here, four q here, and so on.
+
+00:06:46.049 --> 00:06:47.044
+What will we see?
+
+00:06:47.044 --> 00:06:50.565
+{1, 1}, {2, 1}, {3, 2}, {5, 3}, {8, 5}
+
+00:06:50.565 --> 00:06:52.865
+yes, quite familiar ...
+
+00:06:52.865 --> 00:06:53.726
+Here.
+
+00:06:53.726 --> 00:06:57.100
+Our task is to understand what is written here.
+
+00:06:57.100 --> 00:06:59.033
+Let's step by step.
+
+00:06:59.033 --> 00:07:05.524
+First, let's pay attention
+that you can write this statement:
+
+00:07:05.524 --> 00:07:09.102
+a pair of neighboring Fibonacci numbers
+
+00:07:09.102 --> 00:07:12.775
+is written as a pair of such expressions.
+
+00:07:12.775 --> 00:07:17.029
+The last one is obvious.
+
+00:07:17.029 --> 00:07:19.906
+F[n-1] = F[n-1]
+
+00:07:19.906 --> 00:07:25.190
+And the first statement is simply the definition of Fibonacci numbers.
+
+00:07:25.190 --> 00:07:27.626
+This is true.
+
+00:07:27.626 --> 00:07:32.575
+But let's think about a pair of Fibonacci numbers,
+as about a pair of x, y.
+
+00:07:32.575 --> 00:07:36.641
+And it's as if written here that
+
+00:07:36.641 --> 00:07:46.359
+a function of the old pair x, y
+gives some new pair x, y.
+
+00:07:46.359 --> 00:07:54.260
+The general formula for obtaining a new pair x, y and the old one can look like this:
+
+00:07:54.260 --> 00:08:05.778
+new x = a x + b y
+new y = c x + d y
+
+00:08:05.778 --> 00:08:08.415
+Okay.
+
+00:08:08.415 --> 00:08:11.018
+For Fibonacci numbers, we get:
+
+00:08:11.018 --> 00:08:14.794
+if the new pair {x, y} = {F[n], F[n-1]},
+
+00:08:14.794 --> 00:08:19.844
+and the old pair {x, y} = {F[n-1], F[n-2]},
+
+00:08:19.844 --> 00:08:24.000
+then from this expression
+
+00:08:24.000 --> 00:08:28.882
+and recalling how it all looks like here,
+
+00:08:28.882 --> 00:08:39.864
+we get: a = 1, b = 1, c = 1, d = 0
+
+00:08:39.864 --> 00:08:41.866
+So...
+
+00:08:41.866 --> 00:08:50.108
+Next, we need the NewPointList function, 
+ which is applied to the list of pairs x, y.
+
+00:08:50.108 --> 00:08:56.295
+Here we write a function that converts one pair of x, y and write that it needs to be applied...
+
+00:08:56.295 --> 00:09:00.876
+It is called map (/@).
+
+00:09:00.876 --> 00:09:05.021
+The hint doesn't show up,
+but this is operator map (/@).
+
+00:09:05.021 --> 00:09:09.367
+We apply it to the list "l".
+
+00:09:09.367 --> 00:09:13.780
+Let's check how it works.
+
+00:09:13.780 --> 00:09:15.151
+Here...
+
+00:09:15.151 --> 00:09:22.245
+So, we passed a list of pairs as the first argument and got a list of transformed pairs.
+
+00:09:22.245 --> 00:09:31.585
+We could have added xx, yy
+and gotten another transformed pair.
+
+00:09:31.585 --> 00:09:36.150
+Actually, we could have avoided introducing a new function, NewPointList,
+and made the function NewPoint calculate
+for both a pair (x, y) and a list of pairs.
+
+00:09:36.150 --> 00:09:42.809
+Let's see how we can do this.
+
+00:09:46.384 --> 00:09:48.619
+Like this.
+
+00:09:48.619 --> 00:09:51.893
+This expression is quite complex and unclear.
+
+00:09:51.893 --> 00:09:53.459
+Here's what it says:
+
+00:09:53.459 --> 00:09:55.985
+We define the function NewPoint,
+
+00:09:55.985 --> 00:10:00.000
+then in square brackets we describe the arguments
+and prerequisites for these arguments,
+
+00:10:00.000 --> 00:10:03.961
+i.e., under what condition
+the arguments should satisfy,
+
+00:10:03.961 --> 00:10:10.089
+in order to expand the function definition
+as written to the right of the ":=" symbol.
+
+00:10:10.089 --> 00:10:16.677
+So, it says if x is not a list and y is not a list,
+
+00:10:16.677 --> 00:10:19.614
+then NewPoint is what is written here,
+
+00:10:19.614 --> 00:10:21.415
+i.e., the transformed pair.
+
+00:10:21.415 --> 00:10:27.221
+So we think of x as a number... about y.
+
+00:10:27.221 --> 00:10:31.635
+The second definition of the function NewPoint.
+
+00:10:31.635 --> 00:10:35.854
+We specify the prerequisite for the argument l.
+
+00:10:35.854 --> 00:10:40.000
+Prerequisites are written after the question mark.
+
+00:10:40.000 --> 00:10:49.753
+MatrixQ is a function that returns True
+when the argument l is a matrix,
+
+00:10:49.753 --> 00:10:52.667
+i.e., a list of lists.
+
+00:10:52.667 --> 00:10:58.530
+ListQ is a function that returns True
+when the argument is a list.
+
+00:11:05.684 --> 00:11:09.673
+So this symbol, the exclamation mark "!",
+means negation.
+
+00:11:09.673 --> 00:11:12.951
+That is, x_
+
+00:11:12.951 --> 00:11:17.678
+can be followed by either a type, a question mark, or a condition.
+
+00:11:17.678 --> 00:11:20.501
+Here we have a question mark and a condition.
+
+00:11:20.501 --> 00:11:25.767
+We need to describe a function that returns True or False.
+
+00:11:27.272 --> 00:11:32.393
+And if True is returned, then it's good.
+
+00:11:32.393 --> 00:11:41.663
+The definition to the right of ":=" is good
+for computing the NewPoint function.
+
+00:11:41.663 --> 00:11:43.379
+Let's check how this works...
+
+00:11:43.379 --> 00:11:47.140
+This works as it should.
+
+00:11:49.769 --> 00:11:55.952
+By the way, note that if (a, b, c, d) == (1, 0, 0, 1),
+
+00:11:55.952 --> 00:12:03.247
+then we get ax = x, by = 0, so just x is here.
+
+00:12:04.617 --> 00:12:09.506
+c = 0, d = 1, so just y is here.
+
+00:12:09.506 --> 00:12:12.947
+Thus, the new pair x, y is the old pair x, y.
+
+00:12:12.947 --> 00:12:14.425
+Let's remember this.
+
+00:12:14.425 --> 00:12:20.934
+This combination of parameters a, b, c, d
+gives us identical transformations.
+
+00:12:20.934 --> 00:12:23.840
+The next thing we will need is the Flatten function.
+
+00:12:23.840 --> 00:12:29.526
+The Flatten function
+erases all the curly brackets inside.
+
+00:12:29.526 --> 00:12:33.068
+It just makes a list of elements.
+
+00:12:33.068 --> 00:12:38.989
+The function F can be given a two- or three-dimensional matrix as input, and the output will be just a list.
+
+00:12:38.989 --> 00:12:42.003
+But if you specify 1 as the second argument,
+
+00:12:42.003 --> 00:12:49.701
+then you will get a list
+with one dimension removed.
+
+00:12:49.701 --> 00:12:55.366
+And if you specify 2, then two dimensions will be removed.
+
+00:12:55.969 --> 00:12:59.804
+Well, if you specify 3, then three dimensions will be removed.
+
+00:12:59.804 --> 00:13:06.396
+In short, I want to draw this plot here.
+
+00:13:06.396 --> 00:13:08.999
+These are sets of points.
+
+00:13:08.999 --> 00:13:11.472
+A set of blue points.
+
+00:13:11.472 --> 00:13:13.706
+A set of yellow points.
+
+00:13:13.706 --> 00:13:15.773
+And a set of green points.
+
+00:13:15.773 --> 00:13:18.802
+Here I have blue dots,
+
+00:13:18.802 --> 00:13:20.199
+yellow dots,
+
+00:13:20.199 --> 00:13:22.434
+and green ones.
+
+00:13:22.434 --> 00:13:24.300
+Points are pairs of coordinates.
+
+00:13:24.300 --> 00:13:28.713
+And here, as I'm making this matrix,
+what I end up with...
+
+00:13:28.713 --> 00:13:29.808
+The Table matrix.
+
+00:13:29.808 --> 00:13:32.185
+...I end up with a two-dimensional matrix.
+
+00:13:32.185 --> 00:13:35.995
+And I want to turn it into just a list of points.
+
+00:13:35.995 --> 00:13:41.213
+Let's Flatten this matrix
+and we'll get a simple list of pairs.
+
+00:13:42.319 --> 00:13:46.126
+Here I have a pair of points 5i, j.
+
+00:13:46.126 --> 00:13:51.812
+In other words, "x" runs through the 5i points,
+and "y" runs through the "j" values.
+
+00:13:51.812 --> 00:13:57.901
+So "x" kind of jumps immediately by 5,
+and "y" jumps by 1.
+
+00:13:57.901 --> 00:14:00.471
+See, here are the coordinates 10, 20.
+
+00:14:00.471 --> 00:14:04.180
+Then, conversely, these become yellow points.
+
+00:14:04.180 --> 00:14:10.656
+And the third set of points this sun.
+
+00:14:10.656 --> 00:14:14.032
+Let's do the following...
+
+00:14:14.032 --> 00:14:15.734
+Here's our matrix.
+
+00:14:15.734 --> 00:14:16.804
+By the way, it's not like this.
+
+00:14:16.804 --> 00:14:22.156
+It's like this:
+(a, b, c, d) = (1, 1, 1, 0)
+
+00:14:22.156 --> 00:14:30.901
+And let's draw a set of transformed
+blue, yellow, and green points.
+
+00:14:30.901 --> 00:14:34.422
+The blue dots remain horizontal,
+
+00:14:34.422 --> 00:14:37.729
+but the yellow lines are now sloping.
+
+00:14:37.729 --> 00:14:40.500
+They were...
+
+00:14:40.500 --> 00:14:42.098
+No. Our blue dots have changed
+
+00:14:42.098 --> 00:14:45.774
+They were vertical and became horizontal.
+
+00:14:45.774 --> 00:14:49.366
+The yellow dots now go at a 45 degree angle.
+
+00:14:49.366 --> 00:14:52.820
+And as you can see, 
+ the sun has become slanted and stretched out.
+
+00:14:52.820 --> 00:14:55.590
+Let's break this down.
+
+00:14:55.590 --> 00:14:58.386
+We'll put all of this inside Manipulate.
+
+00:14:58.386 --> 00:15:06.251
+Now a, b, c, and d are numbers 
+ that we can change and observe what happens.
+
+00:15:08.228 --> 00:15:14.148
+Notice, I set a, b, c, and d equal to 1, 0, 0, 1, 
+ which is the initial value.
+
+00:15:14.148 --> 00:15:18.460
+This is the identical transformation that I talked about earlier.
+
+00:15:18.460 --> 00:15:22.841
+The letter 'a', as we can see, 
+ is responsible for horizontal compression.
+
+00:15:22.841 --> 00:15:25.399
+Compression or stretching.
+
+00:15:26.706 --> 00:15:31.895
+'d' is responsible for vertical compression or stretching.
+
+00:15:31.895 --> 00:15:33.454
+Okay.
+
+00:15:33.454 --> 00:15:38.630
+What about 'b'?
+Now this is where it gets interesting.
+
+00:15:43.089 --> 00:15:45.335
+This is that slanting effect.
+
+00:15:45.335 --> 00:15:49.805
+And here's another slanting effect.
+
+00:15:49.805 --> 00:15:53.906
+You see, at some point we got a rotation.
+
+00:15:53.906 --> 00:15:57.115
+The squares remained squares.
+
+00:15:57.115 --> 00:16:00.370
+The entire plane just rotated.
+
+00:16:00.370 --> 00:16:03.366
+And also, apparently, it stretched out a bit.
+
+00:16:03.366 --> 00:16:10.450
+But if we bring "a" and "d" to numbers close to one,
+
+00:16:10.450 --> 00:16:16.142
+the image will look similar to the original, 
+ just rotated by some degrees.
+
+00:16:16.142 --> 00:16:18.198
+Okay!
+
+00:16:18.198 --> 00:16:21.676
+Let's do the following operation.
+
+00:16:21.676 --> 00:16:28.607
+We'll apply the function "t" to the point 1, 1 several times.
+
+00:16:28.607 --> 00:16:30.265
+{13, 8}
+
+00:16:30.265 --> 00:16:35.048
+We recognize the Fibonacci numbers.
+
+00:16:35.048 --> 00:16:41.763
+This thing, applying the function several times, is called Nest in Mathematica.
+
+00:16:41.763 --> 00:16:44.785
+Mathematica is a functional programming language.
+
+00:16:44.785 --> 00:16:49.506
+The function Nest takes the function h as a first argument,
+
+00:16:49.506 --> 00:16:56.306
+The second argument is x, to which the function h should be applied,
+
+00:16:56.306 --> 00:16:59.243
+and the third argument is how many times.
+
+00:17:00.208 --> 00:17:04.498
+NestList gives us the successive steps of applying the function h.
+
+00:17:05.322 --> 00:17:06.295
+There.
+
+00:17:06.948 --> 00:17:07.840
+There.
+
+00:17:08.436 --> 00:17:13.131
+Thus, we have another way of computing Fibonacci numbers.
+
+00:17:13.131 --> 00:17:18.198
+Let's draw the result of executing NestList.
+
+00:17:19.646 --> 00:17:21.396
+Here.
+
+00:17:22.646 --> 00:17:26.869
+The coordinates of these points are the adjacent Fibonacci numbers.
+
+00:17:27.724 --> 00:17:30.430
+Now let's take the logarithm.
+
+00:17:31.834 --> 00:17:35.158
+It starts from point (0, 0) – which is (log 1, log 1).
+
+00:17:35.158 --> 00:17:43.959
+Then the coordinates are equal 
+ to the (log 2, 0), then (log 3, log 2) and so on. 
+
+00:17:43.959 --> 00:17:47.568
+It is evident that further points lie approximately on a straight line.
+
+00:17:47.568 --> 00:17:53.690
+This is the case of convergence to a geometric progression.
+
+00:17:53.690 --> 00:18:00.080
+And let's try to see what else we could get 
+ if we took other numbers a, b, c, d.
+
+00:18:01.856 --> 00:18:04.144
+This is exactly the case described here.
+
+00:18:04.144 --> 00:18:05.139
+So...
+
+00:18:05.139 --> 00:18:08.144
+Some numbers a, b, c, d are taken here...
+
+00:18:08.144 --> 00:18:12.557
+n is how many times it needs to be applied.
+
+00:18:14.300 --> 00:18:15.374
+"a"...
+
+00:18:16.212 --> 00:18:19.553
+We start gradually changing "a"...
+
+00:18:19.553 --> 00:18:21.352
+slowly...
+
+00:18:21.990 --> 00:18:26.818
+n is the number of steps. Let's increase this number.
+
+00:18:28.125 --> 00:18:29.610
+Here...
+
+00:18:30.528 --> 00:18:32.568
+Changing "a"...
+
+00:18:34.440 --> 00:18:37.131
+This is a diverging spiral.
+
+00:18:37.131 --> 00:18:43.232
+When we decrease n, the outer links begin to disappear.
+
+00:18:43.232 --> 00:18:45.869
+Now let's increase it again.
+
+00:18:49.120 --> 00:18:54.350
+And this is how the inner links disappear.
+
+00:18:59.076 --> 00:19:02.528
+"с"...
+
+00:19:02.528 --> 00:19:05.198
+Well... a similar effect.
+
+00:19:17.566 --> 00:19:22.486
+They all more or less make the same picture.
+
+00:19:24.698 --> 00:19:29.531
+But we have already obtained some strange cases here.
+
+00:19:38.312 --> 00:19:44.276
+No longer spirals, but such strange ones...
+
+00:19:45.382 --> 00:19:48.462
+Alright. Let's see how our viewer is doing.
+
+00:19:49.772 --> 00:19:52.826
+Our viewer's hair is standing on end.
+
+00:19:53.697 --> 00:19:57.239
+Well... good. That's the expected effect.
+
+00:19:57.608 --> 00:19:59.533
+Moving on.
+
+00:20:00.740 --> 00:20:04.095
+Let's apply this transformation twice.
+
+00:20:04.095 --> 00:20:05.357
+Or better yet:
+
+00:20:05.357 --> 00:20:08.262
+once with coefficients a1, b1, c1, d1,
+
+00:20:08.262 --> 00:20:11.804
+and once with coefficients a2, b2, c2, d2.
+
+00:20:11.804 --> 00:20:13.533
+What do we get?
+
+00:20:13.533 --> 00:20:15.298
+We get this expression.
+
+00:20:15.298 --> 00:20:19.946
+Using the Collect function, 
+ we can gather the coefficients for x and y.
+
+00:20:19.946 --> 00:20:20.974
+Here...
+
+00:20:20.974 --> 00:20:30.515
+We see that the double application of the NewPoint transformation gives us a transformation of the same type,
+
+00:20:30.515 --> 00:20:35.934
+where a = a1a2+b2c1,
+
+00:20:35.934 --> 00:20:41.256
+the new b = a2b1+b2d1, and so on.
+
+00:20:41.256 --> 00:20:42.887
+So...
+
+00:20:43.624 --> 00:20:44.470
+Well, what...
+
+00:20:44.470 --> 00:20:46.278
+This is what is called matrix multiplication.
+
+00:20:46.278 --> 00:20:48.785
+This set of coefficients for matrix 1,
+
+00:20:48.785 --> 00:20:51.752
+this set of coefficients for matrix 2,
+
+00:20:51.752 --> 00:20:59.450
+and this new set of coefficients a, b, c, d
+is the result of multiplying matrices.
+
+00:21:00.489 --> 00:21:04.685
+I think it's very clear where this comes from.
+
+00:21:04.685 --> 00:21:10.280
+We want to apply these 
+ stretches and shears one after the other.
+
+00:21:10.280 --> 00:21:18.882
+One transformation has certain coefficients a1, b1, c1, d1, 
+ while the other has different ones.
+
+00:21:18.882 --> 00:21:26.712
+What will be the coefficients of the transformation obtained by applying sequentially, firstly the first one, then the second?
+
+00:21:26.712 --> 00:21:28.162
+Here's the answer.
+
+00:21:28.162 --> 00:21:37.366
+And in Mathematica, this answer is already built into the operator for multiplying two matrices.
+
+00:21:37.366 --> 00:21:40.434
+The first matrix is a1, b1, c1, d1.
+
+00:21:40.434 --> 00:21:42.559
+Here's the second matrix.
+
+00:21:42.559 --> 00:21:49.988
+We multiply them and then ask
+to write this in matrix form.
+
+00:21:49.988 --> 00:21:51.988
+It seems to match.
+
+00:21:55.541 --> 00:21:57.713
+Here's our matrix.
+
+00:21:57.713 --> 00:22:00.584
+Let's multiply it by itself several times.
+
+00:22:00.584 --> 00:22:04.897
+We'll find the numbers 34, 21.
+
+00:22:04.897 --> 00:22:15.542
+In mathematics, there's a function called MatrixPower, which allows you to compute the product of 8 such matrices.
+
+00:22:15.542 --> 00:22:17.138
+Okay.
+
+00:22:17.149 --> 00:22:20.893
+And here's our fourth definition of Fibonacci numbers.
+
+00:22:20.893 --> 00:22:28.490
+To get MatrixPower (1, 1, 1, 0),
+we take the first element of the first row.
+
+00:22:28.490 --> 00:22:34.009
+This is like the first row,
+and 34 is the first element in this case.
+
+00:22:34.009 --> 00:22:35.875
+Let's check how it works.
+
+00:22:35.875 --> 00:22:37.540
+It just works!
+
+00:22:37.540 --> 00:22:39.674
+How long does it take to work?
+
+00:22:39.674 --> 00:22:41.326
+Very fast.
+
+00:22:41.326 --> 00:22:43.205
+But let's compare anyway.
+
+00:22:43.205 --> 00:22:47.015
+First, let's try to define the MatrixPower function ourselves.
+
+00:22:47.015 --> 00:22:49.920
+Let's call it MatrixPower2.
+
+00:22:49.920 --> 00:22:51.417
+How will we define it?
+
+00:22:51.417 --> 00:22:55.629
+For n=0, we'll return the matrix
+that is equal to one.
+
+00:22:55.629 --> 00:23:00.843
+As usual for aⁿ.
+If n = 0, then one must be returned.
+
+00:23:00.854 --> 00:23:04.439
+And here we act in the world of matrices,
+so we need to return the identity matrix.
+
+00:23:04.439 --> 00:23:07.679
+The identity transformation matrix.
+
+00:23:07.679 --> 00:23:14.413
+If n &gt; 0, then we return m * m^(n-1).
+
+00:23:14.413 --> 00:23:18.022
+Let's check if this definition works.
+
+00:23:18.022 --> 00:23:19.868
+It seems to work.
+
+00:23:19.868 --> 00:23:21.331
+And it's quite fast.
+
+00:23:21.331 --> 00:23:23.599
+What about two thousand?
+
+00:23:23.599 --> 00:23:26.409
+Not instant anymore.
+
+00:23:26.409 --> 00:23:29.783
+It takes 0.038 seconds.
+
+00:23:31.124 --> 00:23:34.752
+Let's define mⁿ more efficiently.
+
+00:23:34.752 --> 00:23:40.506
+This is a very important code. The classic one.
+
+00:23:40.506 --> 00:23:42.197
+Let's analyse it.
+
+00:23:42.197 --> 00:23:50.036
+If n = 0, we return the identity matrix as before. The identity transformation matrix.
+
+00:23:50.807 --> 00:23:52.446
+And here's the interesting part...
+
+00:23:52.446 --> 00:23:54.678
+Here's an old option.
+
+00:23:54.678 --> 00:24:00.826
+If "n" modulo 2 (i.e. the remainder of n divided by 2) equals 0,
+
+00:24:00.826 --> 00:24:02.777
+then we do this.
+
+00:24:02.777 --> 00:24:05.380
+If "n" is odd, then it's this.
+
+00:24:05.380 --> 00:24:09.424
+So for odd "n", we do the old way.
+
+00:24:09.424 --> 00:24:15.446
+That is, we recursively call mⁿ⁻¹ and multiply it by m.
+
+00:24:15.446 --> 00:24:26.478
+And if "n" is even, we multiply "m" by itself and square the matrix m to the power of n/2.
+
+00:24:26.478 --> 00:24:33.932
+This is a cool idea if you need
+3 * 3 * 3 * 3 * 3 * 3.
+
+00:24:33.932 --> 00:24:36.535
+You can do this...
+
+00:24:36.535 --> 00:24:39.282
+You can multiply three by itself six times,
+
+00:24:39.282 --> 00:24:47.985
+or you can do 3 * 3, and then multiply the result of 3 * 3 three times.
+
+00:24:47.985 --> 00:24:52.081
+Multiply three numbers,
+that is, choose two multiplication operators.
+
+00:24:52.081 --> 00:24:54.081
+Of course, with the example of six, it's not that impressive,
+
+00:24:54.081 --> 00:24:58.666
+but imagine if you have 3²⁵⁶.
+
+00:24:58.666 --> 00:25:03.749
+So then you probably quickly understand that
+
+00:25:03.749 --> 00:25:12.653
+(3*3)^128 – is the big leap!  Not forward, but backwards. We are going to zero, not to the infinity.
+
+00:25:12.653 --> 00:25:17.904
+When "n" equals zero, we'll know the answer and return it immediately.
+
+00:25:17.904 --> 00:25:21.739
+We need to reduce "n" as quickly as possible using recursion.
+
+00:25:21.739 --> 00:25:26.253
+And this is a good way to reduce it. We half number n here.
+
+00:25:26.253 --> 00:25:27.550
+Okay...
+
+00:25:28.086 --> 00:25:29.617
+I know, it is quite vague explanation...
+
+00:25:29.617 --> 00:25:36.121
+Read it carefully, meditate on it, and you'll understand.
+
+00:25:36.121 --> 00:25:37.217
+It works.
+
+00:25:38.088 --> 00:25:40.586
+But how fast does it work?
+
+00:25:40.586 --> 00:25:44.819
+Oh! It takes only 0.007 seconds. 
+ Do you remember how long it was before?
+
+00:25:44.819 --> 00:25:50.137
+It was 0.03-0.04 seconds.
+
+00:25:54.695 --> 00:26:01.845
+Yes. The unoptimized version returns around 0.03-0.04.
+
+00:26:01.845 --> 00:26:05.897
+And here it is for 10000.
+
+00:26:05.897 --> 00:26:08.199
+But the numbers here are very large.
+
+00:26:08.199 --> 00:26:11.050
+Let's do a trick.
+
+00:26:11.050 --> 00:26:18.811
+Let's take it modulo 1597 in order not too much returns.
+
+00:26:20.621 --> 00:26:22.340
+There we go.
+
+00:26:22.943 --> 00:26:27.725
+And let's compare it with the built-in function MatrixPower.
+
+00:26:27.725 --> 00:26:29.356
+Oops! We've beaten it.
+
+00:26:29.356 --> 00:26:31.189
+Again...
+
+00:26:32.865 --> 00:26:36.424
+We've beaten it again! We're great.
+
+00:26:36.424 --> 00:26:42.466
+We've given such a definition to MatrixPower2o 
+(o – stands for optimized)
+
+00:26:42.466 --> 00:26:45.941
+that we've beaten the built-in MatrixPower function.
+
+00:26:45.941 --> 00:26:49.110
+Well, that's it for today.
+
+00:26:49.110 --> 00:26:55.970
+Of course, I haven't told you everything about matrices yet...
+
+00:26:55.970 --> 00:26:59.444
+A very important point, of course, I haven't mentioned.
+
+00:26:59.444 --> 00:27:03.601
+In this algorithm for computing matrices...
+
+00:27:03.601 --> 00:27:06.149
+Alright, let me delete this.
+
+00:27:06.149 --> 00:27:09.366
+...a very important property is explicitly used.
+
+00:27:09.366 --> 00:27:11.064
+Namely...
+
+00:27:11.064 --> 00:27:13.902
+Where are these matrices? Let me copy them.
+
+00:27:13.902 --> 00:27:15.432
+Here they are.
+
+00:27:15.432 --> 00:27:19.778
+...a very important property of matrices is:
+
+00:27:19.778 --> 00:27:21.982
+that I can group them however I want.
+
+00:27:21.982 --> 00:27:26.639
+I can group them like this.
+
+00:27:26.639 --> 00:27:29.477
+Like so...
+
+00:27:31.366 --> 00:27:38.326
+And the result doesn't depend on how I group them.
+
+00:27:39.734 --> 00:27:41.250
+This is a challenge.
+
+00:27:41.250 --> 00:27:43.250
+Try proving it yourself.
+
+00:27:43.250 --> 00:27:48.680
+This property is called the associative 
+ property of matrix multiplication.
+
+00:27:48.680 --> 00:27:53.001
+Also, I didn't mention that matrices can be not only 2x2, 
+ but also 3x3.
+
+00:27:53.001 --> 00:27:54.364
+But you can figure that out on your own.
+
+00:27:54.364 --> 00:27:57.795
+Instead of x, y and the transformation of x, y to a new x, y,
+
+00:27:57.795 --> 00:28:02.217
+we need to take the transformation of x, y, z.
+
+00:28:02.217 --> 00:28:08.620
+Task: write down the formula for multiplying 3x3 matrices.
+
+00:28:08.620 --> 00:28:17.537
+Ask Mathematica to perform the same operation we did.
+
+00:28:17.537 --> 00:28:20.140
+Here it is.
+
+00:28:20.940 --> 00:28:24.120
+Apply Collect  on expanded expression.
+
+00:28:24.120 --> 00:28:26.388
+You will have x, y, z here.
+
+00:28:26.388 --> 00:28:32.410
+And you need to see what the coefficients 
+ are in each row for x, y and z.
+
+00:28:33.382 --> 00:28:35.013
+Well, in general...
+
+00:28:35.013 --> 00:28:38.253
+there are many ideas for independent work,
+
+00:28:38.253 --> 00:28:42.845
+for independent mathematical experiments.
+
+00:28:42.845 --> 00:28:45.884
+Let's see how our viewer is doing.
+
+00:28:45.884 --> 00:28:48.460
+Great! Good bye!
+

@@ -1,0 +1,43 @@
+{
+  "number": "009",
+  "video_id": "Mc1wxCzegdg",
+  "youtube_url": "https://www.youtube.com/watch?v=Mc1wxCzegdg",
+  "directory": "videos/009-Mc1wxCzegdg",
+  "locales": {
+    "ru": {
+      "title": "9. Формула суммы корней √ 1 + √ 2 + √ 3 + ... Дзета функция в дробных точках (English subtitles)",
+      "metadata_file": "metadata.ru.json",
+      "title_file": "title.ru.txt",
+      "description_file": "description.ru.md",
+      "captions_file": "captions/ru.vtt",
+      "thumbnail_file": "thumbnails/ru.jpg"
+    },
+    "en": {
+      "title": "9. The formula for the sum of roots √ 1 + √ 2 + √ 3 + ... Zeta function at fractional points",
+      "metadata_file": "metadata.en.json",
+      "title_file": "title.en.txt",
+      "description_file": "description.en.md",
+      "captions_file": "captions/en.vtt",
+      "thumbnail_file": "thumbnails/en.jpg"
+    }
+  },
+  "tags_file": "tags.json",
+  "notebooks": [
+    {
+      "path": "yt-channel/012-sin-zeta.nb",
+      "relationship": "related_companion_not_exact_video_source"
+    }
+  ],
+  "exact_notebook_source_found": false,
+  "thumbnail_editable_sources": [
+    {
+      "path": "thumbnail-sources/pictures-4.ru.pptx",
+      "slide": 4,
+      "kind": "PowerPoint",
+      "language": "ru"
+    }
+  ],
+  "metadata_source": "YouTube Data API videos.list; actual existing ru/en localizations; fetched 2026-10-19T13:37:26.821577+00:00",
+  "english_thumbnail_method": "Image generation edit of the original, with explicit translation and style preservation",
+  "description_link_status": "prepared; YouTube application tracked separately"
+}

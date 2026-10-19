@@ -1,0 +1,2016 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:01.426 --> 00:00:05.319
+Hello, everyone! My name is Artem Vorozhtsov.
+
+00:00:05.319 --> 00:00:08.629
+And today I'm going to talk about Fibonacci numbers.
+
+00:00:08.629 --> 00:00:12.662
+It is impossible to tell the full story about Fibonacci numbers ,  I'll try to cover just tiny portion.
+
+00:00:12.662 --> 00:00:13.643
+So...
+
+00:00:13.643 --> 00:00:20.686
+Fibonacci numbers are numbers like: 1, 1, 2, 3, 4, 5, 8, 13, ... and so on.
+
+00:00:20.686 --> 00:00:24.943
+Each number is the sum of the two preceding ones.
+
+00:00:24.943 --> 00:00:31.959
+We've defined this explicitly with the expression F[n_] := F[n-1]+F[n-2];
+
+00:00:31.959 --> 00:00:33.875
+Will it work?
+
+00:00:33.875 --> 00:00:35.657
+No, it won't...
+
+00:00:35.657 --> 00:00:37.941
+Recursion depth exceeded...
+
+00:00:37.941 --> 00:00:42.562
+Because it doesn't know
+what the first two Fibonacci numbers are.
+
+00:00:42.562 --> 00:00:45.326
+They are 1, 1.
+We need to specify them.
+
+00:00:45.326 --> 00:00:47.396
+Let's be imperative programmers for a moment
+
+00:00:47.396 --> 00:00:59.679
+and define a function F1 that returns 1 if n=0 or n=1
+(two vertical lines " || " mean "or").
+
+00:00:59.679 --> 00:01:03.984
+Otherwise, it returns F[n-1]+F[n-2].
+
+00:01:03.984 --> 00:01:07.578
+In other words, it recursively returns itself
+with smaller parameters.
+
+00:01:07.578 --> 00:01:09.833
+Let's check if this works...
+
+00:01:09.833 --> 00:01:12.735
+Yes, it works. 10946.
+
+00:01:12.735 --> 00:01:13.934
+Moving on.
+
+00:01:13.934 --> 00:01:16.662
+Range [0, 20].
+
+00:01:16.662 --> 00:01:25.822
+Apply the function F1 to all these numbers:
+0, 1, 2, 3, 4, 5, and so on.
+
+00:01:25.822 --> 00:01:31.632
+Interestingly enough, the same result could be obtained from this "not working" definition.
+
+00:01:31.632 --> 00:01:34.069
+Just had to add two more lines.
+
+00:01:34.069 --> 00:01:37.051
+Like this.
+
+00:01:37.051 --> 00:01:38.214
+Let's check...
+
+00:01:38.214 --> 00:01:39.158
+Yes!
+
+00:01:39.158 --> 00:01:41.304
+It works.
+
+00:01:41.304 --> 00:01:48.056
+Programmers (imperative) might wonder:
+What's the hack? How can these three lines work?
+
+00:01:48.056 --> 00:01:52.349
+They are defined independently of each other,
+
+00:01:52.349 --> 00:01:56.452
+and for some reason, the first line led to infinite recursion,
+
+00:01:56.452 --> 00:02:02.059
+but these two additional lines remove this infinite recursion.
+
+00:02:02.059 --> 00:02:04.617
+I'll explain it like this:
+
+00:02:04.617 --> 00:02:11.169
+You can think about it as polymorphism.
+Symbol F represents two different objects.
+
+00:02:11.169 --> 00:02:15.867
+On one hand, it is function F (":=" rule),  and on the other hand, it is a dictionary ("=" rule).
+
+00:02:15.867 --> 00:02:18.045
+And Mathematica does the following:
+
+00:02:18.045 --> 00:02:26.273
+when an expression with F comes in, it first checks if there is already a ready answer in the dictionary  F,
+
+00:02:26.273 --> 00:02:30.549
+and if not, then it goes to function F[n_].
+
+00:02:30.549 --> 00:02:38.108
+Let's see what, for example, 
+ F[n_] will be equal to if we write xxx here.
+
+00:02:38.108 --> 00:02:40.668
+The first definition worked.
+
+00:02:40.668 --> 00:02:45.417
+Note that it did not move on further...
+
+00:02:45.417 --> 00:02:50.281
+Or rather, it did move on further,
+found the recursion and stopped.
+
+00:02:50.281 --> 00:02:52.170
+Good.
+
+00:02:52.170 --> 00:02:53.611
+Let's erase this.
+
+00:02:53.611 --> 00:02:55.209
+Now...
+
+00:02:55.209 --> 00:02:58.712
+The new F works just like F1.
+
+00:02:58.712 --> 00:03:08.344
+F[25] is computed in about half a second,
+
+00:03:08.344 --> 00:03:16.454
+and F1[25] is computed in just over a second.
+
+00:03:16.454 --> 00:03:23.436
+Thus, function F1 computes
+25 Fibonacci numbers for over a second,
+
+00:03:23.436 --> 00:03:29.387
+while function F does it in half a second – that's a lot.
+
+00:03:29.387 --> 00:03:35.897
+To make the calculations more efficient,
+let's add memorization.
+
+00:03:35.897 --> 00:03:38.146
+Memorization is done like this:
+
+00:03:38.146 --> 00:03:49.214
+We define the function F2 in a very similar way,
+but add F2[n]= inside it.
+
+00:03:49.214 --> 00:03:53.773
+Here again, a colon equals " := " defines a function (SetDelayed-rule),
+
+00:03:53.773 --> 00:04:00.000
+while an equals sign " = " puts 
+ the value of n into the dictionary F2 (Set-rule).
+
+00:04:00.001 --> 00:04:04.923
+So, the function F2[n] is defined as follows:
+
+00:04:04.923 --> 00:04:12.806
+We need to evaluate this expression, get a numerical result, and save it in the dictionary F2.
+
+00:04:12.806 --> 00:04:15.966
+Only then we return this value.
+
+00:04:15.966 --> 00:04:18.782
+Let's check...
+
+00:04:18.782 --> 00:04:25.996
+It's practically instantaneous,
+we can replace it with 35 and get even more numbers.
+
+00:04:25.996 --> 00:04:35.101
+Let me illustrate this idea with an example where one symbol can be both a function and a dictionary.
+
+00:04:35.101 --> 00:04:37.256
+Using the symbol g.
+
+00:04:37.256 --> 00:04:40.000
+g[n_] is equal to n as a function.
+
+00:04:40.000 --> 00:04:45.264
+g[n_, a_] as a function of two variables is equal to n + a.
+
+00:04:45.264 --> 00:04:51.827
+And we also defined 3 values of g at three points.
+We stored them in the dictionary g.
+
+00:04:51.827 --> 00:04:56.704
+Let's check...
+
+00:04:56.704 --> 00:04:58.704
+The first line worked here.
+
+00:04:58.704 --> 00:05:00.758
+The second line worked here.
+
+00:05:00.758 --> 00:05:03.979
+g[42]...
+
+00:05:03.979 --> 00:05:05.299
+Correct.
+
+00:05:05.299 --> 00:05:06.913
+g[b] = 3
+
+00:05:06.913 --> 00:05:13.647
+Interestingly, if we write b = 2 and evaluate g[b] again,
+
+00:05:13.647 --> 00:05:15.865
+we get a different result.
+
+00:05:15.865 --> 00:05:24.308
+The reason is that this line was executed 
+ when " b " was an undefined symbol.
+
+00:05:24.308 --> 00:05:31.186
+And that's exactly how it was stored in the dictionary g:
+g of the symbol b is equal to 3.
+
+00:05:31.186 --> 00:05:38.791
+Here, in square brackets, it's not the symbol "b", 
+ but the number 2.
+
+00:05:38.791 --> 00:05:44.012
+g[a] = a, the first line of the definition is executed here.
+
+00:05:44.012 --> 00:05:50.583
+By the way, we can view all of these definitions 
+ using the Definition function.
+
+00:05:50.583 --> 00:05:56.366
+And with the FullDefinition function, we can see more.
+
+00:05:56.366 --> 00:05:58.967
+First of all, we see all the definitions,
+
+00:05:58.967 --> 00:06:04.272
+and also he writes some additional definitions of symbols
+
+00:06:04.272 --> 00:06:13.659
+that appear in the right side of SetDelayed rule (to the right of the ":=").
+
+00:06:13.659 --> 00:06:18.319
+Let's check the status of our audience.
+
+00:06:18.319 --> 00:06:19.806
+Oh...
+
+00:06:19.806 --> 00:06:22.407
+It seems like brains have exploded.
+
+00:06:22.407 --> 00:06:24.149
+Well, let's be more careful.
+
+00:06:24.149 --> 00:06:29.121
+Moving on to the next point - Continued Fractions.
+
+00:06:29.121 --> 00:06:37.692
+A continued fraction is such a multi-story expression where arbitrary numbers can be used instead of ones.
+
+00:06:37.692 --> 00:06:40.000
+Instead of these ones.
+
+00:06:40.000 --> 00:06:42.301
+Well, instead of these ones too.
+
+00:06:42.301 --> 00:06:45.718
+Let's see what we get...
+
+00:06:45.718 --> 00:06:48.749
+1/2
+
+00:06:48.749 --> 00:06:52.295
+2/3
+
+00:06:52.295 --> 00:06:55.841
+3/5
+
+00:06:55.841 --> 00:06:58.485
+5/8
+
+00:06:58.485 --> 00:07:00.227
+Moving on...
+
+00:07:00.227 --> 00:07:05.277
+Let's define this multilevel fraction.
+
+00:07:05.277 --> 00:07:07.749
+How do we do that?
+
+00:07:07.749 --> 00:07:15.200
+Let me temporarily put the letter x here
+
+00:07:15.200 --> 00:07:25.617
+and write what Fib[4] is equal to.
+
+00:07:25.617 --> 00:07:29.513
+Fib[4] is equal to this.
+
+00:07:29.513 --> 00:07:34.863
+If we remove x from here,
+
+00:07:34.863 --> 00:07:38.709
+it immediately calculates the entire expression as 5/8.
+
+00:07:38.709 --> 00:07:40.902
+5
+
+00:07:40.902 --> 00:07:41.723
+6
+
+00:07:41.723 --> 00:07:43.318
+Looks like it works.
+
+00:07:43.318 --> 00:07:44.545
+Okay.
+
+00:07:44.545 --> 00:07:50.912
+Let's calculate for the first 20 natural numbers.
+
+00:07:50.912 --> 00:07:57.636
+It's clear that this is the ratio of neighboring Fibonacci numbers.
+
+00:07:57.636 --> 00:08:03.630
+To get the numerator of these numbers, 
+ we need to call the Numerator function.
+
+00:08:03.630 --> 00:08:07.648
+Let's see how quickly Numerator works.
+
+00:08:07.648 --> 00:08:12.354
+Also fast.
+
+00:08:12.354 --> 00:08:19.560
+Although this is 10 times slower than the F2 function.
+
+00:08:19.560 --> 00:08:22.955
+The next interesting topic.
+
+00:08:22.955 --> 00:08:30.882
+Another place where Fibonacci numbers appear is
+in the partitioning of a rectangle into squares.
+
+00:08:30.882 --> 00:08:39.141
+Here. We now have an image
+on which I can explain what I'm going to do.
+
+00:08:39.141 --> 00:08:43.245
+Let's say we have some rectangle.
+
+00:08:43.245 --> 00:08:53.276
+We will take the smaller of its sides 
+ and draw a square attached to it from the inside.
+
+00:08:53.276 --> 00:08:56.736
+We get the remainder. The remainder is also a rectangle.
+
+00:08:56.736 --> 00:09:01.055
+We will find the smaller side in it
+and attach a square to it in the same way.
+
+00:09:01.055 --> 00:09:03.742
+Let's assume that at the top.
+
+00:09:03.742 --> 00:09:07.503
+We will again get a rectangle.
+
+00:09:07.503 --> 00:09:11.736
+We will also find the smaller side in it
+and draw a square.
+
+00:09:11.736 --> 00:09:14.896
+Here, it turned out that square, square, square...
+
+00:09:14.896 --> 00:09:17.411
+I cut off one square each time,
+
+00:09:17.411 --> 00:09:20.484
+because that's how I already chose.
+
+00:09:20.484 --> 00:09:29.369
+But if you take 27/8,
+such a longer rectangle,
+
+00:09:29.369 --> 00:09:33.688
+then at first we will have to cut off three squares.
+
+00:09:33.688 --> 00:09:37.363
+Okay, we get such a vertical rectangle.
+
+00:09:37.363 --> 00:09:39.492
+So we cut off a square from the top...
+
+00:09:39.492 --> 00:09:40.353
+Not enough...
+
+00:09:40.353 --> 00:09:42.353
+Let's cut off one more...
+
+00:09:42.353 --> 00:09:46.688
+And now we have a lying rectangle.
+
+00:09:46.688 --> 00:09:51.264
+From it, we cut off a square on the right
+and there are still two squares left.
+
+00:09:51.264 --> 00:09:55.282
+That's how it goes...
+
+00:09:55.282 --> 00:09:59.051
+If we write 8 here, nothing will change.
+
+00:09:59.051 --> 00:10:03.413
+8 is how many steps we need to take.
+
+00:10:03.413 --> 00:10:07.346
+1, 2, 3, 4, 5, 6, 7, 8
+
+00:10:07.346 --> 00:10:10.000
+The first one doesn't count, apparently.
+
+00:10:10.000 --> 00:10:15.201
+Eight steps are enough, 
+ so further increasing this number will not lead to anything.
+
+00:10:15.201 --> 00:10:17.634
+Let's go back up.
+
+00:10:17.634 --> 00:10:18.879
+So...
+
+00:10:18.879 --> 00:10:25.002
+The function SplitToSquares should split the rectangle,
+
+00:10:25.002 --> 00:10:33.314
+wich has the bottom left corner at x1, y1,
+the top right corner at x2, y2,
+
+00:10:33.314 --> 00:10:35.805
+into n parts.
+
+00:10:35.805 --> 00:10:40.000
+Well, into n minus one square and what's left.
+
+00:10:40.000 --> 00:10:42.129
+So...
+
+00:10:42.129 --> 00:10:46.453
+We use Module and temporary variables a, b.
+
+00:10:46.453 --> 00:10:54.208
+If you want to write a complex function with local variables, use Module.
+
+00:10:54.208 --> 00:10:58.579
+If n = 0, that is, there are 0 steps left,
+
+00:10:58.579 --> 00:11:02.425
+then we take and return this rectangle as is.
+
+00:11:02.425 --> 00:11:04.128
+Yes, I know. Too many curly braces...
+
+00:11:04.128 --> 00:11:10.708
+Well, yes, because I want to return a list with one figure.
+
+00:11:10.708 --> 00:11:15.378
+The fact that it is a list is indicated by the curly braces.
+
+00:11:15.378 --> 00:11:18.727
+One figure is a list of pairs.
+
+00:11:18.727 --> 00:11:23.261
+These are the second set of curly braces and the third ones.
+
+00:11:23.261 --> 00:11:31.145
+Now if we have more steps left,
+I want to return a list of more than one figure.
+
+00:11:31.145 --> 00:11:37.740
+I calculate side a, side b,
+and finding out which side is smaller.
+
+00:11:37.740 --> 00:11:41.044
+a is the length of x2 - x1.
+
+00:11:41.044 --> 00:11:42.700
+b is the height.
+
+00:11:42.700 --> 00:11:54.407
+If a&lt;b, meaning our rectangle is in portrait orientation,
+then we need to cut off one square from the top.
+
+00:11:54.407 --> 00:11:56.922
+How do we cut off one square from the top?
+
+00:11:56.922 --> 00:11:58.230
+This square.
+
+00:11:58.230 --> 00:12:06.057
+Indeed, the height of this square is a,
+because it's y2 minus this expression.
+
+00:12:06.057 --> 00:12:11.077
+And the width of this square is also a,
+because it's x2 - x1.
+
+00:12:11.077 --> 00:12:14.709
+This is the square that we cut off.
+
+00:12:14.709 --> 00:12:18.040
+And we're left with a rectangle with these coordinates.
+
+00:12:18.040 --> 00:12:19.568
+Check it.
+
+00:12:19.568 --> 00:12:23.243
+We need to cut it into n-1 pieces.
+
+00:12:23.243 --> 00:12:25.715
+Checking...
+
+00:12:25.715 --> 00:12:29.218
+Cutting...
+
+00:12:29.218 --> 00:12:37.788
+I asked to cut the rectangle 13/8
+and make 2 cuts, which resulted in 3 figures.
+
+00:12:37.788 --> 00:12:44.684
+And if you ask for more cuts to be made,
+this is what we get.
+
+00:12:44.684 --> 00:12:45.803
+Okay.
+
+00:12:45.803 --> 00:12:50.208
+The Graphics function takes a list of directives as its argument.
+
+00:12:50.208 --> 00:12:55.644
+The first directive is Hue,
+to select a color with these parameters.
+
+00:12:55.644 --> 00:13:00.264
+The second directive is Rectangle. Draw a Rectangle.
+
+00:13:00.264 --> 00:13:04.798
+I'll show you how to work with Hue.
+
+00:13:04.798 --> 00:13:11.200
+When you type Hue, it suggests you to select the color you need in the selector.
+
+00:13:11.200 --> 00:13:15.133
+Okay, click and the necessary parameters are substituted.
+
+00:13:15.133 --> 00:13:22.372
+Then you execute it and see the rectangle you need.
+
+00:13:22.372 --> 00:13:26.931
+Color scheme number 10, we'll use it.
+
+00:13:26.931 --> 00:13:30.000
+This is what I already showed you.
+
+00:13:30.000 --> 00:13:36.428
+Let's explicitly write that
+the coordinates are equal to Fibonacci numbers.
+
+00:13:36.428 --> 00:13:44.827
+That is, we want to take a rectangle
+whose sides are neighboring Fibonacci numbers,
+
+00:13:44.827 --> 00:13:50.649
+and divide it into squares. n - 1 squares.
+
+00:13:50.649 --> 00:13:55.956
+Let's check how it all works...
+
+00:13:55.956 --> 00:14:02.897
+I take it and get a list of squares.
+
+00:14:02.897 --> 00:14:04.596
+Next.
+
+00:14:04.596 --> 00:14:10.848
+I take Range[Length[sqs]]
+(from one to the number of squares).
+
+00:14:10.848 --> 00:14:15.080
+And this becomes my variable i.
+
+00:14:15.080 --> 00:14:16.994
+i = #
+
+00:14:16.994 --> 00:14:21.098
+These parentheses here are the expression.
+
+00:14:21.098 --> 00:14:24.730
+It is denoted as a function of the hash.
+
+00:14:24.730 --> 00:14:29.693
+But inside this expression, we immediately send the hash value to the i variable.
+
+00:14:29.693 --> 00:14:34.012
+And then we write not " # ", but " i ".
+
+00:14:34.012 --> 00:14:38.889
+It's more visual than using the hash everywhere.
+
+00:14:38.889 --> 00:14:44.442
+i is an index. Index of the square in the sqs array.
+
+00:14:44.442 --> 00:14:51.556
+We take a Rectangle with vertices equal to this square.
+
+00:14:51.556 --> 00:14:52.334
+Like this.
+
+00:14:52.334 --> 00:15:01.287
+And we take its color from the colors array,
+which I calculated above.
+
+00:15:01.287 --> 00:15:06.911
+As a result, we get a list of pairs. A list of directives.
+
+00:15:06.911 --> 00:15:08.367
+Set this color.
+
+00:15:08.367 --> 00:15:10.000
+Draw a Rectangle.
+
+00:15:10.000 --> 00:15:13.140
+We turn this list of pairs into just a list.
+
+00:15:13.140 --> 00:15:18.268
+Flatten means to turn a list of lists into a list.
+
+00:15:18.268 --> 00:15:22.888
+It removes the inner brackets.
+
+00:15:22.888 --> 00:15:26.692
+We draw and get what we see on the screen.
+
+00:15:26.692 --> 00:15:28.177
+Good!
+
+00:15:28.177 --> 00:15:34.214
+By the way, here we have a proof of a very interesting theorem.
+
+00:15:34.214 --> 00:15:41.539
+The sum of the squares of Fibonacci numbers that are involved here equals the area of the entire rectangle.
+
+00:15:41.539 --> 00:15:46.073
+And the area of the rectangle is the product of adjacent Fibonacci numbers.
+
+00:15:46.073 --> 00:15:49.785
+So, we take the product of adjacent Fibonacci numbers,
+
+00:15:49.785 --> 00:15:56.552
+and it should be equal to the sum 
+ of the squares of all previous Fibonacci numbers.
+
+00:15:56.552 --> 00:15:57.908
+Let's check...
+
+00:15:57.908 --> 00:16:00.252
+Here's the sum of the squares,
+
+00:16:00.252 --> 00:16:02.080
+and here's the product.
+
+00:16:02.080 --> 00:16:06.550
+The sum of squares from zero to the fourth,
+
+00:16:06.550 --> 00:16:09.558
+and the product of the fourth and fifth.
+
+00:16:09.558 --> 00:16:11.343
+They match!
+
+00:16:11.343 --> 00:16:12.817
+We can verify this...
+
+00:16:12.817 --> 00:16:14.388
+Here are the Fibonacci numbers.
+
+00:16:14.388 --> 00:16:16.388
+Here are their squares.
+
+00:16:16.388 --> 00:16:20.492
+The square is a magical function. It is Listable. It threads through the list.
+
+00:16:20.492 --> 00:16:29.753
+It threads through the list.
+That is, when called on a list, we get a list 
+ in which this function is applied to each element.
+
+00:16:29.753 --> 00:16:32.983
+I remind you what Accumulate is.
+
+00:16:32.983 --> 00:16:40.652
+Accumulate of a list is a list
+consisting of the sum of various prefixes.
+
+00:16:40.652 --> 00:16:43.405
+Prefix is the beginning of a list.
+
+00:16:43.405 --> 00:16:47.861
+The beginning of the list "a",
+The beginning of the list "a + b",
+The beginning of the list "a + b + c".
+
+00:16:47.861 --> 00:16:53.340
+All possible prefixes are aggregated by summation.
+
+00:16:53.340 --> 00:16:59.572
+Let's sum up all the prefixes of the squares 
+ of Fibonacci numbers.
+
+00:16:59.572 --> 00:17:02.001
+This is what we will get.
+
+00:17:02.001 --> 00:17:04.903
+And now let's take the Fibonacci numbers...
+
+00:17:04.903 --> 00:17:10.854
+and take the Fibonacci numbers shifted by one and multiply these two lists.
+
+00:17:10.854 --> 00:17:18.781
+See? These Fibonacci numbers start at 1, 1, 2, and these start at 1, 2, 3.
+
+00:17:18.781 --> 00:17:20.000
+Multiplying:
+
+00:17:20.000 --> 00:17:22.344
+1 * 1 = 1
+
+00:17:22.344 --> 00:17:24.859
+1 * 2 = 2
+
+00:17:24.859 --> 00:17:27.937
+2 * 3 = 6
+
+00:17:27.937 --> 00:17:33.287
+This is how you multiply two lists.
+Simply place a multiplication sign between them.
+
+00:17:33.287 --> 00:17:37.435
+3 * 2 = 6
+
+00:17:37.435 --> 00:17:42.854
+3 * 5 = 15, everything matches
+
+00:17:42.854 --> 00:17:46.787
+5 * 8 = 40
+
+00:17:46.787 --> 00:17:54.628
+So, what do you think? Let's see your status...
+
+00:17:54.628 --> 00:17:58.303
+Okay... what is this?
+
+00:17:58.303 --> 00:18:00.518
+Alright. I'll be more careful.
+
+00:18:00.518 --> 00:18:03.334
+Now we're going to move on to a simpler topic.
+
+00:18:03.334 --> 00:18:08.107
+Oh, no.
+It's not going to be simpler, it's just going to be more interesting.
+
+00:18:08.107 --> 00:18:13.103
+Let's immediately make sure
+that all of our graphs have GridLines.
+
+00:18:13.103 --> 00:18:19.698
+I'll write that F = F2 and now,
+hopefully, everything will be faster.
+
+00:18:19.698 --> 00:18:21.011
+Slap!
+
+00:18:21.011 --> 00:18:23.244
+There they are!
+
+00:18:23.244 --> 00:18:26.446
+A thousand Fibonacci numbers.
+
+00:18:29.796 --> 00:18:32.088
+A lot of digits...
+
+00:18:32.088 --> 00:18:34.088
+Oh, it didn't fit.
+
+00:18:34.088 --> 00:18:35.232
+Well, okay...
+
+00:18:35.232 --> 00:18:36.242
+We have to hide this somehow.
+
+00:18:36.242 --> 00:18:38.242
+There, it's hidden.
+
+00:18:38.242 --> 00:18:43.753
+Let's erase it and put a semicolon here
+so that it doesn't output everything.
+
+00:18:43.753 --> 00:18:46.913
+Let it store the result in an array called fibs.
+
+00:18:46.913 --> 00:18:50.215
+And let's have it draw the logarithm of these numbers.
+
+00:18:50.215 --> 00:18:55.723
+I took the logarithm right away
+because without it, things get really sad.
+
+00:18:55.723 --> 00:19:01.492
+If we remove the logarithm
+and take the first 10 numbers, we get this image:
+
+00:19:01.492 --> 00:19:04.780
+But if we take the first 100 numbers, it looks like this.
+
+00:19:04.780 --> 00:19:09.510
+In general, it's meaningless to observe it.
+
+00:19:09.510 --> 00:19:12.181
+Everything is at the bottom, and then it goes up.
+
+00:19:12.181 --> 00:19:16.243
+Because Fibonacci numbers grow very quickly.
+
+00:19:16.243 --> 00:19:18.485
+And this can be seen in this plot.
+
+00:19:18.485 --> 00:19:22.272
+What is a logarithm? Perhaps not everyone knows.
+
+00:19:22.272 --> 00:19:24.701
+Essentially, it is the number of digits.
+
+00:19:24.701 --> 00:19:27.690
+We saw that the number of digits...
+
+00:19:27.690 --> 00:19:33.727
+Ha! What do you think of that definition?
+A logarithm is the number of digits.
+
+00:19:33.727 --> 00:19:39.810
+The Take function 
+ takes a certain number of elements from an array,
+
+00:19:39.810 --> 00:19:51.773
+and it can be seen that the number of digits 
+ grows with each step by a certain amount.
+
+00:19:51.773 --> 00:19:53.336
+Well, not with each step...
+
+00:19:53.336 --> 00:20:01.478
+Here we have a sequence of two-digit numbers, then a sequence of three-digit numbers, then a sequence of four-digit numbers...
+
+00:20:01.478 --> 00:20:10.854
+The point is that the number of numbers with the same number of decimal digits is roughly the same.
+
+00:20:10.854 --> 00:20:18.086
+Look again:
+1, 2, 3, 4, 5,
+
+00:20:18.086 --> 00:20:19.503
+and there were 4.
+
+00:20:19.503 --> 00:20:25.289
+How many six-digit numbers will there be?
+1, 2, 3, 4, 5
+
+00:20:25.289 --> 00:20:33.926
+How many seven-digit numbers will there be?
+1, 2, 3, 4, 5
+
+00:20:33.926 --> 00:20:37.018
+This is logarithmic growth,
+
+00:20:37.018 --> 00:20:48.045
+when roughly the same number of steps are taken to add the next digit in some representation, such as decimal.
+
+00:20:48.045 --> 00:20:51.106
+A logarithm is...
+
+00:20:51.106 --> 00:20:54.344
+Let me give you some definition.
+
+00:20:54.344 --> 00:21:00.338
+Log[2, 8] = 3
+
+00:21:00.338 --> 00:21:06.924
+How many times do we need to multiply 2 by itself to get 8?
+
+00:21:06.924 --> 00:21:09.579
+Log[2, 16] = 4
+
+00:21:09.579 --> 00:21:18.328
+If we don't write 2 here, then we take some other number as the base, which is called "e".
+
+00:21:18.328 --> 00:21:26.043
+And we can numerically find out what Log[16] equals.
+
+00:21:26.043 --> 00:21:27.497
+Okay.
+
+00:21:27.497 --> 00:21:31.754
+The logarithm grows approximately linearly.
+
+00:21:31.754 --> 00:21:36.012
+Linearly means that you can put a ruller on your plot
+
+00:21:36.012 --> 00:21:40.000
+and see that they are approximately on a line.
+
+00:21:40.000 --> 00:21:45.749
+Let's find this linear function.
+
+00:21:45.749 --> 00:21:53.462
+For this we use the function Fit - the simplest function 
+ for regression.
+
+00:21:53.462 --> 00:21:59.539
+To find some approximate functions for your number series.
+
+00:21:59.539 --> 00:22:04.162
+0.48x
+
+00:22:04.162 --> 00:22:12.868
+We see that the Fibonacci numbers 
+ are approximately a geometric progression.
+
+00:22:12.868 --> 00:22:22.876
+When the logarithm of the numbers grows linearly, it means that we are dealing with approximately a geometric progression.
+
+00:22:22.876 --> 00:22:28.006
+Let's find the power of this geometric progression.
+
+00:22:28.006 --> 00:22:29.351
+Approximately.
+
+00:22:29.351 --> 00:22:32.491
+For this, we need to divide adjacent 2 Fibonacci numbers.
+
+00:22:32.491 --> 00:22:39.662
+Well, we no longer have F2, we made it so that F = F2
+
+00:22:39.662 --> 00:22:41.494
+Here's the number...
+
+00:22:41.494 --> 00:22:43.094
+Oops...
+
+00:22:43.094 --> 00:22:47.569
+If there were some Gauss or Euler with us...
+
+00:22:47.569 --> 00:22:51.594
+he would say: Ah, I know this number!
+
+00:22:51.594 --> 00:22:55.902
+More precisely, he would say it in German...
+
+00:22:55.902 --> 00:23:06.383
+But in general, of course, any mathematician recognizes this number, as well as ancient Greek architects...
+
+00:23:06.383 --> 00:23:10.000
+This is the number φ "phi" - the Golden Ratio.
+
+00:23:10.000 --> 00:23:14.162
+Let's write more digits.
+
+00:23:14.162 --> 00:23:20.000
+1.618033988...
+
+00:23:20.000 --> 00:23:22.582
+Remember it.
+
+00:23:22.582 --> 00:23:25.583
+And let's draw 2 graphs now.
+
+00:23:25.583 --> 00:23:27.765
+Our original graph...
+
+00:23:27.765 --> 00:23:30.462
+and here is the result of fitting.
+
+00:23:30.462 --> 00:23:33.517
+Fitting is the same as adjustment.
+
+00:23:33.517 --> 00:23:38.320
+We can draw it like this in different colors.
+
+00:23:38.320 --> 00:23:43.378
+Let's draw the dots in blue and the line in red.
+
+00:23:43.378 --> 00:23:48.581
+Now let's do something that's typical for researchers.
+
+00:23:48.581 --> 00:23:55.875
+Let's try to study these deviations.
+Microscopic deviations from the red line.
+
+00:23:55.875 --> 00:23:59.294
+At first, they're big and then they get smaller and smaller.
+
+00:23:59.294 --> 00:24:14.952
+To do this, we need to subtract the approximate value of the logarithm of the Fibonacci numbers from the list of true values of the logarithm of the Fibonacci numbers.
+
+00:24:14.952 --> 00:24:19.609
+The approximate values look like this, I remind you.
+
+00:24:19.609 --> 00:24:23.829
+Where x is n.
+
+00:24:23.829 --> 00:24:29.797
+And instead of x, we substitute Range[100],
+which is the first 100 natural numbers.
+
+00:24:29.797 --> 00:24:33.332
+And we get...
+
+00:24:33.332 --> 00:24:37.916
+We've fitted. It's clear that the difference in logarithms is small.
+
+00:24:37.916 --> 00:24:43.119
+At first, it jumps around, then it goes here.
+
+00:24:43.119 --> 00:24:52.888
+Honestly, it's not very good. Because then it will go away.
+
+00:24:52.888 --> 00:24:57.399
+Yes, it's not very good further.
+
+00:24:57.399 --> 00:25:02.493
+That is, it fitted it, but only in the vicinity of [0, 100].
+
+00:25:02.493 --> 00:25:08.716
+But in general, this fitting works poorly at infinity, it goes down.
+
+00:25:08.716 --> 00:25:17.414
+It's visible. And further, most likely, 
+ it takes arbitrarily small values.
+
+00:25:17.414 --> 00:25:25.700
+Okay, but now we'll take not the result of the fitting, but directly the logarithm of φ.
+
+00:25:25.700 --> 00:25:26.753
+Slap!
+
+00:25:26.753 --> 00:25:29.554
+Oh! That's different!
+
+00:25:29.554 --> 00:25:31.703
+A smooth curve.
+
+00:25:31.703 --> 00:25:35.013
+He knows φ with absolute accuracy.
+
+00:25:35.013 --> 00:25:47.023
+And here we used such a trick:
+that if you subtract one list from another, 
+ you get the difference of the lists.
+
+00:25:47.023 --> 00:25:50.552
+A list of differences.
+
+00:25:50.552 --> 00:25:58.303
+Now let's add the constant 0.3235 that we have obtained.
+
+00:25:58.303 --> 00:26:01.249
+More precisely, we need to do the following:
+
+00:26:01.249 --> 00:26:05.761
+Add 0.32 -&gt; undershoot, cause we have negative numbers.
+
+00:26:05.761 --> 00:26:11.292
+Okay, let's write 0.325 here -&gt;positive numbers,  it is overshoot.
+
+00:26:11.292 --> 00:26:19.080
+Okay, so we write 0.324 -&gt; still overshoot...
+
+00:26:19.080 --> 00:26:21.408
+0.323 -&gt; undershoot.
+
+00:26:21.408 --> 00:26:24.209
+So between three and four...
+
+00:26:24.209 --> 00:26:28.399
+I write 0.3235.
+
+00:26:28.399 --> 00:26:31.600
+0.3235 - this is an undershoot.
+
+00:26:31.600 --> 00:26:35.893
+0.3237 - overshoot.
+
+00:26:35.893 --> 00:26:42.371
+0.3236, 0.3235.
+
+00:26:42.371 --> 00:26:47.931
+Between 5 and 6, so I write 55.
+
+00:26:47.931 --> 00:26:52.151
+Next, 55 -&gt; overshoot.
+
+00:26:52.151 --> 00:26:55.825
+I write 4...
+
+00:26:55.825 --> 00:26:59.026
+I write 3...
+
+00:26:59.026 --> 00:27:01.790
+I write 2...
+
+00:27:01.790 --> 00:27:05.974
+I write 1...
+
+00:27:05.974 --> 00:27:10.000
+Still the same. I write 0...
+
+00:27:10.000 --> 00:27:12.194
+There. Okay.
+
+00:27:12.194 --> 00:27:16.450
+I write 5 here -&gt; undershoot.
+
+00:27:16.450 --> 00:27:19.688
+I write 7 here -&gt; undershoot.
+
+00:27:19.688 --> 00:27:24.345
+I write 8 here -&gt; overshoot.
+
+00:27:24.345 --> 00:27:26.818
+So between 7 and 8.
+
+00:27:26.818 --> 00:27:33.914
+Writing 75 -&gt; overshoot.
+
+00:27:33.914 --> 00:27:40.392
+Writing 73... 71
+
+00:27:40.392 --> 00:27:45.972
+71 - undershoot. So the next number is 5.
+
+00:27:45.972 --> 00:27:53.250
+Gradually, we are learning the truth about this constant.
+
+00:27:53.250 --> 00:27:58.728
+Even better than what fitting gave us earlier.
+
+00:27:58.728 --> 00:28:02.131
+Now Mathematica is starting to fail.
+
+00:28:02.131 --> 00:28:08.241
+So let's pause. Here is the constant.
+
+00:28:11.335 --> 00:28:20.615
+So we have calculated that Fibonacci numbers are approximately a geometric progression with a base of φ.
+
+00:28:20.615 --> 00:28:26.073
+The golden ratio is approximately 1.62.
+
+00:28:26.073 --> 00:28:27.927
+But there's a small correction:
+
+00:28:27.927 --> 00:28:31.604
+This number, which we put 
+ under an exponent with a minus sign,
+
+00:28:31.604 --> 00:28:37.281
+because the truth minus this thing,
+
+00:28:37.281 --> 00:28:43.431
+plus this constant, means that actually this constant is not with plus, but with minus.
+
+00:28:43.431 --> 00:28:44.945
+Alright.
+
+00:28:44.945 --> 00:28:48.219
+Here is the approximate value of Fibonacci numbers.
+
+00:28:48.219 --> 00:28:52.512
+Here are the first ten approximate Fibonacci numbers.
+
+00:28:52.512 --> 00:28:55.713
+Approximately 1, approximately 2, approximately 3, approximately 5,
+
+00:28:55.713 --> 00:29:00.515
+approximately 8, approximately 13, approximately 21, approximately 34.
+
+00:29:00.515 --> 00:29:01.969
+That's what we need!
+
+00:29:01.969 --> 00:29:10.375
+Round - a function that rounds to the nearest integer. 
+ Gives the truth.
+
+00:29:10.375 --> 00:29:14.943
+Oh, by the way, let's mark that all our F functions are Listable,
+
+00:29:14.943 --> 00:29:22.527
+so that we can create the same miracles with them as we do with logarithms, rounds, and so on.
+
+00:29:22.527 --> 00:29:28.521
+Round of a list equals: a list in which each element is rounded.
+
+00:29:28.521 --> 00:29:32.239
+Same with logarithms...
+
+00:29:32.239 --> 00:29:35.356
+And we want our function F to work the same way.
+
+00:29:35.356 --> 00:29:39.031
+To do this, we set the Listable attribute for the function F.
+
+00:29:39.031 --> 00:29:44.728
+And now we can write F[Range[20]] and get the answer for the whole range.
+
+00:29:44.728 --> 00:29:46.556
+Good!
+
+00:29:46.556 --> 00:29:57.742
+Now let's look at the errors that occur between our approximation and the true function F.
+
+00:29:57.742 --> 00:30:04.362
+They are small and seem 
+ to be approaching zero in absolute value.
+
+00:30:04.362 --> 00:30:07.049
+Excellent!
+
+00:30:07.049 --> 00:30:13.080
+By the way, now that we understand that the Fibonacci numbers are approximately a geometric progression,
+
+00:30:13.080 --> 00:30:19.570
+let's look for geometric progressions that exactly satisfy this relationship.
+
+00:30:19.570 --> 00:30:25.199
+We write "=", and get this equation.
+
+00:30:25.199 --> 00:30:31.073
+We can see that this can be reduced by m. We reduce it.
+
+00:30:31.073 --> 00:30:34.364
+And this is what we get.
+
+00:30:34.364 --> 00:30:37.609
+This can be simplified to obtain an equation.
+
+00:30:37.609 --> 00:30:40.211
+This is actually a quadratic equation.
+
+00:30:40.211 --> 00:30:44.315
+If you mentally multiply by λ, you'll see why it's quadratic.
+
+00:30:44.315 --> 00:30:46.787
+Let's solve this quadratic equation.
+
+00:30:46.787 --> 00:30:50.634
+Oh, we'll find out. This is what φ is.
+
+00:30:50.634 --> 00:30:52.634
+And what is this?
+
+00:30:52.634 --> 00:31:00.980
+I'll tell you a secret, the second number is "-1/φ".
+
+00:31:00.980 --> 00:31:08.790
+This is exactly equal to this second λ.
+
+00:31:12.612 --> 00:31:16.461
+Yes. True.
+
+00:31:16.461 --> 00:31:32.594
+The numerical solution to the equation looks like this: λ = -0.618034 and 1.618034
+
+00:31:32.594 --> 00:31:36.527
+Let's check...
+
+00:31:36.527 --> 00:31:39.586
+We need to simplify. FullSimplify will help us.
+
+00:31:39.586 --> 00:31:40.713
+True.
+
+00:31:40.713 --> 00:31:43.733
+We're beginning to see elements of paranoid programming.
+
+00:31:43.733 --> 00:31:45.389
+True.
+
+00:31:45.389 --> 00:31:46.616
+Is that right?
+
+00:31:46.616 --> 00:31:49.733
+True.
+
+00:31:49.733 --> 00:31:51.285
+Moving on.
+
+00:31:51.285 --> 00:31:57.193
+We've found two geometric progressions, two different λs,
+
+00:31:57.193 --> 00:32:02.929
+that fit the geometric progression pattern,
+
+00:32:02.929 --> 00:32:12.058
+so that the relation c[n] = c[n-1] + c[n-2] holds.
+
+00:32:12.058 --> 00:32:21.669
+By the way, the sum of two geometric progressions will also satisfy this recurrence relation.
+
+00:32:21.669 --> 00:32:25.215
+Proof:
+These three lines.
+
+00:32:25.215 --> 00:32:29.742
+If the first line is true and the second line is true,
+then the third line is also true,
+
+00:32:29.742 --> 00:32:35.693
+because the third line is the sum of the first two equalities.
+
+00:32:35.693 --> 00:32:42.368
+Let's try to find such a and b that...
+
+00:32:42.368 --> 00:32:45.534
+the zeroth element of this sum of geometric progressions
+
+00:32:45.534 --> 00:32:50.285
+and the first element are both equal to 1.
+
+00:32:50.285 --> 00:32:53.144
+That is, like the first two Fibonacci numbers.
+
+00:32:53.144 --> 00:32:55.788
+The answer is here.
+
+00:32:55.788 --> 00:32:58.046
+Let's write it as...
+
+00:32:58.046 --> 00:33:00.991
+" a " times the first geometric progression
+
+00:33:00.991 --> 00:33:04.666
+plus " b " times the second geometric progression.
+
+00:33:04.666 --> 00:33:11.519
+This is another explicit formula for the Fibonacci numbers.
+
+00:33:11.519 --> 00:33:14.639
+Let's check what it gives...
+
+00:33:14.639 --> 00:33:16.599
+Wow...
+
+00:33:16.599 --> 00:33:18.924
+And numerically...
+
+00:33:18.924 --> 00:33:22.470
+Numerically, it seems to be true.
+
+00:33:22.470 --> 00:33:23.783
+Now FullSimplify.
+
+00:33:23.783 --> 00:33:32.912
+FullSimplify is able to collapse this expression to completely accurate integers.
+
+00:33:32.912 --> 00:33:38.171
+And the F3 execution time is also microscopic.
+
+00:33:38.171 --> 00:33:40.171
+All right.
+
+00:33:40.171 --> 00:33:41.823
+Moving on.
+
+00:33:41.823 --> 00:33:44.424
+It's a complex topic, though.
+
+00:33:44.424 --> 00:33:49.040
+Let's draw the generating function for Fibonacci numbers.
+
+00:33:49.040 --> 00:33:51.512
+So, here are our Fibonacci numbers.
+
+00:33:51.512 --> 00:33:56.432
+And now, let's take powers of 1, x, x², and so on.
+
+00:33:56.432 --> 00:33:59.161
+And let's multiply them element-wise.
+
+00:33:59.161 --> 00:34:03.523
+This is done like this, as described here.
+
+00:34:03.523 --> 00:34:06.425
+We need to multiply and then add.
+
+00:34:06.425 --> 00:34:13.150
+" Plus @@ ", and to the right of " @@ " should be a list.
+
+00:34:13.150 --> 00:34:21.025
+In this list, commas are replaced by the operator Plus, which is to the left of " @@ ".
+
+00:34:21.025 --> 00:34:24.857
+So, we get...
+
+00:34:24.857 --> 00:34:32.748
+We element-wise multiplied the top and bottom lists up to 10.
+
+00:34:32.748 --> 00:34:37.797
+And we got the following polynomial of degree 10.
+
+00:34:37.797 --> 00:34:41.816
+This is the generating function for Fibonacci numbers.
+
+00:34:41.816 --> 00:34:47.724
+Well, if we continue to infinity, 
+ then this will be the generating function,
+
+00:34:47.724 --> 00:34:50.797
+but we took the first 10 elements.
+
+00:34:50.797 --> 00:34:54.379
+Let's pay attention to the next point.
+
+00:34:54.379 --> 00:34:59.686
+If we add the generating function
+with x multiplied by itself,
+
+00:34:59.686 --> 00:35:02.502
+we'll get this thing.
+
+00:35:02.502 --> 00:35:04.244
+And what will happen?
+
+00:35:04.244 --> 00:35:06.934
+What will happen with x⁵, for instance?
+
+00:35:06.934 --> 00:35:13.912
+For x⁵, we'll have 8x⁵ plus...
+
+00:35:13.912 --> 00:35:17.286
+and from the second bracket comes out a five.
+
+00:35:17.286 --> 00:35:21.763
+5x⁴ multiplied by x, which will be 5x⁵,
+
+00:35:21.763 --> 00:35:27.500
+and 8 will be added to 5 to get 13.
+
+00:35:27.500 --> 00:35:36.345
+It will be 13. To do this, we need to execute the Expand function...
+
+00:35:36.345 --> 00:35:42.210
+Again, we get the generating function for Fibonacci numbers.
+
+00:35:42.210 --> 00:35:47.082
+Only it's shifted.
+
+00:35:47.082 --> 00:35:58.402
+Here we have 13x⁵, and before it was 13x⁶.
+
+00:35:58.402 --> 00:36:02.764
+So it turns out that we've divided by x.
+
+00:36:02.764 --> 00:36:06.568
+Let's write this down...
+
+00:36:06.568 --> 00:36:10.000
+We subtract 1 from g10 and divide by x.
+
+00:36:10.000 --> 00:36:14.018
+And we get this equation.
+
+00:36:14.018 --> 00:36:19.110
+Let's forget about the ten and imagine that it's an infinite series,
+
+00:36:19.110 --> 00:36:20.831
+and then the following identity will be true.
+
+00:36:20.831 --> 00:36:23.475
+Let's call the Solve function.
+
+00:36:23.475 --> 00:36:26.763
+Although it's not that hard to solve this mentally.
+
+00:36:26.763 --> 00:36:36.021
+We've obtained some function g[x], which is exactly this infinite series.
+
+00:36:36.021 --> 00:36:44.334
+Let's ask Mathematicia to compute this infinite series.
+
+00:36:44.334 --> 00:36:48.751
+There we go. We didn't make a mistake.
+
+00:36:48.751 --> 00:36:55.382
+By the way, note that from school math we know that
+
+00:36:55.382 --> 00:37:02.493
+1/(1-q)=1+q²+q³, etc.
+
+00:37:02.493 --> 00:37:11.290
+The sum of a geometric series, if it goes to infinity, is equal to this expression.
+
+00:37:11.290 --> 00:37:14.393
+But here we have x + x² as q.
+
+00:37:14.393 --> 00:37:18.736
+Look, here we have something like one minus q, and q is x + x²,
+
+00:37:18.736 --> 00:37:21.766
+so we can write it like this.
+
+00:37:21.766 --> 00:37:24.300
+Interesting!
+
+00:37:24.300 --> 00:37:30.416
+Let's remember what (a+b)², (a+b)³, (a+b)⁴, etc. are equal to.
+
+00:37:30.416 --> 00:37:35.423
+Let's draw Pascal's triangle.
+
+00:37:35.423 --> 00:37:44.292
+And let's think about what is in this expression on the right side when x⁶ is present.
+
+00:37:44.292 --> 00:37:52.372
+In this Pascal's triangle, we have y = x², and x = x.
+
+00:37:52.372 --> 00:38:01.960
+So from this bracket (x + x²)⁶, we get x⁶,
+
+00:38:01.960 --> 00:38:06.021
+and all the other terms are not interesting to us.
+
+00:38:06.021 --> 00:38:11.500
+Right now, we are interested in the coefficient of x⁶.
+
+00:38:11.500 --> 00:38:23.211
+In this bracket, there will be a term x⁶.
+
+00:38:25.083 --> 00:38:31.138
+Oh, it's in this bracket here.
+
+00:38:31.138 --> 00:38:40.461
+This term 5x⁴y will be in this bracket. 
+ y = x². This gives us 5x⁶.
+
+00:38:40.461 --> 00:38:46.884
+Here we will find x⁶...
+
+00:38:46.884 --> 00:38:48.283
+at this point.
+
+00:38:48.283 --> 00:38:54.234
+x²y², y = x²
+This gives us x²x⁴,
+
+00:38:54.234 --> 00:38:57.264
+and here we also get six...
+
+00:38:57.264 --> 00:39:03.602
+And in the previous line, x⁶ is found here - y³.
+
+00:39:03.602 --> 00:39:08.222
+So, to get x⁶, we need to take:
+
+00:39:08.222 --> 00:39:10.780
+this term,
+
+00:39:10.780 --> 00:39:14.459
+this term,
+
+00:39:14.459 --> 00:39:16.846
+this term,
+
+00:39:16.846 --> 00:39:20.993
+and this term.
+
+00:39:20.993 --> 00:39:27.205
+The entire Pascal's triangle, all the terms shown here, are present on the right side.
+
+00:39:27.205 --> 00:39:36.935
+Because on the right side, we see the sum of all the rows of Pascal's triangle.
+
+00:39:36.935 --> 00:39:45.995
+And we've just shown that for x⁶, it will be 1 + 5 + 6 + 1
+
+00:39:45.995 --> 00:39:50.000
+Here, I've written it down.
+
+00:39:50.000 --> 00:39:57.797
+That is, the sum of the binomial coefficients
+(which are the coefficients in this triangle),
+
+00:39:57.797 --> 00:40:04.521
+that go diagonally like this, skipping every other one,
+
+00:40:04.521 --> 00:40:11.202
+the sum of these coefficients is equal to the Fibonacci number.
+
+00:40:11.202 --> 00:40:15.593
+You can check this, for example, for the previous x⁵.
+
+00:40:15.593 --> 00:40:22.747
+1 + 4 + 3
+
+00:40:22.747 --> 00:40:23.667
+Here there is no
+
+00:40:23.667 --> 00:40:33.008
+1 + 4 + 3 = 8
+Indeed, the previous Fibonacci number is 8.
+
+00:40:33.008 --> 00:40:36.511
+Moving on...
+
+00:40:39.130 --> 00:40:48.261
+Let's note that if we replace the minus sign with a plus sign, we will get the same series, but alternating in sign.
+
+00:40:48.261 --> 00:40:49.574
+Interesting!
+
+00:40:49.574 --> 00:40:54.538
+What if we now multiply these two expressions?
+
+00:40:54.538 --> 00:40:59.520
+Here's what we get.
+
+00:40:59.520 --> 00:41:01.136
+We can notice the following:
+
+00:41:01.136 --> 00:41:10.000
+that the first expression is (1-x²)-x,
+and the second expression is (1-x²)+x.
+
+00:41:12.405 --> 00:41:16.012
+We get that this is the square of the first 
+ minus the square of the second.
+
+00:41:16.012 --> 00:41:22.307
+And then a little trick: subtract one and add one.
+
+00:41:24.626 --> 00:41:33.312
+This is very similar to what happened
+if we take 1-x² as "y"
+
+00:41:35.843 --> 00:41:42.580
+Let's see what the expansion of this product is...
+
+00:41:42.580 --> 00:41:47.028
+and in this expansion, we will recognize the Fibonacci numbers.
+
+00:41:47.028 --> 00:41:49.285
+What does this imply?
+
+00:41:49.285 --> 00:41:53.088
+We've just had an interesting observation.
+
+00:41:53.088 --> 00:41:58.696
+To understand what this implies, we need to learn how to multiply two generating functions.
+
+00:41:58.696 --> 00:42:02.214
+Let's say we have two generating functions 
+ with some coefficients.
+
+00:42:02.214 --> 00:42:07.693
+One with coefficients "a", and the other with coefficients "b".
+
+00:42:07.693 --> 00:42:14.223
+Let's think about what will happen at x⁶ when we multiply the first one by the second one.
+
+00:42:14.223 --> 00:42:22.150
+Firstly, x⁶ will be obtained when we multiply a[0] by x⁶b[6].
+
+00:42:22.150 --> 00:42:29.003
+Secondly, we can multiply xa[1] by x⁵b[5].
+
+00:42:29.003 --> 00:42:37.617
+Thirdly, we can multiply x³a[3] by x³b[3].
+
+00:42:37.617 --> 00:42:42.924
+Fourthly, x⁴a[4] can be multiplied by x²b[2].
+
+00:42:42.924 --> 00:42:46.470
+And so we get...
+
+00:42:46.470 --> 00:42:49.742
+that at x⁶, we get this expression.
+
+00:42:49.742 --> 00:42:58.313
+This expression is called the convolution
+of the first 6 elements of the series "a",
+and the first 6 elements of the series "b".
+
+00:43:00.203 --> 00:43:07.141
+We are multiplying two generating functions here,
+
+00:43:07.141 --> 00:43:11.288
+the first of which has coefficients "a" -
+these are Fibonacci numbers,
+
+00:43:11.288 --> 00:43:21.718
+and the second of which has coefficients that are Fibonacci numbers with alternating plus and minus signs.
+
+00:43:21.718 --> 00:43:24.974
+So, we write it like this...
+
+00:43:24.974 --> 00:43:35.048
+At x⁶ we will have
+F[0] * F[6] - F[1] * F[5] + F[2] * F[4] - F[3] * F[3] and so on.
+
+00:43:36.079 --> 00:43:37.116
+Let's calculate...
+
+00:43:37.116 --> 00:43:40.705
+21 is a Fibonacci number, I recognize it.
+
+00:43:40.705 --> 00:43:45.926
+And if we take the same convolution for the first five, we get 0.
+
+00:43:45.926 --> 00:43:46.508
+So...
+
+00:43:46.508 --> 00:43:52.588
+We can write all of this in the form of a table F[n-k] * F[k].
+
+00:43:52.588 --> 00:44:00.000
+And here comes the alternating sign.
+
+00:44:00.000 --> 00:44:07.165
+Let's calculate the convolution function of Fibonacci numbers
+
+00:44:07.165 --> 00:44:10.711
+with the alternating sign sequence of Fibonacci numbers.
+
+00:44:11.698 --> 00:44:15.229
+We get a remarkable result.
+
+00:44:15.229 --> 00:44:23.370
+We see Fibonacci numbers, 
+ in which some are missing, replaced by zeros.
+
+00:44:23.370 --> 00:44:27.356
+In essence, we have proved a certain identity.
+
+00:44:27.356 --> 00:44:38.948
+The convolution of Fibonacci numbers with itself and alternating signs is equal to Fibonacci numbers again.
+
+00:44:38.948 --> 00:44:40.000
+So...
+
+00:44:40.000 --> 00:44:42.687
+Next it's more difficult...
+
+00:44:44.405 --> 00:44:48.071
+Derivatives are being checked...
+
+00:44:48.071 --> 00:44:53.421
+Let's take the derivative of our generating function
+
+00:44:53.421 --> 00:44:55.550
+By the way...
+
+00:44:55.550 --> 00:44:58.151
+How are our viewers doing?
+
+00:44:59.354 --> 00:45:00.927
+Smoking...
+
+00:45:00.927 --> 00:45:03.340
+Smoking nervously...
+
+00:45:03.340 --> 00:45:08.088
+Okey, not nervous. The look is quite positive.
+
+00:45:08.088 --> 00:45:10.515
+Great!
+
+00:45:10.515 --> 00:45:12.300
+This is wonderful!
+
+00:45:12.300 --> 00:45:18.252
+The derivative of our generating function is this,
+
+00:45:18.252 --> 00:45:21.850
+and the square is this.
+
+00:45:21.850 --> 00:45:26.856
+They are similar in some way. 
+The denominator of both is a square.
+
+00:45:26.856 --> 00:45:28.681
+Let's take the first one...
+
+00:45:28.681 --> 00:45:32.399
+Ah! Note that the first one has -2x.
+
+00:45:32.399 --> 00:45:35.387
+Or rather, +2x, because there's a minus sign in front.
+
+00:45:35.387 --> 00:45:40.489
+Let's subtract 2x from G' to get rid of this 2x.
+
+00:45:40.489 --> 00:45:42.403
+What will we get?
+
+00:45:42.403 --> 00:45:43.372
+Oh!
+
+00:45:43.372 --> 00:45:44.906
+We'll get something very simple.
+
+00:45:44.906 --> 00:45:47.679
+This is just the square of G, let's write it down.
+
+00:45:47.679 --> 00:45:54.102
+G'[x] - 2xG[x]² == G[x]²
+
+00:45:54.102 --> 00:46:02.592
+This is a differential equation 
+ that the generating function G satisfies.
+
+00:46:05.418 --> 00:46:06.870
+Checking...
+
+00:46:06.870 --> 00:46:09.324
+G[x]²
+
+00:46:09.324 --> 00:46:15.147
+G[x]² yields:
+1, 2, 5, 10, 20, 38...
+
+00:46:15.147 --> 00:46:17.448
+And if we take 1+2x,
+
+00:46:17.448 --> 00:46:20.436
+1, 4, 9, 20, 40...
+
+00:46:20.436 --> 00:46:24.068
+Here's G',
+
+00:46:24.068 --> 00:46:25.556
+Here's G prime,
+1, 4, 9, 20, 40
+
+00:46:25.556 --> 00:46:27.688
+It matches!
+
+00:46:27.688 --> 00:46:33.384
+So it is indeed true that
+(1+2x)G[x]² = G'[x]
+
+00:46:33.384 --> 00:46:36.415
+But what does this imply?
+
+00:46:37.274 --> 00:46:38.887
+It implies the following:
+
+00:46:38.887 --> 00:46:49.562
+G[x]² yields the Fibonacci convolution coefficients with itself, without alternating signs.
+
+00:46:49.562 --> 00:46:53.899
+For example, one term will be 38.
+
+00:46:53.899 --> 00:46:57.395
+And another term will be 71.
+
+00:46:57.395 --> 00:47:03.389
+And it says that if we add these two series,
+
+00:47:03.389 --> 00:47:05.389
+we will get something interesting.
+
+00:47:05.389 --> 00:47:06.444
+Let's check.
+
+00:47:06.444 --> 00:47:14.328
+So first let's define the Fibonacci 
+ convolution without alternating signs.
+
+00:47:14.328 --> 00:47:21.578
+Let's write it as Listable,
+so we can perform ConF on a list.
+
+00:47:21.578 --> 00:47:26.359
+(38, 71)
+That's what we need. That's what we got above.
+
+00:47:26.359 --> 00:47:32.062
+Now let's multiply the numbers N by the Fibonacci numbers.
+
+00:47:32.062 --> 00:47:33.977
+So the first Fibonacci number times 1.
+
+00:47:33.977 --> 00:47:37.952
+The second Fibonacci number times 2,
+
+00:47:37.952 --> 00:47:40.768
+The third Fibonacci number times 3,
+
+00:47:40.768 --> 00:47:45.517
+The fourth Fibonacci number times 4, and so on.
+
+00:47:45.517 --> 00:47:51.606
+Now let's add our сonvolutions of convolutional coefficients
+
+00:47:51.606 --> 00:47:57.729
+plus the doubled list of convolution coefficients, but shifted.
+
+00:47:59.186 --> 00:48:02.361
+Or is it better vice versa...
+
+00:48:02.361 --> 00:48:07.839
+Twice the unshifted plus one shifted.
+
+00:48:07.839 --> 00:48:12.287
+We get 4, 9, 20, 40, 78...
+
+00:48:12.287 --> 00:48:14.287
+It matches!
+
+00:48:14.287 --> 00:48:25.847
+We have found that N times F of N
+equals this convolution expression.
+
+00:48:25.847 --> 00:48:29.522
+By the way, another interesting observation
+about the generating function...
+
+00:48:29.522 --> 00:48:32.123
+Let's do this.
+
+00:48:32.123 --> 00:48:39.105
+What is the series equal to at x equals 1?
+Not x equals 0, but x equals 1?
+
+00:48:40.000 --> 00:48:43.038
+Here we see Fibonacci numbers again.
+
+00:48:43.038 --> 00:48:47.451
+Only every other one is missing...
+
+00:48:47.451 --> 00:48:52.500
+Every other Fibonacci number is missing 
+ and the signs alternate.
+
+00:48:52.500 --> 00:48:56.304
+And at x equals -1,
+
+00:48:56.304 --> 00:49:00.849
+1, -1, 2, -3, 5, -8...
+
+00:49:00.849 --> 00:49:05.426
+Here they are not missing, but the signs alternate.
+
+00:49:05.426 --> 00:49:09.273
+What do you think follows from this?
+
+00:49:09.273 --> 00:49:12.468
+And finally...
+
+00:49:12.468 --> 00:49:16.047
+Let's draw the function 1 over G of x,
+
+00:49:16.047 --> 00:49:27.913
+and also draw the value of 
+ this function G of x on the complex plane.
+
+00:49:27.913 --> 00:49:35.840
+Here we have two poles at the points...
+
+00:49:35.840 --> 00:49:40.935
+As far as I know, 1/φ and -φ (phi).
+
+00:49:40.935 --> 00:49:45.211
+This is negative phi on the real axis,
+
+00:49:45.211 --> 00:49:50.000
+and this is 1/φ.
+
+00:49:53.997 --> 00:49:57.250
+That's all for today. Stay tuned for bonus tracks!
+
+00:49:57.250 --> 00:49:59.465
+Goodbye, everyone!
+

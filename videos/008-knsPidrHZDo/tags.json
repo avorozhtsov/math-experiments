@@ -1,0 +1,25 @@
+{
+  "scope": "YouTube tags are video-wide, not independently localized. This list is the exact current global tag list.",
+  "tags": [
+    "wolfram mathematica",
+    "математика",
+    "треугольник паскаля",
+    "многочлены бернулли",
+    "math",
+    "дзета-функция",
+    "zeta-function",
+    "эйлер"
+  ],
+  "ru_or_mixed": [
+    "математика",
+    "треугольник паскаля",
+    "многочлены бернулли",
+    "дзета-функция",
+    "эйлер"
+  ],
+  "en_or_language_neutral": [
+    "wolfram mathematica",
+    "math",
+    "zeta-function"
+  ]
+}

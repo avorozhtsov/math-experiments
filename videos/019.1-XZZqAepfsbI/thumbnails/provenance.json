@@ -1,0 +1,20 @@
+{
+  "method": "built-in image_gen image edit, original artwork as reference, followed by JPEG resize/export with FFmpeg",
+  "source": {
+    "prefix": "019.1-XZZqAepfsbI",
+    "source_url": "https://i.ytimg.com/vi/XZZqAepfsbI/sddefault.jpg",
+    "source_resolution": [
+      640,
+      480
+    ],
+    "bytes": 57277
+  },
+  "english_prompt": "Use case: text-localization. Edit the provided original YouTube mathematics thumbnail to English. Keep the original style, composition, colors, mathematical diagrams, graph geometry, axes, logo positions, and original Wolfram Mathematica logo/lettering. Translate every channel label \"Математические Эксперименты\" to \"Math Experiments\" in the same white bold two-line box, preserving its original red, orange or magenta background. No additional branding, no new decorations, no redesigned charts. All foreground copy must be clean fluent English. Output landscape 16:9 with no black letterboxing; if input has black outer bars, use only the existing 16:9 artwork between them and fill the canvas. Prefer 1280x720. Fit translated text in the original zones without overlap or clipping. Large orange title \"Finite Fields\"; smaller orange subtitle \"LEGENDRE SYMBOL\". Preserve central blue finite-field notation exactly F₂, F₃, F₄, F₅, F₇, … .",
+  "english_sha256": "5ff4a19494d0d220a7054157790a3aece01b388e8bf3bd542e7d6810fd44dc62",
+  "russian_sha256": "ced0cf7f24fc8b63d0eaef83be81c67bf61470fad0f3cbfa4f960c8f7c4a7d68",
+  "english_resolution": [
+    1280,
+    720
+  ],
+  "review": "Visually inspected for English copy, layout, branding and readable mathematical notation. Raster artwork may differ in fine details from the original."
+}

@@ -1,0 +1,20 @@
+{
+  "method": "built-in image_gen image edit, original artwork as reference, followed by JPEG resize/export with FFmpeg",
+  "source": {
+    "prefix": "017-p4r1qaUxXgA",
+    "source_url": "https://i.ytimg.com/vi/p4r1qaUxXgA/sddefault.jpg",
+    "source_resolution": [
+      640,
+      480
+    ],
+    "bytes": 46727
+  },
+  "english_prompt": "Use case: text-localization. Edit the provided original YouTube mathematics thumbnail to English. Keep the original style, composition, colors, mathematical diagrams, graph geometry, axes, logo positions, and original Wolfram Mathematica logo/lettering. Translate every channel label \"Математические Эксперименты\" to \"Math Experiments\" in the same white bold two-line box, preserving its original red, orange or magenta background. No additional branding, no new decorations, no redesigned charts. All foreground copy must be clean fluent English. Output landscape 16:9 with no black letterboxing; if input has black outer bars, use only the existing 16:9 artwork between them and fill the canvas. Prefer 1280x720. Fit translated text in the original zones without overlap or clipping. Translate channel label to \"Math Experiments\" and headline to \"Distribution of Prime Numbers\".",
+  "english_sha256": "380f921ad9f9aaa4106f48fe661a0e9a2b4be5314ab146226eccec1dcf0d5739",
+  "russian_sha256": "d5231a46aa5eefca3b4f2b4e4d51648caa57eb576d5b42a76762fc25eef3a31c",
+  "english_resolution": [
+    1280,
+    720
+  ],
+  "review": "Visually inspected for English copy, layout, branding and readable mathematical notation. Raster artwork may differ in fine details from the original."
+}

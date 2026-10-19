@@ -1,0 +1,20 @@
+{
+  "method": "built-in image_gen image edit, original artwork as reference, followed by JPEG resize/export with FFmpeg",
+  "source": {
+    "prefix": "022-VeLbvkEJrn0",
+    "source_url": "https://i.ytimg.com/vi/VeLbvkEJrn0/sddefault.jpg",
+    "source_resolution": [
+      640,
+      480
+    ],
+    "bytes": 50232
+  },
+  "english_prompt": "Use case: text-localization. Edit the provided original YouTube mathematics thumbnail to English. Keep the original style, composition, colors, mathematical diagrams, graph geometry, axes, logo positions, and original Wolfram Mathematica logo/lettering. Translate every channel label \"Математические Эксперименты\" to \"Math Experiments\" in the same white bold two-line box, preserving its original red, orange or magenta background. No additional branding, no new decorations, no redesigned charts. All foreground copy must be clean fluent English. Output landscape 16:9 with no black letterboxing; if input has black outer bars, use only the existing 16:9 artwork between them and fill the canvas. Prefer 1280x720. Fit translated text in the original zones without overlap or clipping. Yellow main text \"Number of Primes < n = ?\" with n italic as source. Pink lower right \"Chebyshev’s\" / \"Inequalities\" / \"and Catalan Numbers\". Preserve exact math at left A < π(n)/(n/log(n)) < B and the original prime-count plot.",
+  "english_sha256": "83ca2ac0a5c0c88a4a5d038ee6da44adca90bee2c72de2f40e74b74b3a465842",
+  "russian_sha256": "64562c9267531018ec4ec0e5f1f7872935c6ee152fc55096649d258c849252ef",
+  "english_resolution": [
+    1280,
+    720
+  ],
+  "review": "Visually inspected for English copy, layout, branding and readable mathematical notation. Raster artwork may differ in fine details from the original."
+}

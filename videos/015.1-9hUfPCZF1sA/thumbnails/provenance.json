@@ -1,0 +1,20 @@
+{
+  "method": "built-in image_gen image edit, original artwork as reference, followed by JPEG resize/export with FFmpeg",
+  "source": {
+    "prefix": "015.1-9hUfPCZF1sA",
+    "source_url": "https://i.ytimg.com/vi/9hUfPCZF1sA/maxresdefault.jpg",
+    "source_resolution": [
+      1280,
+      720
+    ],
+    "bytes": 115995
+  },
+  "english_prompt": "Use case: text-localization. Edit the provided original YouTube mathematics thumbnail to English. Keep the original style, composition, colors, mathematical diagrams, graph geometry, axes, logo positions, and original Wolfram Mathematica logo/lettering. Translate every channel label \"Математические Эксперименты\" to \"Math Experiments\" in the same white bold two-line box, preserving its original red, orange or magenta background. No additional branding, no new decorations, no redesigned charts. All foreground copy must be clean fluent English. Output landscape 16:9 with no black letterboxing; if input has black outer bars, use only the existing 16:9 artwork between them and fill the canvas. Prefer 1280x720. Fit translated text in the original zones without overlap or clipping. White right headline in three lines: \"Euler–Maclaurin\" / \"Formula\". Yellow left \"ζ(z)\" and \"Function\"; white connector \"and\". Preserve the formula panel at the top EXACTLY, with all indices and symbols; preserve the step plots.",
+  "english_sha256": "a5640126e203e2b4b7dcc05ca9e6c6677588082e0079059708986551bea3bf43",
+  "russian_sha256": "a59ce6b61a252018d534d372f9f5fcd1d4c7333f930b5562cabbaba3eea2331f",
+  "english_resolution": [
+    1280,
+    720
+  ],
+  "review": "Visually inspected for English copy, layout, branding and readable mathematical notation. Raster artwork may differ in fine details from the original."
+}

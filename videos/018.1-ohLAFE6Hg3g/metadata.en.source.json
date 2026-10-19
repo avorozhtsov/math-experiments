@@ -1,0 +1,4 @@
+{
+  "title": "18. The First Zero of the ζ–function. Sums of Prime Powers (English subtitles)",
+  "description": "00:50 Where does the idea of taking sums over prime numbers and powers of prime numbers come from?\n05:21 Sums to calculate\n10:16 Drawing the noises\n15:11 Subscructing the noises\n16:04 Key picture of the video\n23:23 First nontrivial zero of the zeta function \n\nThis time, while studying partial sums of prime powers, we discovered the first zero of the zeta function.\n\nThe \"prime number noise\", which we found in the previous video, turns out to consist of several components, including sine waves. The main sine wave has the form a * sin(14.1347... log(x) + b), where the number 14.1347... is the imaginary part of the first zero of the zeta function."
+}

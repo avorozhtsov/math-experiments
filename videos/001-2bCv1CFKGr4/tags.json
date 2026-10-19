@@ -1,0 +1,31 @@
+{
+  "scope": "YouTube tags are video-wide, not independently localized. This list is the exact current global tag list.",
+  "tags": [
+    "Wolfram Mathematica",
+    "Уроки программирования",
+    "Математическое моделирование",
+    "EulerPhi",
+    "euler totient function",
+    "Ворожцов",
+    "Wolfram",
+    "math",
+    "mathematica",
+    "визуализация данных",
+    "математические модели"
+  ],
+  "ru_or_mixed": [
+    "Уроки программирования",
+    "Математическое моделирование",
+    "Ворожцов",
+    "визуализация данных",
+    "математические модели"
+  ],
+  "en_or_language_neutral": [
+    "Wolfram Mathematica",
+    "EulerPhi",
+    "euler totient function",
+    "Wolfram",
+    "math",
+    "mathematica"
+  ]
+}

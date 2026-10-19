@@ -1,0 +1,42 @@
+{
+  "number": "019.3",
+  "video_id": "udATFsg3BDU",
+  "youtube_url": "https://www.youtube.com/watch?v=udATFsg3BDU",
+  "directory": "videos/019.3-udATFsg3BDU",
+  "locales": {
+    "ru": {
+      "title": "19. Часть 3. Расширения конечных полей. Число неприводимых многочленов (English subtitles)",
+      "metadata_file": "metadata.ru.json",
+      "title_file": "title.ru.txt",
+      "description_file": "description.ru.md",
+      "captions_file": "captions/ru.vtt",
+      "thumbnail_file": "thumbnails/ru.jpg"
+    },
+    "en": {
+      "title": "19. Part 3. Extensions of Finite Fields. Number of Irreducible Polynomials (English subtitles)",
+      "metadata_file": "metadata.en.json",
+      "title_file": "title.en.txt",
+      "description_file": "description.en.md",
+      "captions_file": "captions/en.vtt",
+      "thumbnail_file": "thumbnails/en.jpg"
+    }
+  },
+  "tags_file": "tags.json",
+  "notebooks": [
+    {
+      "path": "yt-channel/019-finite_fields.nb",
+      "relationship": "primary"
+    }
+  ],
+  "exact_notebook_source_found": true,
+  "thumbnail_editable_sources": [
+    {
+      "path": "thumbnail-sources/019.3.ru.key",
+      "kind": "Keynote",
+      "language": "ru"
+    }
+  ],
+  "metadata_source": "YouTube Data API videos.list; actual existing ru/en localizations; fetched 2026-10-19T13:37:26.821577+00:00",
+  "english_thumbnail_method": "Image generation edit of the original, with explicit translation and style preservation",
+  "description_link_status": "prepared; YouTube application tracked separately"
+}

@@ -1,0 +1,1450 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.510 --> 00:00:04.591
+Hey there! Welcome to "Mathematical Experiments".
+
+00:00:04.591 --> 00:00:10.960
+Today, we'll be experimenting with approximating functions using polynomials.
+
+00:00:10.960 --> 00:00:16.626
+And, of course, we'll be learning Wolfram Mathematica by diving right in, just the way I like it.
+
+00:00:16.626 --> 00:00:20.882
+Without any extra explanations.
+
+00:00:20.882 --> 00:00:26.139
+So, today I want to talk to you about Chebyshev polynomials.
+
+00:00:26.767 --> 00:00:37.004
+You'll see how we can reach them on your own by solving a specific practical problem.
+
+00:00:37.004 --> 00:00:43.434
+Let's take a look at what these polynomials look like.
+
+00:00:43.434 --> 00:00:47.035
+Here's an example of one polynomial.
+
+00:00:47.035 --> 00:00:49.812
+And here's its plot.
+
+00:00:51.579 --> 00:00:56.117
+The higher the degree, the more oscillations within the interval (-1, 1).
+
+00:00:56.117 --> 00:01:06.793
+An important property is that the minima and maxima coincide in magnitude at -1 and 1.
+
+00:01:06.793 --> 00:01:14.029
+We'll get to these polynomials by solving the approximation problem using polynomials.
+
+00:01:14.029 --> 00:01:22.602
+We'll approximate this function f, which is called the Runge function.
+
+00:01:22.602 --> 00:01:25.065
+Here is its plot.
+
+00:01:25.065 --> 00:01:29.524
+There's a peak near zero.
+
+00:01:30.780 --> 00:01:34.932
+We'll try to approximate this function with a polynomial.
+
+00:01:34.932 --> 00:01:38.530
+Here's an example of a 12th-degree polynomial.
+
+00:01:38.530 --> 00:01:44.173
+The symbol "coeffs" contains the polynomial coefficients,
+
+00:01:44.173 --> 00:01:49.554
+and the symbol "poly" contains the polynomial itself.
+
+00:01:49.554 --> 00:01:52.331
+Let's do the next.
+
+00:01:52.331 --> 00:01:54.048
+Idea number 1:
+
+00:01:54.048 --> 00:02:01.850
+We'll take points on the interval (-1, 1), 13 of them.
+
+00:02:01.850 --> 00:02:05.224
+A uniform grid of points.
+
+00:02:05.224 --> 00:02:07.059
+Let's call it like this.
+
+00:02:07.059 --> 00:02:09.561
+And...
+
+00:02:09.561 --> 00:02:17.127
+we'll ask the polynomial to pass through these points exactly,
+
+00:02:17.127 --> 00:02:21.600
+taking the values that the function f takes at these points.
+
+00:02:21.600 --> 00:02:23.827
+For example...
+
+00:02:23.827 --> 00:02:26.722
+An example of the second equation:
+
+00:02:26.722 --> 00:02:31.737
+the value of the polynomial at the point -0.833333
+
+00:02:31.737 --> 00:02:35.299
+is equal to this expression.
+
+00:02:35.299 --> 00:02:43.415
+And we equate this expression to the value of the function f at the point -0.833333
+
+00:02:43.415 --> 00:02:49.058
+We end up with 13 such equations for 13 coefficients.
+
+00:02:49.058 --> 00:02:53.602
+Mathematica easily finds the solution.
+
+00:02:53.602 --> 00:02:57.329
+Here's our polynomial.
+
+00:02:57.329 --> 00:03:01.009
+This polynomial, at the nodal points (let's call them that),
+
+00:03:01.009 --> 00:03:09.604
+passes through the same values as our function f.
+
+00:03:09.604 --> 00:03:12.580
+Our function f is the blue plot.
+
+00:03:12.580 --> 00:03:15.632
+And the result of the approximation is the yellow plot.
+
+00:03:15.632 --> 00:03:27.517
+Clearly, the yellow plot coincides with the function f at these 13 points.
+
+00:03:27.517 --> 00:03:30.519
+But we can't call this a good approximation.
+
+00:03:30.519 --> 00:03:32.865
+If it's somewhat okay near zero,
+
+00:03:32.865 --> 00:03:37.252
+even there, we see differences between the blue and yellow plots.
+
+00:03:37.252 --> 00:03:42.856
+And towards the edges, it's a complete mess.
+
+00:03:42.856 --> 00:03:49.245
+If we take the difference, we'll see that the absolute difference is greater than one at the edges,
+
+00:03:49.245 --> 00:03:52.541
+while the function itself is smaller than one in magnitude.
+
+00:03:52.541 --> 00:03:55.562
+So, this is a bad approximation.
+
+00:03:55.562 --> 00:03:59.752
+If we try the Taylor series...
+
+00:03:59.752 --> 00:04:02.725
+Okay... better to take the 12th degree...
+
+00:04:02.725 --> 00:04:06.232
+...we still won't find anything good.
+
+00:04:06.232 --> 00:04:12.472
+In this plot, there are now
+
+00:04:12.472 --> 00:04:14.150
+three lines.
+
+00:04:14.150 --> 00:04:16.229
+The original function f is blue.
+
+00:04:16.229 --> 00:04:19.752
+Our approximation using the grid is yellow,
+
+00:04:19.752 --> 00:04:22.833
+and the Taylor series is green.
+
+00:04:22.833 --> 00:04:30.724
+The Taylor series precisely replicates our blue plot in the vicinity of zero,
+
+00:04:30.724 --> 00:04:39.570
+but beyond the interval (-0.2, 0.2), it's even worse than the yellow plot.
+
+00:04:42.475 --> 00:04:47.058
+So, two of our ideas turned out unsuccessful.
+
+00:04:47.058 --> 00:04:52.976
+Approximating the function using a grid of points is a bad idea.
+
+00:04:52.976 --> 00:04:58.579
+Using the Taylor series doesn't give a good solution either,
+
+00:04:58.579 --> 00:05:03.829
+if we need accuracy over the entire interval (-1, 1).
+
+00:05:03.829 --> 00:05:06.831
+We need some third idea.
+
+00:05:06.831 --> 00:05:17.263
+Our Idea #1, about the grid, might be successful if we arrange the nodal points in another way.
+
+00:05:17.263 --> 00:05:20.226
+For example,
+
+00:05:20.226 --> 00:05:24.439
+let's place them closer to the edges of the interval (-1, 1).
+
+00:05:24.439 --> 00:05:32.854
+The problems arise precisely at the edges of the interval, and if we place more nodal points there,
+
+00:05:32.854 --> 00:05:37.947
+where our function matches the original one,
+
+00:05:37.947 --> 00:05:42.648
+we might overcome these problems.
+
+00:05:42.648 --> 00:05:48.465
+Let me explain why the uniform grid from -1 to 1 is bad,
+
+00:05:48.465 --> 00:05:50.261
+using this polynomial as an example.
+
+00:05:50.261 --> 00:05:59.720
+Let's plot the polynomial that takes the value 0 at all nodal points.
+
+00:05:59.720 --> 00:06:05.853
+This polynomial has slight oscillations around zero,
+
+00:06:05.853 --> 00:06:11.692
+but the closer we get to the edges of the interval (-1, 1), the larger the oscillations become.
+
+00:06:11.692 --> 00:06:15.136
+That's it's problem.
+
+00:06:15.136 --> 00:06:17.136
+Here's an idea:
+
+00:06:17.136 --> 00:06:27.333
+Let's find a grid where the oscillations throughout the interval have the same amplitude.
+
+00:06:27.333 --> 00:06:30.385
+That's roughly what this idea sounds like.
+
+00:06:30.385 --> 00:06:34.759
+Next, I try to explain something complex here.
+
+00:06:34.759 --> 00:06:38.125
+I take this polynomial
+
+00:06:38.125 --> 00:06:41.538
+and remove the i-th factor from it.
+
+00:06:41.538 --> 00:06:49.458
+And I draw various polynomials, 13 of them,
+
+00:06:49.458 --> 00:06:58.712
+to show this problem that if we remove the i-th factor even from the polynomial, then at the i-th node...
+
+00:06:58.712 --> 00:07:02.405
+(in this case, I removed the factor x - 0)
+
+00:07:02.405 --> 00:07:10.000
+...the values modulo are smaller than some intervals between nodes.
+
+00:07:10.000 --> 00:07:11.372
+That's bad.
+
+00:07:11.372 --> 00:07:14.816
+Later, you'll understand why.
+
+00:07:14.816 --> 00:07:17.986
+Now I won't specify.
+
+00:07:17.986 --> 00:07:26.125
+Here, I want to draw all our basis functions.
+
+00:07:26.125 --> 00:07:29.491
+Here's how it looks.
+
+00:07:29.491 --> 00:07:32.464
+All 13 basis functions.
+
+00:07:32.464 --> 00:07:35.817
+Or, more precisely, here it's 11.
+
+00:07:35.817 --> 00:07:39.760
+Here are the actual 13 basis functions.
+
+00:07:42.312 --> 00:07:46.396
+The problem with these basis functions is that,
+
+00:07:46.396 --> 00:07:54.010
+when we look at a specific basis function and the node that was removed from it,
+
+00:07:54.010 --> 00:08:05.816
+at this node, it takes values modulo smaller than in some intervals between others.
+
+00:08:05.816 --> 00:08:07.729
+That's one of the problems.
+
+00:08:07.729 --> 00:08:10.781
+Maybe it's a difficult and incomprehensible explanation,
+
+00:08:10.781 --> 00:08:20.196
+but let's skip it for now and move on to this idea that was mentioned.
+
+00:08:20.196 --> 00:08:27.684
+To find a polynomial that oscillates equally over the interval (-1, 1).
+
+00:08:27.684 --> 00:08:33.644
+That is, all its maxima and minima have the same value modulo.
+
+00:08:33.644 --> 00:08:43.380
+At the end of the video, I attempted to explain the idea of proving the theorem that the polynomial, which is the solution to the minmax problem, must be equioscillating, meaning the values modulo of its extreme values should coincide.
+
+00:08:43.380 --> 00:08:49.607
+This can be written as the following code.
+
+00:08:49.607 --> 00:08:57.220
+Let's describe the polynomial as a product of factors x - r[i].
+
+00:08:57.220 --> 00:08:59.178
+Table generates the list of factors.
+
+00:08:59.178 --> 00:09:03.094
+Times multiplies all these factors.
+
+00:09:03.094 --> 00:09:07.991
+And we'll ask for the maximum
+
+00:09:07.991 --> 00:09:15.204
+and the values of this polynomial on a grid of points from -1 to 1
+
+00:09:15.204 --> 00:09:20.000
+to have the maximum of all these values as small as possible.
+
+00:09:20.000 --> 00:09:20.926
+So, now it goes like this:
+
+00:09:20.926 --> 00:09:31.398
+Minimize the maximum value of the polynomial on the interval (-1, 1).
+
+00:09:31.398 --> 00:09:33.154
+Running...
+
+00:09:33.154 --> 00:09:36.402
+It's thinking for a while.
+
+00:09:36.402 --> 00:09:39.128
+Let's see...
+
+00:09:39.128 --> 00:09:41.669
+Here's the result.
+
+00:09:41.669 --> 00:09:45.192
+Let's draw this polynomial.
+
+00:09:45.192 --> 00:09:47.303
+Here it is.
+
+00:09:47.303 --> 00:09:49.112
+See?
+
+00:09:49.112 --> 00:09:58.916
+We asked the polynomial to have the smallest value modulo on the interval (-1, 1),
+
+00:09:58.916 --> 00:10:05.099
+and it produced a polynomial called "Equioscillating".
+
+00:10:05.099 --> 00:10:13.713
+So, these are the modules of the extreme points.
+
+00:10:13.713 --> 00:10:15.770
+Well... In this case, they are approximately equal.
+
+00:10:15.770 --> 00:10:19.568
+As you can see, for example, this maximum is slightly larger than this one.
+
+00:10:19.568 --> 00:10:26.114
+And this actually indicates that Mathematica found not the absolute optimum.
+
+00:10:26.114 --> 00:10:31.991
+It's not the best solution to this problem.
+
+00:10:31.991 --> 00:10:40.000
+Anyway, let's draw how the roots of this polynomial look like.
+
+00:10:40.000 --> 00:10:41.638
+Let's draw the list of roots.
+
+00:10:41.638 --> 00:10:44.376
+The X-axis here represents the i-th number,
+
+00:10:44.376 --> 00:10:48.409
+and the Y-axis represents the value of the root.
+
+00:10:48.409 --> 00:10:54.601
+You can see that the roots are denser near the edges,
+
+00:10:54.601 --> 00:10:57.698
+then the distance between the roots increases,
+
+00:10:57.698 --> 00:11:00.789
+and then it becomes denser again.
+
+00:11:02.948 --> 00:11:09.598
+Some mathematician might say, "Oh! This looks very similar to a sinusoid!"
+
+00:11:09.598 --> 00:11:16.458
+More precisely, to the function -cos[αx].
+
+00:11:16.458 --> 00:11:18.144
+Let's test this idea.
+
+00:11:18.144 --> 00:11:22.570
+To do that, we need to take the arcsine or arccosine
+
+00:11:22.570 --> 00:11:25.111
+of these values of the roots
+
+00:11:25.111 --> 00:11:29.773
+and see
+
+00:11:29.773 --> 00:11:35.180
+if the gotten points lie on a straight line.
+
+00:11:38.789 --> 00:11:45.342
+Here I drew the best-fitting line through these points
+
+00:11:45.342 --> 00:11:52.084
+and found that they almost perfectly lie on a straight line.
+
+00:11:52.084 --> 00:11:57.582
+This is the first way to approach Chebyshev polynomials
+
+00:11:57.582 --> 00:12:01.890
+and understand how they work.
+
+00:12:01.890 --> 00:12:08.985
+Although I believe that Pafnuty Chebyshev himself took a different path,
+
+00:12:08.985 --> 00:12:11.397
+which I will explain later.
+
+00:12:11.397 --> 00:12:12.545
+So, the idea is:
+
+00:12:12.545 --> 00:12:21.285
+the nodes for which we must set the equality for our polynomial and the original function f,
+
+00:12:21.285 --> 00:12:33.294
+form a cosine of some arithmetic progression on the interval (-1, 1).
+
+00:12:33.294 --> 00:12:36.820
+More precisely, on the interval from 0 to Pi.
+
+00:12:36.820 --> 00:12:44.048
+You can see that the points are located from 0 to Pi, but do not reach Pi
+
+00:12:44.048 --> 00:12:47.461
+and do not reach zero.
+
+00:12:47.461 --> 00:12:54.771
+But here, I deliberately chose the wrong variant and placed the extreme points right at zero and right at Pi.
+
+00:12:58.029 --> 00:13:05.807
+Thus, I got cos[1] and cos[-1].
+
+00:13:05.807 --> 00:13:08.571
+Let's visualize this.
+
+00:13:08.571 --> 00:13:21.698
+On the upper half-circle, I placed 13 evenly distributed points and projected them onto the X-axis.
+
+00:13:21.698 --> 00:13:27.311
+Then I wrote the product of the terms x - x[i].
+
+00:13:27.311 --> 00:13:30.245
+And I failed.
+
+00:13:30.245 --> 00:13:35.220
+It turned out to be non-equioscillating.
+
+00:13:35.220 --> 00:13:38.524
+Because I intentionally made a mistake.
+
+00:13:38.524 --> 00:13:44.845
+Since Mathematica told us not to reach 0 and not to reach Pi.
+
+00:13:44.845 --> 00:13:53.384
+So, let's listen to it this time and make thе next change.
+
+00:13:53.384 --> 00:13:56.162
+We will divide by n + 1 instead of n,
+
+00:13:56.162 --> 00:14:00.990
+and make a shift by 0.5 here.
+
+00:14:00.990 --> 00:14:02.597
+Here we go...
+
+00:14:02.597 --> 00:14:08.763
+Now we get an equioscillating polynomial.
+
+00:14:08.763 --> 00:14:10.475
+Visualization.
+
+00:14:10.475 --> 00:14:13.919
+You see? There are no points on the circle.
+
+00:14:13.919 --> 00:14:16.193
+The first point goes through half the interval,
+
+00:14:16.193 --> 00:14:18.970
+then: interval, interval, interval, and so on,
+
+00:14:18.970 --> 00:14:21.677
+and then again half the interval,
+
+00:14:21.677 --> 00:14:24.698
+and here there are no extreme points at all.
+
+00:14:24.698 --> 00:14:33.128
+These are the roots of Chebyshev polynomials.
+
+00:14:33.128 --> 00:14:40.263
+Let's see how the approximation based on these nodes looks like.
+
+00:14:40.263 --> 00:14:45.932
+Now for some reason, odd powers start to appear.
+
+00:14:45.932 --> 00:14:50.157
+By the way, they can be removed with a simple replacement rule.
+
+00:14:50.157 --> 00:14:53.641
+Let's draw...
+
+00:14:53.641 --> 00:15:00.344
+and you can see that the green approximation is much better than the yellow one we had.
+
+00:15:00.344 --> 00:15:02.179
+Alright.
+
+00:15:04.691 --> 00:15:08.823
+So, here are our wonderful nodes.
+
+00:15:08.823 --> 00:15:15.486
+They are called Chebyshev nodes.
+
+00:15:15.486 --> 00:15:23.444
+And again, we can consider a set of basis functions that are constructed as follows:
+
+00:15:23.444 --> 00:15:28.105
+we take the product of all the terms x - x[i],
+
+00:15:28.105 --> 00:15:32.048
+but exclude one of these terms.
+
+00:15:32.048 --> 00:15:36.199
+Here, for example, a term with a node located somewhere here is excluded.
+
+00:15:36.199 --> 00:15:38.858
+And here, we already see a remarkable property.
+
+00:15:38.858 --> 00:15:43.139
+The value of this basis function modulo at the node is much larger
+
+00:15:43.139 --> 00:15:49.410
+than the value of this basis function at all other points of the interval.
+
+00:15:49.410 --> 00:15:53.404
+And this holds true for any i.
+
+00:15:53.404 --> 00:15:54.611
+Okay...
+
+00:15:54.611 --> 00:15:59.547
+Let's assume you understood this idea.
+
+00:15:59.547 --> 00:16:06.407
+Here are all the basis functions for n = 30 depicted.
+
+00:16:10.372 --> 00:16:13.828
+And here I can even explain.
+
+00:16:13.828 --> 00:16:26.184
+Each of these bumps corresponds to the value of the basis function at the node that was excluded from it.
+
+00:16:27.519 --> 00:16:32.561
+And, for example, this second-level bump,
+
+00:16:32.561 --> 00:16:39.500
+it is adjacent to the node that was excluded.
+
+00:16:39.500 --> 00:16:54.407
+You can see that with increasing n, the ratio of the maximum at the excluded node
+
+00:16:54.407 --> 00:17:00.508
+to the value of the basis function at other points increases as n grows.
+
+00:17:00.508 --> 00:17:04.087
+That is...
+
+00:17:04.087 --> 00:17:11.073
+the approximation becomes better and better the more points you take.
+
+00:17:11.073 --> 00:17:17.981
+And when you try to approximate the function f using Chebyshev nodes,
+
+00:17:17.981 --> 00:17:22.873
+you are, to some approximation, solving this problem:
+
+00:17:22.873 --> 00:17:34.090
+"Find a polynomial for which the maximum modulus deviation from the original function over the interval (-1, 1) is minimal".
+
+00:17:34.090 --> 00:17:41.481
+But Chebyshev nodes do not give an exact solution to this problem.
+
+00:17:41.481 --> 00:17:43.355
+Next, what I wanted to show here...
+
+00:17:43.355 --> 00:17:49.006
+Ah! I also wanted to explain another example with this idea of a basis.
+
+00:17:49.006 --> 00:17:51.561
+Look, here I took the fifth basis function,
+
+00:17:51.561 --> 00:17:53.396
+the eighth one.
+
+00:17:53.396 --> 00:17:56.683
+I multiplied the first one by three... it doesn't matter by what.
+
+00:17:56.683 --> 00:17:58.801
+And the second one by -7.
+
+00:17:58.801 --> 00:18:02.834
+And got these modified basis functions.
+
+00:18:02.834 --> 00:18:05.061
+The yellow one,
+
+00:18:05.061 --> 00:18:08.112
+it's exactly 3b[5],
+
+00:18:08.112 --> 00:18:13.598
+and the green one is -7b[8].
+
+00:18:13.598 --> 00:18:21.282
+And the function f2 is the sum of these two basis functions, multiplied by some coefficients.
+
+00:18:21.282 --> 00:18:30.977
+And you see? The green function passes through the same point in this node where the yellow one passes through,
+
+00:18:30.977 --> 00:18:38.151
+and in this node, it passes through the same point as the green one.
+
+00:18:38.151 --> 00:18:43.505
+So, you kind of multiply each basis polynomial by the number
+
+00:18:43.505 --> 00:18:51.433
+to get the desired value at the node that was excluded from it.
+
+00:18:51.433 --> 00:18:56.110
+And when you then sum up all the basis functions with these coefficients,
+
+00:18:56.110 --> 00:18:58.544
+you get a function with the desired properties.
+
+00:18:58.544 --> 00:19:12.352
+It will pass through all the nodes at the exact same y-values that the function f takes.
+
+00:19:12.352 --> 00:19:16.512
+Okay... I probably better skip ahead...
+
+00:19:16.512 --> 00:19:27.180
+Here, I will explain how to get Chebyshev polynomials in Mathematica.
+
+00:19:27.180 --> 00:19:31.292
+There's already a ready-made function ChebyshevT.
+
+00:19:31.292 --> 00:19:35.482
+There are also Chebyshev polynomials of the second kind, ChebyshevU.
+
+00:19:35.482 --> 00:19:46.464
+They are simply the derivatives of ChebyshevT polynomials with respect to x and some other factor 1/n.
+
+00:19:46.464 --> 00:19:49.072
+The plot looks like this.
+
+00:19:49.072 --> 00:19:53.696
+Well... you already understood how it all works.
+
+00:19:53.696 --> 00:19:58.161
+Here, several Chebyshev polynomials are already plotted together.
+
+00:19:58.161 --> 00:20:02.002
+We can add the first one.
+
+00:20:02.002 --> 00:20:03.832
+And one more thing.
+
+00:20:03.832 --> 00:20:16.167
+How could you quickly get polynomials that oscillate between the values (-1, 1)?
+
+00:20:16.167 --> 00:20:19.805
+Take the polynomial t2 = 2x^2 - 1.
+
+00:20:19.805 --> 00:20:23.642
+It possesses this remarkable property.
+
+00:20:23.642 --> 00:20:30.702
+Over the interval (-1, 1), it takes values from -1 to 1.
+
+00:20:30.702 --> 00:20:35.913
+From 1, it goes to -1, then back to 1.
+
+00:20:35.913 --> 00:20:38.577
+And...
+
+00:20:38.577 --> 00:20:43.670
+You can substitute this polynomial into itself
+
+00:20:43.670 --> 00:20:52.807
+and get increasingly intricate functions with a greater number of extrema over the interval (-1, 1),
+
+00:20:52.807 --> 00:20:56.605
+and all of them will be the same in absolute value.
+
+00:21:02.376 --> 00:21:04.121
+So...
+
+00:21:04.121 --> 00:21:14.749
+However, this method allows you to generate Equioscillating polynomials with degrees of 2^k.
+
+00:21:14.749 --> 00:21:18.810
+2, 4, 8, and so on.
+
+00:21:18.810 --> 00:21:23.550
+But it turns out that there are also all the intermediate values of n.
+
+00:21:23.550 --> 00:21:25.503
+Like these.
+
+00:21:25.503 --> 00:21:30.251
+And they are called Chebyshev polynomials.
+
+00:21:33.863 --> 00:21:39.823
+Here, I have drawn the Chebyshev polynomials of the second kind.
+
+00:21:43.199 --> 00:21:48.790
+How do I think Chebyshev came up with them.
+
+00:21:48.790 --> 00:21:57.970
+Of course, he couldn't just call the NMinimize function.
+
+00:21:57.970 --> 00:22:02.071
+He didn't have such an opportunity.
+
+00:22:02.071 --> 00:22:05.524
+So, when he called NMinimize,
+
+00:22:05.524 --> 00:22:07.202
+looked at this polynomial,
+
+00:22:07.202 --> 00:22:09.037
+looked at this plot,
+
+00:22:09.037 --> 00:22:10.872
+and then took the arccosine,
+
+00:22:10.872 --> 00:22:12.999
+that's just my imagination, of course.
+
+00:22:12.999 --> 00:22:14.952
+Most likely, it wasn't like that.
+
+00:22:14.952 --> 00:22:21.380
+It's not that simple to solve this minimization problem on paper.
+
+00:22:21.380 --> 00:22:25.452
+Most likely, another method was used.
+
+00:22:25.452 --> 00:22:27.326
+My favorite method.
+
+00:22:27.326 --> 00:22:35.380
+When you just engage in random wandering, so to speak.
+
+00:22:35.380 --> 00:22:42.130
+Or rather, you develop your thoughts in various interesting directions for you,
+
+00:22:42.130 --> 00:22:45.927
+accumulate a base of mathematical facts.
+
+00:22:45.927 --> 00:22:52.276
+And then, when you encounter a practical problem, an enlightenment suddenly comes,
+
+00:22:52.276 --> 00:22:57.013
+because you have accumulated a base of facts.
+
+00:22:57.013 --> 00:23:00.000
+Most likely, such a method worked for Chebyshev,
+
+00:23:00.000 --> 00:23:11.709
+and he probably knew because he had accumulated such an interesting fact from life that
+
+00:23:11.709 --> 00:23:20.746
+Cos[nx] can be represented as a polynomial of Cos[x].
+
+00:23:20.746 --> 00:23:22.333
+Just a moment...
+
+00:23:22.333 --> 00:23:24.364
+Let me explain it.
+
+00:23:24.364 --> 00:23:25.257
+Look...
+
+00:23:25.257 --> 00:23:33.718
+Suppose you know these two expansion formulas for Cos[a + b] and Sin[a + b].
+
+00:23:33.718 --> 00:23:42.980
+From these formulas, it immediately follows that you can transform Cos[nx] into a polynomial of Cos[x] and Sin[x].
+
+00:23:42.980 --> 00:23:51.921
+But, oh, miracle! When you do this, you find that Sin[x] appears with even powers,
+
+00:23:51.921 --> 00:23:55.719
+which means you can apply this formula
+
+00:23:55.719 --> 00:24:02.415
+and eventually write this polynomial exclusively in terms of Cos[x].
+
+00:24:02.415 --> 00:24:11.120
+I believe this mathematical fact from trigonometry was known to mathematicians 200 years ago
+
+00:24:11.120 --> 00:24:14.162
+and an enlightenment occurred.
+
+00:24:14.162 --> 00:24:25.812
+Cos[nx], in a sense, by definition - it's a number from -1 to 1.
+
+00:24:25.812 --> 00:24:32.955
+And therefore, Cos[nx] as a polynomial of Cos[x] is exactly what we need.
+
+00:24:32.955 --> 00:24:38.166
+By the way, it will indeed take values (-1, 1) multiple times,
+
+00:24:38.166 --> 00:24:41.579
+the larger n, the more frequently.
+
+00:24:41.579 --> 00:24:45.377
+Okay... Now I'll explain this on another example.
+
+00:24:45.377 --> 00:24:48.184
+Let's take this Cos[5x],
+
+00:24:48.184 --> 00:24:54.345
+then substitute -Sin[x]^n into this expression.
+
+00:24:57.250 --> 00:24:58.601
+In short...
+
+00:24:58.601 --> 00:25:06.921
+Cos[5x] as a polynomial of Cos[x] is exactly the Chebyshev polynomial.
+
+00:25:06.921 --> 00:25:10.163
+What else...
+
+00:25:14.089 --> 00:25:20.566
+How to arrive at the recurrence formula for Chebyshev polynomials?
+
+00:25:20.566 --> 00:25:24.442
+This is done as follows:
+
+00:25:24.442 --> 00:25:29.653
+Perhaps someone knows the formula Cos[a + b] + Cos[a - b],
+
+00:25:29.653 --> 00:25:34.323
+but those, who don't, can get it from these two formulas.
+
+00:25:34.323 --> 00:25:39.141
+We simply add the first and second equalities
+
+00:25:39.141 --> 00:25:42.389
+and get the following expression.
+
+00:25:42.389 --> 00:25:50.762
+And from it, it directly follows that
+
+00:25:50.762 --> 00:25:59.843
+Chebyshev polynomial [n + 1] plus Chebyshev polynomial [n - 1]
+
+00:25:59.843 --> 00:26:06.250
+equals 2 times Chebyshev polynomial of n multiplied by x.
+
+00:26:06.250 --> 00:26:10.000
+Well, or it can be written like this.
+
+00:26:10.000 --> 00:26:15.043
+The first two values are as follows.
+
+00:26:15.043 --> 00:26:20.000
+And from this definition, from these three lines,
+
+00:26:20.000 --> 00:26:27.208
+it becomes quite clear that these are indeed polynomials, not some other functions.
+
+00:26:27.208 --> 00:26:35.283
+In addition, from this recurrence formula, you can get the generating function for Chebyshev polynomials.
+
+00:26:35.283 --> 00:26:37.628
+Here's how it's defined.
+
+00:26:37.628 --> 00:26:41.354
+You need to do this once, and then you will understand
+
+00:26:41.354 --> 00:26:52.914
+how to get the generating function from the recurrence formula.
+
+00:26:52.914 --> 00:26:57.369
+We take, according to this recurrence formula,
+
+00:26:57.369 --> 00:27:01.763
+the generating function of x, t,
+
+00:27:01.763 --> 00:27:06.472
+minus 2tx,
+
+00:27:08.592 --> 00:27:13.487
+and plus (t^2) G[x, t].
+
+00:27:13.487 --> 00:27:16.743
+Let's calculate this expression.
+
+00:27:16.743 --> 00:27:18.133
+Here's what it equals.
+
+00:27:18.133 --> 00:27:21.182
+Here I just rewrote it.
+
+00:27:21.182 --> 00:27:24.509
+Next, we put t here,
+
+00:27:24.509 --> 00:27:27.407
+and we get t^n+1.
+
+00:27:27.407 --> 00:27:29.680
+We put this t^2 here.
+
+00:27:29.680 --> 00:27:33.290
+We get t^n+2.
+
+00:27:33.290 --> 00:27:37.088
+Next, we perform a renumbering.
+
+00:27:37.088 --> 00:27:39.590
+Here we sum from 1
+
+00:27:39.590 --> 00:27:44.212
+and no longer write n + 1 here, but just n.
+
+00:27:47.039 --> 00:27:50.520
+And here we write, accordingly, n - 1.
+
+00:27:50.520 --> 00:27:54.828
+And here we write t^n, but sum from 2,
+
+00:27:54.828 --> 00:27:58.437
+and here n - 2.
+
+00:27:58.437 --> 00:28:07.770
+Next, we combine these three sums into one sum and take t^n out of the brackets.
+
+00:28:10.754 --> 00:28:17.565
+However, from the first sum, only the first two terms remain,
+
+00:28:17.565 --> 00:28:19.332
+here they are,
+
+00:28:19.332 --> 00:28:22.117
+and from the second sum, only one term remains,
+
+00:28:22.117 --> 00:28:23.960
+here it is.
+
+00:28:25.844 --> 00:28:30.000
+This sum is equal to zero simply because
+
+00:28:30.000 --> 00:28:32.109
+this expression is equal to zero.
+
+00:28:32.109 --> 00:28:37.987
+This is the same recurrence formula, just written
+
+00:28:37.987 --> 00:28:40.764
+like this.
+
+00:28:40.764 --> 00:28:45.324
+With a minus sign and it still equals zero.
+
+00:28:47.836 --> 00:28:53.283
+Therefore, what we originally calculated,
+
+00:28:53.283 --> 00:28:56.374
+is equal to just this expression.
+
+00:28:56.374 --> 00:28:58.385
+That is, this
+
+00:28:58.385 --> 00:29:00.425
+equals this.
+
+00:29:00.425 --> 00:29:02.613
+So, we have got the answer.
+
+00:29:02.613 --> 00:29:07.903
+Let's check that everything is fine.
+
+00:29:07.903 --> 00:29:09.110
+Here we go...
+
+00:29:10.288 --> 00:29:14.280
+In this way, Chebyshev polynomials are gotten.
+
+00:29:14.280 --> 00:29:23.221
+With t^n, it turns out to be the Chebyshev polynomial of degree n.
+
+00:29:23.221 --> 00:29:30.000
+And this polynomial is a solution to the minmax problem
+
+00:29:30.000 --> 00:29:32.463
+with an accuracy up to the coefficient.
+
+00:29:32.463 --> 00:29:36.496
+It is a solution to this problem.
+
+00:29:36.496 --> 00:29:38.095
+Okay...
+
+00:29:39.037 --> 00:29:44.413
+Today, I also want to remind you about Bernoulli polynomials and draw them.
+
+00:29:44.413 --> 00:29:50.566
+The thing is that they, in a sense, are also equioscillating.
+
+00:29:50.566 --> 00:29:54.874
+For example, the 15th Bernoulli polynomial.
+
+00:29:56.641 --> 00:29:58.251
+See?
+
+00:29:58.251 --> 00:30:02.480
+Here the nodes are evenly spaced,
+
+00:30:02.480 --> 00:30:07.612
+but the number of oscillations is small, less than 15.
+
+00:30:09.339 --> 00:30:12.329
+Here is the 16th Bernoulli polynomial,
+
+00:30:12.329 --> 00:30:14.870
+and you can see that it's not quite Equioscillating.
+
+00:30:14.870 --> 00:30:16.868
+Look at this extremum
+
+00:30:16.868 --> 00:30:21.891
+and this one, they're kind of strange, extreme points, they have different values.
+
+00:30:21.891 --> 00:30:25.985
+Here's the 17th.
+
+00:30:25.985 --> 00:30:29.123
+Here's the 18th.
+
+00:30:29.123 --> 00:30:30.196
+Look how interesting.
+
+00:30:30.196 --> 00:30:34.268
+It's as if the Bernoulli polynomials try to fit the sine wave,
+
+00:30:34.268 --> 00:30:40.892
+but at some point, they deviate and go into a power dependence.
+
+00:30:40.892 --> 00:30:43.551
+That's really the case.
+
+00:30:43.551 --> 00:30:50.411
+Indeed, the Bernoulli polynomials, in a sense, try to approximate the sine wave
+
+00:30:50.411 --> 00:30:52.285
+as best as possible,
+
+00:30:52.285 --> 00:30:58.006
+and with each number n, they approximate this sine wave better and better,
+
+00:30:58.006 --> 00:31:02.833
+and over a larger interval.
+
+00:31:02.833 --> 00:31:05.257
+Let's draw
+
+00:31:05.257 --> 00:31:08.858
+here several Bernoulli polynomials,
+
+00:31:08.858 --> 00:31:10.928
+only we'll cleverly normalize them...
+
+00:31:10.928 --> 00:31:15.668
+Don't pay attention, this normalization doesn't have any deep meaning.
+
+00:31:15.668 --> 00:31:19.565
+...and let's also multiply them by 1 and -1 to see
+
+00:31:19.565 --> 00:31:24.619
+these two families explicitly.
+
+00:31:24.619 --> 00:31:28.801
+Even and odd Bernoulli polynomials.
+
+00:31:28.801 --> 00:31:34.640
+And you can see that the lower-degree one (green here) deviates earlier,
+
+00:31:34.640 --> 00:31:45.975
+while the higher the degree, the later the deviation to something different from a sine wave.
+
+00:31:45.975 --> 00:31:54.287
+The higher the polynomial number, the farther it goes along the sine wave to the left and right.
+
+00:31:56.760 --> 00:32:01.756
+Alright... what else I want to show here...
+
+00:32:04.975 --> 00:32:07.150
+Example of a 25th-degree polynomial.
+
+00:32:07.150 --> 00:32:20.000
+Without normalization, its extrema oscillate between (-350000, 350000).
+
+00:32:20.000 --> 00:32:25.926
+That is, the magnitude of the oscillations increases.
+
+00:32:25.926 --> 00:32:30.866
+But what I want to draw attention to.
+
+00:32:30.866 --> 00:32:37.294
+Let's take the 15th-degree polynomial
+
+00:32:37.294 --> 00:32:44.885
+and see where the roots of the derivative
+
+00:32:44.885 --> 00:32:45.867
+of this polynomial are.
+
+00:32:45.867 --> 00:32:52.334
+In other words, find the x-values for extreme points.
+
+00:32:52.334 --> 00:32:54.625
+Here are their values.
+
+00:32:54.625 --> 00:33:00.852
+-1.22213, 0.74999
+
+00:33:00.852 --> 00:33:04.846
+Let's calculate the intervals between these roots.
+
+00:33:04.846 --> 00:33:13.512
+When you have a list of numbers and want to calculate the differences between neighboring elements, use ListConvolve.
+
+00:33:13.512 --> 00:33:18.605
+The difference between this root and this one is 0.472...
+
+00:33:18.605 --> 00:33:25.074
+Between this one and this one, it's something very close to 0.5
+
+00:33:25.074 --> 00:33:26.084
+There you go...
+
+00:33:26.084 --> 00:33:34.480
+You can see that the extrema are not strictly spaced at 0.5
+
+00:33:39.819 --> 00:33:47.409
+And the values of the extrema themselves are also not perfectly equal modulo.
+
+00:33:47.409 --> 00:33:49.409
+See?
+
+00:33:50.665 --> 00:33:58.940
+Even between this value and this one, there are differences in some distant signs.
+
+00:34:02.589 --> 00:34:10.600
+This can be shown by plotting a small piece of the plane x/y.
+
+00:34:10.600 --> 00:34:12.199
+So...
+
+00:34:14.358 --> 00:34:16.692
+Yes, here's another interesting picture.
+
+00:34:16.692 --> 00:34:22.413
+I draw the Bernoulli polynomial in blue,
+
+00:34:22.413 --> 00:34:28.291
+and on top of it, I'm plotting the cosine function.
+
+00:34:28.291 --> 00:34:30.000
+Look...
+
+00:34:30.000 --> 00:34:31.058
+See?
+
+00:34:31.058 --> 00:34:35.209
+The Bernoulli polynomials try to be equal to the cosine,
+
+00:34:35.209 --> 00:34:39.007
+but at some point, they deviate and go to infinity.
+
+00:34:39.007 --> 00:34:43.904
+This is exclusively for even numbers.
+
+00:34:43.904 --> 00:34:49.586
+A very interesting property of the Bernoulli polynomials that I hadn't heard of.
+
+00:34:49.586 --> 00:34:55.229
+I wonder if any of you know about this property.
+
+00:34:55.229 --> 00:34:58.673
+Has it been studied anywhere?
+
+00:34:58.673 --> 00:35:06.282
+The difference between the Chebyshev polynomial and the cosine is quite small.
+
+00:35:06.282 --> 00:35:12.317
+See? 10^-7 for the 24th-degree polynomial.
+
+00:35:15.654 --> 00:35:20.245
+And this difference decreases significantly with the growth of n.
+
+00:35:20.245 --> 00:35:23.886
+Such an amazing property.
+
+00:35:23.886 --> 00:35:28.233
+The Bernoulli polynomials are almost Equioscillating,
+
+00:35:28.233 --> 00:35:33.962
+and if you want to approximate a function on a uniform grid,
+
+00:35:33.962 --> 00:35:36.175
+then you should use Bernoulli polynomials,
+
+00:35:36.175 --> 00:35:43.977
+but, of course, you'll have to take higher degrees than the number of points you have.
+
+00:35:47.667 --> 00:35:49.713
+Here, I've drawn a cool picture too.
+
+00:35:49.713 --> 00:35:57.562
+These are the roots of the Bernoulli polynomial on the complex plane.
+
+00:36:01.959 --> 00:36:10.454
+I've already mentioned, that the Bernoulli polynomials have fewer oscillations
+
+00:36:10.454 --> 00:36:12.650
+than their degree.
+
+00:36:12.650 --> 00:36:17.665
+Why? Because some of their roots
+
+00:36:17.665 --> 00:36:21.345
+have non-zero imaginary parts.
+
+00:36:21.345 --> 00:36:24.819
+And here's how these roots are distributed.
+
+00:36:24.819 --> 00:36:29.441
+That is the idea that you need to place more roots at the edge.
+
+00:36:29.441 --> 00:36:31.598
+The Bernoulli polynomials are realized as follows:
+
+00:36:31.598 --> 00:36:38.461
+they placed them at the edge, but in the complex plane,
+
+00:36:38.461 --> 00:36:49.530
+and in the middle, they still made Equidistance, approximately the same distance between the roots.
+
+00:36:52.985 --> 00:36:58.075
+And if you remove one of these roots,
+
+00:36:58.075 --> 00:37:04.307
+you'll get this wonderful property again, that
+
+00:37:04.307 --> 00:37:09.479
+at this point
+
+00:37:09.479 --> 00:37:16.731
+the value of the Bernoulli polynomial is greater than anywhere else on this interval.
+
+00:37:16.731 --> 00:37:21.370
+But there's a certain unpleasantness here.
+
+00:37:21.370 --> 00:37:26.580
+There is no reduction of the ratio of the modulus value at this point
+
+00:37:26.580 --> 00:37:33.636
+and the modulus at all other points on the interval.
+
+00:37:33.636 --> 00:37:37.206
+And also, this unusual elongation of the interval itself.
+
+00:37:37.206 --> 00:37:39.316
+It's not the interval (-1, 1),
+
+00:37:39.316 --> 00:37:44.841
+but a gradually increasing interval.
+
+00:37:44.841 --> 00:37:48.325
+And one more thing I forgot to mention.
+
+00:37:48.325 --> 00:37:58.326
+The fact that there is a problem of finding a polynomial for which the maximum value of the modulus is minimal on the interval.
+
+00:37:58.326 --> 00:38:09.818
+And there's a problem of making a polynomial that has the same extreme points.
+
+00:38:09.818 --> 00:38:13.357
+And it turns out
+
+00:38:13.357 --> 00:38:21.011
+this extreme polynomial has the Equioscillation property.
+
+00:38:21.011 --> 00:38:25.240
+How to prove this theorem? Equioscillation theorem.
+
+00:38:25.240 --> 00:38:29.132
+I don't claim to have a completely rigorous proof.
+
+00:38:29.132 --> 00:38:32.812
+The idea is as follows... by contradiction:
+
+00:38:32.812 --> 00:38:38.781
+let's assume we have a polynomial that is a solution to this problem.
+
+00:38:38.781 --> 00:38:42.893
+And let's assume it's not Equioscillating.
+
+00:38:42.893 --> 00:38:49.232
+Let's say it has an extreme point whose magnitude is greater than all the others, for example.
+
+00:38:49.232 --> 00:38:52.367
+If there are several, that's a complex case. It needs to be considered separately.
+
+00:38:52.367 --> 00:38:57.895
+But let's say there's one outstanding extreme point, a maximum,
+
+00:38:57.895 --> 00:39:01.585
+that is larger in magnitude than all other maxima.
+
+00:39:01.585 --> 00:39:05.594
+Then we can do the following:
+
+00:39:05.594 --> 00:39:11.264
+let's take, say, a 13th-degree polynomial and we have 13 coefficients.
+
+00:39:11.264 --> 00:39:14.394
+More precisely, 12, because it's a monic polynomial.
+
+00:39:14.394 --> 00:39:20.000
+And let's consider this 12-dimensional space of coefficients.
+
+00:39:20.000 --> 00:39:25.368
+And let's consider a small neighborhood around the current point,
+
+00:39:25.368 --> 00:39:31.843
+around the values of these coefficients gotten by solving this problem.
+
+00:39:31.843 --> 00:39:38.707
+And let's take such a small vicinity, a 12-dimensional sphere, its interior,
+
+00:39:38.707 --> 00:39:41.812
+so that within this sphere, this property is not violated,
+
+00:39:41.812 --> 00:39:46.285
+and our max maximum is still greater than all other maxima.
+
+00:39:46.285 --> 00:39:51.456
+Let's take such a small sphere that this property holds.
+
+00:39:51.456 --> 00:39:52.859
+Next.
+
+00:39:52.859 --> 00:40:00.440
+Note that at our extreme node,
+
+00:40:00.440 --> 00:40:06.484
+the values of the polynomial are just a linear function of the coefficients.
+
+00:40:06.484 --> 00:40:09.536
+Of these 12 coefficients.
+
+00:40:09.536 --> 00:40:13.530
+This means that in our 12-dimensional sphere, there is a direction
+
+00:40:13.530 --> 00:40:20.625
+in which we can reduce the value of this maximum.
+
+00:40:20.625 --> 00:40:26.228
+Let's move to this point on the sphere,
+
+00:40:26.228 --> 00:40:30.898
+where the maximum is reduced.
+
+00:40:30.898 --> 00:40:42.665
+Then we get an answer that better solves the problem of minimizing the maximum.
+
+00:40:42.665 --> 00:40:44.415
+And we get a contradiction.
+
+00:40:44.415 --> 00:40:50.157
+So, our original polynomial is apparently not a solution to our problem,
+
+00:40:50.157 --> 00:40:53.945
+and we assumed it was.
+
+00:40:53.945 --> 00:40:57.570
+Therefore, for polynomials,
+
+00:40:57.570 --> 00:41:01.454
+which are solutions to this problem,
+
+00:41:01.454 --> 00:41:09.657
+there cannot be a situation where the extremes by modulus have different values.
+
+00:41:09.657 --> 00:41:13.101
+This is not a rigorous proof.
+
+00:41:13.101 --> 00:41:17.224
+Its lack of rigor is due to the fact that
+
+00:41:17.224 --> 00:41:20.884
+while I managed to reduce the value of the maximum at the node,
+
+00:41:20.884 --> 00:41:26.771
+there's no guarantee that a little to the right, a new maximum won't appear, even larger.
+
+00:41:26.771 --> 00:41:38.224
+And I didn't consider the case where there are several maximums of the same magnitude.
+
+00:41:38.224 --> 00:41:41.369
+But these cases can be carefully considered.
+
+00:41:41.369 --> 00:41:46.737
+It's better to just read Wikipedia and find out how this theorem is proved.
+
+00:41:46.737 --> 00:41:50.574
+That's all for today. Bye, everyone!
+

@@ -1,0 +1,2383 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.468 --> 00:00:03.610
+Hello! Welcome to "Mathematical Adventures".
+
+00:00:03.610 --> 00:00:06.825
+Today, we're diving deep into the prime number theorem,
+
+00:00:06.825 --> 00:00:08.381
+which goes something like this:
+
+00:00:08.381 --> 00:00:11.335
+The number of primes less than n
+
+00:00:11.335 --> 00:00:15.454
+is roughly n divided by Log[n].
+
+00:00:15.454 --> 00:00:18.418
+In fancy math talk, it sounds like this:
+
+00:00:18.418 --> 00:00:22.798
+The limit of this ratio equals 1.
+
+00:00:22.798 --> 00:00:26.237
+Now, we won't be proving this theorem today; it's quite the mathematical odyssey.
+
+00:00:26.237 --> 00:00:28.647
+Instead, we'll prove a pair of these nifty inequalities.
+
+00:00:28.647 --> 00:00:32.918
+We want to prove that this expression is sandwiched between two positive numbers, a and b.
+
+00:00:32.918 --> 00:00:36.280
+Concrete, real-deal positive numbers.
+
+00:00:36.280 --> 00:00:39.093
+This problem has occupied the minds of some mathematical legends, including Pafnuty Chebyshev.
+
+00:00:39.093 --> 00:00:43.110
+Yes, the same fellow who brought us those polynomials we talked about recently.
+
+00:00:43.110 --> 00:00:46.858
+He came up with this result back in 1852.
+
+00:00:46.858 --> 00:00:53.542
+The constants a and b he found were pretty darn close to 1.
+
+00:00:53.542 --> 00:00:58.840
+But he couldn't prove the existence of the limit, even though he was on the right track.
+
+00:00:58.840 --> 00:01:03.883
+He did prove, however, that if there is a limit, it's equal to 1.
+
+00:01:03.883 --> 00:01:07.450
+A rather intriguing claim.
+
+00:01:07.450 --> 00:01:12.425
+The actual proof of this limit's existence came 45 years later.
+
+00:01:12.425 --> 00:01:17.400
+And it was based on the Riemann zeta function.
+
+00:01:17.400 --> 00:01:20.888
+Specifically, the fact that it has a pole at 1,
+
+00:01:20.888 --> 00:01:28.980
+and all of its zeros reside to the left of a vertical line with a real part of 1.
+
+00:01:28.980 --> 00:01:31.843
+But, my friends, that's getting into some serious mathematical territory...
+
+00:01:31.843 --> 00:01:34.957
+Far easier to derive these nifty inequalities instead.
+
+00:01:35.963 --> 00:01:40.000
+This one on the right is a walk in the park to get.
+
+00:01:40.000 --> 00:01:45.929
+We'll be using school methods and those Catalan numbers we learnt about recently.
+
+00:01:45.929 --> 00:01:52.965
+In general, I'd like this video to be more than just a proof.
+
+00:01:52.965 --> 00:01:57.336
+I want it to be a mathematical journey.
+
+00:01:57.336 --> 00:02:00.000
+You see, we stumbled upon Catalan numbers.
+
+00:02:00.000 --> 00:02:05.150
+We noticed some fascinating prime-related properties hiding within these Catalans.
+
+00:02:05.150 --> 00:02:07.502
+So, we decided to explore further.
+
+00:02:07.502 --> 00:02:12.979
+By pure chance, we stumbled upon one inequality and then another.
+
+00:02:12.979 --> 00:02:20.000
+The goal of this video is to showcase this mathematical adventure as a way of the Samurai.
+
+00:02:20.000 --> 00:02:27.124
+When there's no fixed destination, just new mathematical terrain to explore and intriguing observations to make.
+
+00:02:27.124 --> 00:02:31.797
+We follow the mathematical path illuminated by curiosity.
+
+00:02:31.797 --> 00:02:35.619
+We gather important observations along the way.
+
+00:02:35.619 --> 00:02:40.744
+And these accumulated insights will surely come in handy when tackling specific mathematical puzzles on our journey.
+
+00:02:40.744 --> 00:02:47.076
+These observations will be our guiding light as we continue on this mathematical adventure.
+
+00:02:47.076 --> 00:02:50.593
+In addition to these inequalities, we'll uncover more mathematical gems.
+
+00:02:50.593 --> 00:02:53.858
+And some visually stunning plots...
+
+00:02:53.858 --> 00:02:56.319
+Like this one, for instance. What does it mean?
+
+00:02:56.319 --> 00:02:59.014
+Let me try to explain right away.
+
+00:02:59.014 --> 00:03:05.347
+Take the Catalan numbers and look at the powers of 2 within them.
+
+00:03:05.347 --> 00:03:08.411
+In the Catalan numbers c1, c2, c3, and so on.
+
+00:03:08.411 --> 00:03:13.134
+Apply Accumulate to this series of numbers.
+
+00:03:13.134 --> 00:03:18.058
+Then subtract (n+1)Log[n + 1] from it.
+
+00:03:18.058 --> 00:03:23.786
+And voilà, you've got yourself this beautiful fractal function.
+
+00:03:23.786 --> 00:03:27.906
+And if we divide it by n, we get this intriguing result.
+
+00:03:27.906 --> 00:03:37.304
+In essence, it depicts the function of the power of the prime number 2 in the product of the first n Catalan numbers.
+
+00:03:37.304 --> 00:03:43.215
+Also minus a certain base function of (n+1)Log[n+1].
+
+00:03:43.215 --> 00:03:45.626
+Alright, let's keep this mathematical journey rolling.
+
+00:03:45.626 --> 00:03:52.466
+So, we've uncovered the Catalan numbers (c_n) and their explicit formula.
+
+00:03:52.466 --> 00:03:59.401
+But today, we'll find it more convenient to work with numbers that are n + 1 times larger.
+
+00:03:59.401 --> 00:04:02.701
+In other words, with the binomial coefficient 2n/n.
+
+00:04:02.701 --> 00:04:04.601
+Let's define it.
+
+00:04:04.601 --> 00:04:07.112
+Here are our Catalan numbers.
+
+00:04:07.112 --> 00:04:10.000
+And here are the first 10 centered binomial coefficients.
+
+00:04:10.000 --> 00:04:20.000
+I'll call them centered binomial coefficients because these numbers, 2, 6, 20, 70...
+
+00:04:20.000 --> 00:04:26.898
+They are these numbers: 2, 6, 20, 70...
+
+00:04:26.898 --> 00:04:30.895
+Let's enclose them in a frame.
+
+00:04:30.895 --> 00:04:36.624
+In general, today we'll be studying these binomial coefficients,
+
+00:04:36.624 --> 00:04:39.577
+investigating the powers of prime numbers within them,
+
+00:04:39.577 --> 00:04:43.043
+and making interesting observations.
+
+00:04:43.043 --> 00:04:44.749
+Here's observation №1.
+
+00:04:44.749 --> 00:04:52.690
+The remainders when dividing these binomial coefficients by 5 look like this.
+
+00:04:52.690 --> 00:04:56.985
+Some remainders go on, and then there's a long sequence of zeros.
+
+00:04:56.985 --> 00:05:00.000
+Again, non-zeros,
+
+00:05:00.000 --> 00:05:03.381
+then another long sequence of zeros.
+
+00:05:03.381 --> 00:05:08.550
+This holds true for both 7 and 11...
+
+00:05:08.550 --> 00:05:13.073
+We keep encountering these long sequences of zeros all the time.
+
+00:05:13.073 --> 00:05:16.238
+Let's delve into these zeros.
+
+00:05:16.238 --> 00:05:19.072
+A zero signifies divisibility by a prime number, p.
+
+00:05:19.072 --> 00:05:25.312
+But to what power, precisely, does the number b divide by p?
+
+00:05:25.312 --> 00:05:36.822
+To understand this, we'll define the function vp, which represents the exponent of the prime number p in the integer x.
+
+00:05:36.822 --> 00:05:40.330
+For instance, let's consider the case of 5.
+
+00:05:40.330 --> 00:05:46.210
+Here, we have remainders "2, 1".
+
+00:05:46.210 --> 00:05:48.772
+This implies that the number isn't divisible by 5.
+
+00:05:48.772 --> 00:05:50.427
+Then "0, 0".
+
+00:05:50.427 --> 00:05:55.594
+This indicates that the number is divisible by 5, and specifically, it's divisible by the first power of 5.
+
+00:05:55.594 --> 00:05:57.833
+Then it's not divisible again, and then it is...
+
+00:05:57.833 --> 00:06:00.696
+We encounter numbers that are divisible by 5^2,
+
+00:06:00.696 --> 00:06:02.403
+and 5^3.
+
+00:06:02.403 --> 00:06:07.478
+In fact, if desired, you can find numbers that are divisible by any power of 5.
+
+00:06:07.478 --> 00:06:13.524
+However, the maximum power of 5 in binomial coefficients increases very slowly.
+
+00:06:13.524 --> 00:06:16.437
+This is an interesting observation.
+
+00:06:16.437 --> 00:06:20.000
+What's also interesting is that we periodically encounter zeros here.
+
+00:06:20.000 --> 00:06:24.673
+So, no matter how far we go in these binomial coefficients,
+
+00:06:24.673 --> 00:06:30.553
+numbers that are not divisible by 5 will still appear.
+
+00:06:30.553 --> 00:06:31.940
+So...
+
+00:06:31.940 --> 00:06:37.970
+We expand using the formula b_n and get something such,
+
+00:06:37.970 --> 00:06:45.509
+that the exponent of the prime number p in b_n is equal to the difference between these two expressions.
+
+00:06:45.509 --> 00:06:50.465
+The function vp is an entirely additive arithmetic function.
+
+00:06:50.465 --> 00:06:55.339
+vp[a * b] = vp[a] + vp[b]
+
+00:06:55.339 --> 00:06:59.107
+And when we divide, we get the difference.
+
+00:06:59.107 --> 00:07:03.730
+In essence, today we'll try to express this equation.
+
+00:07:03.730 --> 00:07:09.560
+I've called it the vp-identity, but that's an unofficial name. It's incorrect.
+
+00:07:09.560 --> 00:07:16.999
+What we want to write down is that x can be expressed as a product of prime powers in the following way.
+
+00:07:16.999 --> 00:07:19.208
+We simply take the Log[x].
+
+00:07:19.208 --> 00:07:26.279
+Then, instead of a product, we have the sum of Log[p] times the power of the prime number p within x.
+
+00:07:26.279 --> 00:07:34.873
+And we'll apply this elementary equation to various expressions to get what we need.
+
+00:07:34.873 --> 00:07:38.395
+But let's start with something very simple for now.
+
+00:07:38.395 --> 00:07:44.777
+Let's immediately derive a fascinating result by school methods.
+
+00:07:44.777 --> 00:07:47.063
+The result is as follows:
+
+00:07:47.063 --> 00:07:56.009
+It's clear that the central binomial coefficient is less than 2^2n.
+
+00:07:56.009 --> 00:08:00.899
+So, let's consider this expansion.
+
+00:08:00.899 --> 00:08:03.451
+The 10th row of Pascal's triangle.
+
+00:08:03.451 --> 00:08:06.867
+Let's take this central binomial coefficient...
+
+00:08:06.867 --> 00:08:11.540
+And it's entirely obvious that it's less than 2^10.
+
+00:08:11.540 --> 00:08:18.224
+Simply because the sum of all coefficients (this is x = 1) yields 2^10.
+
+00:08:18.224 --> 00:08:22.193
+So, on one hand, we have obvious inequalities,
+
+00:08:22.193 --> 00:08:33.150
+and on the other hand, from the formula, we can see that in b_n, prime numbers greater than n are in the numerator.
+
+00:08:33.150 --> 00:08:39.373
+And they cannot be canceled by what's in the denominator.
+
+00:08:39.373 --> 00:08:43.543
+(2n)! is the product of numbers from 1 to 2n.
+
+00:08:43.543 --> 00:08:49.121
+n! is the product of all numbers from 1 to n, and there are two of them.
+
+00:08:49.121 --> 00:08:54.092
+Prime numbers greater than n cannot appear in the denominator.
+
+00:08:54.092 --> 00:09:06.960
+This means that b_n is definitely greater than the product of all prime numbers from n + 1 (inclusive) to 2n.
+
+00:09:06.960 --> 00:09:10.326
+So, this is what we want to write down.
+
+00:09:10.326 --> 00:09:18.518
+2^2n is greater than the product of prime numbers from n + 1 to 2n.
+
+00:09:18.518 --> 00:09:21.230
+A result suitable for school.
+
+00:09:21.230 --> 00:09:23.809
+Let's introduce a definition...
+
+00:09:23.809 --> 00:09:26.792
+Alright... let's call this function θ[n].
+
+00:09:26.792 --> 00:09:36.534
+And let it be the product of all prime numbers less than n, along with the logarithm.
+
+00:09:36.534 --> 00:09:40.334
+The logarithm of a product is expressed as the sum of logarithms.
+
+00:09:40.334 --> 00:09:45.811
+So, when we take the logarithm of both sides,
+
+00:09:45.811 --> 00:09:48.322
+it gives us...
+
+00:09:48.322 --> 00:09:51.034
+Well... this 4^n here.
+
+00:09:51.034 --> 00:10:02.294
+This means Log[4n] ≥ (θ[2n] - θ[n]).
+
+00:10:02.294 --> 00:10:09.431
+Let's write this down several times for n, n/2, n/4, n/8, and so on.
+
+00:10:09.431 --> 00:10:14.255
+Let's write down Log₂[n] lines here.
+
+00:10:14.255 --> 00:10:16.801
+And let's sum up these inequalities.
+
+00:10:16.801 --> 00:10:18.387
+What will we get?
+
+00:10:18.387 --> 00:10:23.060
+On the left, we get Log[4] * 2n.
+
+00:10:23.060 --> 00:10:29.241
+2n is the sum of all these factors plus one.
+
+00:10:29.241 --> 00:10:31.819
+Here, we get cancellation.
+
+00:10:31.819 --> 00:10:36.592
+This cancels out with this, and so on.
+
+00:10:36.592 --> 00:10:39.455
+And we are left with just the first part.
+
+00:10:39.455 --> 00:10:44.882
+In the end, Log[4]2n ≥ θ[2n]
+
+00:10:44.882 --> 00:10:53.426
+Now, when we substitute n/2 here, we get θ[n] ≤ Log[4]n.
+
+00:10:53.426 --> 00:10:58.517
+Approximately ≈ 1.386 * n
+
+00:10:58.517 --> 00:11:02.706
+By the way, we've already dealt with this function in one of our videos.
+
+00:11:02.706 --> 00:11:05.373
+And got this experimental result.
+
+00:11:05.373 --> 00:11:08.967
+That θ[n] is actually ≈ n.
+
+00:11:08.967 --> 00:11:14.293
+And it becomes slightly less than n asymptotically.
+
+00:11:14.293 --> 00:11:21.027
+So, the truth is that θ[n] has an asymptote.
+
+00:11:21.027 --> 00:11:24.745
+If we divide θ[n] by n, in the limit, we get 1.
+
+00:11:24.745 --> 00:11:29.672
+This theorem is, in fact, equivalent to the Prime Number Theorem.
+
+00:11:29.672 --> 00:11:37.160
+We saw it through numerical experimentation, but we didn't prove it.
+
+00:11:37.160 --> 00:11:45.518
+In short, the truth is that instead of 1.386, we should write 1, but it's not that simple.
+
+00:11:45.518 --> 00:11:50.643
+So far, we've got this upper bound.
+
+00:11:50.643 --> 00:11:52.274
+Let's move on.
+
+00:11:52.274 --> 00:11:59.078
+This result can be further developed.
+
+00:11:59.078 --> 00:12:02.444
+Somehow, the idea comes to us...
+
+00:12:02.444 --> 00:12:08.877
+Let's take the product of prime numbers from √n to n.
+
+00:12:08.877 --> 00:12:12.701
+How does this idea come to our minds?
+
+00:12:12.701 --> 00:12:15.054
+Well... just think about it.
+
+00:12:15.054 --> 00:12:21.637
+This idea actually comes to mind when you think about this result.
+
+00:12:21.637 --> 00:12:31.452
+You start to understand that if we take θ[√n], it's asymptotically smaller than θ[n].
+
+00:12:31.452 --> 00:12:41.422
+So, we can study prime numbers from √n to n.
+
+00:12:41.422 --> 00:12:43.080
+What will we get?
+
+00:12:43.080 --> 00:12:48.306
+We'll get that this logarithm is equal to the difference.
+
+00:12:48.306 --> 00:12:55.932
+We can get a lower estimate like this:
+
+00:12:55.932 --> 00:12:58.515
+how many of these numbers from √n to n?
+
+00:12:58.515 --> 00:13:01.277
+This difference is already the Pi function.
+
+00:13:01.277 --> 00:13:06.754
+That's the number of prime numbers in this range.
+
+00:13:08.754 --> 00:13:12.011
+So, we take their products and logarithms.
+
+00:13:14.424 --> 00:13:18.221
+It's like we're taking the sum of the logarithms of these prime numbers.
+
+00:13:18.221 --> 00:13:23.397
+And each of these terms is definitely greater than Log[√n].
+
+00:13:23.397 --> 00:13:26.541
+So, we write down this expression and say that it's less.
+
+00:13:26.541 --> 00:13:30.526
+We've got a lower estimate for this thing.
+
+00:13:30.526 --> 00:13:38.417
+Next, we divide by Log[√n] and get this.
+
+00:13:38.417 --> 00:13:46.033
+Then we move Pi[√n] to the right and make a very rough estimate.
+
+00:13:46.033 --> 00:13:51.714
+The number of prime numbers less than √n is definitely less than √n.
+
+00:13:51.714 --> 00:14:00.466
+And in the end, we can discard this term by rounding up the "α" coefficient.
+
+00:14:00.466 --> 00:14:08.298
+And say that, starting from some large n, we can neglect this term
+
+00:14:08.298 --> 00:14:12.410
+due to a slight increase in this constant.
+
+00:14:12.410 --> 00:14:17.578
+In the end, we've got an upper estimate for Pi[n].
+
+00:14:17.578 --> 00:14:29.143
+But the truth is, instead of 1.1 (like Chebyshev), we got 2.78, much cruder. But it was a complete giveaway.
+
+00:14:29.143 --> 00:14:34.818
+That's how we quickly got two results.
+
+00:14:34.818 --> 00:14:37.687
+One for the θ[n] function,
+
+00:14:37.687 --> 00:14:40.450
+and the other for the Pi[n] function.
+
+00:14:40.450 --> 00:14:43.162
+Okay...
+
+00:14:43.162 --> 00:14:45.572
+Let's move on.
+
+00:14:45.572 --> 00:15:01.708
+Let's write down this vp - identity for n! and the binomial coefficient b_n.
+
+00:15:01.708 --> 00:15:08.445
+Let's start with the function vp[n], where n ranges from 1 to 128.
+
+00:15:08.445 --> 00:15:11.726
+Take the prime number 2.
+
+00:15:11.726 --> 00:15:18.209
+This is what the powers of the prime number 2 in the number n look like.
+
+00:15:18.209 --> 00:15:19.664
+A simple function like this.
+
+00:15:19.664 --> 00:15:24.840
+Every second number isn't divisible by 2, so vp = 0.
+
+00:15:24.840 --> 00:15:29.799
+Every second number is divisible by 2. Here...
+
+00:15:29.799 --> 00:15:34.806
+Every fourth number is divisible by 2^2.
+
+00:15:34.806 --> 00:15:39.672
+Every eighth number is divisible by 2^3, and so on.
+
+00:15:39.672 --> 00:15:48.689
+And vp[n!] is actually the sum of all these columns.
+
+00:15:50.650 --> 00:15:52.117
+Moving on...
+
+00:15:52.117 --> 00:15:56.488
+We can calculate the sum of these columns like this:
+
+00:15:56.488 --> 00:16:02.317
+We can calculate it horizontally.
+
+00:16:02.317 --> 00:16:05.230
+Let me explain...
+
+00:16:05.230 --> 00:16:12.215
+Let's mentally imagine that there are points at the intersections with the horizontals as well.
+
+00:16:12.215 --> 00:16:21.161
+Then, the sum of the heights of these columns equals the number of points in this region.
+
+00:16:21.161 --> 00:16:25.971
+In other words, above horizontal 0.
+
+00:16:25.971 --> 00:16:31.014
+So, vp[n!] can be calculated like this:
+
+00:16:31.014 --> 00:16:34.117
+the number of points on horizontal 1,
+
+00:16:34.117 --> 00:16:36.117
+the number of points on horizontal 2,
+
+00:16:36.117 --> 00:16:39.445
+including these intersections.
+
+00:16:39.445 --> 00:16:44.547
+The number of points on horizontal 3, and so on.
+
+00:16:44.547 --> 00:16:58.073
+If n = p^k, then the number of points on the first horizontal equals (p^k)/p, which is p^k-1.
+
+00:16:58.073 --> 00:17:08.654
+The number of points on the second horizontal equals n/(p^2), which is p^k - 2 if n = p^k.
+
+00:17:08.654 --> 00:17:10.945
+And so on...
+
+00:17:10.945 --> 00:17:15.525
+So, for a specific value of n = p^k
+
+00:17:15.525 --> 00:17:24.348
+vp[n!] becomes a geometric progression with q = p.
+
+00:17:24.348 --> 00:17:25.090
+Moving on...
+
+00:17:25.090 --> 00:17:29.422
+Now let's think about b_n.
+
+00:17:29.422 --> 00:17:35.352
+There we have vp[(2n)!] equal to this.
+
+00:17:35.352 --> 00:17:38.080
+vp[n!] equals this.
+
+00:17:38.080 --> 00:17:44.601
+And we need to subtract two of these. We get 0.
+
+00:17:44.601 --> 00:17:53.799
+At these points, the remainder of division by p isn't zero for n = p^k.
+
+00:17:53.799 --> 00:17:57.466
+For other n that are not equal to p^k,
+
+00:17:57.466 --> 00:18:04.703
+the number of points on the k-th horizontal equals n/p^k, rounded down.
+
+00:18:04.703 --> 00:18:12.845
+These square brackets represent rounding down of a real number.
+
+00:18:12.845 --> 00:18:19.606
+You can consider this variant where n = (p^k) plus some small a.
+
+00:18:19.606 --> 00:18:27.751
+And then we get this expression for vp[n!]
+
+00:18:27.751 --> 00:18:32.173
+and this expression for vp[(2n)!].
+
+00:18:32.173 --> 00:18:37.399
+When we subtract one from the other,
+
+00:18:37.399 --> 00:18:41.619
+these first parts cancel out
+
+00:18:41.619 --> 00:18:44.524
+and only the second parts remain,
+
+00:18:44.524 --> 00:18:48.543
+and we can group them further like this.
+
+00:18:48.543 --> 00:18:51.758
+We end up with a sum of such brackets.
+
+00:18:51.758 --> 00:18:57.571
+Well... instead of a, you could write n here. It's not that important.
+
+00:18:57.571 --> 00:19:05.914
+So, this function can be represented as the sum of such functions,
+
+00:19:05.914 --> 00:19:08.676
+which are essentially the same function f[x],
+
+00:19:08.676 --> 00:19:18.879
+but for x it's first a/p, then a/(p^2), then a/(p^3).
+
+00:19:21.697 --> 00:19:27.351
+By the way, these square brackets work directly in Mathematica.
+
+00:19:27.351 --> 00:19:30.414
+Here's the function I'm talking about.
+
+00:19:30.414 --> 00:19:36.599
+Floor[2x] - 2Floor[x]
+
+00:19:36.599 --> 00:19:40.000
+Let's define it.
+
+00:19:40.000 --> 00:19:48.249
+And, for example, for the prime number 3, we'll have this option for the first bracket.
+
+00:19:48.249 --> 00:19:56.439
+Such a thing for the sum of the first two brackets. And so on...
+
+00:19:56.439 --> 00:20:02.414
+Look... we get a kind of fractal function.
+
+00:20:02.414 --> 00:20:05.070
+Let's see how it's structured.
+
+00:20:05.070 --> 00:20:08.726
+First, we have these three platforms.
+
+00:20:08.726 --> 00:20:13.248
+Then, we divide each platform into triangles.
+
+00:20:13.248 --> 00:20:15.106
+Here the triangle goes up,
+
+00:20:15.106 --> 00:20:16.360
+while here the triangle goes down,
+
+00:20:16.360 --> 00:20:19.575
+and then the triangle goes up again.
+
+00:20:19.575 --> 00:20:25.345
+We essentially break down each platform into three subplatforms.
+
+00:20:25.345 --> 00:20:29.263
+Here, the middle one goes up,
+
+00:20:29.263 --> 00:20:32.026
+while here, the two edges go up.
+
+00:20:32.026 --> 00:20:35.140
+Here, the middle one goes up again.
+
+00:20:35.140 --> 00:20:37.148
+And the same process continues.
+
+00:20:37.148 --> 00:20:40.464
+Next, we again divide each of these subplatforms into three parts,
+
+00:20:40.464 --> 00:20:49.150
+and again, every other one is lifted up.
+
+00:20:49.150 --> 00:20:52.918
+For five, the same concept applies.
+
+00:20:52.918 --> 00:21:02.267
+Only there, each platform is divided into five pieces, and two subplatforms go up
+
+00:21:02.267 --> 00:21:07.141
+or three subplatforms go up.
+
+00:21:07.141 --> 00:21:09.419
+Here, it's two again.
+
+00:21:11.782 --> 00:21:12.936
+And so on.
+
+00:21:12.936 --> 00:21:22.870
+In short, it's quite understandable how the function vp for the number b_n is structured.
+
+00:21:22.870 --> 00:21:28.379
+Here, each point x holds b_x,
+
+00:21:28.379 --> 00:21:31.536
+and the Y-axis represents the value of vp,
+
+00:21:31.536 --> 00:21:36.603
+the power of the prime number p within b_x.
+
+00:21:36.603 --> 00:21:44.793
+We get exactly what we analytically predicted.
+
+00:21:44.793 --> 00:21:46.147
+The next observation.
+
+00:21:46.147 --> 00:21:50.317
+When we take a large number of b_n values,
+
+00:21:50.317 --> 00:21:59.565
+we see that the function vp for them can be bounded from above by the logarithm of n base p.
+
+00:21:59.565 --> 00:22:07.835
+Plus some constant, which is unique for each prime but small (&lt;1).
+
+00:22:07.835 --> 00:22:11.574
+When we take the logarithmic X-axis,
+
+00:22:11.574 --> 00:22:14.286
+plot the logarithm of n here,
+
+00:22:14.286 --> 00:22:18.959
+and here, just vp of the number b_n,
+
+00:22:18.959 --> 00:22:22.971
+we get such a linear boundary.
+
+00:22:22.971 --> 00:22:40.603
+I added 0.1 here to show these blue dots, which are located directly below the yellow line if you don't add 0.1.
+
+00:22:40.603 --> 00:22:41.316
+So...
+
+00:22:41.320 --> 00:22:48.356
+For two, you get a very precise approximation of the maximum value of the vp function.
+
+00:22:48.356 --> 00:22:51.873
+But you need use Log[n+1] instead of Log[n].
+
+00:22:51.873 --> 00:22:58.306
+That extra 1 is added, I'll explain where it comes from later.
+
+00:22:58.306 --> 00:23:01.607
+For five, and for nineteen.
+
+00:23:01.607 --> 00:23:12.313
+Everywhere, you get a simple linear function if you take the logarithmic X-axis.
+
+00:23:12.313 --> 00:23:14.120
+Alright...
+
+00:23:16.181 --> 00:23:20.218
+vp grows slowly, logarithmically.
+
+00:23:20.218 --> 00:23:24.600
+And it takes on values 0, 1, 2, 3, ..., whole numbers.
+
+00:23:24.600 --> 00:23:29.030
+The question arises: "How many blue dots are there on this line,
+
+00:23:29.030 --> 00:23:32.144
+on this one, on this one, and so on?"
+
+00:23:32.144 --> 00:23:38.024
+That's exactly what we'll deal with today. And we'll get the following answers.
+
+00:23:38.024 --> 00:23:47.070
+The average value of Y for n = p^k is equal to this.
+
+00:23:47.070 --> 00:23:53.491
+Approximately k/2 minus a small adjustment for p &gt; 2.
+
+00:23:53.491 --> 00:23:56.684
+And for two, it's a different result.
+
+00:23:56.684 --> 00:23:59.698
+We'll prove it directly.
+
+00:23:59.698 --> 00:24:01.555
+Let's go...
+
+00:24:03.918 --> 00:24:10.814
+You can count the number of different Y values using the Tally function.
+
+00:24:10.814 --> 00:24:16.283
+Look... Tally counts frequencies.
+
+00:24:16.283 --> 00:24:18.392
+1 occurs 5 times.
+
+00:24:18.392 --> 00:24:20.000
+2 occurs 3 times.
+
+00:24:20.000 --> 00:24:22.913
+101 occurs 2 times.
+
+00:24:22.913 --> 00:24:25.373
+And here it's the same.
+
+00:24:25.373 --> 00:24:29.091
+But I prefer to use the IntTally function.
+
+00:24:29.091 --> 00:24:30.898
+How it works.
+
+00:24:30.898 --> 00:24:37.079
+It gives you the same frequencies but not as pairs, just as an array of frequencies.
+
+00:24:37.079 --> 00:24:43.981
+The i-th position contains how many times the number i occurs.
+
+00:24:47.752 --> 00:24:50.480
+Look at what we have...
+
+00:24:50.480 --> 00:24:56.859
+How many times is vp[b[n]] for p = 2 equal to zero?
+
+00:24:56.859 --> 00:24:58.616
+Answer: 0 times.
+
+00:24:58.616 --> 00:25:02.736
+How many times is vp[b[n]] equal to 1?
+
+00:25:02.736 --> 00:25:03.800
+7 times.
+
+00:25:03.800 --> 00:25:05.335
+How many times is it equal to 2?
+
+00:25:05.335 --> 00:25:08.206
+And so on...
+
+00:25:08.206 --> 00:25:13.281
+We consider all b_i, where i ranges from 1
+
+00:25:13.281 --> 00:25:16.433
+to such an n.
+
+00:25:18.142 --> 00:25:23.709
+Clearly, these are simply binomial coefficients.
+
+00:25:23.709 --> 00:25:27.089
+Interesting, right?
+
+00:25:27.089 --> 00:25:31.963
+So, in different binomial coefficients from b_1 to b_n,
+
+00:25:31.963 --> 00:25:37.239
+the frequencies of different values form a row from Pascal's Triangle.
+
+00:25:37.239 --> 00:25:42.959
+In other words, they are also binomial coefficients.
+
+00:25:42.959 --> 00:25:55.882
+Let's draw the frequencies of these powers of b_1 to b_n for different values of m, where n = (p^m) - 1.
+
+00:25:55.882 --> 00:25:58.236
+Here's Pascal's Triangle.
+
+00:25:58.236 --> 00:26:04.917
+Only with the ones detached in the first column.
+
+00:26:04.917 --> 00:26:10.000
+This triangle has a generating function.
+
+00:26:10.000 --> 00:26:11.930
+Like this.
+
+00:26:11.930 --> 00:26:17.006
+More precisely, it's the generating function of Pascal's Triangle itself without the detached ones.
+
+00:26:17.006 --> 00:26:18.759
+To detach the ones,
+
+00:26:18.759 --> 00:26:23.834
+you need to subtract 1/(1-y) here, 1 from here, 1 from here, and so on...
+
+00:26:23.834 --> 00:26:31.442
+So, in reality, you need to subtract 1/(1-y).
+
+00:26:31.442 --> 00:26:38.292
+This comes from the formula for an infinite geometric series.
+
+00:26:38.292 --> 00:26:45.177
+If you're not familiar with this, you'll have to look it up on your own.
+
+00:26:45.177 --> 00:26:49.703
+In general, the generating function for Pascal's Triangle is simple.
+
+00:26:49.703 --> 00:26:54.800
+For y^k, we want to see the k-th row.
+
+00:26:54.800 --> 00:26:57.159
+In other words, (1 + x)^k.
+
+00:26:57.159 --> 00:27:03.441
+We want to see the generating function for the kth row in terms of the variable x.
+
+00:27:03.441 --> 00:27:10.000
+The generating function for the triangle is a function of two variables: x and y.
+
+00:27:10.000 --> 00:27:12.437
+And it's structured like this.
+
+00:27:12.437 --> 00:27:22.015
+For y^k, we want to see a polynomial in x, whose coefficients are the numbers in the k-th row of Pascal's Triangle.
+
+00:27:22.015 --> 00:27:27.008
+Some triangle. Whichever you prefer.
+
+00:27:27.008 --> 00:27:36.210
+Here's the generating function for a triangle with the first column detached.
+
+00:27:36.210 --> 00:27:38.889
+Let's make sure of that.
+
+00:27:38.889 --> 00:27:44.824
+I divided by y again here because our triangle starts from the second row.
+
+00:27:44.824 --> 00:27:46.944
+Okay... Checking...
+
+00:27:46.944 --> 00:27:48.735
+Yes, indeed...
+
+00:27:48.735 --> 00:27:50.251
+There's no 1 here,
+
+00:27:50.251 --> 00:27:51.186
+no 1 here...
+
+00:27:51.186 --> 00:27:53.136
+The 1 is detached.
+
+00:27:53.136 --> 00:27:55.496
+Okay.
+
+00:27:55.496 --> 00:28:00.873
+We need to get a similar generating function for other prime numbers.
+
+00:28:00.873 --> 00:28:02.865
+3, 5 and so on...
+
+00:28:02.865 --> 00:28:08.143
+Then, we might come across something interesting.
+
+00:28:08.143 --> 00:28:10.595
+We'll get this result soon.
+
+00:28:10.595 --> 00:28:14.463
+It will be like this.
+
+00:28:14.463 --> 00:28:22.059
+And for p = 3, we'll have a generating function like this.
+
+00:28:22.059 --> 00:28:25.890
+And here are the rows of this triangle.
+
+00:28:25.890 --> 00:28:31.704
+Each row represents the frequencies of different values of vp
+
+00:28:31.704 --> 00:28:36.338
+when we consider vp[b1], vp[b2], ..., vp[bn],
+
+00:28:36.338 --> 00:28:43.826
+where n is equal to (p^k) - 1 (or not -1, we'll see).
+
+00:28:43.826 --> 00:28:44.709
+Alright...
+
+00:28:44.709 --> 00:28:49.433
+I must postpone the proof of this statement until the end of the video.
+
+00:28:49.433 --> 00:28:55.359
+For now, let's look at the experimental results.
+
+00:28:55.359 --> 00:29:01.579
+Let's experimentally study our vp function some more.
+
+00:29:01.579 --> 00:29:11.736
+And very often, when you have a sequence of numbers, it makes sense to consider partial sums of that sequence.
+
+00:29:11.736 --> 00:29:18.520
+To compute partial sums in Wolfram Mathematica, you use the Accumulate function.
+
+00:29:18.520 --> 00:29:30.000
+Accumulate turns a sequence of numbers into a sequence of partial sums, where the k-th element is the sum of the first k.
+
+00:29:30.000 --> 00:29:35.876
+Here's what Accumulate looks like for p = 2.
+
+00:29:35.876 --> 00:29:45.124
+Accumulate of vp[b_i] is vp of the product b1, b2, b3, ..., b_n.
+
+00:29:45.124 --> 00:29:48.189
+We get this plot...
+
+00:29:48.189 --> 00:29:53.717
+And it's evident that it has some small "peaks",
+
+00:29:53.717 --> 00:29:57.132
+which are more noticeable for 3.
+
+00:29:57.132 --> 00:30:01.654
+There are such points. Maxima.
+
+00:30:01.654 --> 00:30:09.317
+For them, you can get the exact value of Accumulate[vp[b_i]].
+
+00:30:09.317 --> 00:30:18.424
+For two, in particular, it's simply 0.5Log[n+1] * (n+1).
+
+00:30:18.424 --> 00:30:23.146
+And when we subtract this function,
+
+00:30:23.146 --> 00:30:31.280
+at the points where there were peaks (these are powers of two minus one),
+
+00:30:31.280 --> 00:30:36.053
+we get exactly 0 at these points.
+
+00:30:36.053 --> 00:30:45.658
+When n equals 2^(k-1), this expression becomes 2^k.
+
+00:30:45.658 --> 00:30:50.000
+And here, I multiplied it by Log[p],
+
+00:30:50.000 --> 00:30:59.749
+to get the contribution of the prime number p to vp of the product of b_i's.
+
+00:30:59.749 --> 00:31:06.483
+The contribution to the logarithm of the product of b_i's.
+
+00:31:06.483 --> 00:31:10.000
+I'm just giving you the answer.
+
+00:31:10.000 --> 00:31:13.818
+We'll try to derive it below.
+
+00:31:13.818 --> 00:31:16.731
+Basically, you wouldn't have to guess it,
+
+00:31:16.731 --> 00:31:22.711
+you could find it through trial and error.
+
+00:31:22.711 --> 00:31:27.155
+If everything is clear with the maxima,
+
+00:31:27.155 --> 00:31:33.132
+it's much more complicated with the minima (these points at the bottom).
+
+00:31:33.132 --> 00:31:39.152
+Let's take a look at them...
+
+00:31:39.152 --> 00:31:44.328
+For this, we will divide the expression we had by n.
+
+00:31:44.328 --> 00:31:51.011
+This is a very natural desire when you see such a plot, to divide it by n.
+
+00:31:51.011 --> 00:31:53.924
+Here's what we get.
+
+00:31:53.924 --> 00:31:59.100
+It appears that this entire plot resides within a certain band.
+
+00:31:59.100 --> 00:32:03.471
+Both the upper and lower bounds will eventually give us
+
+00:32:03.471 --> 00:32:11.807
+upper and lower estimates for Pi[n] or some other prime-related function.
+
+00:32:11.807 --> 00:32:13.413
+We'll see this later.
+
+00:32:13.413 --> 00:32:19.544
+Right now, we're interested in studying this fractal function and understanding how it behaves.
+
+00:32:19.544 --> 00:32:29.084
+Here, I've written down the values of n for all these minima.
+
+00:32:29.084 --> 00:32:33.292
+If for points of maximum, we have (2^k)-1
+
+00:32:33.292 --> 00:32:37.253
+and the binary representation looks like this,
+
+00:32:37.253 --> 00:32:39.600
+then for minima, the answer is like this:
+
+00:32:39.600 --> 00:32:49.058
+The binary representation of n looks like 1010101, and so on.
+
+00:32:49.058 --> 00:32:52.999
+Well... there's a mistake here...
+
+00:32:52.999 --> 00:32:56.264
+In general, it alternates between 1 and 0.
+
+00:32:56.264 --> 00:32:58.918
+And sometimes at the end, you encounter an irregularity.
+
+00:32:58.918 --> 00:33:03.289
+Sometimes this final "1" is omitted.
+
+00:33:03.289 --> 00:33:07.501
+Lets make sure of this
+
+00:33:07.501 --> 00:33:09.555
+Here we go...
+
+00:33:09.555 --> 00:33:14.339
+So it ends either with (1, 0, 0) or (0, 1, 0).
+
+00:33:14.339 --> 00:33:19.716
+Essentially, each subsequent number is either 2 times the previous one
+
+00:33:19.716 --> 00:33:22.695
+or 2 times the previous one plus 2.
+
+00:33:22.695 --> 00:33:26.664
+Like for example 42 is 20 * 2 + 2.
+
+00:33:26.664 --> 00:33:30.784
+This is how the points of minima are arranged.
+
+00:33:30.784 --> 00:33:35.304
+This x. And what is y at the points of minima?
+
+00:33:35.304 --> 00:33:44.502
+Well, here we get expressions, the structure of which is somewhat clear.
+
+00:33:44.502 --> 00:33:51.362
+Firstly, we see that everything tends to some limit -0.14...
+
+00:33:53.976 --> 00:33:55.993
+This is a complex matter.
+
+00:33:55.993 --> 00:33:59.586
+These numbers are not easy to decipher right away.
+
+00:33:59.586 --> 00:34:02.742
+We'll skip studying these numbers.
+
+00:34:02.742 --> 00:34:06.057
+Let it be for your independent study.
+
+00:34:09.275 --> 00:34:15.487
+So, for powers of two, the upper bound is this,
+
+00:34:15.487 --> 00:34:19.699
+and the lower bound is this.
+
+00:34:19.699 --> 00:34:23.631
+Here, 0.20744
+
+00:34:23.631 --> 00:34:32.016
+is actually this number, but you need to divide it by Log[2].
+
+00:34:32.016 --> 00:34:40.925
+Because here, 0.14 is got after multiplying by Log[p].
+
+00:34:40.925 --> 00:34:45.688
+And here, I didn't multiply by Log[p].
+
+00:34:45.688 --> 00:34:49.698
+For other prime numbers, you get an upper bound like this.
+
+00:34:49.698 --> 00:34:55.863
+This is also an analytical result that we will prove below.
+
+00:34:55.863 --> 00:35:03.927
+And this result is not proven, but it's somewhat visible.
+
+00:35:03.927 --> 00:35:10.320
+You see, this 0.5 – it's an estimate that simply can't be improved upon.
+
+00:35:10.320 --> 00:35:22.256
+This value emerges in the very first minimum when p approaches infinity.
+
+00:35:22.256 --> 00:35:25.159
+Now, the first minimum looks quite simple.
+
+00:35:25.159 --> 00:35:34.156
+It's a scenario where vp[b1, b2, b3, ..., b_n0] doesn't contain the prime number p at all.
+
+00:35:34.156 --> 00:35:43.385
+Because there's no prime number p in either the numerator or the denominator as long as n ≤ n0.
+
+00:35:43.385 --> 00:35:49.164
+So, let's take n = (p - 1)/2.
+
+00:35:49.164 --> 00:35:52.680
+First we need to define...
+
+00:35:52.680 --> 00:35:55.090
+Then set...
+
+00:35:55.090 --> 00:35:57.349
+Then calculate the limit.
+
+00:35:57.349 --> 00:36:00.262
+There we have it. It equals 0.5.
+
+00:36:00.262 --> 00:36:04.381
+Of course, this isn't a proof; it's just how the first minimum is structured.
+
+00:36:04.381 --> 00:36:09.677
+It's quite possible that the second and third minima will be even smaller.
+
+00:36:09.677 --> 00:36:12.339
+This isn't proven here.
+
+00:36:12.339 --> 00:36:19.705
+Of course, the number 0.5 for each individual prime number can be replaced by something smaller modulo.
+
+00:36:19.705 --> 00:36:25.111
+Now, I'll draw a plot, and hopefully, it'll all become clearer.
+
+00:36:25.111 --> 00:36:38.291
+Here, we calculate the minimum for a specific prime number in the range from 0 to 16000.
+
+00:36:38.291 --> 00:36:44.035
+Here, you can see the first 15 prime numbers and the number 71.
+
+00:36:44.035 --> 00:36:46.614
+For some reason, I did it this way...
+
+00:36:46.614 --> 00:36:50.496
+Initially, for two -&gt; 0.20
+
+00:36:50.496 --> 00:36:57.774
+Then, it gets closer to 0.5
+
+00:36:57.774 --> 00:37:05.042
+For example, this is what the plot looks like for p = 5.
+
+00:37:05.042 --> 00:37:08.966
+The first minimum is found right here.
+
+00:37:08.966 --> 00:37:15.319
+The second and third minima are at approximately the same level, around -0.4.
+
+00:37:15.319 --> 00:37:20.336
+If we take 7... it sort of looks like this.
+
+00:37:20.336 --> 00:37:22.897
+Let's create a Manipulate.
+
+00:37:22.897 --> 00:37:26.364
+And visualize our difference.
+
+00:37:26.364 --> 00:37:33.080
+True minus our approximation (n+1)*Log[n+1].
+
+00:37:33.080 --> 00:37:38.507
+This function is simply 0. A horizontal line.
+
+00:37:38.507 --> 00:37:46.085
+And this is another horizontal line, which is derived...
+
+00:37:46.085 --> 00:37:48.638
+right here.
+
+00:37:48.638 --> 00:37:52.821
+Some unique constant for each prime number.
+
+00:37:52.821 --> 00:38:03.074
+And this constant is determined simply as the actual minimum among the first 16000 n values.
+
+00:38:03.074 --> 00:38:12.621
+Let's experiment... p equals 2. The first prime number.
+
+00:38:12.621 --> 00:38:18.306
+Three... Already -0.4...
+
+00:38:18.306 --> 00:38:23.978
+Then, smaller modulo...
+
+00:38:23.978 --> 00:38:25.936
+Even smaller modulo...
+
+00:38:25.936 --> 00:38:32.369
+So, p = 7 is the smallest.
+
+00:38:32.369 --> 00:38:38.780
+And then it gradually starts increasing again.
+
+00:38:38.780 --> 00:38:44.413
+As p increases, this minimum grows very slowly.
+
+00:38:44.413 --> 00:38:52.368
+The first minimum increases very slowly and approaches -0.5 as p tends to infinity.
+
+00:38:52.368 --> 00:38:58.788
+And as we can see from examples of small prime numbers,
+
+00:38:58.788 --> 00:39:07.877
+the second, third and subsequent minima don't deviate much from the first minimum.
+
+00:39:07.877 --> 00:39:15.451
+A similar study of minima can be done for p = 3 and other values of p.
+
+00:39:15.451 --> 00:39:20.251
+Maxima are found at points (p^k) - 1.
+
+00:39:20.251 --> 00:39:25.578
+In these n values.
+
+00:39:25.578 --> 00:39:35.128
+And the pi-notation of these numbers looks like a sequence of twos for p = 3.
+
+00:39:35.128 --> 00:39:39.169
+For p = 5, it would be fours.
+
+00:39:39.169 --> 00:39:42.434
+Minima are a more complex matter.
+
+00:39:42.434 --> 00:39:46.805
+I zoomed in here once again,
+
+00:39:46.805 --> 00:39:49.618
+looked at what n equals,
+
+00:39:49.618 --> 00:39:56.201
+and wrote down the initial values. 13, 40, 121, etc.
+
+00:39:56.201 --> 00:39:59.446
+Let's see how they are structured. They are structured very simply.
+
+00:39:59.446 --> 00:40:04.923
+This number, in pi-notation, consists of nothing but ones.
+
+00:40:04.923 --> 00:40:10.000
+Here is where the minimum is located.
+
+00:40:10.000 --> 00:40:18.137
+You can see that the numerical values are slowly increasing modulo,
+
+00:40:18.137 --> 00:40:21.677
+and most likely, they have some limit
+
+00:40:21.677 --> 00:40:27.254
+that is less than 0.5 modulo.
+
+00:40:27.254 --> 00:40:30.871
+Studying these minima is a complex matter.
+
+00:40:30.871 --> 00:40:36.470
+In short, one can delve into the study of minima for different p
+
+00:40:36.470 --> 00:40:42.450
+and try to guess what this limit of minima is.
+
+00:40:42.450 --> 00:40:44.051
+What I want to draw your attention to
+
+00:40:44.051 --> 00:40:52.444
+I want to draw your attention to the fact that the contributions of different prime numbers to Accumulate[vp[b[i]],
+
+00:40:52.444 --> 00:40:55.709
+these contributions are roughly the same.
+
+00:40:55.709 --> 00:41:01.991
+At first, the contributions from different prime numbers to the logarithm of Accumulate[vp]
+
+00:41:01.991 --> 00:41:06.203
+They sort of keep overtaking each other.
+
+00:41:06.203 --> 00:41:07.910
+I'm not sure if this is a correct statement...
+
+00:41:07.910 --> 00:41:13.186
+The statement that for any two prime numbers, their contributions constantly overtake each other.
+
+00:41:13.186 --> 00:41:19.711
+And no contribution ever dominates the other completely, to infinity.
+
+00:41:19.711 --> 00:41:24.765
+The number p = 2, it seems, is a special case after all.
+
+00:41:24.765 --> 00:41:26.974
+But the others...
+
+00:41:26.974 --> 00:41:30.000
+With the others, it's complicated.
+
+00:41:30.000 --> 00:41:34.321
+Now, let me explain.
+
+00:41:34.321 --> 00:41:35.977
+Going back a bit.
+
+00:41:35.977 --> 00:41:39.113
+Look at what we've got.
+
+00:41:39.113 --> 00:41:48.069
+We've got that the contribution from the prime number p is equal to its vp multiplied by the logarithm.
+
+00:41:48.069 --> 00:41:51.183
+Let's take this value.
+
+00:41:51.183 --> 00:41:54.850
+Multiply it by Log[p].
+
+00:41:54.850 --> 00:42:00.327
+And what do we get when we bring this logarithm of p inside the brackets?
+
+00:42:00.327 --> 00:42:01.226
+Let's bring it in...
+
+00:42:01.226 --> 00:42:06.513
+Here, p disappears and it becomes a simple natural logarithm.
+
+00:42:06.513 --> 00:42:08.679
+And here, multiplication takes place.
+
+00:42:08.679 --> 00:42:12.849
+So, the contribution of the prime number p,
+
+00:42:12.849 --> 00:42:18.519
+it's mostly (n + 1) * Log[n+1] for any prime number p.
+
+00:42:18.519 --> 00:42:25.856
+In other words, the contributions from all prime numbers are asymptotically the same, (n + 1) Log[n+1],
+
+00:42:25.856 --> 00:42:30.459
+if we ignore this small addition, which does depend on p,
+
+00:42:30.459 --> 00:42:33.523
+but it's noticeably smaller than this.
+
+00:42:33.523 --> 00:42:42.109
+So, we can kind of disregard it and roughly say that the contributions are the same.
+
+00:42:42.109 --> 00:42:46.064
+And maybe even the statement that they constantly overtake each other is true for large p.
+
+00:42:46.064 --> 00:42:51.994
+Because this number appears to approach zero.
+
+00:42:51.994 --> 00:42:57.079
+I'm talking about the limit of Log[p] / (p - 1) -&gt; 0 as p -&gt; infinity (without the n multiplier).
+
+00:42:57.079 --> 00:43:00.000
+Because this number approaches zero
+
+00:43:00.000 --> 00:43:05.144
+and against the backdrop of this number, 0.5 or 0.4, whatever it is,
+
+00:43:05.144 --> 00:43:09.350
+it diminishes to zero for large p.
+
+00:43:09.350 --> 00:43:19.789
+And large prime numbers, they definitely behave this way, overtaking each other within the b_i's.
+
+00:43:19.789 --> 00:43:24.124
+Alright... Let's move on.
+
+00:43:24.124 --> 00:43:30.896
+Let's now move on to our other important statement.
+
+00:43:30.896 --> 00:43:33.821
+To this first statement.
+
+00:43:33.821 --> 00:43:46.538
+And now, let's write that the contribution of the prime number p to the logarithm of b1, b2, b3, ..., bn
+
+00:43:46.538 --> 00:43:52.661
+is less than or equal to this.
+
+00:43:52.661 --> 00:44:00.501
+Because b_i has an estimate like this, what can do?
+
+00:44:00.501 --> 00:44:06.734
+We can write this inequality, simplifying b_i to an estimate of 2^2n.
+
+00:44:06.734 --> 00:44:12.633
+There's an error here. We should use Stirling's formula and estimate it in the other direction.
+Instead of an upper estimate
+b[n] &lt; 4^n
+we need a lower estimate like
+b[n] &gt; 3.9^n, starting from some n.
+ 
+Or work with O[n], as done below.
+
+00:44:14.493 --> 00:44:17.564
+Let's go through with it.
+
+00:44:17.564 --> 00:44:21.515
+From this statement about the approximation of b_n
+
+00:44:21.515 --> 00:44:26.389
+and from what I call the vp-identity,
+
+00:44:26.389 --> 00:44:29.101
+we get:
+
+00:44:29.101 --> 00:44:36.187
+the logarithm of the product is equal to n(n+1)Log[2].
+
+00:44:36.187 --> 00:44:42.945
+This follows from the approximation that b_i equals 4^i.
+
+00:44:42.945 --> 00:44:52.598
+And from this statement, by replacing Log[p] * vp
+
+00:44:52.598 --> 00:44:56.064
+with this expression, multiplied by 1/2,
+
+00:44:56.064 --> 00:45:00.936
+we get this answer.
+
+00:45:00.936 --> 00:45:05.006
+Since the contribution of each prime number is approximately the same,
+
+00:45:05.006 --> 00:45:08.162
+we end up with the count of prime numbers
+
+00:45:08.162 --> 00:45:15.801
+that enter into the products of b_i from 1 to n
+
+00:45:15.801 --> 00:45:18.865
+multiplied by the size of this contribution.
+
+00:45:18.865 --> 00:45:23.989
+We have these two things, and now we write the inequality.
+
+00:45:23.989 --> 00:45:26.349
+We need to figure out which way it's directed.
+
+00:45:26.349 --> 00:45:31.238
+It turns out that Pi[2n] is greater than or equal to
+
+00:45:31.238 --> 00:45:37.396
+this estimate
+
+00:45:37.396 --> 00:45:40.312
+divided by this estimate,
+
+00:45:40.312 --> 00:45:42.724
+which came from here.
+
+00:45:42.724 --> 00:45:48.639
+And we get that Pi[2n] is greater than or equal to this thing.
+
+00:45:48.639 --> 00:45:53.315
+Or greater than or equal to 0.69n/Log[n].
+
+00:45:53.315 --> 00:46:00.536
+That's how we made a step towards the prime number theorem.
+
+00:46:00.536 --> 00:46:02.673
+We didn't prove that this limit exists,
+
+00:46:02.673 --> 00:46:08.703
+but we did prove that this quantity is bounded from below by the number 0.69.
+
+00:46:11.010 --> 00:46:15.616
+I'll skip this part, it seems like some nonsense is written here...
+
+00:46:16.340 --> 00:46:20.000
+What else I want to tell you here...
+
+00:46:20.000 --> 00:46:35.468
+Well, okay... Let's move on to the attempt to prove that the maximum approaches (n + 1) Logₚ[n+1].
+
+00:46:35.468 --> 00:46:43.124
+For this, we'll need to draw generating functions for triangles.
+
+00:46:43.124 --> 00:46:55.652
+We've already drawn a triangle for the frequency values of vp[b[i]] for p = 2.
+
+00:46:55.652 --> 00:46:59.750
+It turns out that this is, indeed, Pascal's Triangle.
+
+00:46:59.750 --> 00:47:01.236
+So...
+
+00:47:04.956 --> 00:47:17.991
+The triangles for p = 3, 5 and 7 look like this.
+
+00:47:17.991 --> 00:47:20.626
+A very interesting puzzle is to try to crack this triangle.
+
+00:47:20.626 --> 00:47:25.817
+To figure out if there are any recurrent dependencies here.
+
+00:47:25.817 --> 00:47:28.441
+The answer is: "There are!"
+
+00:47:28.441 --> 00:47:33.747
+Moreover, we can choose different options for the recurrent formula.
+
+00:47:33.747 --> 00:47:40.274
+For example, we can represent any number in this triangle as a linear combination of numbers
+
+00:47:40.274 --> 00:47:43.983
+that are right here.
+
+00:47:43.983 --> 00:47:46.572
+The coefficients in this linear combination turn out to be:
+
+00:47:46.572 --> 00:47:50.804
+2, 1, 2, 4, 8, 16, and so on.
+
+00:47:50.804 --> 00:47:53.076
+Let me demonstrate how this works.
+
+00:47:53.076 --> 00:48:03.230
+1072 – this is a sum of these numbers with coefficients 2, 1, 2, 4, 8, 16.
+
+00:48:03.230 --> 00:48:06.647
+In Mathematica, the dot corresponds to scalar multiplication.
+
+00:48:06.647 --> 00:48:11.984
+And you get exactly linear combinations of numbers from this series
+
+00:48:11.984 --> 00:48:16.813
+with coefficients from this series.
+
+00:48:16.813 --> 00:48:19.334
+You can choose a different option for the recurrent formula.
+
+00:48:19.334 --> 00:48:20.530
+You can write that this number
+
+00:48:20.530 --> 00:48:22.932
+depends as the sum of these numbers.
+
+00:48:22.932 --> 00:48:27.677
+And, oddly enough, the coefficients will be the same powers of two.
+
+00:48:27.677 --> 00:48:33.358
+At first, some irregularity (2), and then there are powers of two.
+
+00:48:33.358 --> 00:48:35.930
+You can choose this option.
+
+00:48:35.930 --> 00:48:36.889
+And write this number
+
+00:48:36.889 --> 00:48:39.000
+as a linear combination of these numbers.
+
+00:48:39.000 --> 00:48:47.433
+The number 312 should have been included in the yellow strip - into the set of numbers, a linear combination of which gives the number 1072.
+
+00:48:47.885 --> 00:48:51.113
+But there, the dependence is more complex.
+
+00:48:51.113 --> 00:48:55.535
+You can come up with a recurrent formula like this.
+
+00:48:55.535 --> 00:48:59.629
+By the way, the same applies to Pascal's Triangle.
+
+00:48:59.629 --> 00:49:02.930
+Just, for example, in this version, it will have...
+
+00:49:02.930 --> 00:49:10.000
+It will simply have: the sum of two numbers above with coefficients 1, like [1072] = [312] + [419].
+
+00:49:10.452 --> 00:49:14.723
+For instance, here it seems like there will be all ones as coefficients.
+
+00:49:14.723 --> 00:49:20.654
+In Pascal's Triangle, you can also choose different options for the recurrent formula.
+
+00:49:20.654 --> 00:49:25.582
+Not just the sum of the two above.
+
+00:49:25.582 --> 00:49:28.731
+Take a look at this moment.
+
+00:49:28.731 --> 00:49:33.384
+In general, here I'm showing that there are different options for the recurrent formula.
+
+00:49:33.384 --> 00:49:37.324
+And the simplest one to guess is this formula.
+
+00:49:37.324 --> 00:49:41.663
+Here, there are simply powers of two for p = 3.
+
+00:49:41.663 --> 00:49:44.556
+And for p = 5...
+
+00:49:44.556 --> 00:49:50.888
+Let's see what we get for p = 5...
+
+00:49:50.888 --> 00:49:55.160
+We get this 6-th row of the triangle.
+
+00:49:55.160 --> 00:50:00.201
+By the way, you can try to derive an explicit formula using some factorials.
+
+00:50:00.201 --> 00:50:05.377
+And for this, you can break down these numbers into prime exponents.
+
+00:50:05.377 --> 00:50:08.433
+But here, there's nothing interesting to see.
+
+00:50:08.433 --> 00:50:15.634
+You can see simple things, like 3^6 – the first number, and 3^5 * 2 – the last number.
+
+00:50:15.634 --> 00:50:20.474
+But inside... it's not obvious.
+
+00:50:20.474 --> 00:50:23.381
+Here's the triangle for p = 5.
+
+00:50:23.381 --> 00:50:26.101
+And here, something interesting happens.
+
+00:50:26.101 --> 00:50:34.436
+For example, the number 3970 is written as
+
+00:50:34.436 --> 00:50:41.363
+a linear combination of this, this, this, and this number
+
+00:50:41.363 --> 00:50:50.363
+with coefficients of 3, and then there's a geometric progression with q = 3.
+
+00:50:50.363 --> 00:50:57.292
+Each subsequent number is three times larger than the previous one and starts with 4.
+
+00:50:57.292 --> 00:50:59.200
+For p = 7...
+
+00:50:59.200 --> 00:51:04.731
+In general, these recurrent formulas are guessed, and then proved.
+
+00:51:04.731 --> 00:51:08.147
+And we get the following:
+
+00:51:08.147 --> 00:51:15.706
+from these recurrent formulas, we can derive generating functions for the triangles.
+
+00:51:15.706 --> 00:51:21.032
+From this generating function, we can get an estimate of the mean value.
+
+00:51:21.032 --> 00:51:22.783
+It's very simple.
+
+00:51:22.783 --> 00:51:25.336
+So, we have a triangle.
+
+00:51:25.336 --> 00:51:28.702
+Let's take a specific fifth row.
+
+00:51:28.702 --> 00:51:37.849
+What is the average value of the exponent within this row?
+
+00:51:37.849 --> 00:51:43.158
+We take the coefficients from this row as weights.
+
+00:51:43.158 --> 00:51:50.000
+So, the total number of elements in the row is the sum of the coefficients.
+
+00:51:50.000 --> 00:51:56.660
+This is also the number of indices i that we traverse.
+
+00:51:56.660 --> 00:52:03.210
+And in the numerator, we need to write that we get a power of 2 ten times.
+
+00:52:03.210 --> 00:52:06.631
+We get a power of 3 ten times.
+
+00:52:06.631 --> 00:52:08.796
+We get a power of 4 five times.
+
+00:52:08.796 --> 00:52:12.549
+And we get a power of 5 once.
+
+00:52:12.549 --> 00:52:23.530
+Here's the manually calculated average exponent of two within b_i.
+
+00:52:23.530 --> 00:52:26.831
+How could we express this (this expression)
+
+00:52:26.831 --> 00:52:30.224
+using the generating function of the row?
+
+00:52:30.224 --> 00:52:31.855
+Like this.
+
+00:52:31.855 --> 00:52:38.119
+We can take the derivative of this polynomial, and it will do what we need.
+
+00:52:38.119 --> 00:52:40.000
+This 10 will be multiplied by 2.
+
+00:52:40.000 --> 00:52:42.000
+This 10 will be multiplied by 3.
+
+00:52:42.000 --> 00:52:44.153
+This 5 will be multiplied by 4.
+
+00:52:44.153 --> 00:52:47.820
+And this 1 will be multiplied by 5.
+
+00:52:51.138 --> 00:52:56.715
+Just remember to substitute x with 1.
+
+00:52:56.715 --> 00:52:58.290
+It matches.
+
+00:52:58.290 --> 00:53:01.711
+This with this.
+
+00:53:01.711 --> 00:53:07.188
+This expression, when we take the derivative of the function and divide by the function itself,
+
+00:53:07.188 --> 00:53:11.194
+it's the same as taking the derivative of the logarithm of that function.
+
+00:53:11.194 --> 00:53:13.627
+It's all simple.
+
+00:53:13.627 --> 00:53:20.564
+Our k-th row (the coefficient at y^k) is this thing.
+
+00:53:20.564 --> 00:53:23.139
+((1 + x)^k) - 1
+
+00:53:23.139 --> 00:53:28.520
+And we can simply calculate what this expression equals.
+
+00:53:28.520 --> 00:53:31.861
+The logarithmic derivative at the point x = 1.
+
+00:53:31.861 --> 00:53:34.573
+So, we've got the answer for 2.
+
+00:53:34.573 --> 00:53:41.255
+And it's clear that gradually it all approaches 0.5.
+
+00:53:41.255 --> 00:53:45.079
+Good. Now for 3.
+
+00:53:45.079 --> 00:53:48.329
+Here's our triangle.
+
+00:53:48.329 --> 00:53:53.418
+Here's the recurrent formula we chose.
+
+00:53:53.418 --> 00:54:05.270
+How to get the generating function of the triangle from the recurrent formula?
+
+00:54:05.270 --> 00:54:07.805
+Let's introduce the notation f_i.
+
+00:54:07.805 --> 00:54:11.673
+Let f_k be the coefficient at y^k.
+
+00:54:11.673 --> 00:54:15.634
+It is claimed that from the recurrent formula...
+
+00:54:15.634 --> 00:54:22.197
+This one. It's written for a specific case, but it's more convenient in a sense.
+
+00:54:22.197 --> 00:54:35.907
+It turns out that f_n[x] can be gotten from 2 * f_n-1[x].
+
+00:54:35.907 --> 00:54:39.722
+That's this two.
+
+00:54:39.722 --> 00:54:41.079
+Plus...
+
+00:54:41.079 --> 00:54:47.059
+We take the same power of x, the same vertical, but the previous row,
+
+00:54:47.059 --> 00:54:50.969
+and the previous row is n - 1.
+
+00:54:50.969 --> 00:54:54.486
+Then we take the pre-previous row, n - 2.
+
+00:54:54.486 --> 00:55:00.000
+But here, we need to shift to the left, so here we have a multiplication by x.
+
+00:55:00.000 --> 00:55:02.722
+To make this number appear as a power of x,
+
+00:55:02.722 --> 00:55:11.761
+which is this, you need to multiply f_n-2 by x.
+
+00:55:11.761 --> 00:55:16.517
+Next, here comes the 2. It's from the pre-previous row already.
+
+00:55:16.517 --> 00:55:20.486
+Then 4, then 8 and so on.
+
+00:55:20.486 --> 00:55:33.479
+So, it turns out that F[x, y] (now we're thinking about F[x, y]) can be gotten from F[x, y] in the following way:
+
+00:55:33.479 --> 00:55:38.447
+2y means we take the previous row.
+
+00:55:38.447 --> 00:55:41.008
+In other words, we multiply by "y".
+
+00:55:41.008 --> 00:55:52.119
+This means that now something from y^k-1 from the same triangle will contribute to y^k.
+
+00:55:52.119 --> 00:56:03.068
+Then, we take from the n - 2 row by multiplying the same function F[x, y] by y^2.
+
+00:56:03.068 --> 00:56:09.364
+And we also need to shift to the left, so the multiplication by x occurs.
+
+00:56:09.364 --> 00:56:11.878
+What's here?
+
+00:56:11.878 --> 00:56:13.735
+That's a good question.
+
+00:56:13.735 --> 00:56:17.905
+It's just found by trial and error to figure out what to substitute here.
+
+00:56:17.905 --> 00:56:24.178
+In the end, we get this expression.
+
+00:56:24.178 --> 00:56:32.724
+Here are calculations where I was specifically finding this expression that needs to be substituted in the numerators.
+
+00:56:32.724 --> 00:56:39.305
+And the denominator follows from the recurrent formula.
+
+00:56:39.305 --> 00:56:52.744
+Thus, for p = 3, we get the generating function of the frequency triangle as follows.
+
+00:56:52.744 --> 00:56:55.722
+Here, I'm just making sure the answer is correct.
+
+00:56:55.722 --> 00:57:00.926
+And these coefficients are exactly what I saw in the triangle,
+
+00:57:00.926 --> 00:57:06.596
+computed explicitly by hand in the real triangle.
+
+00:57:06.596 --> 00:57:12.007
+Okay... This is all very complicated and will take forever if I don't skip ahead.
+
+00:57:12.007 --> 00:57:21.129
+Similar things can be done for p = 5, 7, 11 and we get the answer.
+
+00:57:21.129 --> 00:57:23.998
+The answer is written here.
+
+00:57:23.998 --> 00:57:36.695
+We find that for the binomial coefficients triangle of prime frequencies for n = p^k,
+
+00:57:36.695 --> 00:57:41.812
+it can be expressed by this generating function.
+
+00:57:41.812 --> 00:57:51.205
+So how do we proceed from here? How do we get the mean value of the exponent from this answer?
+
+00:57:51.205 --> 00:57:58.462
+We take the denominator and study its roots with respect to y.
+
+00:57:58.462 --> 00:58:07.200
+Knowing the roots, we can expand it into a combination of two such simple fractions.
+
+00:58:07.200 --> 00:58:11.497
+1 divided by y minus the first root.
+
+00:58:11.497 --> 00:58:13.455
+This scary root here.
+
+00:58:13.455 --> 00:58:19.601
+1 divided by y minus y2. The second scary root.
+
+00:58:19.601 --> 00:58:22.766
+And when you expand such an expression,
+
+00:58:22.766 --> 00:58:32.567
+you get some linear combination of simple fractions like 1/(y - y_i).
+
+00:58:32.567 --> 00:58:35.203
+The coefficients depend on the situation here.
+
+00:58:35.203 --> 00:58:38.418
+Here, we have coefficients of 1 and -1.
+
+00:58:38.418 --> 00:58:44.154
+And then we divide by this thing, independent of y.
+
+00:58:44.154 --> 00:58:47.485
+Lets check...
+
+00:58:47.485 --> 00:58:50.201
+It's true.
+
+00:58:50.201 --> 00:58:54.281
+This is just 1 divided by the denominator.
+
+00:58:54.281 --> 00:58:58.743
+And if we have some numerator, we simply add it.
+
+00:58:58.743 --> 00:59:02.582
+Based on this expansion, we will now get the answer.
+
+00:59:02.582 --> 00:59:07.080
+It’s clear what these things are equal to.
+
+00:59:07.080 --> 00:59:12.557
+These are basically formulas of infinite geometric progressions.
+
+00:59:12.557 --> 00:59:14.477
+So here, we write:
+
+00:59:14.477 --> 00:59:20.659
+one geometric progression minus the second geometric progression.
+
+00:59:20.659 --> 00:59:23.172
+We take this coefficient.
+
+00:59:23.172 --> 00:59:25.917
+Checking...
+
+00:59:25.917 --> 00:59:32.191
+Okay. I wrote this for 5. Let's go back to 5...
+
+00:59:32.191 --> 00:59:36.210
+Checking...
+
+00:59:36.210 --> 00:59:39.799
+Fourth row for p = 5.
+
+00:59:39.799 --> 00:59:42.726
+81, 189
+
+00:59:42.726 --> 00:59:48.609
+Here I got the answer for this thing.
+
+00:59:51.475 --> 00:59:59.782
+To get the answer for this thing, you need to do a simple thing.
+
+01:00:00.586 --> 01:00:09.307
+The coefficients b_n, which are here at y^n,
+
+01:00:09.307 --> 01:00:13.134
+are gotten by this formula
+
+01:00:13.134 --> 01:00:18.100
+from the coefficients of this thing.
+
+01:00:18.100 --> 01:00:20.233
+Let's check...
+
+01:00:20.233 --> 01:00:23.138
+And indeed, this thing equals
+
+01:00:23.138 --> 01:00:24.987
+this expression
+
+01:00:24.987 --> 01:00:29.149
+minus x times this expression.
+
+01:00:29.149 --> 01:00:35.847
+162 = 189 - 27
+
+01:00:35.847 --> 01:00:43.042
+First, we manually calculate the number we believe in.
+
+01:00:43.042 --> 01:00:46.702
+Then, we verify.
+
+01:00:46.702 --> 01:00:51.095
+Yes... the correct answer.
+
+01:00:52.352 --> 01:00:55.356
+And here comes the moment of truth.
+
+01:00:55.356 --> 01:01:05.207
+What is the average value of the degree in the k-th row of the triangle for prime number p &gt; 2?
+
+01:01:05.207 --> 01:01:08.766
+It all simplifies to this form.
+
+01:01:08.766 --> 01:01:11.352
+And here are the answers.
+
+01:01:11.352 --> 01:01:16.989
+The average value for n = p^k.
+
+01:01:16.989 --> 01:01:23.262
+The average value for n = (p^k) - 1, which is more accurate, as it turns out, it's different.
+
+01:01:23.262 --> 01:01:29.736
+We need to multiply this by p^k and divide by (p^k) - 1.
+
+01:01:29.736 --> 01:01:37.232
+Because, as we remember, vp of b^n, where n = p^k, equals 0.
+
+01:01:37.232 --> 01:01:41.368
+So, we can either include b_n or not.
+
+01:01:41.368 --> 01:01:42.915
+It doesn't matter.
+
+01:01:42.915 --> 01:01:49.720
+For this n, b_n has a zero power of the prime number p inside.
+
+01:01:49.720 --> 01:01:54.870
+Oh... this is probably quite hard to follow just by listening.
+
+01:01:54.870 --> 01:02:00.932
+Next... This is for 2. For n = (2^k) - 1.
+
+01:02:00.932 --> 01:02:08.428
+And here is not the average but the sum of the powers of prime number p inside b_i's.
+
+01:02:08.428 --> 01:02:10.724
+Similar expressions are gotten.
+
+01:02:10.724 --> 01:02:17.752
+Only for p &gt; 2, this adjustment comes into play.
+
+01:02:17.752 --> 01:02:20.738
+Here below, I explain what I said verbally.
+
+01:02:20.738 --> 01:02:27.570
+That vp[b_p^k] = 0. We discussed this earlier.
+
+01:02:27.570 --> 01:02:29.729
+And that vp of this product
+
+01:02:29.729 --> 01:02:32.885
+matches vp of this product as the results.
+
+01:02:32.885 --> 01:02:38.150
+And these are the functions I wrote down at the bottom.
+
+01:02:38.150 --> 01:02:42.596
+And here's what we get for these specific n.
+
+01:02:42.596 --> 01:02:50.000
+Such answer. Absolute equality when n = (p^k) - 1.
+
+01:02:50.000 --> 01:02:53.053
+Why is it a maximum?
+
+01:02:58.281 --> 01:03:03.103
+Alright... Let's make this a homework question: Why do we need to use the ≤ sign here?
+
+01:03:03.103 --> 01:03:08.329
+Why are these n the points of maximum
+
+01:03:08.329 --> 01:03:13.244
+of the powers of prime number p inside the product?
+
+01:03:13.244 --> 01:03:17.394
+We started with quite elementary methods.
+
+01:03:17.394 --> 01:03:23.519
+We simply became interested in the powers of prime numbers inside Catalan numbers.
+
+01:03:23.519 --> 01:03:29.386
+And then we went in the direction where the road opened up to us.
+
+01:03:29.386 --> 01:03:37.478
+Of course, you need some experience to just ask yourself such a question,
+
+01:03:37.478 --> 01:03:40.341
+to make such an observation about prime numbers.
+
+01:03:40.341 --> 01:03:47.480
+"Let's look at the product of all prime numbers in the range from n to 2n".
+
+01:03:47.480 --> 01:03:55.147
+Or "let's examine the contributions of different prime numbers inside the product of b_i's".
+
+01:03:55.147 --> 01:04:04.797
+You need to know how to ask such questions, and that's the main secret of mathematical creativity.
+
+01:04:04.797 --> 01:04:09.388
+Then, it's a matter of technique and perseverance.
+
+01:04:09.388 --> 01:04:15.174
+As it turned out, Catalan numbers and central binomial coefficients
+
+01:04:15.174 --> 01:04:26.506
+can shed light on the asymptotics of these functions, to both lower and upper bounds.
+
+01:04:26.506 --> 01:04:32.447
+We used the simple fact that any number x is the product of prime numbers.
+
+01:04:32.447 --> 01:04:40.547
+But after taking logarithms, it's expressed in this more complex form.
+
+01:04:40.547 --> 01:04:53.061
+And based on the triangle of frequency of powers of the prime number p inside b_i's, we derived some estimates.
+
+01:04:53.061 --> 01:05:01.102
+And an important intermediate step was getting the generating function for the frequency triangles.
+
+01:05:01.102 --> 01:05:11.276
+And now we know how to bound this A[n], which is part of the formula for Pi[n].
+
+01:05:11.276 --> 01:05:14.901
+Pi[n] is approximately n/Log[n].
+
+01:05:14.901 --> 01:05:21.082
+And we have proven that the multiplier A[n], which is determined simply by this equation,
+
+01:05:21.082 --> 01:05:25.093
+at some point, starting from some n, begins to fluctuate within this range.
+
+01:05:25.093 --> 01:05:34.300
+The truth lies in the fact that the limit of A[n] is 1. And this is the fundamental prime number theorem.
+
+01:05:34.300 --> 01:05:44.051
+It was proven in 1896 using the Riemann zeta function.
+
+01:05:44.051 --> 01:05:55.917
+And essentially, this theorem is equivalent to proving that the Riemann zeta function has a pole at 1.
+
+01:05:55.917 --> 01:05:58.168
+A pole of degree 1.
+
+01:05:58.168 --> 01:06:07.849
+And that all zeros of this function are to the left of the vertical line with real part equal to 1.
+
+01:06:07.849 --> 01:06:10.624
+Chebyshev proved a very interesting statement.
+
+01:06:10.624 --> 01:06:12.632
+He was close to this limit.
+
+01:06:12.632 --> 01:06:17.506
+He proved that if the limit exists, it is equal to 1.
+
+01:06:17.506 --> 01:06:21.944
+But the existence of this limit turned out to be a big question.
+
+01:06:21.944 --> 01:06:28.881
+And it turns out that now we have proofs based on the theory of complex variables.
+
+01:06:28.881 --> 01:06:38.948
+It's quite unusual that theorems about prime numbers require knowledge of all this.
+
+01:06:38.948 --> 01:06:43.409
+Analytic continuations and the theory of complex variables.
+
+01:06:43.409 --> 01:06:45.554
+Now it's no longer a surprise.
+
+01:06:45.554 --> 01:06:54.048
+Perhaps, back then, it was such an interesting connection between two areas of mathematics.
+
+01:06:54.048 --> 01:07:03.899
+We have many unanswered questions about the exact value of this lower bound δ_p.
+
+01:07:03.899 --> 01:07:12.477
+And about the average value of this fractal function.
+
+01:07:12.477 --> 01:07:19.010
+In some sense, a simpler approach to proving these inequalities.
+
+01:07:19.010 --> 01:07:22.024
+You can find it online here, for example.
+
+01:07:22.024 --> 01:07:27.032
+An excellent course on analytic number theory.
+
+01:07:27.032 --> 01:07:30.000
+It's such... systematic. It starts with the theorem.
+
+01:07:30.000 --> 01:07:37.242
+You have to prove the theorem, and somehow, you start pulling lemmas out of thin air
+
+01:07:37.242 --> 01:07:40.463
+to reach the theorem you need.
+
+01:07:40.463 --> 01:07:45.554
+But it happens much faster. Much clearer.
+
+01:07:45.554 --> 01:07:51.949
+Everything there is based on Abel's summation formula.
+
+01:07:51.949 --> 01:07:57.249
+Stirling's formula is also a special case of Abel's summation formula.
+
+01:07:57.249 --> 01:08:02.224
+I recommend you study this course.
+
+01:08:02.224 --> 01:08:05.131
+I watched it myself. I liked it a lot!
+
+01:08:05.131 --> 01:08:11.949
+However, it's funny that on the second lecture, the sound disappears halfway through.
+
+01:08:11.949 --> 01:08:15.897
+You watch the most important part with prove with no sound.
+
+01:08:15.897 --> 01:08:20.796
+That's it for today! Good luck to everyone! Goodbye!
+

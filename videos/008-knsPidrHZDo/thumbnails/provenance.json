@@ -1,0 +1,20 @@
+{
+  "method": "built-in image_gen image edit, original artwork as reference, followed by JPEG resize/export with FFmpeg",
+  "source": {
+    "prefix": "008-knsPidrHZDo",
+    "source_url": "https://i.ytimg.com/vi/knsPidrHZDo/maxresdefault.jpg",
+    "source_resolution": [
+      1280,
+      720
+    ],
+    "bytes": 144899
+  },
+  "english_prompt": "Use case: text-localization. Edit the provided original YouTube mathematics thumbnail to English. Keep the original style, composition, colors, mathematical diagrams, graph geometry, axes, logo positions, and original Wolfram Mathematica logo/lettering. Translate every channel label \"Математические Эксперименты\" to \"Math Experiments\" in the same white bold two-line box, preserving its original red, orange or magenta background. No additional branding, no new decorations, no redesigned charts. All foreground copy must be clean fluent English. Output landscape 16:9 with no black letterboxing; if input has black outer bars, use only the existing 16:9 artwork between them and fill the canvas. Prefer 1280x720. Fit translated text in the original zones without overlap or clipping. White top headline \"From Pascal’s Triangle\"; lower white headline \"to the Zeta Function\". Keep yellow formula exactly 1⁵ + 2⁵ + … + n⁵ = ? and right column ζ(-1), ζ(-2), ζ(-3).",
+  "english_sha256": "e39f29d810e76e4915bbaf9b9f0660d5405b3a623dbe4eaf55bdbf97c5ea0ac9",
+  "russian_sha256": "1cf9e2ce4c05a0e4fa4f46127e9dc467bfb999743e2f1fac3e88fa6b81bc2890",
+  "english_resolution": [
+    1280,
+    720
+  ],
+  "review": "Visually inspected for English copy, layout, branding and readable mathematical notation. Raster artwork may differ in fine details from the original."
+}

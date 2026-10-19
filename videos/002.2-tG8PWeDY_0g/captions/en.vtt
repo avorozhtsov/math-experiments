@@ -1,0 +1,649 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:01.885 --> 00:00:07.025
+Welcome back, Artem Vorozhtsov is in touch and this is a bonus track #2 on Fibonacci numbers.
+
+00:00:07.025 --> 00:00:09.862
+While working with Fibonacci numbers, we obtained the following image:
+
+00:00:09.862 --> 00:00:13.034
+A rectangle from which we cut a square on the right,
+
+00:00:13.034 --> 00:00:14.443
+then a square on top,
+
+00:00:14.443 --> 00:00:16.563
+then another square on the right,
+
+00:00:16.563 --> 00:00:19.728
+then another square on top, and so on.
+
+00:00:19.728 --> 00:00:22.756
+We obtained a rather beautiful image,
+
+00:00:22.756 --> 00:00:25.760
+but I want to obtain this image:
+
+00:00:25.760 --> 00:00:30.798
+It is directly related to this one.
+
+00:00:30.798 --> 00:00:33.540
+Well, not really, but we'll see...
+
+00:00:33.540 --> 00:00:41.550
+First, let's clear all the variables we used before. Todays goal is to understand what complex numbers are.
+
+00:00:41.550 --> 00:00:45.000
+Complex numbers.
+
+00:00:45.000 --> 00:00:49.320
+They emerge when we introduce the number "i", equal to √-1.
+
+00:00:49.320 --> 00:00:53.329
+Look, i^2 = -1
+
+00:00:53.329 --> 00:00:56.514
+Amazing! Can you believe it?
+
+00:00:56.514 --> 00:01:03.125
+Let's introduce such an "i". If no contradictions arise, then It's legit!
+
+00:01:04.486 --> 00:01:07.593
+Our numbers will have this form:
+
+00:01:08.980 --> 00:01:12.656
+a1 + i * b1.
+
+00:01:12.656 --> 00:01:17.215
+Then their product will be equal to this expression.
+
+00:01:17.215 --> 00:01:22.629
+a and b are ordinary numbers, real. Integer, fractional... it doesn't matter.
+
+00:01:23.586 --> 00:01:25.985
+Product...
+
+00:01:25.985 --> 00:01:29.061
+Mathematica didn't tell us anything new here.
+
+00:01:29.061 --> 00:01:32.880
+To make it do some work, we need to call the Expand function.
+
+00:01:32.880 --> 00:01:34.900
+And then we can see.
+
+00:01:34.900 --> 00:01:36.493
+It expanded.
+
+00:01:36.493 --> 00:01:38.182
+And take note:
+
+00:01:38.182 --> 00:01:44.842
+Instead of b1b2*i^2, we see -b1b2 here.
+
+00:01:44.842 --> 00:01:49.091
+And everything else is the expected result.
+
+00:01:49.091 --> 00:01:51.258
+ComplexExpand.
+
+00:01:51.258 --> 00:02:00.387
+So, what ComplexExpand did was to separate the terms without "i" from the terms with "i".
+
+00:02:00.387 --> 00:02:03.320
+And what is 1/i equal to?
+
+00:02:03.320 --> 00:02:04.880
+-i.
+
+00:02:04.880 --> 00:02:14.043
+Indeed, "i" times "-i" equals 1.
+
+00:02:14.043 --> 00:02:19.272
+Because this equals -i^2,
+
+00:02:19.272 --> 00:02:23.401
+and i^2 equals -1. Two negatives make an affirmative.
+
+00:02:24.669 --> 00:02:28.965
+So, this means that the inverse of "i" is "-i",
+
+00:02:28.965 --> 00:02:33.381
+and the inverse of "-i" is 1.
+
+00:02:33.381 --> 00:02:35.477
+Well, you can test it by yourself...
+
+00:02:35.477 --> 00:02:43.911
+For example, let's take (i+1)^2 - it turns out to be equal to 2i.
+
+00:02:43.911 --> 00:02:45.696
+You can check this yourself.
+
+00:02:45.696 --> 00:02:52.193
+Let's subtract 2(i+1) from (i+1)^2 to remove that 2.
+
+00:02:52.193 --> 00:02:53.444
+The result is -2.
+
+00:02:53.444 --> 00:02:55.611
+Now let's add 2.
+
+00:02:55.611 --> 00:02:57.611
+The result is 0.
+
+00:02:57.611 --> 00:03:06.666
+Look, if we designate the expression in parentheses as x, we get x^2-2x+2=0.
+
+00:03:06.666 --> 00:03:11.711
+If you calculate the discriminant of this quadratic equation, you get a negative number.
+
+00:03:11.711 --> 00:03:17.256
+You're taught that there are no numbers that satisfy this equation.
+
+00:03:17.256 --> 00:03:20.398
+But in complex numbers, there are answers.
+
+00:03:20.398 --> 00:03:25.627
+One of the answers is "1+i", and the other answer is "1-i".
+
+00:03:25.627 --> 00:03:27.842
+You can check this.
+
+00:03:27.842 --> 00:03:31.580
+Now, what is the inverse of 1/(1+i)?
+
+00:03:31.580 --> 00:03:32.862
+Indeed!
+
+00:03:32.862 --> 00:03:33.929
+Let's check it.
+
+00:03:33.929 --> 00:03:39.110
+We multiply "1+i" by this value and get the answer.
+
+00:03:39.110 --> 00:03:41.700
+This is not difficult to do mentally.
+
+00:03:41.700 --> 00:03:46.451
+We factor out 1/2 from the first multiplier.
+
+00:03:46.451 --> 00:03:49.886
+We get 1-i.
+
+00:03:49.886 --> 00:03:51.754
+So we've got this bracket sorted out.
+
+00:03:51.754 --> 00:03:56.601
+And we need to multiply by 1+i.
+
+00:03:56.601 --> 00:04:00.557
+We multiply this using the difference of squares formula.
+
+00:04:00.557 --> 00:04:09.757
+We get: 1/2(1^2 - i^2).
+
+00:04:09.757 --> 00:04:11.281
+But this is equal to...
+
+00:04:11.281 --> 00:04:15.209
+You've probably already guessed it, it's equal to 1/2 * 2
+
+00:04:15.209 --> 00:04:20.438
+Because i^2 = -1. Two negatives make an affirmative.
+
+00:04:22.687 --> 00:04:24.199
+So!
+
+00:04:24.199 --> 00:04:27.682
+These complex numbers are going to come in handy.
+
+00:04:27.682 --> 00:04:34.466
+We want to interpret points on the plane as complex numbers.
+
+00:04:34.466 --> 00:04:43.649
+We'll interpret a point (x, y) as the number x + iy.
+
+00:04:43.649 --> 00:04:45.302
+That's the main idea.
+
+00:04:45.302 --> 00:04:52.588
+And the squares we've broken the rectangle into are kind of like a set of points on the complex plane.
+
+00:04:52.588 --> 00:04:56.942
+The vertices of these squares, and all points in general, are complex numbers.
+
+00:04:56.942 --> 00:05:02.506
+Here's the definition of the function SplitToSquares.
+
+00:05:02.506 --> 00:05:06.325
+Let's repeat the calculations we had in the original form.
+
+00:05:06.325 --> 00:05:09.688
+Only this time, we'll add a function called ToPolygon.
+
+00:05:09.688 --> 00:05:13.123
+Instead of squares, we'll draw polygons.
+
+00:05:13.123 --> 00:05:15.410
+Polygons are basically rectangles.
+
+00:05:15.410 --> 00:05:23.127
+Previously we drew a rectangle by specifying the bottom left corner and the top right corner.
+
+00:05:23.127 --> 00:05:31.059
+But a polygon, that is, a closed broken line, consists of points.
+
+00:05:31.059 --> 00:05:35.594
+It is assumed that the last point is connected to the first.
+
+00:05:35.594 --> 00:05:38.106
+We call the SplitToSquares function
+
+00:05:38.106 --> 00:05:44.771
+and then use the ToPolygon function to transform each square from this representation
+
+00:05:44.771 --> 00:05:46.024
+to this.
+
+00:05:47.052 --> 00:05:50.431
+So far, we haven't gotten anything new,
+
+00:05:50.431 --> 00:05:51.953
+but soon we will.
+
+00:05:51.953 --> 00:05:57.277
+Let's define a function that takes a point (a, b pair) and makes it a complex number.
+
+00:05:57.277 --> 00:05:59.097
+And vice versa,
+
+00:05:59.097 --> 00:06:04.697
+the FromZ function that takes a complex number Z and makes it a point on the plane.
+
+00:06:04.697 --> 00:06:08.209
+The X coordinate is obtained using Re.
+
+00:06:08.209 --> 00:06:12.410
+The part "a" is called "Re" - the real part of the complex number.
+
+00:06:12.410 --> 00:06:19.608
+And "b" is obtained using the "Im" function - the imaginary part of the complex number Z.
+
+00:06:19.608 --> 00:06:22.325
+Let's check how this all works...
+
+00:06:22.325 --> 00:06:25.234
+It works like this.
+
+00:06:25.234 --> 00:06:26.923
+Good.
+
+00:06:26.923 --> 00:06:34.625
+PointT is a point transformation function using the function F.
+
+00:06:35.881 --> 00:06:43.035
+We use the ToZ function to turn the point P into a complex number.
+
+00:06:43.035 --> 00:06:49.292
+We apply the F function to the complex number, and then obtain a point from the result.
+
+00:06:50.285 --> 00:06:55.710
+For example, let F be the square function.
+
+00:06:55.710 --> 00:07:03.739
+The squared hash (#^2) and ampersand symbol mean the function of the hash, which raises the number (the hash) to the second power.
+
+00:07:05.000 --> 00:07:12.788
+Then we get something like the square of the number (aa + ibb)^2,
+
+00:07:12.788 --> 00:07:15.725
+from which we take the real and imaginary parts.
+
+00:07:15.725 --> 00:07:17.343
+Good.
+
+00:07:17.343 --> 00:07:24.270
+We also need a Range, which has a third argument - the step with which we move from the first point to the last.
+
+00:07:25.514 --> 00:07:28.096
+The next function is PointsBetween,
+
+00:07:28.933 --> 00:07:34.487
+which creates intermediate points between points x1, y1, and x2, y2.
+
+00:07:38.864 --> 00:07:43.940
+I won't go into this definition, explaining what's happening here.
+
+00:07:43.940 --> 00:07:47.064
+I hope you'll understand the essence through examples.
+
+00:07:49.066 --> 00:07:53.892
+Here's a case where we have point x1, y1, point x2, y2,
+
+00:07:53.892 --> 00:08:01.202
+and we place another point exactly in the middle of the segment connecting point x1, y1 and point x2, y2.
+
+00:08:02.302 --> 00:08:03.413
+What I want to do?
+
+00:08:03.413 --> 00:08:13.800
+I want simply draw a polygon with a hundred points on each side instead of this square of four points,
+
+00:08:13.800 --> 00:08:17.725
+and then transform each point.
+
+00:08:17.725 --> 00:08:21.830
+Of course, I could take the four points of the square and only transform them,
+
+00:08:21.830 --> 00:08:28.470
+but the thing is that it's incorrect to say that the transformation of a segment will again be a segment.
+
+00:08:29.499 --> 00:08:39.480
+Therefore, to see where the entire side will be mapped to, I place many, many points on this side and transform each point.
+
+00:08:41.680 --> 00:08:46.404
+So, here I want to explain how Mathematica works, it can do things like this.
+
+00:08:46.404 --> 00:08:50.000
+When you add pairs, it simply adds them element-wise.
+
+00:08:50.000 --> 00:08:56.449
+When you multiply a pair by a number, it simply multiplies each element of the pair by that number.
+
+00:08:56.449 --> 00:09:02.746
+And it's thanks to this trick that the definition given here works.
+
+00:09:03.535 --> 00:09:04.617
+So.
+
+00:09:04.617 --> 00:09:08.380
+In the metafunction ToPolygon, I want to write a function ToDetailedPolygon,
+
+00:09:08.380 --> 00:09:12.805
+where each side of the polygon is elaborated in detail.
+
+00:09:12.805 --> 00:09:16.386
+There are 100 points on each side.
+
+00:09:16.386 --> 00:09:20.395
+From the perspective of drawing the polygon, this is meaningless as long as it remains a rectangle.
+
+00:09:20.395 --> 00:09:24.904
+But when we start to transform it, it immediately becomes meaningful.
+
+00:09:24.904 --> 00:09:28.730
+As the function F[z_], I took simply z.
+
+00:09:28.730 --> 00:09:33.361
+F[z_] = z, a function that does nothing, so the squares remained squares.
+
+00:09:33.361 --> 00:09:36.477
+But let me square it now.
+
+00:09:36.477 --> 00:09:39.601
+There! Something interesting already.
+
+00:09:39.601 --> 00:09:45.904
+By the way, in Mathematica, as far as I know, you can take this result,
+
+00:09:45.904 --> 00:09:47.833
+click right on it...
+
+00:09:47.833 --> 00:09:49.307
+Slap!
+
+00:09:49.307 --> 00:09:51.140
+Yes. And even start moving it around.
+
+00:09:51.140 --> 00:09:57.539
+See? The red square turned into something that is not a square at all.
+
+00:09:57.539 --> 00:09:59.674
+But into some sort of shape.
+
+00:09:59.674 --> 00:10:02.009
+The boundary looks like a parabola.
+
+00:10:02.009 --> 00:10:05.000
+This boundary remained. Just as it was a segment, so it remained.
+
+00:10:05.000 --> 00:10:08.610
+It changed, but it remained a segment.
+
+00:10:09.806 --> 00:10:11.231
+This also looks like a parabola.
+
+00:10:11.231 --> 00:10:12.513
+This is also a piece of a parabola.
+
+00:10:12.513 --> 00:10:13.867
+And this is a piece of a parabola.
+
+00:10:13.867 --> 00:10:15.389
+Interesting!
+
+00:10:16.250 --> 00:10:18.692
+Moving on.
+
+00:10:18.692 --> 00:10:22.927
+Now instead of z^2, I want to take the function 1/z.
+
+00:10:22.927 --> 00:10:27.559
+But 1/z is a dangerous function. You can't divide by zero.
+
+00:10:27.559 --> 00:10:32.549
+And I write: if z == 0, then ComplexInfinity.
+
+00:10:32.549 --> 00:10:33.917
+Look...
+
+00:10:33.917 --> 00:10:34.728
+Here it is.
+
+00:10:34.728 --> 00:10:37.996
+Here is the first picture of the ones we wanted to get.
+
+00:10:37.996 --> 00:10:43.129
+Instead of squares, we get pieces of circles.
+
+00:10:43.129 --> 00:10:48.980
+There were squares, and after 1/z they became little circles.
+
+00:10:48.980 --> 00:10:53.827
+He's swearing here, saying: You can't divide by zero.
+
+00:10:53.827 --> 00:10:56.305
+So it becomes Indeterminate.
+
+00:10:56.305 --> 00:10:56.821
+Oh well.
+
+00:10:56.821 --> 00:11:04.131
+In order to remove this warning, we will learn to find that there is a point 0,0 in our polygon.
+
+00:11:04.131 --> 00:11:10.236
+This very point will turn into the complex number 0, which cannot be divided by.
+
+00:11:11.532 --> 00:11:25.693
+Using the Intersection and Length functions, we will check for intersections.
+
+00:11:26.896 --> 00:11:30.945
+Oops, something went wrong. Looks like I took the wrong example.
+
+00:11:30.945 --> 00:11:31.701
+There we go.
+
+00:11:31.701 --> 00:11:35.734
+We'll turn the seventh element from the squares we obtained into a polygon,
+
+00:11:35.734 --> 00:11:39.600
+and check if there is a point (0, 0) inside the polygon.
+
+00:11:39.600 --> 00:11:43.692
+Answer: 0 intersections. So there is no point (0, 0) inside.
+
+00:11:43.692 --> 00:11:50.824
+The length of the intersection list is equal to zero.
+
+00:11:50.824 --> 00:11:57.112
+We write: dangerous point pC = (0, 0).
+
+00:11:57.112 --> 00:12:02.389
+We obtain the polygon poly from the i-th square.
+
+00:12:02.389 --> 00:12:07.283
+We check if the length of the intersection between the polygon and the dangerous point pC is greater than zero.
+
+00:12:07.283 --> 00:12:10.431
+If so, we return an empty polygon.
+
+00:12:10.431 --> 00:12:14.897
+Otherwise, we just transform each point using F.
+
+00:12:14.897 --> 00:12:19.265
+The transformation F is a complex point on the plane.
+
+00:12:20.000 --> 00:12:21.547
+Let's draw...
+
+00:12:21.547 --> 00:12:24.001
+There we go. Now there are no warnings.
+
+00:12:25.000 --> 00:12:31.292
+Here we can also have some fun and edit the result.
+
+00:12:31.292 --> 00:12:36.760
+It has a fractal nature, as you might have guessed.
+
+00:12:41.664 --> 00:12:43.007
+Alright.
+
+00:12:44.514 --> 00:12:46.770
+How can we see what's inside?
+
+00:12:46.770 --> 00:12:48.770
+We can zoom in like this.
+
+00:12:50.516 --> 00:12:53.391
+But they become invisible.
+
+00:12:53.391 --> 00:12:57.018
+I zoomed in on the pieces that were there.
+
+00:12:57.018 --> 00:12:59.688
+However, they have been slightly deformed.
+
+00:12:59.688 --> 00:13:05.921
+Now, another idea. Let's divide the rectangle differently.
+
+00:13:05.921 --> 00:13:10.742
+Not by approaching the point (0, 0), but by using a spiral. Look.
+
+00:13:11.986 --> 00:13:15.667
+Let's increase the number of dots here to twelve.
+
+00:13:16.289 --> 00:13:18.005
+There we go, in a spiral.
+
+00:13:21.736 --> 00:13:26.803
+By the way, here's an interesting puzzle: what is the point to which this spiral converges?
+
+00:13:26.803 --> 00:13:35.000
+We need to express this point as a point with coordinates x, y, where x and y are in fractions of the length and width.
+
+00:13:36.029 --> 00:13:42.057
+I got 0.27, 0.17, but that's just an approximation.
+
+00:13:42.057 --> 00:13:45.325
+And it's not the numbers after the decimal point that matter,
+
+00:13:45.325 --> 00:13:51.391
+but the analytical formula for this point towards which the spiral converges.
+
+00:13:52.252 --> 00:13:56.723
+Here we are learning an important skill.
+
+00:13:56.723 --> 00:14:01.761
+It's very easy to take the last element of a list. You just need to specify -1 as the index.
+
+00:14:01.761 --> 00:14:06.177
+This is true in the Python language, the Ruby language, and many other languages.
+
+00:14:06.177 --> 00:14:11.023
+Here, I don't want to divide 1/z,
+
+00:14:11.023 --> 00:14:14.099
+but take the function F[z_] = 1/(z-zC),
+
+00:14:14.099 --> 00:14:21.721
+where zC is the point of the last square. One of the vertices of the last square, so to speak.
+
+00:14:21.721 --> 00:14:23.680
+And I'm taking it right here.
+
+00:14:23.680 --> 00:14:28.964
+-1 - take the last square and take its first vertice.
+
+00:14:28.964 --> 00:14:30.529
+Here we go.
+
+00:14:31.223 --> 00:14:32.248
+Slap!
+
+00:14:32.248 --> 00:14:34.679
+We get our picture number 2.
+
+00:14:35.755 --> 00:14:38.173
+Beauty - a terrible force!
+
+00:14:40.000 --> 00:14:44.599
+Let's see what you think about this...
+
+00:14:46.297 --> 00:14:49.653
+Hmmm... looks like you like it. Great!
+
+00:14:49.653 --> 00:14:51.653
+Moving on.
+
+00:14:52.658 --> 00:14:54.625
+And what's next?
+
+00:14:54.625 --> 00:14:57.558
+This is the end!
+
+00:15:01.672 --> 00:15:05.712
+We can look at the pictures we get for different values of n.
+
+00:15:05.712 --> 00:15:10.846
+Here's 17, a beautiful picture. And 12 was a beautiful picture without the clipped circles.
+
+00:15:10.846 --> 00:15:11.770
+No, not 12.
+
+00:15:11.770 --> 00:15:13.459
+13.
+
+00:15:13.985 --> 00:15:17.828
+There's 13, 17...
+
+00:15:19.168 --> 00:15:22.800
+Obviously, we need to add 4.
+
+00:15:23.733 --> 00:15:27.179
+21... and so on.
+
+00:15:30.265 --> 00:15:32.255
+That's all for today!
+
+00:15:32.255 --> 00:15:34.169
+Leave your comments.
+
+00:15:34.169 --> 00:15:40.020
+Write about what you would be interested in learning in the next podcast.
+
+00:15:40.020 --> 00:15:42.020
+Goodbye for now!
+

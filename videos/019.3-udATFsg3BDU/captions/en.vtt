@@ -1,0 +1,2029 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.812 --> 00:00:03.513
+"Mathematical Experiments" Channel.
+
+00:00:03.513 --> 00:00:07.622
+It's time to talk about the quadratic extension of a field.
+
+00:00:07.622 --> 00:00:12.182
+Of course, it's helpful here to have an analogy with complex numbers.
+
+00:00:12.182 --> 00:00:17.601
+We had real numbers, and then we added √-1.
+
+00:00:17.601 --> 00:00:22.121
+Suddenly, we had a plane instead of a line.
+
+00:00:22.121 --> 00:00:29.678
+Similarly, we'd like to do something here, but now with residue fields modulo p.
+
+00:00:29.678 --> 00:00:35.936
+In Mathematica, √-1 is represented by the symbol i.
+
+00:00:35.936 --> 00:00:42.858
+And how it works: it's an unusual symbol, the square of which is -1.
+
+00:00:42.858 --> 00:00:49.596
+So, when you have an expression where i^2 should be present,
+
+00:00:49.596 --> 00:00:56.481
+in that expression, i^2 disappears because it's replaced with -1.
+
+00:00:56.481 --> 00:01:05.728
+In other words, we multiply two expressions like polynomials and then make a substitution in this polynomial.
+
+00:01:05.728 --> 00:01:10.237
+In Mathematica, this is directly called a "Replacement Rule".
+
+00:01:10.237 --> 00:01:17.059
+And we get exactly the same expression we'd have with i, but with x.
+
+00:01:17.059 --> 00:01:23.525
+It's as if we fixed this ratio for x^2
+
+00:01:23.525 --> 00:01:29.062
+and turned polynomials in x into complex numbers.
+
+00:01:29.062 --> 00:01:31.043
+A miracle!
+
+00:01:31.043 --> 00:01:36.159
+Let's try the same for the field F5, for example.
+
+00:01:36.159 --> 00:01:37.443
+How is this done?
+
+00:01:37.443 --> 00:01:42.123
+We consider numbers of the form a + bi,
+
+00:01:42.123 --> 00:01:45.018
+where i is √-1.
+
+00:01:45.018 --> 00:01:51.520
+And we treat the coefficients "a" and "b" as residues modulo 5.
+
+00:01:51.520 --> 00:01:55.423
+In Mathematica, this is done using the function PolynomialMod.
+
+00:01:55.423 --> 00:01:59.306
+And here, we simply get i.
+
+00:01:59.306 --> 00:02:03.463
+Why? Because modulo 5, 5 is equal to 0.
+
+00:02:03.463 --> 00:02:09.189
+So, this first part "5 +" here disappears.
+
+00:02:09.189 --> 00:02:15.841
+The same thing could be achieved if we just wrote
+
+00:02:15.841 --> 00:02:17.952
+this sort of thing here.
+
+00:02:17.952 --> 00:02:25.700
+PolynomialMod takes a list of expressions as the second argument, which are equal to zero.
+
+00:02:25.700 --> 00:02:27.071
+A miracle!
+
+00:02:27.071 --> 00:02:30.596
+Here, we could even take a polynomial in x and y.
+
+00:02:30.596 --> 00:02:35.363
+And then write some polynomials in x and y here.
+
+00:02:35.363 --> 00:02:37.474
+So...
+
+00:02:37.474 --> 00:02:39.223
+Okay...
+
+00:02:39.223 --> 00:02:43.120
+Let's check if our multiplication works as it should
+
+00:02:43.120 --> 00:02:50.718
+in our polynomial arithmetic, where we make the substitution x^2 → -1.
+
+00:02:50.718 --> 00:02:55.672
+Let's define all the polynomials of the form a + bi.
+
+00:02:55.672 --> 00:03:00.439
+Here they are. There are 25 of them.
+
+00:03:00.439 --> 00:03:03.116
+Let's multiply each of these polynomials (25 of them)
+
+00:03:03.116 --> 00:03:06.969
+by this specific polynomial.
+
+00:03:06.969 --> 00:03:10.691
+It's like looking at one row of the multiplication table.
+
+00:03:10.691 --> 00:03:17.200
+Multiplying one element by all the others.
+
+00:03:17.200 --> 00:03:18.818
+Uh-oh!
+
+00:03:18.818 --> 00:03:20.581
+We had 25 elements,
+
+00:03:20.581 --> 00:03:24.521
+but after multiplying by this, we got 5.
+
+00:03:24.521 --> 00:03:33.472
+That means in the multiplication table of this element, not all 25 field elements are present.
+
+00:03:33.472 --> 00:03:36.041
+So, it's not a field.
+
+00:03:36.041 --> 00:03:41.005
+Not all 25 elements are present, meaning what we constructed is not a field,
+
+00:03:41.005 --> 00:03:43.440
+but a ring.
+
+00:03:43.440 --> 00:03:51.398
+"Ring" is a set of elements with multiplication and addition. A commutative ring has all the same properties as a field, except that not every element has a multiplicative inverse (addition is fine). This, in particular, means that there can be rows in the multiplication table where not all field elements are present and that there can be two elements whose product is zero (these are called zero divisors).
+
+00:03:51.398 --> 00:03:53.204
+So, what's the problem here?
+
+00:03:53.204 --> 00:04:00.325
+The problem is that the root √-1 is present in arithmetic modulo 5.
+
+00:04:00.325 --> 00:04:05.602
+x^2 = -1 has solutions. Specifically: 2 and 3.
+
+00:04:05.602 --> 00:04:11.545
+Let me try to show this explicitly...
+
+00:04:16.074 --> 00:04:17.903
+0
+
+00:04:17.903 --> 00:04:24.891
+The product of these two numbers from our ring is 0.
+
+00:04:24.891 --> 00:04:33.942
+In such cases, it's said that the ring is non-integral. It has zero divisors.
+
+00:04:33.942 --> 00:04:41.409
+But for example, modulo 7, everything would work fine for these two elements.
+
+00:04:41.409 --> 00:04:44.943
+Let's check for the field F7.
+
+00:04:44.943 --> 00:04:49.101
+Generate 49 elements
+
+00:04:49.101 --> 00:04:57.309
+and see how many elements we get in the row 1 + 2i.
+
+00:04:57.309 --> 00:04:58.996
+49 of them.
+
+00:04:58.996 --> 00:05:01.170
+All is well.
+
+00:05:01.170 --> 00:05:08.289
+Now we've come to the point where we can construct the field F7^2 from the field F7.
+
+00:05:08.289 --> 00:05:14.173
+For the field F7, the idea of adding √-1 works.
+
+00:05:14.173 --> 00:05:17.389
+But what works for the field F5?
+
+00:05:17.389 --> 00:05:25.379
+There, we need to take a factorization (it's called factorization) not by the polynomial x^2 + 1,
+
+00:05:25.379 --> 00:05:27.465
+like we did here,
+
+00:05:27.465 --> 00:05:31.100
+but by the polynomial x^2 + 2.
+
+00:05:31.100 --> 00:05:38.393
+Because -2 is no longer a quadratic residue in the field F5.
+
+00:05:38.393 --> 00:05:44.258
+I'm trying already to say these smart algebraic words.
+
+00:05:44.258 --> 00:05:46.761
+Maybe it's still too early...
+
+00:05:46.761 --> 00:05:49.626
+Well, okay... get used to it.
+
+00:05:49.626 --> 00:05:58.835
+Here we've constructed all 25 elements of our assumed field F5^2.
+
+00:05:58.835 --> 00:06:05.745
+We're checking that this specific row in the multiplication table contains all 25 elements.
+
+00:06:05.745 --> 00:06:13.274
+Here we can try various elements and always get 25.
+
+00:06:13.274 --> 00:06:16.846
+Let's check this globally
+
+00:06:16.846 --> 00:06:19.349
+for p = 5.
+
+00:06:19.349 --> 00:06:21.025
+Checking...
+
+00:06:21.025 --> 00:06:22.016
+See?
+
+00:06:22.016 --> 00:06:27.219
+Here we're checking all possible rows in the multiplication table.
+
+00:06:27.219 --> 00:06:32.696
+Including the row where multiplication by 0 happens, and there's a unique result.
+
+00:06:32.696 --> 00:06:38.160
+All other rows have 25 unique elements.
+
+00:06:38.160 --> 00:06:42.060
+Let's look at the field F7.
+
+00:06:42.060 --> 00:06:51.158
+The quadratic extension of the field F7 using the polynomial x^2 + 1.
+
+00:06:51.158 --> 00:06:56.187
+And we find that its multiplication table is normal,
+
+00:06:56.187 --> 00:07:02.261
+meaning it's actually a field of 49 elements.
+
+00:07:02.261 --> 00:07:08.305
+Among these 49 elements, there's also 1.
+
+00:07:08.305 --> 00:07:10.851
+This is important.
+
+00:07:10.851 --> 00:07:14.965
+Since all 49 elements are present, 1 is also there.
+
+00:07:14.965 --> 00:07:19.471
+If it weren't, there would be 48 or fewer.
+
+00:07:19.471 --> 00:07:27.160
+This means that, for example, for our element 2 + 3x, there's a some polynomial from here
+
+00:07:27.160 --> 00:07:29.228
+that yields 1.
+
+00:07:29.228 --> 00:07:34.401
+We can explicitly find it using the "Select" function.
+
+00:07:34.401 --> 00:07:36.968
+It's 5 + 3x.
+
+00:07:36.968 --> 00:07:40.952
+Indeed. We multiply 2 + 3x by 5 + 3x.
+
+00:07:40.952 --> 00:07:43.866
+What do we get?
+
+00:07:43.866 --> 00:07:45.411
+This.
+
+00:07:45.411 --> 00:07:51.006
+Here, we should make a substitution. Turn x^2 into -1.
+
+00:07:51.006 --> 00:07:54.380
+This means that x^2 + 1 equals 0.
+
+00:07:54.380 --> 00:07:58.210
+We want to live in a world where x^2 + 1 = 0.
+
+00:07:58.210 --> 00:08:00.000
+And here's what we get.
+
+00:08:00.000 --> 00:08:05.483
+Then we remember that 7 also equals 0, so 21 here also equals 0.
+
+00:08:05.483 --> 00:08:10.338
+Because 21 is 7 + 7 + 7.
+
+00:08:10.338 --> 00:08:16.170
+So, we've checked that the multiplication table contains all elements in each row.
+
+00:08:16.170 --> 00:08:21.808
+But that's not all the properties of a field. There's also commutativity in multiplication, addition, etc.
+
+00:08:21.808 --> 00:08:25.374
+All the other properties of a field...
+
+00:08:25.374 --> 00:08:27.714
+these ones
+
+00:08:27.714 --> 00:08:31.915
+...follow from the fact that they hold for polynomials.
+
+00:08:31.915 --> 00:08:34.026
+All these properties are present in polynomials.
+
+00:08:34.026 --> 00:08:44.877
+So, our polynomials (taken modulo something) also inherit these properties.
+
+00:08:44.877 --> 00:08:51.985
+Thus, we've already proven, through numerical verification,
+
+00:08:51.985 --> 00:08:58.296
+that polynomials over F5 modulo x^2 + 2
+
+00:08:58.296 --> 00:09:04.109
+and polynomials over the field F7 modulo x^2 + 1
+
+00:09:04.109 --> 00:09:09.486
+give us fields of size 25 and 49.
+
+00:09:09.486 --> 00:09:12.470
+What correct words are spoken here...
+
+00:09:12.470 --> 00:09:18.108
+We take the factor of the ring of polynomials F5[x]
+
+00:09:18.108 --> 00:09:24.313
+by the ideal generated by the polynomial x^2 + 2.
+
+00:09:24.313 --> 00:09:30.692
+An ideal is the set of all polynomials that are divisible by x^2 + 2.
+
+00:09:30.692 --> 00:09:33.186
+Let's put it this way... it's not quite exact.
+
+00:09:35.049 --> 00:09:37.176
+Moving on to the next point.
+
+00:09:37.176 --> 00:09:42.205
+Now we want to get fields of size 5^3, 7^3 and so on.
+
+00:09:42.205 --> 00:09:45.488
+How is this done...
+
+00:09:45.488 --> 00:09:51.907
+With the polynomial x^2 + 1 in the field F5, we couldn't achieve anything,
+
+00:09:51.907 --> 00:09:54.889
+because it factors
+
+00:09:54.889 --> 00:09:59.003
+and as a result, we get two elements whose product is zero,
+
+00:09:59.003 --> 00:10:02.813
+and we end up with a problematic multiplication table.
+
+00:10:02.813 --> 00:10:06.579
+And from here, we immediately sense the idea.
+
+00:10:06.579 --> 00:10:12.478
+We need to find a cubic polynomial that doesn't factor.
+
+00:10:12.478 --> 00:10:15.602
+x^2 + 1 factors.
+
+00:10:15.602 --> 00:10:20.000
+We need a cubic polynomial that doesn't factor.
+
+00:10:20.000 --> 00:10:30.864
+Well, I used the Solve function here to find some polynomial that doesn't factor.
+
+00:10:30.864 --> 00:10:34.185
+This is not always true. Some polynomials do factor.
+
+00:10:34.185 --> 00:10:41.870
+For example, this polynomial factors into 3 terms: (x - 1)(x - 2)(x - 2).
+
+00:10:41.870 --> 00:10:45.897
+But this one doesn't factor.
+
+00:10:45.897 --> 00:10:49.794
+By the way, Solve doesn't talk about factorization, it talks about the absence of roots.
+
+00:10:49.794 --> 00:10:55.955
+These are slightly different things, but that's enough for our purpose here.
+
+00:10:57.523 --> 00:11:00.239
+Alright... Let's move on.
+
+00:11:00.239 --> 00:11:10.885
+Now let's consider all second-degree polynomials of the form a + bx + cx^2.
+
+00:11:10.885 --> 00:11:15.254
+There will be 125 of them.
+
+00:11:15.254 --> 00:11:20.326
+And we want to factor them using this polynomial.
+
+00:11:20.326 --> 00:11:25.005
+In other words, we want to replace "x^3" with "minus this expression".
+
+00:11:25.005 --> 00:11:30.339
+We want to replace x^3 with - (x + 1).
+
+00:11:30.339 --> 00:11:35.549
+With this substitution, we can immediately turn x^4
+
+00:11:35.549 --> 00:11:38.444
+into this expression.
+
+00:11:38.444 --> 00:11:40.904
+Already a second-degree.
+
+00:11:40.904 --> 00:11:44.278
+So, for higher degrees (x^3 and above),
+
+00:11:44.278 --> 00:11:50.000
+using this substitution, we can reduce the degree down to the second degree.
+
+00:11:50.000 --> 00:11:54.219
+That's why I immediately generate only second-degree polynomials.
+
+00:11:54.219 --> 00:11:58.159
+It doesn't make sense to go further because we have this substitution.
+
+00:11:58.159 --> 00:11:59.443
+Okay.
+
+00:11:59.443 --> 00:12:04.515
+Here, I'm checking a specific row of our new arithmetic,
+
+00:12:04.515 --> 00:12:09.650
+where we consider this polynomial equal to zero.
+
+00:12:09.650 --> 00:12:12.632
+Alright... Lucky shot!
+
+00:12:12.632 --> 00:12:14.656
+And this?
+
+00:12:14.656 --> 00:12:16.120
+Well...
+
+00:12:16.120 --> 00:12:19.826
+Here, I could do the same thing and check all rows of the multiplication table
+
+00:12:19.826 --> 00:12:25.072
+(all 125 rows of the multiplication table) and get the same result.
+
+00:12:25.072 --> 00:12:30.885
+In all rows of the multiplication table, I get 125 unique elements.
+
+00:12:30.885 --> 00:12:34.159
+Including 1.
+
+00:12:34.159 --> 00:12:36.880
+If we took not this polynomial,
+
+00:12:36.880 --> 00:12:41.362
+but this one, we'd encounter a problem.
+
+00:12:41.362 --> 00:12:44.276
+Let's observe this problem.
+
+00:12:44.276 --> 00:12:49.610
+Here, I encountered a problem with the polynomial 1 + x^2.
+
+00:12:49.610 --> 00:12:53.811
+For the polynomial 2 + x^2, everything is bad.
+
+00:12:53.811 --> 00:13:00.930
+By the way, it's just one of the zero divisors in this field.
+
+00:13:00.930 --> 00:13:04.544
+And for this one, I also get 25.
+
+00:13:04.544 --> 00:13:07.221
+Less than 125.
+
+00:13:07.221 --> 00:13:14.384
+In short, we have two zero divisors that we can immediately see,
+
+00:13:14.384 --> 00:13:17.845
+as well as other elements
+
+00:13:17.845 --> 00:13:22.090
+for which the multiplication table row is disrupted.
+
+00:13:22.090 --> 00:13:24.941
+I'm explaining this here.
+
+00:13:24.941 --> 00:13:31.712
+(x^2 + 2) when multiplied by 0 gives 0, of course.
+
+00:13:31.712 --> 00:13:37.437
+And also (x^2 + 2) when multiplied by (x - 2) gives 0
+
+00:13:37.437 --> 00:13:42.572
+simply because we consider this expression as zero in this ring.
+
+00:13:42.572 --> 00:13:46.599
+So if we take any polynomial pp,
+
+00:13:46.599 --> 00:13:49.819
+as well as the polynomial (x - 2 + pp),
+
+00:13:49.819 --> 00:13:51.974
+we get two elements,
+
+00:13:51.974 --> 00:13:56.611
+such, that in the multiplication table (x^2 + 2)
+
+00:13:56.611 --> 00:13:57.624
+multiplied by this polynomial
+
+00:13:57.624 --> 00:13:59.604
+and (x^2 + 2) multiplied by this polynomial
+
+00:13:59.604 --> 00:14:02.257
+give the same result.
+
+00:14:02.257 --> 00:14:06.589
+This equality comes as the sum of these two equalities.
+
+00:14:06.589 --> 00:14:11.661
+In the multiplication table, where we take the modulus of the polynomial
+
+00:14:11.661 --> 00:14:16.385
+that's the product of three monomials, there will also be issues.
+
+00:14:19.477 --> 00:14:24.023
+Not always, but sometimes.
+
+00:14:24.023 --> 00:14:27.029
+So, look at what happened.
+
+00:14:27.029 --> 00:14:32.861
+We took polynomials modulo (x^3 + x + 1).
+
+00:14:32.861 --> 00:14:36.652
+Meanwhile, we were working in the arithmetic of F5.
+
+00:14:36.652 --> 00:14:44.159
+And we found that the multiplication table is good.
+
+00:14:44.159 --> 00:14:50.973
+So, from the equation a[x] * b1[x] = a[x] * b2[x],
+
+00:14:50.973 --> 00:14:56.089
+it immediately followed that b1 = b2.
+
+00:14:56.089 --> 00:14:58.157
+But how do we prove this rigorously?
+
+00:14:58.157 --> 00:15:00.000
+Let's try to do that.
+
+00:15:00.000 --> 00:15:04.245
+I don't do this often, but sometimes, perhaps, it's useful.
+
+00:15:04.245 --> 00:15:06.530
+Let's argue by contradiction.
+
+00:15:06.530 --> 00:15:08.902
+Suppose we have some polynomial.
+
+00:15:08.902 --> 00:15:18.329
+Irreducible. Which can't be factored into the product of two polynomials of degree greater than 0.
+
+00:15:18.329 --> 00:15:25.837
+And let's have this equation, where b1 and b2 are different polynomials.
+
+00:15:25.837 --> 00:15:27.992
+I'm immediately in the world of degree 2 polynomials,
+
+00:15:27.992 --> 00:15:33.998
+because I understand that we can make this substitution.
+
+00:15:33.998 --> 00:15:36.972
+I can derive from this equation
+
+00:15:36.972 --> 00:15:38.191
+that equation.
+
+00:15:38.191 --> 00:15:41.410
+Simply move to one side
+
+00:15:41.410 --> 00:15:44.760
+and take a[x] out of the bracket.
+
+00:15:44.760 --> 00:15:48.003
+And we end up with an equation of the next form:
+
+00:15:48.003 --> 00:15:57.299
+the product of two polynomials a[x] * (b1[x] - b2[x]) is zero modulo f[x].
+
+00:15:57.299 --> 00:16:08.572
+This means that this product is equivalent to some polynomial k[x] multiplied by f[x].
+
+00:16:08.572 --> 00:16:13.671
+The polynomial k[x] cannot be a simple number.
+
+00:16:13.671 --> 00:16:16.087
+Let k be a number.
+
+00:16:16.087 --> 00:16:21.987
+Then, let's bring 1/k inside a[x], for example.
+
+00:16:21.987 --> 00:16:28.235
+And then we have: the product of two polynomials equals f[x].
+
+00:16:28.235 --> 00:16:32.848
+If these are polynomials of degree greater than 0, we have a contradiction.
+
+00:16:32.848 --> 00:16:34.959
+It turns out f[x] is reducible.
+
+00:16:34.959 --> 00:16:40.771
+We initially assumed it couldn't be factored, but it has factored.
+
+00:16:40.771 --> 00:16:42.664
+And x can't be a number.
+
+00:16:42.664 --> 00:16:45.864
+And b1 - b2 can't be a number.
+
+00:16:45.864 --> 00:16:49.804
+Because then we have a second-degree polynomial here,
+
+00:16:49.804 --> 00:16:52.264
+and a third-degree polynomial here.
+
+00:16:52.264 --> 00:16:58.120
+So, both of them are polynomials
+
+00:16:58.120 --> 00:17:03.429
+where x or x^2 carries a non-zero coefficient.
+
+00:17:03.429 --> 00:17:08.284
+So, if k[x] is a number, we have a contradiction.
+
+00:17:08.284 --> 00:17:09.655
+Thus, k[x] is not a number.
+
+00:17:09.655 --> 00:17:12.332
+Thus, k[x] is a polynomial.
+
+00:17:12.332 --> 00:17:15.097
+Moreover, it's a first-degree polynomial.
+
+00:17:15.097 --> 00:17:16.554
+It can't be second degree,
+
+00:17:16.554 --> 00:17:21.820
+because then it's a fifth-degree polynomial and we get a contradiction.
+
+00:17:21.820 --> 00:17:26.979
+We can't multiply two second-degree polynomials to get a fifth-degree polynomial.
+
+00:17:26.979 --> 00:17:30.634
+So, k[x] is definitely a first-degree polynomial.
+
+00:17:33.813 --> 00:17:38.401
+Then we have the following thing...
+
+00:17:40.174 --> 00:17:42.523
+Let's do the following.
+
+00:17:42.523 --> 00:17:47.900
+Write a[x] as the polynomial k[x]
+
+00:17:47.900 --> 00:17:53.478
+multiplied by the polynomial ll[x] plus the number jj.
+
+00:17:53.478 --> 00:17:57.984
+And let's denote this difference as b12[x]
+
+00:17:57.984 --> 00:18:03.076
+and write it in this way.
+
+00:18:03.076 --> 00:18:08.838
+We divide these two polynomials by k[x] with remainder.
+
+00:18:08.838 --> 00:18:10.644
+Here's what I did.
+
+00:18:10.644 --> 00:18:14.802
+I wrote a[x] as something that's divisible by k[x]
+
+00:18:14.802 --> 00:18:17.262
+plus something that's not divisible by k[x].
+
+00:18:17.262 --> 00:18:23.510
+And this something that's not divisible by k[x] is a number. Just a number.
+
+00:18:23.510 --> 00:18:27.164
+An important concept. Look it up online if you don't understand it.
+
+00:18:27.164 --> 00:18:32.367
+Division of polynomials by each other with a remainder.
+
+00:18:32.367 --> 00:18:35.306
+By writing a[x] this way,
+
+00:18:35.306 --> 00:18:36.633
+and this thing,
+
+00:18:36.633 --> 00:18:42.794
+I have that this product
+
+00:18:42.794 --> 00:18:47.474
+consists of a part that's divisible by k[x]
+
+00:18:47.474 --> 00:18:49.826
+and a part that's not divisible by k[x].
+
+00:18:49.826 --> 00:18:53.940
+This is just a number.
+
+00:18:53.940 --> 00:18:57.053
+And this number must be equal to 0.
+
+00:19:00.000 --> 00:19:07.436
+In other words, either a[x] is proportional to k[x],
+
+00:19:07.436 --> 00:19:12.073
+or (b1 - b2) is proportional to k[x].
+
+00:19:12.073 --> 00:19:13.705
+Alright...
+
+00:19:16.231 --> 00:19:20.694
+For example, a[x].
+
+00:19:20.694 --> 00:19:26.245
+Then we have that k[x] * ll[x]
+
+00:19:26.245 --> 00:19:29.227
+(this expression here)
+
+00:19:29.227 --> 00:19:34.299
+multiplied by this thing
+
+00:19:34.299 --> 00:19:37.368
+is exactly equal to
+
+00:19:37.368 --> 00:19:39.784
+this thing here.
+
+00:19:39.784 --> 00:19:41.503
+Yes, I need to explain.
+
+00:19:41.503 --> 00:19:45.095
+If this was an equation modulo f,
+
+00:19:45.095 --> 00:19:50.298
+then here it's just an equation of polynomials.
+
+00:19:53.651 --> 00:19:56.954
+Sorry, I forgot to mention.
+
+00:19:56.954 --> 00:20:00.720
+In short, we have an equation of polynomials.
+
+00:20:00.720 --> 00:20:08.599
+And so, we can divide by the polynomial k[x] while preserving the equality.
+
+00:20:08.599 --> 00:20:11.189
+And once again, we arrive at a contradiction.
+
+00:20:11.189 --> 00:20:15.956
+f[x] once again turns out to factor into polynomial products.
+
+00:20:15.956 --> 00:20:29.312
+Here I'll reiterate, that irreducible means, that it has no roots, but the reverse isn't true:
+
+00:20:29.312 --> 00:20:34.384
+if there are no roots, it doesn't imply the polynomial is irreducible.
+
+00:20:34.384 --> 00:20:37.109
+This was true for a cubic polynomial,
+
+00:20:37.109 --> 00:20:40.000
+but, let's say, for a sixth-degree polynomial, this is not the case.
+
+00:20:40.000 --> 00:20:41.763
+And this is clearly demonstrated.
+
+00:20:41.763 --> 00:20:45.797
+We take the product of two irreducible polynomials.
+
+00:20:45.797 --> 00:20:51.300
+And we get a polynomial with no roots.
+
+00:20:51.300 --> 00:20:53.977
+Now, pay attention...
+
+00:20:53.977 --> 00:20:57.264
+We've already proven the following:
+
+00:20:57.264 --> 00:21:01.248
+that if we have an irreducible cubic polynomial,
+
+00:21:01.248 --> 00:21:08.690
+we get a field when considering polynomials modulo this irreducible polynomial.
+
+00:21:08.690 --> 00:21:17.005
+A similar reasoning can be repeated for polynomials of any other degree: 4, 5, etc.
+
+00:21:17.005 --> 00:21:22.451
+Thus, we've shown that we can get an extension of the field Fp.
+
+00:21:22.451 --> 00:21:30.000
+Creating fields of size p^k, where k is precisely the degree of the irreducible polynomial,
+
+00:21:30.000 --> 00:21:35.620
+over which we consider all polynomials with coefficients from the field Fp.
+
+00:21:35.620 --> 00:21:44.190
+But how can we prove that for any field Fp, there's always an irreducible polynomial of any degree k?
+
+00:21:44.190 --> 00:21:47.148
+A very good question!
+
+00:21:47.148 --> 00:21:51.350
+Let's think about cubic polynomials first.
+
+00:21:51.350 --> 00:21:53.130
+Here's how they look:
+
+00:21:53.130 --> 00:21:55.895
+(x^3 + ax^2 + cx + d)
+
+00:21:55.895 --> 00:21:58.398
+We'll consider monic polynomials.
+
+00:21:58.398 --> 00:22:04.578
+That is, polynomials where the coefficient of the highest power is one.
+
+00:22:04.578 --> 00:22:11.412
+The number of such polynomials is p^3.
+
+00:22:11.412 --> 00:22:13.567
+Moving on...
+
+00:22:13.567 --> 00:22:22.471
+Let's try to formulate the number of irreducible polynomials of different degrees.
+
+00:22:22.471 --> 00:22:32.004
+For example, the number of irreducible polynomials of degree 1 is simply all degree 1 polynomials.
+
+00:22:32.004 --> 00:22:38.033
+Polynomials of degree 2. Their count can also be calculated.
+
+00:22:38.033 --> 00:22:42.844
+Irreducible polynomials of degree 2 are written like this:
+
+00:22:42.844 --> 00:22:52.271
+((x + b)^2) - a, where "a" must be quadratic non-residues, and all will be well.
+
+00:22:52.271 --> 00:22:55.944
+Indeed, such a polynomial won't have roots,
+
+00:22:55.944 --> 00:23:00.973
+since equating it to zero gives (x + b)^2 = a.
+
+00:23:00.973 --> 00:23:05.871
+And there's no value (x + b) that squares to "a".
+
+00:23:05.871 --> 00:23:10.791
+b can be any number. Any of the p numbers.
+
+00:23:10.791 --> 00:23:12.380
+So, here the factor p appears.
+
+00:23:12.380 --> 00:23:16.122
+And "a" can be any of (p - 1)/2 numbers.
+
+00:23:16.122 --> 00:23:21.368
+(p - 1)/2 numbers is the range for "a".
+
+00:23:21.368 --> 00:23:27.585
+So, Irreducibles of degree 2 amount to p(p-1)/2.
+
+00:23:27.585 --> 00:23:34.811
+Now, can we, knowing the number of all monic cubic polynomials,
+
+00:23:34.811 --> 00:23:39.467
+subtract from this set all the reducible ones
+
+00:23:39.467 --> 00:23:44.017
+and see if anything remains or not?
+
+00:23:44.017 --> 00:23:46.098
+That's the idea.
+
+00:23:46.098 --> 00:23:56.074
+Here's how we're going to crack it. Let's write down irreducible polynomials.
+
+00:23:56.074 --> 00:24:01.993
+Reducible polynomials, those that can be factored, degree 2 ones, are constructed like this:
+
+00:24:01.993 --> 00:24:04.627
+take polynomials with root a1.
+
+00:24:04.627 --> 00:24:08.369
+Take, as it were, (x - a1) and multiply it by (x - a2),
+
+00:24:08.369 --> 00:24:11.308
+where a1 and a2 are distinct.
+
+00:24:11.308 --> 00:24:13.308
+How many such polynomials?
+
+00:24:13.308 --> 00:24:15.201
+p(p-1)/2
+
+00:24:15.201 --> 00:24:19.054
+That's how many ways we can take two elements from the field Fp.
+
+00:24:19.054 --> 00:24:22.254
+So, I've listed the set of all polynomials
+
+00:24:22.254 --> 00:24:25.996
+which are got as a result of multiplying degree 1 polynomials
+
+00:24:25.996 --> 00:24:30.174
+with roots a1 and a2, where a1 and a2 are different roots.
+
+00:24:30.174 --> 00:24:32.198
+There are this many of them.
+
+00:24:32.198 --> 00:24:37.795
+Now let's consider polynomials of the form (x - a1)^2.
+
+00:24:37.795 --> 00:24:40.194
+That is, when root a1 and a2 are the same.
+
+00:24:40.194 --> 00:24:42.576
+There are p of them.
+
+00:24:42.576 --> 00:24:44.405
+Alright.
+
+00:24:44.405 --> 00:24:45.863
+Moving on.
+
+00:24:45.863 --> 00:24:52.285
+Let's consider degree 3 polynomials that factor.
+
+00:24:52.285 --> 00:24:58.528
+They factor into either three distinct roots (a1 * a2 * a3),
+
+00:24:58.528 --> 00:25:02.458
+or one root is repeated twice
+
+00:25:02.458 --> 00:25:04.351
+and another only once.
+
+00:25:04.351 --> 00:25:07.794
+Or one root is repeated three times.
+
+00:25:07.794 --> 00:25:13.930
+Or we take polynomials with a root "a" of degree 1
+
+00:25:13.930 --> 00:25:18.725
+and irreducible polynomials of degree 2.
+
+00:25:18.725 --> 00:25:25.365
+Let "b" denote an irreducible polynomial of degree 2.
+
+00:25:25.365 --> 00:25:27.060
+Recording the count.
+
+00:25:27.060 --> 00:25:30.000
+I have this many of them.
+
+00:25:30.000 --> 00:25:31.739
+How many of them do I have?
+
+00:25:31.739 --> 00:25:35.287
+For the first root, I choose in "p" ways.
+
+00:25:35.287 --> 00:25:41.251
+Leaving "p - 1" numbers and choosing the second root "a2".
+
+00:25:41.251 --> 00:25:46.412
+Here I choose the root "a1". I can do this in "p" ways.
+
+00:25:46.412 --> 00:25:47.696
+And this.
+
+00:25:47.696 --> 00:25:51.569
+To choose a polynomial "a", univariate, there are "p" ways.
+
+00:25:51.569 --> 00:25:56.810
+To choose a polynomial "b", bivariate, degree 2,
+
+00:25:56.810 --> 00:25:58.766
+that many ways.
+
+00:25:58.766 --> 00:26:00.747
+Look.
+
+00:26:00.747 --> 00:26:03.119
+Recording this.
+
+00:26:03.119 --> 00:26:04.751
+These equalities can be ignored.
+
+00:26:04.751 --> 00:26:06.775
+This is me jotting down the essence,
+
+00:26:06.775 --> 00:26:10.174
+and then the answer in quantities.
+
+00:26:10.174 --> 00:26:15.912
+How many irreducible polynomials of degree 2 will there be?
+
+00:26:15.912 --> 00:26:16.847
+Very simple.
+
+00:26:16.847 --> 00:26:22.311
+We need to subtract what I've got here from the total number of degree 2 polynomials, which is p^2.
+
+00:26:22.311 --> 00:26:25.380
+It all simply equals this identity.
+
+00:26:25.380 --> 00:26:30.539
+Now, degree 3 polynomials. Irreducibles.
+
+00:26:30.539 --> 00:26:40.988
+From all degree 3 polynomials (monic).
+
+00:26:40.988 --> 00:26:45.494
+All polynomials that are reducible, monic, of degree 3.
+
+00:26:45.494 --> 00:26:49.062
+Here's what the answer looks like.
+
+00:26:49.062 --> 00:26:54.319
+Alright! Moving on. It gets more complicated.
+
+00:26:54.319 --> 00:27:00.436
+We're considering reducible polynomials of degree 4.
+
+00:27:00.436 --> 00:27:02.922
+Either all 4 distinct roots,
+
+00:27:02.922 --> 00:27:07.211
+or one root repeated twice, and two other distinct roots.
+
+00:27:07.211 --> 00:27:08.309
+And so on...
+
+00:27:08.309 --> 00:27:09.351
+Look.
+
+00:27:09.351 --> 00:27:11.114
+I'm writing all of this in detail.
+
+00:27:11.114 --> 00:27:16.610
+Either I have two factors of the form (x - a1),
+
+00:27:16.610 --> 00:27:18.654
+the second factor (x - a2),
+
+00:27:18.654 --> 00:27:24.118
+and some irreducible polynomial of degree 2.
+
+00:27:24.118 --> 00:27:26.381
+Or this,
+
+00:27:26.381 --> 00:27:31.149
+or the product of two different irreducible polynomials of degree 2,
+
+00:27:31.149 --> 00:27:35.370
+or the same polynomial squared,
+
+00:27:35.370 --> 00:27:41.836
+or an irreducible polynomial of degree 1 multiplied by an irreducible polynomial of degree 3.
+
+00:27:41.836 --> 00:27:50.000
+By the letter "c," I denote all degree 3 polynomials that are irreducible.
+
+00:27:50.000 --> 00:27:52.342
+The answer:
+
+00:27:52.342 --> 00:27:55.019
+It turns out to be this sum.
+
+00:27:55.019 --> 00:27:56.164
+This corresponds to
+
+00:27:56.164 --> 00:27:58.406
+this set.
+
+00:27:58.406 --> 00:27:59.146
+This corresponds to
+
+00:27:59.146 --> 00:28:00.614
+this.
+
+00:28:00.614 --> 00:28:03.409
+And so on.
+
+00:28:03.409 --> 00:28:04.835
+This corresponds to
+
+00:28:04.835 --> 00:28:06.835
+this set.
+
+00:28:06.835 --> 00:28:10.732
+And we know how many irreducible polynomials of degree 2 there are in total.
+
+00:28:10.732 --> 00:28:12.427
+That many.
+
+00:28:12.427 --> 00:28:14.415
+We choose one of them
+
+00:28:14.415 --> 00:28:16.415
+in that many ways.
+
+00:28:16.415 --> 00:28:18.916
+And if the second one is different,
+
+00:28:18.916 --> 00:28:23.374
+it's chosen in that many ways.
+
+00:28:23.374 --> 00:28:26.488
+But it doesn't matter to us which one was chosen first.
+
+00:28:26.488 --> 00:28:28.410
+So there's a division by 2 here.
+
+00:28:28.410 --> 00:28:37.421
+Otherwise, we'd count b1 * b2 twice. First as b1 * b2, then as b2 * b1.
+
+00:28:37.421 --> 00:28:40.664
+Towards the end, this value.
+
+00:28:40.664 --> 00:28:41.382
+This is exactly
+
+00:28:41.382 --> 00:28:43.580
+this.
+
+00:28:43.580 --> 00:28:45.648
+Recording...
+
+00:28:45.648 --> 00:28:48.456
+and getting the answer.
+
+00:28:48.456 --> 00:28:49.594
+Listen... fascinating!
+
+00:28:49.594 --> 00:28:52.881
+Two simple terms here. In the denominator, 4.
+
+00:28:52.881 --> 00:28:55.428
+Here too.
+
+00:28:55.428 --> 00:28:58.272
+And here too.
+
+00:29:00.667 --> 00:29:03.489
+Some sort of answer is emerging.
+
+00:29:03.489 --> 00:29:06.907
+For five, the answer looks like this.
+
+00:29:06.907 --> 00:29:09.236
+But for six, everything breaks down.
+
+00:29:09.236 --> 00:29:11.739
+For six...
+
+00:29:11.739 --> 00:29:15.919
+I'll show you what happens for six.
+
+00:29:15.919 --> 00:29:20.954
+For six, we get 6 here,
+
+00:29:20.954 --> 00:29:25.480
+and 2 here.
+
+00:29:25.480 --> 00:29:29.812
+And we also get 3.
+
+00:29:29.812 --> 00:29:34.407
+And one more term +p/6. That's the answer for six.
+
+00:29:37.629 --> 00:29:43.213
+It's not so easy to watch and understand what's hidden here.
+
+00:29:43.213 --> 00:29:45.496
+A small note:
+
+00:29:45.496 --> 00:29:49.610
+this complex sum that I calculated,
+
+00:29:49.610 --> 00:29:52.220
+can actually be calculated in one go.
+
+00:29:52.220 --> 00:29:53.896
+Like this.
+
+00:29:53.896 --> 00:29:58.707
+All these terms are calculated in one go using this formula.
+
+00:29:58.707 --> 00:30:04.825
+This is called the number of combinations with repetitions.
+
+00:30:04.825 --> 00:30:13.250
+Indeed, what we want to do is from the set of roots, from all the numbers we have in Fp,
+
+00:30:13.250 --> 00:30:21.434
+choose 4 numbers to make them the roots of our polynomial.
+
+00:30:21.434 --> 00:30:28.276
+And when we construct the polynomial, we're allowed to take the same roots multiple times.
+
+00:30:28.276 --> 00:30:30.910
+This is called multiple roots.
+
+00:30:30.910 --> 00:30:41.077
+So here, we have nothing other than the number of selections with repetitions, for which there's a known formula.
+
+00:30:41.077 --> 00:30:45.453
+Specifically, here it's written for k = 4.
+
+00:30:45.453 --> 00:30:52.800
+In the numerator, we simply have k factors from p to p + k - 1,
+
+00:30:52.800 --> 00:30:57.132
+and in the denominator, k!.
+
+00:30:57.132 --> 00:31:06.530
+All this combination that I've written here,
+
+00:31:06.530 --> 00:31:12.560
+can actually be formally described like this:
+
+00:31:16.697 --> 00:31:22.332
+In the form of  multiplication of these four brackets,
+
+00:31:22.332 --> 00:31:31.933
+where by "a1" I mean the number of degree 1 polynomials,
+
+00:31:31.933 --> 00:31:35.220
+which are irreducible degree 1 polynomials. (Attention! Here a_i, b_i, ... have a new meaning)
+
+00:31:35.220 --> 00:31:40.694
+And "a2" is everything that can be constructed from degree 2 polynomials.
+
+00:31:40.694 --> 00:31:44.808
+(these ones)
+
+00:31:44.808 --> 00:31:48.356
+What degree 2 polynomial can be constructed from these (a1) polynomials.
+
+00:31:48.356 --> 00:31:53.907
+And "a3" is how many degree 3 polynomials can be constructed from these (a1) polynomials.
+
+00:31:53.907 --> 00:31:56.149
+...and so on.
+
+00:31:56.149 --> 00:32:02.824
+And when it comes to, say, x^3, it comes this thing.
+
+00:32:02.824 --> 00:32:12.318
+"a3" is how many degree 3 polynomials can be constructed from degree 1 polynomials.
+
+00:32:12.318 --> 00:32:21.692
+Plus, how many polynomials of degree 3 can be constructed from one degree 1 polynomial and one degree 2 polynomial.
+
+00:32:21.692 --> 00:32:28.770
+And here, how many irreducible degree 3 polynomials there are.
+
+00:32:28.770 --> 00:32:33.142
+And this truly describes the set of all degree 3 polynomials.
+
+00:32:33.142 --> 00:32:35.558
+In other words, this expression,
+
+00:32:35.558 --> 00:32:40.218
+it's actually equal to p^3.
+
+00:32:40.218 --> 00:32:43.330
+And I'm writing down the equality.
+
+00:32:43.330 --> 00:32:47.244
+And from this equality, I get the answers.
+
+00:32:47.244 --> 00:32:48.958
+It immediately follows that
+
+00:32:48.958 --> 00:32:54.248
+this is equal to this, meaning a1 = p.
+
+00:32:54.248 --> 00:32:58.754
+Next, I know what a2 is equal to.
+
+00:32:58.754 --> 00:33:01.823
+This is the number of selections with repetitions from "a".
+
+00:33:01.823 --> 00:33:06.475
+I substitute a2 here and immediately
+
+00:33:06.475 --> 00:33:10.827
+from this and this, I get
+
+00:33:10.827 --> 00:33:15.919
+that b1 is equal to what it's equal to above,
+
+00:33:15.919 --> 00:33:17.725
+namely, to this.
+
+00:33:17.725 --> 00:33:21.413
+This is precisely b1.
+
+00:33:21.413 --> 00:33:22.540
+And so on.
+
+00:33:22.540 --> 00:33:26.674
+So, this equation is a good use to us.
+
+00:33:26.674 --> 00:33:30.000
+It's difficult to make a mistake while writing this polynomial.
+
+00:33:30.000 --> 00:33:34.419
+Then, you can ask Mathematica to solve it.
+
+00:33:34.419 --> 00:33:36.095
+How is this done?
+
+00:33:36.095 --> 00:33:41.080
+Essentially, we need to write this equation
+
+00:33:41.080 --> 00:33:43.385
+multiple times.
+
+00:33:43.385 --> 00:33:46.367
+Substitute "a2" with this here.
+
+00:33:46.367 --> 00:33:49.784
+Substitute "a3" with this here.
+
+00:33:49.784 --> 00:33:51.025
+What is b2?
+
+00:33:51.025 --> 00:34:02.847
+b2 is how many degree 4 polynomials can be constructed from b1 polynomials.
+
+00:34:05.285 --> 00:34:06.783
+This many.
+
+00:34:10.789 --> 00:34:13.336
+All these substitutions that I've written here,
+
+00:34:13.336 --> 00:34:16.120
+can be concisely expressed like this.
+
+00:34:16.120 --> 00:34:20.000
+Each letter signifies the number of irreducible polynomials.
+
+00:34:20.000 --> 00:34:24.865
+a1 is the number of irreducible degree 1 polynomials,
+
+00:34:24.865 --> 00:34:31.897
+and a2, a3, a4, ... are how many 2nd, 3rd, 4th, ... degree polynomials can be constructed from them.
+
+00:34:31.897 --> 00:34:38.768
+b1 is the number of irreducible degree 2 polynomials,
+
+00:34:38.768 --> 00:34:49.739
+and b2, b3, b4 are how many (reducible) 4th, 6th, 8th, ... degree polynomials can be constructed from them.
+
+00:34:49.739 --> 00:34:55.290
+Then I write down this equation for four x's.
+
+00:34:55.290 --> 00:34:59.782
+For no reason, as the saying goes.
+
+00:34:59.782 --> 00:35:04.832
+I just need to determine what eq0 is.
+
+00:35:12.148 --> 00:35:14.735
+I write like this, briefly.
+
+00:35:14.735 --> 00:35:18.631
+And here's what I get.
+
+00:35:18.631 --> 00:35:20.315
+a equals p.
+
+00:35:20.315 --> 00:35:22.838
+b equals this.
+
+00:35:22.838 --> 00:35:24.906
+c equals this.
+
+00:35:24.906 --> 00:35:34.855
+This is the number of irreducible polynomials of degrees 1, 2, 3, 4.
+
+00:35:34.855 --> 00:35:41.072
+We could write an equation, which you could jokingly rewrite,
+
+00:35:41.072 --> 00:35:47.581
+shift these subscripts to superscripts by drawing the powers.
+
+00:35:47.581 --> 00:35:53.204
+As if we have such equation:
+
+00:35:53.204 --> 00:35:55.988
+the sum of a geometric progression,
+
+00:35:55.988 --> 00:35:59.275
+the sum of a geometric progression, and so on.
+
+00:35:59.275 --> 00:36:04.026
+Equals the sum of a geometric progression.
+
+00:36:04.026 --> 00:36:08.778
+But here, you have to understand that a^2 – it's not exactly a^2.
+
+00:36:08.778 --> 00:36:13.937
+If a is p, then a^2 is p(p+1)/2.
+
+00:36:13.937 --> 00:36:20.749
+A bit tricky, but you can take it and write it as if it's a geometric progression.
+
+00:36:20.749 --> 00:36:24.770
+In jest. I haven't gone mad. It's just a fun thing to try,
+
+00:36:24.770 --> 00:36:31.889
+to try and write it as a sum of a geometric progression, and then take the reciprocals.
+
+00:36:31.889 --> 00:36:35.037
+But it doesn't result in any equality.
+
+00:36:35.037 --> 00:36:40.303
+If you write it like this, you'll get an incorrect equation.
+
+00:36:40.303 --> 00:36:44.215
+Not equal.
+
+00:36:44.215 --> 00:36:48.171
+But if, instead of the sum of a geometric progression on the right,
+
+00:36:48.171 --> 00:36:50.218
+you write this thing,
+
+00:36:50.218 --> 00:36:52.392
+you get a true statement.
+
+00:36:52.392 --> 00:36:57.508
+It's just some unexplainable magic.
+
+00:36:57.508 --> 00:37:03.016
+The answer is expressed through the Möbius function (μ).
+
+00:37:03.016 --> 00:37:07.348
+Here's what it looks like.
+
+00:37:07.348 --> 00:37:08.782
+p
+
+00:37:08.782 --> 00:37:12.156
+A familiar expression.
+
+00:37:12.156 --> 00:37:15.898
+Here's the broken thing for 6.
+
+00:37:15.898 --> 00:37:21.624
+By the way, I forgot to write down one more term, p.
+
+00:37:21.624 --> 00:37:24.128
+For 7, it's simple again.
+
+00:37:24.128 --> 00:37:28.752
+For 8, we see a 4.
+
+00:37:31.844 --> 00:37:34.655
+It's evident that the expression is simple for prime numbers.
+
+00:37:34.655 --> 00:37:38.204
+And for composite numbers, the expression is more complex.
+
+00:37:38.204 --> 00:37:41.796
+We've already covered the Möbius function together.
+
+00:37:41.796 --> 00:37:48.302
+It's either +1, -1, or 0.
+
+00:37:48.302 --> 00:37:55.072
+It's 0 for all numbers where a prime squared is present in the factorization.
+
+00:37:55.072 --> 00:37:59.230
+It's -1 for prime numbers.
+
+00:37:59.230 --> 00:38:03.432
+For the product of two different prime numbers, it's +1.
+
+00:38:03.432 --> 00:38:07.534
+For the product of three different prime numbers, it's -1 again.
+
+00:38:07.534 --> 00:38:17.623
+It's -1 for all numbers that are the product of an odd number of distinct prime numbers.
+
+00:38:17.623 --> 00:38:25.265
+This is how the factors are arranged in this factorization.
+
+00:38:25.265 --> 00:38:30.174
+The summation occurs not over all numbers from 1 to 14,
+
+00:38:30.174 --> 00:38:33.461
+but over the divisors of the number k.
+
+00:38:33.461 --> 00:38:39.731
+In this case, it's 7, 2, and 1.
+
+00:38:39.731 --> 00:38:42.887
+By the way...
+
+00:38:42.887 --> 00:38:46.537
+You understand, this is the number of objects,
+
+00:38:46.537 --> 00:38:49.040
+meaning these are all integers.
+
+00:38:49.040 --> 00:38:51.369
+In particular, this expression is an integer.
+
+00:38:51.369 --> 00:38:55.266
+And it's an integer for any p.
+
+00:38:55.266 --> 00:38:57.290
+A bit of a marvel.
+
+00:38:57.290 --> 00:38:59.748
+And of course, it's positive.
+
+00:38:59.748 --> 00:39:02.318
+How to prove it's positive?
+
+00:39:02.318 --> 00:39:03.949
+Very simply.
+
+00:39:03.949 --> 00:39:08.150
+This expression here is certainly greater
+
+00:39:08.150 --> 00:39:11.563
+than p^15 minus this thing.
+
+00:39:11.563 --> 00:39:14.893
+All powers from 1 to 14.
+
+00:39:14.893 --> 00:39:20.722
+Well, this thing is less than p^15 for any p,
+
+00:39:20.722 --> 00:39:25.858
+because this sum up to p^14
+
+00:39:25.858 --> 00:39:31.191
+is gotten from subtracting one from this number and dividing by something.
+
+00:39:31.191 --> 00:39:40.923
+Hence, the number of irreducible polynomials is greater than zero for any k.
+
+00:39:40.923 --> 00:39:47.049
+So... let's reconsider this magical equation.
+
+00:39:47.049 --> 00:39:54.405
+I tried moving the subscripts to the superscripts above, but it didn't work out.
+
+00:39:54.405 --> 00:39:57.300
+It did, but I had to hack the right-hand side.
+
+00:39:57.300 --> 00:40:02.181
+So, let's try to understand the meaning of this bracket here.
+
+00:40:02.181 --> 00:40:03.849
+When a1 equals a.
+
+00:40:03.849 --> 00:40:07.586
+a2 equals a(a+1)/2.
+
+00:40:07.586 --> 00:40:09.667
+a3 equals this value.
+
+00:40:09.667 --> 00:40:12.997
+What kind of product is this?
+
+00:40:12.997 --> 00:40:16.442
+Answer:
+
+00:40:16.442 --> 00:40:20.339
+We actually need to do the following.
+
+00:40:20.339 --> 00:40:24.889
+We need to take...
+
+00:40:24.889 --> 00:40:34.685
+We need to take this thing and raise it to the power of 2.
+
+00:40:34.685 --> 00:40:41.238
+Then this expression will be equal to
+
+00:40:41.238 --> 00:40:49.707
+this expression with these values of a.
+
+00:40:49.707 --> 00:40:54.169
+Now I'm writing the actual correct equation,
+
+00:40:54.169 --> 00:40:59.503
+where a is the number of irreducible polynomials of degree 1,
+
+00:40:59.503 --> 00:41:01.571
+b is of degree 2,
+
+00:41:01.571 --> 00:41:05.337
+c is of degree 3, d is of degree 4, and so on.
+
+00:41:07.601 --> 00:41:11.433
+And all of this
+
+00:41:11.433 --> 00:41:19.010
+equals the generating function describing the number of all polynomials of degree k.
+
+00:41:19.010 --> 00:41:25.563
+We verify this for what we've already calculated
+
+00:41:25.563 --> 00:41:29.174
+and confirm the truth of the result.
+
+00:41:29.174 --> 00:41:34.425
+Here, in each bracket, we can take the inverse element
+
+00:41:34.425 --> 00:41:37.494
+and get this equation.
+
+00:41:37.494 --> 00:41:40.627
+Next, we can take the logarithm with respect to x
+
+00:41:40.627 --> 00:41:44.349
+and get the following equation.
+
+00:41:44.349 --> 00:41:55.039
+Next, I need to replace a, b, c, d with these things.
+
+00:41:55.039 --> 00:41:59.672
+And then I write:
+
+00:41:59.672 --> 00:42:03.126
+for x^k we have p^k,
+
+00:42:03.126 --> 00:42:15.703
+and this p^k should result if we collect the coefficients of x^k from all these expressions.
+
+00:42:15.703 --> 00:42:19.031
+And what do we get?
+
+00:42:19.031 --> 00:42:23.581
+We have a[d] * d here.
+
+00:42:23.581 --> 00:42:30.787
+The sum of a[d] * d is what adds up to p^k.
+
+00:42:30.787 --> 00:42:38.560
+But we need to take d as all those d's that divide k.
+
+00:42:38.560 --> 00:42:46.920
+The Möbius function is beautiful in that, having the function p^k as a sum,
+
+00:42:46.920 --> 00:42:53.386
+we can draw the sum from these values and return to the original values.
+
+00:42:53.386 --> 00:42:57.215
+So these terms a[k]
+
+00:42:57.215 --> 00:43:02.162
+can be got from these sums.
+
+00:43:02.162 --> 00:43:06.799
+This is a universal law that I recommend you read about.
+
+00:43:06.799 --> 00:43:14.222
+About the Möbius function and how it can reverse summation.
+
+00:43:14.222 --> 00:43:21.892
+From function f, which is a sum of function g, you can again get function g.
+
+00:43:21.892 --> 00:43:28.029
+Similar formulas were already covered in one of the previous videos about the Möbius function.
+
+00:43:28.029 --> 00:43:31.729
+Next important result.
+
+00:43:31.729 --> 00:43:36.845
+We need to prove that there are no fields other than fields of size p^k.
+
+00:43:36.845 --> 00:43:39.159
+How is this done?
+
+00:43:39.159 --> 00:43:41.880
+Let's introduce the concept of characteristic.
+
+00:43:41.880 --> 00:43:47.089
+The characteristic of field F is how many ones you need to add to get 0.
+
+00:43:47.089 --> 00:43:50.289
+First of all, why can we get 0 by adding ones?
+
+00:43:50.289 --> 00:43:52.148
+The answer is simple.
+
+00:43:52.148 --> 00:43:53.737
+Our field F is finite.
+
+00:43:53.737 --> 00:43:55.955
+That's our initial assumption.
+
+00:43:55.955 --> 00:44:00.218
+Therefore, when adding ones, repetitions will eventually occur.
+
+00:44:00.218 --> 00:44:07.119
+For example, the sum of 5 ones will turn out to be the same as the sum of 18 ones.
+
+00:44:07.119 --> 00:44:10.780
+Let's subtract 5 ones from these two sums.
+
+00:44:10.780 --> 00:44:15.068
+We get: 0 equals the sum of 13 ones.
+
+00:44:15.068 --> 00:44:16.807
+You understand?
+
+00:44:16.807 --> 00:44:21.444
+So, if there are repetitions, there are repetitions of 0 as well.
+
+00:44:21.444 --> 00:44:24.687
+And we can introduce this notation for field F.
+
+00:44:24.687 --> 00:44:34.162
+mF is actually m times the repeated one.
+
+00:44:34.162 --> 00:44:40.737
+Therefore, when we take m as the characteristic of field F,
+
+00:44:40.737 --> 00:44:43.850
+then we get exactly 0.
+
+00:44:43.850 --> 00:44:52.798
+Interestingly, this immediately implies that the sum of any (char(F)) numbers will be zero.
+
+00:44:52.798 --> 00:44:53.551
+Why?
+
+00:44:53.551 --> 00:44:56.925
+Because the law of distributivity holds true.
+
+00:44:56.925 --> 00:45:02.088
+This sum is 1*a + 1*a + 1*a, and so on.
+
+00:45:02.088 --> 00:45:03.658
+We take "a" outside the bracket,
+
+00:45:03.658 --> 00:45:08.164
+leaving here a sum of some number of ones.
+
+00:45:08.164 --> 00:45:11.813
+If there are exactly (char(F)) of them, then it's 0.
+
+00:45:11.813 --> 00:45:14.586
+Alright.
+
+00:45:14.586 --> 00:45:17.700
+As for our fields constructed on polynomials,
+
+00:45:17.700 --> 00:45:26.691
+their char is p, because this is just a special case of the field Fp.
+
+00:45:26.691 --> 00:45:30.605
+And in general, the characteristic must be prime.
+
+00:45:30.605 --> 00:45:32.975
+Because if it's not
+
+00:45:32.975 --> 00:45:36.873
+(let char(F) = c and this equals m * n),
+
+00:45:36.873 --> 00:45:40.920
+then we can take the product of two sums of ones.
+
+00:45:40.920 --> 00:45:44.185
+In the first sum, let's have m ones,
+
+00:45:44.185 --> 00:45:47.261
+and in the second sum, exactly n ones.
+
+00:45:47.261 --> 00:45:56.646
+Then by the rules of distributivity, all of this will eventually simplify to n times m ones.
+
+00:45:56.646 --> 00:45:58.235
+In other words, it will be 0.
+
+00:45:58.235 --> 00:46:00.216
+This can mean only one thing.
+
+00:46:00.216 --> 00:46:03.677
+One of these brackets must be equal to zero.
+
+00:46:03.677 --> 00:46:06.121
+In a field, there should be no zero divisors.
+
+00:46:06.121 --> 00:46:08.972
+So our assumption is incorrect.
+
+00:46:08.972 --> 00:46:11.344
+If they are equal to zero, then we have a contradiction.
+
+00:46:11.344 --> 00:46:17.415
+We took the minimum "c" for which the sum of c ones equals zero.
+
+00:46:17.415 --> 00:46:20.817
+And we ended up with the sum of m ones also equaling zero,
+
+00:46:20.817 --> 00:46:22.580
+or the sum of n ones equaling zero.
+
+00:46:22.580 --> 00:46:26.103
+In general, some smaller number of ones.
+
+00:46:26.103 --> 00:46:28.684
+Next. The next observation.
+
+00:46:28.684 --> 00:46:31.121
+char(F) is a prime number.
+
+00:46:31.121 --> 00:46:36.934
+And it's clear that numbers of this kind generate a field.
+
+00:46:36.934 --> 00:46:40.744
+A subset in our field F, which is also a field.
+
+00:46:40.744 --> 00:46:42.899
+Let's call this field mF.
+
+00:46:42.899 --> 00:46:45.935
+In fact, it's isomorphic to the field Fp.
+
+00:46:45.935 --> 00:46:52.634
+Definition: two finite number fields are ISOMORPHIC if the elements of the first field can be ordered and denoted as elements of the second in such a way that the multiplication and addition tables of the two fields coincide.
+
+00:46:52.634 --> 00:46:56.322
+You can understand this with a little contemplation.
+
+00:46:56.322 --> 00:47:05.488
+We can further notice that what we have here is a linear space over the field Fp.
+
+00:47:05.488 --> 00:47:08.888
+Let's take numbers of this kind:
+
+00:47:08.888 --> 00:47:13.713
+a * 1, where a is from the field Fp.
+
+00:47:13.713 --> 00:47:20.000
+Let's find a number that we can't represent in this way – β1.
+
+00:47:20.000 --> 00:47:26.829
+And let's consider numbers that are gotten when we consider these formal sums.
+
+00:47:26.829 --> 00:47:28.635
+We won't multiply these formal sums.
+
+00:47:28.635 --> 00:47:33.219
+We'll just describe everything that can be got in this way.
+
+00:47:33.219 --> 00:47:38.703
+Where a1 ranges over the field mF again.
+
+00:47:38.703 --> 00:47:43.644
+Such numbers will be p^2 in total.
+
+00:47:43.644 --> 00:47:50.000
+Let's see if there's any number left that we haven't covered with these combinations.
+
+00:47:50.000 --> 00:47:53.012
+If there is, let's call it β2.
+
+00:47:53.012 --> 00:47:55.007
+And so on.
+
+00:47:55.007 --> 00:48:03.074
+Let's continue this process, introducing new numbers β3, β4, and so on.
+
+00:48:03.074 --> 00:48:12.602
+In the end, this process will stop, and our whole field F will be described by these expressions.
+
+00:48:12.602 --> 00:48:16.455
+Clearly, the number of these expressions is p^k.
+
+00:48:16.455 --> 00:48:19.176
+But why are there no repetitions among them?
+
+00:48:19.176 --> 00:48:25.139
+Let's suppose otherwise. Let's suppose there are numbers that are actually the same.
+
+00:48:25.139 --> 00:48:29.819
+Let's equate them as expressions and subtract one from the other.
+
+00:48:29.819 --> 00:48:34.985
+One will have coefficients aᵢ, the other cᵢ.
+
+00:48:34.985 --> 00:48:40.298
+When we subtract one from the other, we'll have aᵢ - cᵢ coefficients.
+
+00:48:40.298 --> 00:48:48.004
+We'll have an expression with some non-zero coefficients that equals zero.
+
+00:48:48.004 --> 00:48:50.768
+Let's look at the highest term in this expression,
+
+00:48:50.768 --> 00:48:54.667
+move it to the right, and we'll get the following thing.
+
+00:48:54.667 --> 00:49:00.584
+Some β large is expressed as a linear combination of some β small,
+
+00:49:00.584 --> 00:49:02.488
+which contradicts the construction.
+
+00:49:02.488 --> 00:49:09.575
+We were looking for the new highest β as numbers that cannot be represented by a linear combination of the lower ones.
+
+00:49:09.575 --> 00:49:19.025
+This way, it is proven that any field F is actually a linear space over the field Fp.
+
+00:49:19.025 --> 00:49:22.862
+And the number of elements in it is p^k.
+
+00:49:22.862 --> 00:49:25.864
+So, today we've covered a lot.
+
+00:49:25.864 --> 00:49:31.415
+First, we understood how to construct finite fields of size p, where p is prime.
+
+00:49:31.415 --> 00:49:34.435
+We built a quadratic extension of the field Fp.
+
+00:49:34.435 --> 00:49:39.281
+For this, you need to add a root of some number a, where a is a quadratic non-residue.
+
+00:49:39.281 --> 00:49:45.007
+The same can be expressed using the Legendre symbol.
+
+00:49:45.007 --> 00:49:57.204
+The field Fp^k is constructed as a field of polynomials modulo some irreducible polynomial of degree k.
+
+00:49:57.204 --> 00:50:00.696
+It exists. We've proven it. 
+
+00:50:00.696 --> 00:50:04.967
+We've proven this for all numbers. 
+
+00:50:04.967 --> 00:50:11.063
+Furthermore, we understood that these fields of size p^k...
+
+00:50:11.063 --> 00:50:15.482
+(any fields, not just those constructed via polynomial rings modulo)
+
+00:50:15.482 --> 00:50:20.451
+...сan actually be interpreted as linear spaces. 
+
+00:50:20.451 --> 00:50:29.664
+Or, as they say: linear spans spanned by β0, β1, ... βk-1.
+
+00:50:29.664 --> 00:50:35.259
+The subfield Fp is simply a field gotten by summing ones.
+
+00:50:35.259 --> 00:50:38.071
+It's closed under addition and multiplication.
+
+00:50:38.071 --> 00:50:43.381
+When you perform operations with sums of ones, you get a sum of ones again.
+
+00:50:43.381 --> 00:50:53.150
+We haven't yet proven a very important fact, that all fields Fp^k are isomorphic to each other.
+
+00:50:53.150 --> 00:51:00.978
+But today we've tried machine learning for the first time to crack some number theory stuff.
+
+00:51:00.978 --> 00:51:11.688
+Namely, to understand that the product of two Legendre symbols depends on (p-1)/2 and (q-1)/2 by this law. 
+
+00:51:11.688 --> 00:51:17.849
+You can find the derivation of this law using elementary methods in this video. 
+
+00:51:17.849 --> 00:51:23.513
+Sorry for the long talk today! Have a great evening, everyone! Goodbye!
+

@@ -1,0 +1,2164 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:01.446 --> 00:00:03.227
+Hello!
+
+00:00:03.227 --> 00:00:05.610
+Math Experiments Channel.
+
+00:00:05.610 --> 00:00:10.000
+Today, we will continue exploring approximations of the function Sin[x].
+
+00:00:10.000 --> 00:00:12.675
+More precisely, I will do the exploration and you will watch.
+
+00:00:12.675 --> 00:00:17.138
+But I hope you're also explore something on your own.
+
+00:00:17.138 --> 00:00:20.646
+I have this problem: once I start an exploration, I can't stop.
+
+00:00:20.646 --> 00:00:23.828
+I keep explore and explore further...
+
+00:00:23.828 --> 00:00:29.561
+Research directions begin to branch out and deepen,
+
+00:00:29.561 --> 00:00:32.577
+and it's just impossible to stop.
+
+00:00:32.577 --> 00:00:37.281
+But that's not a problem. In fact, I recommend never stopping.
+
+00:00:37.281 --> 00:00:42.529
+When you take those final steps, you find the most interesting moments.
+
+00:00:42.529 --> 00:00:49.149
+So, patience to take those final steps is a crucial thing.
+
+00:00:49.149 --> 00:00:52.236
+Today, I hope to reach the zeta function.
+
+00:00:52.236 --> 00:01:01.319
+That means we'll start approximating Sin[x] and reach the zeta function.
+
+00:01:01.319 --> 00:01:06.286
+The distance from the sine function to the zeta function is not that great.
+
+00:01:06.286 --> 00:01:09.200
+Let's see how it will go.
+
+00:01:09.200 --> 00:01:12.718
+Today's material is challenging.
+
+00:01:12.718 --> 00:01:15.037
+With two stars.
+
+00:01:15.037 --> 00:01:20.000
+Although it's hard to explain what exactly makes this material challenging.
+
+00:01:20.000 --> 00:01:22.900
+I'm not doing any integrals here.
+
+00:01:22.900 --> 00:01:26.912
+I'm not doing any complex mathematical calculations.
+
+00:01:26.912 --> 00:01:32.382
+But the code itself probably looks complex.
+
+00:01:32.382 --> 00:01:36.148
+And also, of course, there's this intuition,
+
+00:01:36.148 --> 00:01:41.362
+when you need to see a component in the approximation that can be subtracted.
+
+00:01:41.362 --> 00:01:46.725
+You need to visually see sixth-degree polynomials or power functions,
+
+00:01:46.725 --> 00:01:52.028
+or see that you have (x^2) * Sin[x] in front of you.
+
+00:01:52.028 --> 00:01:58.088
+So, some experience with functions is necessary.
+
+00:01:58.088 --> 00:02:00.951
+But experience comes with practice.
+
+00:02:00.951 --> 00:02:04.009
+Let's see how it goes.
+
+00:02:04.009 --> 00:02:05.253
+The idea was as follows:
+
+00:02:05.253 --> 00:02:09.017
+Take the function 1/Sin[x].
+
+00:02:09.017 --> 00:02:10.889
+And it looks like this.
+
+00:02:10.889 --> 00:02:15.069
+These pieces resemble hyperbolas.
+
+00:02:15.069 --> 00:02:18.591
+If we change the scale a bit,
+
+00:02:18.591 --> 00:02:19.560
+it rises up
+
+00:02:19.560 --> 00:02:23.531
+and here returns from minus infinity. Then again...
+
+00:02:23.531 --> 00:02:32.686
+The idea is simple: let's try to express the sum of hyperbolas living in these points.
+
+00:02:32.686 --> 00:02:34.438
+Maybe something will work out.
+
+00:02:34.438 --> 00:02:36.383
+And indeed, it does.
+
+00:02:36.383 --> 00:02:38.197
+Hyperbolas are called poles.
+
+00:02:38.197 --> 00:02:43.295
+Places where we have asymptotes going up and down.
+
+00:02:43.295 --> 00:02:46.659
+These numerators of the poles are called residues.
+
+00:02:46.659 --> 00:02:52.326
+Essentially, we found the residues of the function 1/Sin[x]
+
+00:02:52.326 --> 00:02:56.286
+and tried to sum a certain number of residues in the vicinity of zero
+
+00:02:56.286 --> 00:02:58.242
+and compare the results.
+
+00:02:58.242 --> 00:03:04.829
+Here, I'm comparing Sin[x] with 1 divided by the sum of residues.
+
+00:03:04.829 --> 00:03:08.657
+And we see that the functions almost coincide in the vicinity of small "x".
+
+00:03:08.657 --> 00:03:14.149
+Well, then, of course, there are significant divergences.
+
+00:03:14.149 --> 00:03:17.862
+The blue plot goes up and down,
+
+00:03:17.862 --> 00:03:24.152
+while Sin[x] calmly oscillates around zero.
+
+00:03:24.152 --> 00:03:35.293
+A very natural idea is to look at the difference of the function to which we approximate our function Sin[x].
+
+00:03:35.293 --> 00:03:38.406
+Here we have something similar to xSin[x].
+
+00:03:38.406 --> 00:03:41.632
+Not exactly xSin[x], of course.
+
+00:03:41.632 --> 00:03:48.506
+xSin[x] looks different.
+
+00:03:48.506 --> 00:03:52.816
+Firstly, it becomes very large here. We need to multiply it by something.
+
+00:04:00.698 --> 00:04:01.786
+There is some difference.
+
+00:04:01.786 --> 00:04:05.779
+It is visible that our xSin[x] is oscillating around zero,
+
+00:04:05.779 --> 00:04:08.413
+while here, you see, it is a skewed xSin[x].
+
+00:04:08.413 --> 00:04:10.730
+And the oscillations of the blue plot are twice as frequent.
+
+00:04:10.730 --> 00:04:12.835
+In short, what we did here:
+
+00:04:12.835 --> 00:04:26.252
+we divided this plot, the blue one, by "x", after which it started to resemble a regular oscillatory plot.
+
+00:04:26.252 --> 00:04:31.691
+But we need to understand the scale here.
+
+00:04:31.691 --> 00:04:35.913
+And we need to understand that the oscillations occur twice as often.
+
+00:04:35.913 --> 00:04:38.067
+Well, we figured that out.
+
+00:04:38.067 --> 00:04:40.669
+To restore the scale to normal,
+
+00:04:40.669 --> 00:04:46.676
+from 5 * 10^-6 to normal numbers in the range from 0 to 1,
+
+00:04:46.676 --> 00:04:52.390
+we had to multiply it by 20m^2.
+
+00:04:52.390 --> 00:04:58.329
+And if we try different values of m here,
+
+00:04:58.329 --> 00:05:00.504
+we will get small numbers.
+
+00:05:00.504 --> 00:05:02.552
+Here we have taken the next step.
+
+00:05:02.552 --> 00:05:08.482
+Here, after this event, we found Cos[2x],
+
+00:05:08.482 --> 00:05:12.803
+subtracted it, and this is the result of the subtraction.
+
+00:05:12.803 --> 00:05:16.135
+And here we went down the wrong path,
+
+00:05:16.135 --> 00:05:20.219
+when we started studying this thing.
+
+00:05:20.219 --> 00:05:24.967
+We should have studied another thing.
+
+00:05:24.967 --> 00:05:30.000
+We should have simply multiplied this expression by g[x, m].
+
+00:05:30.000 --> 00:05:32.327
+Well, what can we do...
+
+00:05:32.327 --> 00:05:34.103
+We took Sin[x],
+
+00:05:34.103 --> 00:05:35.052
+took the approximation,
+
+00:05:35.052 --> 00:05:36.734
+subtracted one from the other,
+
+00:05:36.734 --> 00:05:38.207
+didn't think for long...
+
+00:05:38.207 --> 00:05:42.692
+But then we realized that it would have been better to act this way.
+
+00:05:42.692 --> 00:05:47.403
+But I want to deliberately go down the wrong path for now,
+
+00:05:47.403 --> 00:05:54.647
+to hit my head against something and understand... see the wrongness of this path.
+
+00:05:54.647 --> 00:06:00.227
+And for now, we have this
+
+00:06:00.227 --> 00:06:02.065
+and we wonder what this 20 is.
+
+00:06:02.065 --> 00:06:06.375
+It could be 2Pi^2, or it could be a solid 20.
+
+00:06:06.375 --> 00:06:15.127
+If we assume that we prefer the yellow plot over the blue one, then we should go with 2Pi^2.
+
+00:06:15.127 --> 00:06:19.390
+Here it's unclear, although the picture is undoubtedly beautiful.
+
+00:06:19.390 --> 00:06:25.232
+If we need to go with 2Pi^2, here's what we have.
+
+00:06:25.232 --> 00:06:27.594
+Such an approximation.
+
+00:06:27.594 --> 00:06:34.320
+Or if we replace it with Cos[2x-1]/2 multiplied by Sin[x]^2, then this is what we have.
+
+00:06:34.320 --> 00:06:37.754
+Alright. Let's move on.
+
+00:06:37.754 --> 00:06:39.057
+Here...
+
+00:06:39.057 --> 00:06:40.000
+I won't repeat.
+
+00:06:40.000 --> 00:06:42.777
+Also, in the previous video, we took a few steps
+
+00:06:42.777 --> 00:06:46.573
+and figured out to replace m^2 with m(m+1).
+
+00:06:46.573 --> 00:06:50.377
+It's quite a difficult guess,
+
+00:06:50.377 --> 00:06:54.917
+which certainly makes the subsequent steps much easier.
+
+00:06:54.917 --> 00:06:58.855
+But in reality, it also leads to a dead end.
+
+00:06:58.855 --> 00:07:07.067
+So at some point, we have to abandon m(m+1) and go back to m^2.
+
+00:07:07.067 --> 00:07:10.632
+It makes you want to bang your head against the wall again.
+
+00:07:10.632 --> 00:07:13.460
+This is what we have here.
+
+00:07:13.460 --> 00:07:18.120
+At this stage, I see an oscillatory function here.
+
+00:07:18.120 --> 00:07:21.160
+Although around zero, everything is somehow messed up
+
+00:07:21.160 --> 00:07:23.850
+and it doesn't get fixed by increasing m.
+
+00:07:23.850 --> 00:07:27.809
+But I want to repeat these oscillations as much as possible
+
+00:07:27.809 --> 00:07:31.462
+And here comes the idea: what if it's Sin[x]^2 again?
+
+00:07:31.462 --> 00:07:33.801
+And yes! It looks like it.
+
+00:07:33.801 --> 00:07:36.928
+Although... how can I say.
+
+00:07:36.928 --> 00:07:42.157
+Now I'm not absolutely certain if it's exactly 1.
+
+00:07:42.157 --> 00:07:46.160
+Maybe it's 0.95 here, who knows.
+
+00:07:46.160 --> 00:07:49.266
+We found the yellow plot that matches the blue one in some places,
+
+00:07:49.266 --> 00:07:53.620
+and then we subtract the yellow plot from the blue one.
+
+00:07:53.620 --> 00:07:57.010
+Well, I'll use these words...
+
+00:07:57.010 --> 00:08:00.000
+Of course, functions are subtract.
+
+00:08:00.000 --> 00:08:02.189
+All of this goes off to infinity
+
+00:08:02.189 --> 00:08:12.159
+and, of course, we want to multiply this difference by x.
+
+00:08:12.159 --> 00:08:19.058
+Maybe even multiply it by x again.
+
+00:08:19.058 --> 00:08:21.441
+Alright... Good.
+
+00:08:25.711 --> 00:08:29.400
+Here, it's already something unclear...
+
+00:08:29.400 --> 00:08:32.005
+Next, we try to draw these things.
+
+00:08:32.005 --> 00:08:33.653
+Well... good.
+
+00:08:33.653 --> 00:08:35.511
+Here's our approximation.
+
+00:08:35.511 --> 00:08:37.850
+Here's the function we're approximating.
+
+00:08:37.850 --> 00:08:41.470
+And then various ideas for remainders come into play.
+
+00:08:41.470 --> 00:08:47.093
+The remainders already have m in the denominator.
+
+00:08:47.093 --> 00:08:49.651
+So, as m increases
+
+00:08:49.651 --> 00:08:51.695
+it tends towards this,
+
+00:08:51.695 --> 00:08:56.848
+but we're interested in the remainders.
+
+00:08:56.848 --> 00:09:01.718
+The colors in Mathematica go as follows: blue, yellow, green, red, violet.
+
+00:09:01.718 --> 00:09:05.597
+It's impossible to understand, you just need to memorize.
+
+00:09:05.597 --> 00:09:08.211
+And what I'm trying here.
+
+00:09:08.211 --> 00:09:10.175
+The blue plot - I simply take m^2.
+
+00:09:10.175 --> 00:09:14.966
+And here's this guess that m^2 should be replaced with some second-degree polynomial.
+
+00:09:14.966 --> 00:09:21.382
+And by trial and error, it was found to be m(m+1).
+
+00:09:21.382 --> 00:09:23.922
+Maybe take a different interval after all.
+
+00:09:23.922 --> 00:09:26.655
+For example, like this.
+
+00:09:26.655 --> 00:09:28.688
+Or even larger,
+
+00:09:28.688 --> 00:09:34.705
+to see the difference between all these ol.
+
+00:09:34.705 --> 00:09:38.032
+The blue plot is hidden behind the green one.
+
+00:09:38.032 --> 00:09:41.816
+I know that and I'm telling you.
+
+00:09:41.816 --> 00:09:46.618
+The yellow plot (see?) is much better than the blue-green one.
+
+00:09:46.618 --> 00:09:52.082
+And the red and violet ones don't provide any significant improvements compared to the yellow plot.
+
+00:09:52.082 --> 00:09:54.290
+So there is the yellow plot
+
+00:09:54.290 --> 00:09:57.954
+and here are attempts to guess the value of the second term.
+
+00:09:57.954 --> 00:10:01.265
+This is the first term, an approximation of the difference.
+
+00:10:01.265 --> 00:10:03.922
+This is the second term.
+
+00:10:03.922 --> 00:10:08.823
+But all of them are unsuccessful.
+
+00:10:08.823 --> 00:10:12.323
+So you don't have to look at them carefully.
+
+00:10:12.323 --> 00:10:16.988
+But this is a process that is important to show, how it all happens.
+
+00:10:16.988 --> 00:10:18.764
+One must admit.
+
+00:10:18.764 --> 00:10:23.532
+Yes. The yellow plot was an improvement over the blue-green one,
+
+00:10:23.532 --> 00:10:29.852
+but the violet and red, although we saw something there,
+
+00:10:29.852 --> 00:10:32.335
+it didn't help much.
+
+00:10:32.335 --> 00:10:40.000
+We saw this sine wave far from x = 0.
+
+00:10:40.000 --> 00:10:45.600
+In the range of large x values, the violet plot may be good.
+
+00:10:45.600 --> 00:10:46.914
+Yes, it's good. See?
+
+00:10:46.914 --> 00:10:52.664
+The violet plot is closer to the x-axis compared to the red one,
+
+00:10:52.664 --> 00:10:58.070
+but not "dramatically," as the English say.
+
+00:10:58.070 --> 00:11:02.367
+Attempts to add one more term by analogy also don't yield anything.
+
+00:11:02.367 --> 00:11:05.976
+There is green plot...
+
+00:11:05.976 --> 00:11:08.403
+Here it is slightly better than the yellow one,
+
+00:11:08.403 --> 00:11:11.585
+and here the opposite.
+
+00:11:11.585 --> 00:11:13.191
+And all of this is just the beginning.
+
+00:11:13.191 --> 00:11:20.000
+The beginning of this game of subtraction and division.
+
+00:11:20.000 --> 00:11:24.730
+Let's engage in it more carefully.
+
+00:11:24.730 --> 00:11:27.318
+As Zhvanetsky said: "You need to be more thorough, more thorough."
+
+00:11:27.318 --> 00:11:32.903
+Now we will try to do all this "more thoroughly."
+
+00:11:32.903 --> 00:11:40.000
+And here I have come to such a tangle.
+
+00:11:41.576 --> 00:11:43.439
+Which...
+
+00:11:44.140 --> 00:11:46.900
+Depending on the scale, we see different pictures.
+
+00:11:46.900 --> 00:11:49.550
+It's a power function.
+
+00:11:49.550 --> 00:11:55.874
+If we slightly decrease the scale, we see a sine wave above of the power function.
+
+00:11:55.874 --> 00:11:58.853
+The power function is not just any parabola like x^2,
+
+00:11:58.853 --> 00:12:06.239
+but x^6 or something like that.
+
+00:12:06.239 --> 00:12:11.456
+Well, in the vicinity of zero...
+
+00:12:11.456 --> 00:12:15.326
+It's more like a parabola...
+
+00:12:15.326 --> 00:12:17.933
+Beyond that, something incomprehensible...
+
+00:12:17.933 --> 00:12:22.970
+And this incomprehensible thing remains stable when m changes.
+
+00:12:22.970 --> 00:12:32.184
+So, this part needs to be approximated with components to which we don't have to add a multiplier m1.
+
+00:12:32.184 --> 00:12:38.556
+I denote m1 like this.
+
+00:12:38.556 --> 00:12:44.505
+And at larger scales, the dependence on m is felt.
+
+00:12:44.505 --> 00:12:51.612
+You move m, and the numbers on the "y" axis change.
+
+00:12:51.612 --> 00:12:53.059
+And here, you can still move.
+
+00:12:53.059 --> 00:12:55.442
+Here, you can find something further...
+
+00:12:55.442 --> 00:13:00.000
+Some steps have been taken here. It doesn't matter which ones.
+
+00:13:00.000 --> 00:13:07.375
+Let's put a comma and write, for example, xp^6.
+
+00:13:09.564 --> 00:13:11.564
+There it is.
+
+00:13:16.337 --> 00:13:20.000
+What do we need to do here... Let's try dividing by m1.
+
+00:13:23.416 --> 00:13:25.634
+That's not fair. I guessed.
+
+00:13:25.634 --> 00:13:28.499
+I just guessed. It happens sometimes.
+
+00:13:30.513 --> 00:13:36.618
+And that's the complexity of this whole story.
+
+00:13:36.618 --> 00:13:46.807
+You need to have experience and quickly guess, otherwise the endeavor turns into tedious hours of trial and error.
+
+00:13:46.807 --> 00:13:50.716
+Guessed it! (x^6)/m1
+
+00:13:50.716 --> 00:13:57.258
+And now, when I subtract, it will be easier for me to deal with these oscillations.
+
+00:13:57.258 --> 00:14:00.692
+This component was found in a similar way.
+
+00:14:00.692 --> 00:14:01.630
+You understand, right?
+
+00:14:01.630 --> 00:14:04.976
+I remove the comma, write a minus sign.
+
+00:14:04.976 --> 00:14:06.792
+Slap!
+
+00:14:06.792 --> 00:14:09.263
+Again, I go to a larger scale,
+
+00:14:09.263 --> 00:14:10.858
+I see these oscillations.
+
+00:14:10.858 --> 00:14:12.146
+Great.
+
+00:14:12.146 --> 00:14:15.766
+I currently like xm to be around 70.
+
+00:14:15.766 --> 00:14:17.492
+I want to act here.
+
+00:14:17.492 --> 00:14:21.101
+And I'm quite content with m = 80.
+
+00:14:21.101 --> 00:14:25.104
+I want to live on this x scale and with this m.
+
+00:14:25.104 --> 00:14:28.919
+I write a comma. xp to some power...
+
+00:14:28.919 --> 00:14:32.084
+xp = x/Pi.
+
+00:14:32.084 --> 00:14:36.963
+Sinp = Sin[x]/Pi.
+
+00:14:36.963 --> 00:14:40.957
+Simply during all these games, it was discovered that
+
+00:14:40.957 --> 00:14:49.087
+if you take x, then the next step will require dividing by 3. Something similar to 3.
+
+00:14:49.087 --> 00:14:54.185
+If you take x^2, then later you'll want to divide by Pi^2.
+
+00:14:54.185 --> 00:14:55.792
+So, x always goes with Pi.
+
+00:14:55.792 --> 00:14:57.869
+The same was noticed about Sin[x].
+
+00:14:57.869 --> 00:15:05.713
+If you subtract it, the multiplier to it contains 1/Pi.
+
+00:15:05.713 --> 00:15:07.511
+I missed this step. Sorry.
+
+00:15:07.511 --> 00:15:11.295
+Otherwise, the video would be too long.
+
+00:15:11.295 --> 00:15:14.696
+And not everyone will watch this video until the end.
+
+00:15:14.696 --> 00:15:20.000
+I think I will lose a significant portion of the audience here.
+
+00:15:20.000 --> 00:15:25.054
+But guys, don't get lost. This is very important!
+
+00:15:25.054 --> 00:15:28.313
+We will reach the zeta function.
+
+00:15:28.313 --> 00:15:31.889
+We started with a simple idea of approximating the sine with hyperbolas.
+
+00:15:31.889 --> 00:15:41.045
+And we will get to the zeta function in a matter of hours...
+
+00:15:43.278 --> 00:15:44.209
+So... what I want...
+
+00:15:44.209 --> 00:15:52.132
+I want to create oscillations with increasing amplitude.
+
+00:15:52.132 --> 00:15:58.982
+Let's assume the amplitude grows like x^4.
+
+00:15:58.982 --> 00:16:00.173
+Let's check...
+
+00:16:04.508 --> 00:16:10.537
+Hmm, some kind of incorrect artifact appears here.
+
+00:16:10.537 --> 00:16:12.263
+Mistaken one.
+
+00:16:12.263 --> 00:16:15.171
+Clearly a mistaken artifact.
+
+00:16:16.616 --> 00:16:18.863
+Alright...
+
+00:16:23.986 --> 00:16:30.679
+It feels ike the amplitude increases with a greater degree.
+
+00:16:34.007 --> 00:16:37.979
+Here I'm in phase,
+
+00:16:37.979 --> 00:16:39.180
+and here in antiphase.
+
+00:16:39.180 --> 00:16:41.749
+So I guessed the parity wrong.
+
+00:16:41.749 --> 00:16:44.833
+Let's try the 5th power.
+
+00:16:44.833 --> 00:16:47.031
+Maybe it's actually the 3rd power.
+
+00:16:47.031 --> 00:16:49.051
+Yes!
+
+00:16:49.051 --> 00:16:52.441
+That's closer to the truth.
+
+00:16:52.441 --> 00:16:56.262
+Although I'm not certain.
+
+00:16:58.495 --> 00:17:00.622
+Not sure...
+
+00:17:00.622 --> 00:17:08.333
+Sines are better to look for in the region of small x values.
+
+00:17:08.333 --> 00:17:10.620
+Well, how can we understand it here...
+
+00:17:10.620 --> 00:17:16.638
+The power function that is hidden here interferes with the fitting.
+
+00:17:19.353 --> 00:17:22.277
+Let me try writing 2 here.
+
+00:17:25.430 --> 00:17:27.418
+Listen... maybe it's actually 2.
+
+00:17:29.213 --> 00:17:31.128
+Let's subtract 2.
+
+00:17:31.128 --> 00:17:34.868
+We can write "a" here...
+
+00:17:34.868 --> 00:17:36.638
+By the way, I added "a" here.
+
+00:17:36.638 --> 00:17:38.113
+...and try different values of "a".
+
+00:17:38.113 --> 00:17:43.441
+So, "a" is likely to be equal to one.
+
+00:17:43.441 --> 00:17:45.561
+And we'll leave the fitting of "a" for later.
+
+00:17:45.561 --> 00:17:48.218
+For now, let's subtract,
+
+00:17:48.218 --> 00:17:51.521
+to see this thing here.
+
+00:17:51.521 --> 00:17:57.626
+This is a parabola,
+
+00:17:57.626 --> 00:18:02.067
+which doesn't change its scale when m changes,
+
+00:18:02.067 --> 00:18:06.782
+but it changes over time...
+
+00:18:11.249 --> 00:18:13.970
+Let's give it a go...
+
+00:18:13.970 --> 00:18:17.216
+xp^2
+
+00:18:19.624 --> 00:18:23.213
+With a minus sign.
+
+00:18:23.213 --> 00:18:24.764
+And it's not enough...
+
+00:18:24.764 --> 00:18:27.322
+Let's add a two.
+
+00:18:27.322 --> 00:18:29.224
+Still not enough...
+
+00:18:30.844 --> 00:18:32.264
+We're short on twos.
+
+00:18:32.264 --> 00:18:35.654
+Let's try a three.
+
+00:18:35.654 --> 00:18:36.603
+Oh!
+
+00:18:36.603 --> 00:18:38.285
+That looks like the truth.
+
+00:18:38.285 --> 00:18:43.514
+Very, very close to the truth.
+
+00:18:43.514 --> 00:18:44.539
+Yes! See?
+
+00:18:44.539 --> 00:18:49.648
+We have a parabola, and there's a sine wave oscillating around it.
+
+00:18:49.648 --> 00:18:53.263
+Excellent!
+
+00:18:55.015 --> 00:18:57.148
+Remove the comma.
+
+00:18:57.148 --> 00:18:59.181
+Change minus to plus.
+
+00:18:59.181 --> 00:19:01.564
+And so on...
+
+00:19:01.564 --> 00:19:04.472
+All of this can be unraveled in reverse.
+
+00:19:04.472 --> 00:19:07.873
+So we have some approximation here.
+
+00:19:07.873 --> 00:19:09.687
+We highlight, we copy,
+
+00:19:09.687 --> 00:19:12.902
+and we set it equal to zero.
+
+00:19:12.902 --> 00:19:17.936
+I replaced this interior part (this one here) with y to make it easier.
+
+00:19:17.936 --> 00:19:20.333
+And we solve this equation for y.
+
+00:19:20.333 --> 00:19:23.953
+We get an answer. Here's what the approximation looks like.
+
+00:19:23.953 --> 00:19:29.752
+And this is already the next level of quality approximation.
+
+00:19:29.752 --> 00:19:33.011
+Let's compare. This is what we had.
+
+00:19:33.011 --> 00:19:34.650
+This is what it became.
+
+00:19:34.650 --> 00:19:37.908
+Well, I'll say it again, this is all the wrong way.
+
+00:19:37.908 --> 00:19:44.627
+We continue down the wrong path, even though we enjoy it and get some results.
+
+00:19:44.627 --> 00:19:50.207
+It's clear that the old version (blue) is much worse than the new one (yellow).
+
+00:19:50.207 --> 00:19:56.385
+If the new yellow one at this point, in the vicinity of the number 2,
+
+00:19:56.385 --> 00:20:03.158
+gives an approximation of 4 * 10^-9 for m = 20,
+
+00:20:03.158 --> 00:20:14.212
+then the blue plot at the same point has an approximation of 1 * 10^-6.
+
+00:20:14.212 --> 00:20:18.095
+A few orders of magnitude. We earned a couple of orders here.
+
+00:20:18.095 --> 00:20:23.200
+But, in truth, we had to add all of this.
+
+00:20:23.200 --> 00:20:24.532
+Good.
+
+00:20:27.072 --> 00:20:29.750
+Now, by the way, we can look at the plan.
+
+00:20:29.750 --> 00:20:33.708
+We have an extensive plan.
+
+00:20:33.708 --> 00:20:36.413
+Now we'll look at a more comprehensive version.
+
+00:20:36.413 --> 00:20:42.830
+That is, what other terms can we find.
+
+00:20:42.830 --> 00:20:45.065
+Also, we will finally choose the right path.
+
+00:20:45.065 --> 00:20:53.403
+Realize that the chosen path is wrong and try simply changing the numerator and denominator.
+
+00:20:53.403 --> 00:20:59.781
+Then, for the sake of interest, we'll derive another formula for Pi from this approximation.
+
+00:20:59.781 --> 00:21:02.120
+And we'll summarize a bit.
+
+00:21:02.120 --> 00:21:10.327
+Then we will learn the truth about what is really at stake here.
+
+00:21:10.327 --> 00:21:16.126
+What infinite series of m is involved.
+
+00:21:18.841 --> 00:21:21.030
+And we will start thinking about this truth.
+
+00:21:21.030 --> 00:21:27.398
+This truth will be got through the Taylor series expansion by some function.
+
+00:21:27.398 --> 00:21:35.561
+But the coefficients in this expansion will be unknown to us in the form of a formula.
+
+00:21:35.561 --> 00:21:40.932
+We will know them numerically for some initial terms.
+
+00:21:40.932 --> 00:21:47.048
+And here we will start guessing what these numbers are.
+
+00:21:47.048 --> 00:21:50.554
+Here we continue to guess...
+
+00:21:50.554 --> 00:21:55.663
+And only here we will get the final answer through the zeta function.
+
+00:21:55.663 --> 00:21:57.662
+Further, various bonus tracks,
+
+00:21:57.662 --> 00:22:02.551
+but no one will be here anymore...
+
+00:22:02.551 --> 00:22:09.576
+Well, listen... maybe you should take breaks? Then you'll make it to the end.
+
+00:22:09.576 --> 00:22:13.229
+I just don't feel like dividing this video into parts.
+
+00:22:13.229 --> 00:22:16.025
+I'll make one big video.
+
+00:22:16.025 --> 00:22:21.708
+And you can pause and have tea at the right places.
+
+00:22:21.708 --> 00:22:23.215
+Okay.
+
+00:22:23.215 --> 00:22:32.027
+If you approach the problem I solved earlier with enthusiasm, you can uncover this.
+
+00:22:32.027 --> 00:22:35.208
+Here we introduce another notation, xsinp.
+
+00:22:35.208 --> 00:22:41.182
+It's just a thing: xSin[x]/Pi^2.
+
+00:22:41.182 --> 00:22:44.365
+Let's play it.
+
+00:22:44.365 --> 00:22:48.368
+I won't repeat how all of this was found.
+
+00:22:48.368 --> 00:22:52.853
+Although, I must say, the process is very, very interesting.
+
+00:22:52.853 --> 00:22:53.896
+Here I stopped.
+
+00:22:53.896 --> 00:23:00.877
+There seems to be some power visible, but it's already difficult. Really difficult.
+
+00:23:00.877 --> 00:23:05.885
+Moreover, as you approach small values of x,
+
+00:23:05.885 --> 00:23:19.446
+here you can see that we have reached a point where the floating-point precision is not enough.
+
+00:23:19.446 --> 00:23:23.843
+10^-16. We have already reached this limit.
+
+00:23:23.843 --> 00:23:28.941
+Here we are already living at the level of approximation of 10^-16.
+
+00:23:28.941 --> 00:23:37.893
+When you see such pictures with noise, it is a clear sign that it's time to stop.
+
+00:23:37.893 --> 00:23:40.493
+You can stop acting like a dumb programmer-engineer.
+
+00:23:40.493 --> 00:23:44.945
+You can start thinking.
+
+00:23:44.945 --> 00:23:47.686
+Moreover, this picture around zero,
+
+00:23:47.686 --> 00:23:50.219
+it looks like this.
+
+00:23:50.219 --> 00:23:53.828
+And here some sharp angle is observed,
+
+00:23:53.828 --> 00:24:05.757
+This is the moment when the story with m1, which is equal to m(m+1), ends,
+
+00:24:05.757 --> 00:24:07.527
+and it starts...
+
+00:24:07.527 --> 00:24:12.801
+Nothing starts. There is a deadlock. It becomes very difficult to move forward.
+
+00:24:12.801 --> 00:24:20.570
+If we ask Mathematica to give us an answer: what do we get if we set our approximation to zero?
+
+00:24:20.570 --> 00:24:22.996
+As if we found an absolutely accurate approximation.
+
+00:24:22.996 --> 00:24:33.272
+If the error were not equal to this nonsense, but if it were equal to zero, what would the coveted "y" be?
+
+00:24:33.272 --> 00:24:35.091
+This is what it would be.
+
+00:24:35.091 --> 00:24:41.503
+And if we group the terms into these pieces,
+
+00:24:41.503 --> 00:24:47.258
+then we get the following approximation formula.
+
+00:24:47.258 --> 00:24:52.324
+We approximate Sin[x] with these poles.
+
+00:24:52.324 --> 00:24:53.248
+Here we go...
+
+00:24:53.248 --> 00:25:02.430
+And of course, after an hour of contemplation, anyone can guess that...
+
+00:25:02.430 --> 00:25:04.594
+I won't say the word "obviously."
+
+00:25:04.594 --> 00:25:10.305
+...that actually we should have divided the sine by this expression.
+
+00:25:11.794 --> 00:25:14.498
+Because these popping up sines here...
+
+00:25:14.498 --> 00:25:19.252
+First of all, it's silly. We are looking for an approximation of the sine, and somehow in this approximation, we have a sine.
+
+00:25:19.252 --> 00:25:22.435
+We don't solve the sine approximation problem like this.
+
+00:25:22.435 --> 00:25:23.292
+We want to get rid of them.
+
+00:25:23.292 --> 00:25:25.292
+Where did these sines come from?
+
+00:25:25.292 --> 00:25:30.000
+They appeared here because of this division.
+
+00:25:30.000 --> 00:25:31.241
+Here's what we have here.
+
+00:25:31.241 --> 00:25:35.737
+If we simplify the picture, here's what we have here.
+
+00:25:35.737 --> 00:25:40.234
+And the thought arises: what if we had to act differently?
+
+00:25:40.234 --> 00:25:48.660
+Take our approximating function "a" and the original sine function
+
+00:25:48.660 --> 00:25:52.548
+and consider this expression.
+
+00:25:52.548 --> 00:25:56.945
+Because if this expression equals something simple,
+
+00:25:56.945 --> 00:26:03.575
+where there is no such power series of sines,
+
+00:26:03.575 --> 00:26:10.000
+then, if this statement is true, then 1/asin...
+
+00:26:10.000 --> 00:26:12.583
+we move -1 to the other side.
+
+00:26:12.583 --> 00:26:19.356
+We get that 1/asin will be equal to this.
+
+00:26:19.356 --> 00:26:25.823
+And we take this and consider it as "p".
+
+00:26:25.823 --> 00:26:34.829
+and we find that 1/(1-p) is the formula of an infinite geometric progression.
+
+00:26:34.829 --> 00:26:40.779
+And these sine powers pop up.
+
+00:26:40.779 --> 00:26:44.206
+Intuition, of course, is complex here.
+
+00:26:44.206 --> 00:26:48.297
+But it exists.
+
+00:26:50.487 --> 00:26:56.446
+And a person who doesn't know the correct answer could actually turn around here
+
+00:26:56.446 --> 00:26:59.015
+and choose this other path.
+
+00:26:59.015 --> 00:27:00.538
+We were dealing with this,
+
+00:27:00.538 --> 00:27:03.107
+now we'll be dealing with this.
+
+00:27:03.107 --> 00:27:07.156
+We go through the same process.
+
+00:27:07.156 --> 00:27:09.627
+We play the same game.
+
+00:27:09.627 --> 00:27:18.141
+And here we manage to achieve a greater number of m1
+
+00:27:18.141 --> 00:27:22.506
+and reach this pattern.
+
+00:27:22.506 --> 00:27:32.085
+Of course, I would very much like to show you all these steps, but no. There's not enough time.
+
+00:27:32.085 --> 00:27:34.194
+Some interesting moments
+
+00:27:34.194 --> 00:27:38.252
+Here I dare to divide by (x^2 - p).
+
+00:27:38.252 --> 00:27:40.000
+Yes, it's an interesting moment.
+
+00:27:40.000 --> 00:27:42.340
+Maybe it's worth showing.
+
+00:27:42.340 --> 00:27:44.340
+(No, it's not)
+
+00:27:45.873 --> 00:27:52.470
+As a result, we get this approximation.
+
+00:27:52.470 --> 00:27:58.761
+A long polynomial in which there is no Sin[x] and Sin[x] powers.
+
+00:27:58.761 --> 00:28:02.250
+Let's remember this as a certain answer.
+
+00:28:02.250 --> 00:28:03.319
+Alright.
+
+00:28:03.319 --> 00:28:10.000
+Here, a different approach is chosen, where I didn't divide by (x^2 - Pi^2),
+
+00:28:10.000 --> 00:28:12.820
+but raised this parabola by one,
+
+00:28:12.820 --> 00:28:15.728
+then subtracted this parabola.
+
+00:28:15.728 --> 00:28:18.504
+An essentially equivalent option.
+
+00:28:18.504 --> 00:28:25.485
+And here's what we end up with when we bring this to the end.
+
+00:28:25.485 --> 00:28:29.795
+The last term is quite debatable.
+
+00:28:29.795 --> 00:28:35.167
+You can take a look at this option, for example.
+
+00:28:35.167 --> 00:28:40.447
+I just wrote it quite roughly.
+
+00:28:40.447 --> 00:28:44.071
+10 and 45.
+
+00:28:44.071 --> 00:28:45.272
+Maybe it's not 45.
+
+00:28:45.272 --> 00:28:46.823
+Maybe it's 44.
+
+00:28:46.823 --> 00:28:52.004
+You can't see it just by looking.
+
+00:28:52.004 --> 00:28:58.892
+But you won't believe it, 45 is actually the correct answer, as it turns out later.
+
+00:28:58.892 --> 00:29:04.180
+So I saw the component x in some large power,
+
+00:29:04.180 --> 00:29:08.971
+picked four and a multiplier of 45,
+
+00:29:08.971 --> 00:29:13.366
+and then subtracted.
+
+00:29:13.366 --> 00:29:19.106
+And here it's already difficult to proceed because as "m" increases...
+
+00:29:19.106 --> 00:29:22.332
+And I want to increase "m".
+
+00:29:22.332 --> 00:29:27.649
+As "m" increases, we already have some noise.
+
+00:29:27.649 --> 00:29:36.267
+And we've reached a point where machine precision no longer allows us to move further.
+
+00:29:36.267 --> 00:29:39.304
+We calculate the answer in this variant.
+
+00:29:39.304 --> 00:29:41.142
+Let's remember it.
+
+00:29:41.142 --> 00:29:46.256
+We ask Mathematica how much these two variants I found differ,
+
+00:29:46.256 --> 00:29:49.602
+with division by x^2 - Pi^2 and without division.
+
+00:29:49.602 --> 00:29:51.778
+They don't differ that much.
+
+00:29:51.778 --> 00:29:54.993
+In the second one, I managed to reach 45.
+
+00:29:54.993 --> 00:29:57.726
+You can see that the difference...
+
+00:29:57.726 --> 00:30:05.320
+Don't count the one, maybe I wrote it unnecessarily.
+
+00:30:07.159 --> 00:30:10.803
+Here we have a fourth power in the denominator of m1 everywhere.
+
+00:30:10.803 --> 00:30:15.048
+So it's actually an eighth power of m.
+
+00:30:15.048 --> 00:30:17.650
+And here things are not so straightforward.
+
+00:30:17.650 --> 00:30:20.689
+Yes, in the initial approximation, I used the letter "b".
+
+00:30:20.689 --> 00:30:25.831
+And, by the way, if b equals 9, then this pair vanishes.
+
+00:30:25.831 --> 00:30:29.055
+And if b equals 45, then this pair vanishes.
+
+00:30:29.055 --> 00:30:34.049
+That's why in that approximation, I couldn't decide on b.
+
+00:30:34.049 --> 00:30:40.402
+One component vanishes with one b, and the other with another.
+
+00:30:40.402 --> 00:30:45.905
+Therefore, the variant with division by (xp^2) - 1 is not quite correct.
+
+00:30:45.905 --> 00:30:48.766
+Division seems to be bad in general.
+
+00:30:48.766 --> 00:30:50.580
+So we need subtraction.
+
+00:30:50.580 --> 00:30:52.791
+As this specific problem shows,
+
+00:30:52.791 --> 00:30:56.969
+we need to do subtraction, not division.
+
+00:30:56.969 --> 00:30:58.637
+Okay.
+
+00:31:01.571 --> 00:31:11.094
+I wrote a rule here to eliminate all higher powers of m. Higher than 4.
+
+00:31:11.094 --> 00:31:19.164
+And precisely at this level, these two approximations coincide.
+
+00:31:19.164 --> 00:31:23.766
+But in the approximation up to the next fourth power.
+
+00:31:23.766 --> 00:31:27.375
+Here we see 45, 10
+
+00:31:27.375 --> 00:31:29.678
+6, 3, 13
+
+00:31:29.678 --> 00:31:32.805
+Here we already have interesting numbers different from one.
+
+00:31:32.805 --> 00:31:37.378
+By the way, it turned out that they all have only a numerator.
+
+00:31:37.378 --> 00:31:40.831
+Integers, integer coefficients.
+
+00:31:40.831 --> 00:31:42.284
+Why?
+
+00:31:43.598 --> 00:31:45.598
+Well...
+
+00:31:47.525 --> 00:31:50.994
+Let's go back to the number m.
+
+00:31:50.994 --> 00:31:55.610
+Here I replaced our gotten answer.
+
+00:31:55.610 --> 00:31:59.659
+In this answer, I replaced m1 with m(m+1)
+
+00:31:59.659 --> 00:32:05.282
+and asked to expand this expression in terms of powers of m.
+
+00:32:05.282 --> 00:32:12.769
+And here, too, we got integer values for all coefficients.
+
+00:32:12.769 --> 00:32:18.410
+As I said, everything seems reliable up to m^8.
+
+00:32:18.410 --> 00:32:20.814
+Essentially, we got such an approximation.
+
+00:32:20.814 --> 00:32:23.898
+1 minus Sin multiplied by the sum
+
+00:32:23.898 --> 00:32:28.689
+equals xSin/(Pi^2) multiplied by this polynomial,
+
+00:32:28.689 --> 00:32:30.733
+which you see in front of you.
+
+00:32:30.733 --> 00:32:35.568
+The polynomial starts with the fourth power of m.
+
+00:32:35.568 --> 00:32:40.612
+Well, previously it was just 1/(m1^2)
+
+00:32:43.152 --> 00:32:47.389
+And if we express the sine from this, here's what we get
+
+00:32:49.053 --> 00:32:54.257
+Let's see what happens if we return to the old idea.
+
+00:32:54.257 --> 00:32:58.260
+If we really divide 1/gg by sine. ("gg" is the summ)
+
+00:32:58.260 --> 00:33:00.219
+What will happen then?
+
+00:33:00.219 --> 00:33:04.181
+Then we get this expression.
+
+00:33:04.181 --> 00:33:08.330
+Here I divided by Pi^2 mentally
+
+00:33:08.330 --> 00:33:14.228
+and xsin also mentally contains division by Pi^2.
+
+00:33:14.228 --> 00:33:22.097
+xsin - it's Sin[x]/Pi^2 and also multiplied by x.
+
+00:33:22.097 --> 00:33:26.644
+So, this is what we get.
+
+00:33:26.644 --> 00:33:32.837
+That is, this is what we could have got in the first incorrect variant, if we had continued.
+
+00:33:32.837 --> 00:33:35.854
+But here we have m's, and we need to get m1.
+
+00:33:35.854 --> 00:33:37.335
+Well...
+
+00:33:37.335 --> 00:33:40.000
+Let's go back to m1 like this.
+
+00:33:40.000 --> 00:33:43.550
+Expressing m through m1 using the following formula.
+
+00:33:43.550 --> 00:33:48.261
+And then we ask to expand in terms of powers of m1 up to the fourth power.
+
+00:33:48.261 --> 00:33:50.831
+And we get something.
+
+00:33:50.831 --> 00:33:57.885
+Here we see exactly these components: 1, 2, 8, 13.
+
+00:33:57.885 --> 00:34:00.856
+Let's remember the result we had.
+
+00:34:00.856 --> 00:34:03.852
+Where is our beloved result.
+
+00:34:05.166 --> 00:34:06.685
+Here it is.
+
+00:34:06.685 --> 00:34:08.272
+I didn't execute this.
+
+00:34:08.272 --> 00:34:12.526
+The result we got by moving in the wrong path.
+
+00:34:12.526 --> 00:34:15.661
+And let's compare what we get from this formula
+
+00:34:15.661 --> 00:34:18.362
+and from this one.
+
+00:34:18.362 --> 00:34:20.833
+That is, we followed the right path.
+
+00:34:20.833 --> 00:34:25.493
+Got a certain formula for the expansion of the inverted fraction.
+
+00:34:25.493 --> 00:34:29.288
+But here we tried to go back to the old variant and see,
+
+00:34:29.288 --> 00:34:33.390
+what would happen if we continued in the old option.
+
+00:34:33.390 --> 00:34:34.546
+This is what would happen.
+
+00:34:34.546 --> 00:34:35.615
+And there are coincidences.
+
+00:34:35.615 --> 00:34:37.308
+1/m,
+
+00:34:37.308 --> 00:34:38.859
+1/(m^2)
+
+00:34:40.873 --> 00:34:45.079
+So these coefficients are correctly found.
+
+00:34:45.079 --> 00:34:47.349
+m1 is additionally hidden here.
+
+00:34:47.349 --> 00:34:51.902
+So don't pay attention to the fact that there is a square here, and here it's just m.
+
+00:34:51.902 --> 00:34:53.268
+13, 13
+
+00:34:53.268 --> 00:34:54.627
+3, 3
+
+00:34:54.627 --> 00:34:55.841
+1, 1
+
+00:34:55.841 --> 00:34:56.706
+6, 6
+
+00:34:56.706 --> 00:34:58.914
+Everything matches. Perfect.
+
+00:35:00.534 --> 00:35:06.303
+With Sin[x]^2 there is a variable "a".
+
+00:35:11.120 --> 00:35:14.851
+This two matches.
+
+00:35:14.851 --> 00:35:20.000
+But with x^2 it's not so straightforward.
+
+00:35:24.029 --> 00:35:25.726
+Alright.
+
+00:35:25.726 --> 00:35:30.000
+Now let's look at the quality of the approximation.
+
+00:35:30.000 --> 00:35:33.998
+Just sin minus one divided by the sum.
+
+00:35:33.998 --> 00:35:39.037
+And here are these new approximation variants that we got.
+
+00:35:39.037 --> 00:35:43.739
+And these polynomials no longer contain sines.
+
+00:35:43.739 --> 00:35:48.083
+Everything is already calculated here.
+
+00:35:48.083 --> 00:35:50.834
+Let's try.
+
+00:35:50.834 --> 00:35:56.114
+The blue plot - the first approximation.
+
+00:35:56.114 --> 00:36:01.778
+The yellow plot - we took m1^2.
+
+00:36:01.778 --> 00:36:07.675
+Essentially, we took the component with m1^2 in the denominator.
+
+00:36:07.675 --> 00:36:12.329
+And here we took the component with m1^3 in the denominator.
+
+00:36:12.329 --> 00:36:14.151
+This is m1.
+
+00:36:14.151 --> 00:36:16.263
+Here is m1^2.
+
+00:36:16.263 --> 00:36:20.000
+And we got the blue plot.
+
+00:36:20.000 --> 00:36:28.032
+The difference is a small number, 0.0005, but we can do better.
+
+00:36:28.032 --> 00:36:29.310
+Where is our yellow plot?
+
+00:36:29.310 --> 00:36:32.098
+Here it is, finally born.
+
+00:36:32.098 --> 00:36:36.289
+2 * 10^-9.
+
+00:36:36.289 --> 00:36:42.407
+And the green plot is 2 * 10^-11.
+
+00:36:42.407 --> 00:36:47.138
+These are the different levels of approximation.
+
+00:36:47.138 --> 00:36:48.946
+So, what do we have?
+
+00:36:48.946 --> 00:36:51.154
+By summing up 20 terms,
+
+00:36:51.154 --> 00:36:54.730
+or more precisely, 20 on the left, 20 on the right,
+
+00:36:54.730 --> 00:37:04.308
+we get 10^-11 as an approximation in the vicinity of zero, from -5 to 5.
+
+00:37:04.308 --> 00:37:07.369
+By the way, it can be not 20 + 20 terms, but exactly 20 terms,
+
+00:37:07.369 --> 00:37:12.828
+if we combine these symmetric terms.
+
+00:37:14.930 --> 00:37:18.273
+And here it is shown that this
+
+00:37:18.273 --> 00:37:21.472
+can be replaced with this.
+
+00:37:21.472 --> 00:37:29.610
+And here I tried to take even more terms.
+
+00:37:29.610 --> 00:37:33.745
+Let's have a look.
+
+00:37:33.745 --> 00:37:37.573
+So, the blue plot
+
+00:37:37.573 --> 00:37:40.203
+is this variant.
+
+00:37:40.203 --> 00:37:45.257
+This is not that blue plot. This is the first approximation, where we take m1.
+
+00:37:45.257 --> 00:37:50.000
+Then the yellow plot appears.
+
+00:37:50.000 --> 00:37:55.536
+We took m1^3.
+
+00:37:55.536 --> 00:38:00.548
+The old approach.
+
+00:38:00.548 --> 00:38:06.846
+This is the new approach. Also m1^3.
+
+00:38:06.846 --> 00:38:09.570
+Here it is in green. The new approach,
+
+00:38:09.570 --> 00:38:11.315
+where we flipped the fractions.
+
+00:38:11.315 --> 00:38:13.887
+It works better.
+
+00:38:13.887 --> 00:38:17.426
+And the next approach: we take m1^3 here, and here we also have m1,
+
+00:38:17.426 --> 00:38:21.148
+m^4 approximation.
+
+00:38:21.148 --> 00:38:23.114
+This is the red plot.
+
+00:38:23.114 --> 00:38:25.629
+But there is also the violet one.
+
+00:38:25.629 --> 00:38:34.449
+The violet one is simply the approximation of the Taylor series taking m terms.
+
+00:38:34.449 --> 00:38:44.145
+Actually, I chose two m terms here because half of the terms in the sine expansion are zeros.
+
+00:38:44.145 --> 00:38:48.130
+So, it turns out that the Taylor series approximation works best here.
+
+00:38:48.130 --> 00:38:55.768
+That is, we didn't find any new, more efficient way to calculate sine.
+
+00:38:55.768 --> 00:39:01.775
+Although our method has its advantages. I'll show you what they are now.
+
+00:39:01.775 --> 00:39:10.000
+The Taylor series in the form of this plot goes to infinity abruptly,
+
+00:39:10.000 --> 00:39:18.689
+while our approximations work over a large range of x values.
+
+00:39:18.689 --> 00:39:20.848
+See, right?
+
+00:39:22.556 --> 00:39:25.420
+Here is our red plot.
+
+00:39:25.420 --> 00:39:31.396
+It also has a tendency, of course. It works particularly well in the vicinity of small x values.
+
+00:39:31.396 --> 00:39:39.212
+But it works quite well around x = 20, unlike the Taylor expansion.
+
+00:39:41.533 --> 00:39:43.583
+Moving on...
+
+00:39:43.583 --> 00:39:48.235
+Further, we can find the formula for the number Pi.
+
+00:39:48.235 --> 00:39:51.364
+Here's what we have.
+
+00:39:51.364 --> 00:39:54.846
+Here we got our approximation, subtract it from the sine.
+
+00:39:54.846 --> 00:40:00.225
+Set it equal to zero and replace x with (Pi^2)/6.
+
+00:40:01.845 --> 00:40:05.189
+Then replace Pi with pix.
+
+00:40:05.189 --> 00:40:10.725
+This expression here (/.), and then the rule in curly braces,
+
+00:40:10.725 --> 00:40:19.142
+they effectively replace what appears to the left of the rule with what appears to the right of the rule.
+
+00:40:19.142 --> 00:40:29.402
+And we get that Pi is expressed from this formula because,
+
+00:40:29.402 --> 00:40:36.628
+when we substitute x = (Pi^2)/6, because x is always paired with division by Pi,
+
+00:40:36.628 --> 00:40:39.825
+we simply get 1/6 raised to some power.
+
+00:40:39.825 --> 00:40:41.419
+Here it is (1/6)^4,
+
+00:40:41.419 --> 00:40:44.470
+and here (1/6)^2.
+
+00:40:44.470 --> 00:40:45.857
+So...
+
+00:40:45.857 --> 00:40:50.265
+Anyway, check for yourself.
+
+00:40:50.265 --> 00:40:54.093
+It turns out to be a simple linear equation for Pi.
+
+00:40:54.093 --> 00:40:56.750
+Well, Pi can be considered as x.
+
+00:40:56.750 --> 00:40:59.221
+And here's what we get.
+
+00:40:59.221 --> 00:41:00.785
+Wonderful!
+
+00:41:00.785 --> 00:41:09.291
+Let's fix this approximation as the function PiX and draw it.
+
+00:41:11.875 --> 00:41:21.237
+Calculate PiX here for different values of m.
+
+00:41:21.237 --> 00:41:27.948
+And we get such fractions.
+
+00:41:27.948 --> 00:41:30.637
+They are all close to Pi. Very close.
+
+00:41:30.637 --> 00:41:34.990
+Let's look at the difference between this and Pi.
+
+00:41:34.990 --> 00:41:38.435
+Simply -Pi.
+
+00:41:38.435 --> 00:41:42.745
+And you can see that they go to 10^-14, 10^-15.
+
+00:41:42.745 --> 00:41:44.489
+Let's draw the plot of errors.
+
+00:41:44.489 --> 00:41:47.891
+But it's better to draw not the errors themselves, but the logarithms of them.
+
+00:41:47.891 --> 00:41:51.588
+Here I take the absolute values of these errors,
+
+00:41:51.588 --> 00:42:00.419
+decimal logarithm, to understand how many correct digits of Pi we know.
+
+00:42:00.419 --> 00:42:03.283
+For m equal to ten, we know...
+
+00:42:03.283 --> 00:42:06.848
+Well.. some amount. 13 decimal places.
+
+00:42:06.848 --> 00:42:10.687
+I sum up 15 terms
+
+00:42:10.687 --> 00:42:12.182
+right here.
+
+00:42:12.182 --> 00:42:15.233
+And then I compute this formula.
+
+00:42:15.233 --> 00:42:18.853
+We have 15 digits of accuracy for the number Pi.
+
+00:42:18.853 --> 00:42:29.130
+And with 20 terms, we have -16. The logarithm of the error.
+
+00:42:29.130 --> 00:42:36.461
+So, we got a formula for approximating the sine function.
+
+00:42:39.701 --> 00:42:42.041
+What is its accuracy?
+
+00:42:42.041 --> 00:42:43.840
+We don't have a clear answer.
+
+00:42:43.840 --> 00:42:48.281
+We know the experimental error is 10^-13 for m = 10.
+
+00:42:48.281 --> 00:42:53.247
+That's not for Pi, but for the sine function.
+
+00:42:53.247 --> 00:43:00.000
+Somehow, m(m+1) appeared here. What is it?
+
+00:43:01.839 --> 00:43:03.869
+It's unclear for now.
+
+00:43:05.796 --> 00:43:08.726
+Why are the coefficients in this expansion integers?
+
+00:43:08.726 --> 00:43:11.182
+I'll ask this question again. It's an important question.
+
+00:43:11.182 --> 00:43:17.274
+When you see integer coefficients,
+
+00:43:17.274 --> 00:43:20.620
+it's likely some combinatorial object.
+
+00:43:20.620 --> 00:43:24.842
+That is, the quantity of some things.
+
+00:43:24.842 --> 00:43:29.821
+By the way, some Fibonacci numbers. 1, 2, 3, 8
+
+00:43:29.821 --> 00:43:33.318
+6 is not a Fibonacci number, but still.
+
+00:43:33.318 --> 00:43:39.667
+Is there any way to guess? To find some patterns in these numbers and guess what's next.
+
+00:43:39.667 --> 00:43:43.153
+Well.. I'll say right away: it's unlikely.
+
+00:43:43.153 --> 00:43:45.269
+It's difficult to guess.
+
+00:43:45.269 --> 00:43:49.579
+Mathematica knows the truth, what this sum equals.
+
+00:43:49.579 --> 00:43:50.648
+No, actually, it doesn't know.
+
+00:43:50.648 --> 00:43:53.261
+It makes an error here...
+
+00:43:53.261 --> 00:43:55.345
+You input this sum and it says:
+
+00:43:55.345 --> 00:44:02.731
+I have these nice smooth analytical functions somehow programmed inside.
+
+00:44:02.731 --> 00:44:07.181
+And these functions...
+
+00:44:07.181 --> 00:44:10.320
+You can check the help...
+
+00:44:12.597 --> 00:44:19.383
+It says it's just a sum of (k+a)^s, where k varies from 0 to infinity.
+
+00:44:19.383 --> 00:44:24.437
+Well, it turns out that if we take, for example, a = -10,
+
+00:44:24.437 --> 00:44:26.820
+and then take a = 10,
+
+00:44:26.820 --> 00:44:33.188
+and then subtract this function Φ, where a = -10 and a = 10,
+
+00:44:33.188 --> 00:44:34.750
+we get a finite sum.
+
+00:44:34.750 --> 00:44:36.389
+Well, indeed.
+
+00:44:36.389 --> 00:44:38.290
+But what does "s" equal?
+
+00:44:38.290 --> 00:44:40.320
+One.
+
+00:44:40.320 --> 00:44:41.305
+Well, yes, that's what he writes.
+
+00:44:41.305 --> 00:44:43.269
+"s" equals one,
+
+00:44:43.269 --> 00:44:48.356
+and "a" is some complex expression, in short, it wrote.
+
+00:44:48.356 --> 00:44:50.984
+We could trust Mathematica,
+
+00:44:50.984 --> 00:44:56.838
+but no. Here there is actually some error.
+
+00:44:56.838 --> 00:44:58.451
+Slap!
+
+00:44:59.765 --> 00:45:01.692
+If we subtract this
+
+00:45:01.692 --> 00:45:07.327
+from this. That is, add 0.811, we get 2.
+
+00:45:07.327 --> 00:45:12.663
+This is the true value of the sum. I just plugged in a specific value here.
+
+00:45:12.663 --> 00:45:23.978
+And here, it used it's great intellect to turn this sum into a specific expression of an analytical function,
+
+00:45:23.978 --> 00:45:28.080
+and then he plugged it in and got a different answer.
+
+00:45:28.080 --> 00:45:37.119
+This is because this function has poles along the path from -20 to 20,
+
+00:45:37.119 --> 00:45:43.717
+and you need to be very careful about how you bypass these poles, from which side.
+
+00:45:43.717 --> 00:45:46.083
+We went too far, in short.
+
+00:45:46.083 --> 00:45:52.608
+And miracle of miracles! Mathematica knows the series expansion of these functions.
+
+00:45:52.608 --> 00:45:56.024
+And you can simply ask it for the answer.
+
+00:45:56.024 --> 00:46:02.304
+This function G, which we previously called gg of m.
+
+00:46:02.304 --> 00:46:06.858
+And I ask, what is the expansion in terms of x?
+
+00:46:06.858 --> 00:46:09.579
+It knows the expansion in terms of x.
+
+00:46:09.579 --> 00:46:11.163
+Oh my God! Pi squared is here.
+
+00:46:11.163 --> 00:46:15.473
+It knows everything. Everything has already been calculated before us.
+
+00:46:15.473 --> 00:46:19.649
+All these formulas were found a long time ago.
+
+00:46:22.671 --> 00:46:28.070
+But we need to expand the function G
+
+00:46:28.070 --> 00:46:30.814
+(or rather, this expression here)
+
+00:46:30.814 --> 00:46:35.211
+in terms of powers of x and powers of 1/m.
+
+00:46:35.211 --> 00:46:37.625
+How do we do that?
+
+00:46:37.625 --> 00:46:41.917
+Well, from here on, it's just about looking and enjoying.
+
+00:46:41.917 --> 00:46:44.073
+Here...
+
+00:46:44.073 --> 00:46:49.478
+it showed his intestines. That he knows all about it.
+
+00:46:49.478 --> 00:46:55.567
+Here, I allow the computation to be done correctly.
+
+00:46:55.567 --> 00:47:01.140
+Please expand it as a series around zero up to x^8.
+
+00:47:01.140 --> 00:47:03.929
+And in the vicinity of n, which is infinity,
+
+00:47:03.929 --> 00:47:07.987
+but this means that I want to expand it as a series in 1/m.
+
+00:47:07.987 --> 00:47:13.593
+I also want to get the expansion up to 1/m^8.
+
+00:47:13.593 --> 00:47:17.411
+He starts writing zeta functions here.
+
+00:47:17.411 --> 00:47:20.232
+Here we have finally reached them.
+
+00:47:20.232 --> 00:47:24.284
+And I tell him that
+
+00:47:24.284 --> 00:47:31.019
+it can be simplified by removing the option he added.
+
+00:47:31.019 --> 00:47:39.641
+Then I have to ask him to replace m with 1/u and divide it by 2 moreover.
+
+00:47:39.641 --> 00:47:40.448
+Why?
+
+00:47:40.448 --> 00:47:43.750
+I remind you that the expansion depended on the parity of m,
+
+00:47:43.750 --> 00:47:46.133
+so here I wrote 2m,
+
+00:47:46.133 --> 00:47:47.775
+and m belongs to Integers.
+
+00:47:47.775 --> 00:47:51.795
+You can write it like this. That's how smart it is.
+
+00:47:51.795 --> 00:47:55.604
+When you have an expression that depends on whether
+
+00:47:55.604 --> 00:47:58.348
+m is an integer or not, what parity m has,
+
+00:47:58.348 --> 00:48:05.767
+you surround that expression with Assuming and write a list of your assumptions.
+
+00:48:05.767 --> 00:48:13.110
+Your knowledge of the variables involved in the expression here.
+
+00:48:13.110 --> 00:48:18.346
+That's how you can manipulate it to get the answer.
+
+00:48:18.346 --> 00:48:23.174
+And this answer is quite complex.
+
+00:48:23.174 --> 00:48:25.408
+It's a complicated one.
+
+00:48:25.408 --> 00:48:32.400
+But let me rather show you this.
+
+00:48:32.400 --> 00:48:36.009
+It turns out to be a quite complicated answer.
+
+00:48:36.009 --> 00:48:40.000
+And this answer involves u.
+
+00:48:40.000 --> 00:48:48.776
+And we need to ask Mathematica for this series in terms of x (powers of x)
+
+00:48:48.776 --> 00:48:54.498
+to apply another expansion series in terms of u.
+
+00:48:57.476 --> 00:49:03.774
+This was done, and we got this answer.
+
+00:49:08.854 --> 00:49:12.880
+There is a long pause here because...
+
+00:49:14.150 --> 00:49:19.799
+Of course, it's unclear how we can reach all of this.
+
+00:49:19.799 --> 00:49:23.901
+Up to this code.
+
+00:49:23.901 --> 00:49:28.054
+It's unclear how all this knowledge was built into Mathematica.
+
+00:49:31.908 --> 00:49:33.424
+Well... what can be done here...
+
+00:49:34.869 --> 00:49:40.587
+There are gaps in my videos...
+
+00:49:45.141 --> 00:49:51.093
+It's inevitable, we have to accept it.
+
+00:49:51.093 --> 00:50:00.798
+By the way, the support team replied to me, confirming that there is indeed an error in the "summ" function,
+
+00:50:00.798 --> 00:50:04.038
+and it's quite amusing,
+
+00:50:04.038 --> 00:50:06.946
+that
+
+00:50:06.946 --> 00:50:09.285
+this sum
+
+00:50:09.285 --> 00:50:16.715
+is not automatically expanded into the correct analytical form.
+
+00:50:19.211 --> 00:50:23.887
+Let's compare the truth we got here with what we previously calculated
+
+00:50:23.887 --> 00:50:26.349
+when we were dealing with component selection.
+
+00:50:26.349 --> 00:50:28.305
+Here's what we had there.
+
+00:50:28.305 --> 00:50:31.578
+Well... actually, we had this, I remind you.
+
+00:50:31.578 --> 00:50:37.377
+1, 2, 8, 13, 3, 45... and our 10, these last two terms.
+
+00:50:37.377 --> 00:50:42.018
+And then we simply substituted m1 with m(m+1),
+
+00:50:42.018 --> 00:50:45.540
+expanded it in terms of 1/m
+
+00:50:45.540 --> 00:50:47.803
+and got this thing.
+
+00:50:47.803 --> 00:50:50.679
+With integer coefficients!
+
+00:50:50.679 --> 00:50:53.423
+The alarm goes off immediately!
+
+00:50:54.999 --> 00:50:56.316
+And what do we see?
+
+00:50:56.316 --> 00:50:59.550
+1, 1, 3, 17, 56...
+
+00:50:59.550 --> 00:51:03.027
+Hmm... something's wrong.
+
+00:51:04.341 --> 00:51:06.963
+1, 1, 1, 3, 17, 155...
+
+00:51:06.963 --> 00:51:09.478
+Well, that's already an incorrect term.
+
+00:51:09.478 --> 00:51:10.503
+It is clear.
+
+00:51:10.503 --> 00:51:13.082
+For x^2: 1, 2, 5, 28
+
+00:51:13.082 --> 00:51:15.607
+1, 2, 5, 28...
+
+00:51:15.607 --> 00:51:18.001
+92 for m^10.
+
+00:51:18.001 --> 00:51:20.352
+Well, in the 10th power, it's definitely wrong.
+
+00:51:20.352 --> 00:51:23.523
+The 8th is still correct.
+
+00:51:23.523 --> 00:51:25.862
+x^4
+
+00:51:25.862 --> 00:51:27.512
+as well.
+
+00:51:27.512 --> 00:51:29.074
+Great.
+
+00:51:29.074 --> 00:51:37.719
+So, using experimental methods, we correctly found everything up to the 8th power of 1/m.
+
+00:51:37.719 --> 00:51:40.429
+This was confirmed by Mathematica,
+
+00:51:40.429 --> 00:51:43.991
+which we trust,
+
+00:51:43.991 --> 00:51:48.038
+if we disregard these small errors.
+
+00:51:48.038 --> 00:51:49.242
+Alright.
+
+00:51:50.425 --> 00:51:52.510
+Let's start thinking!
+
+00:51:52.510 --> 00:51:55.273
+To be continued...
+

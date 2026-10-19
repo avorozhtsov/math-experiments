@@ -1,0 +1,19 @@
+{
+  "scope": "YouTube tags are video-wide, not independently localized. This list is the exact current global tag list.",
+  "tags": [
+    "wollfram",
+    "wolfram mathematica",
+    "математика",
+    "дзета-функция",
+    "многочлены бернулли"
+  ],
+  "ru_or_mixed": [
+    "математика",
+    "дзета-функция",
+    "многочлены бернулли"
+  ],
+  "en_or_language_neutral": [
+    "wollfram",
+    "wolfram mathematica"
+  ]
+}

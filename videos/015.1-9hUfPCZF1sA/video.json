@@ -1,0 +1,43 @@
+{
+  "number": "015.1",
+  "video_id": "9hUfPCZF1sA",
+  "youtube_url": "https://www.youtube.com/watch?v=9hUfPCZF1sA",
+  "directory": "videos/015.1-9hUfPCZF1sA",
+  "locales": {
+    "ru": {
+      "title": "15. Формула Эйлера-Маклорена и ζ(z) функция (English subtitles)",
+      "metadata_file": "metadata.ru.json",
+      "title_file": "title.ru.txt",
+      "description_file": "description.ru.md",
+      "captions_file": "captions/ru.vtt",
+      "thumbnail_file": "thumbnails/ru.jpg"
+    },
+    "en": {
+      "title": "15. Euler-Maclaurin formula and the ζ(z) function (English subtitles)",
+      "metadata_file": "metadata.en.json",
+      "title_file": "title.en.txt",
+      "description_file": "description.en.md",
+      "captions_file": "captions/en.vtt",
+      "thumbnail_file": "thumbnails/en.jpg"
+    }
+  },
+  "tags_file": "tags.json",
+  "notebooks": [
+    {
+      "path": "yt-channel/012-sin-zeta.nb",
+      "relationship": "related_companion_not_exact_video_source"
+    }
+  ],
+  "exact_notebook_source_found": false,
+  "thumbnail_editable_sources": [
+    {
+      "path": "thumbnail-sources/pictures-4.ru.pptx",
+      "slide": 8,
+      "kind": "PowerPoint",
+      "language": "ru"
+    }
+  ],
+  "metadata_source": "YouTube Data API videos.list; actual existing ru/en localizations; fetched 2026-10-19T13:37:26.821577+00:00",
+  "english_thumbnail_method": "Image generation edit of the original, with explicit translation and style preservation",
+  "description_link_status": "prepared; YouTube application tracked separately"
+}

@@ -1,0 +1,29 @@
+{
+  "scope": "YouTube tags are video-wide, not independently localized. This list is the exact current global tag list.",
+  "tags": [
+    "wolfram mathematica",
+    "quadratic field extension",
+    "number fields",
+    "field extensions",
+    "числовые поля",
+    "конечные числовые поля",
+    "неприводимые многочлены",
+    "irreducible polynomials",
+    "moebius function",
+    "функция мёбиуса"
+  ],
+  "ru_or_mixed": [
+    "числовые поля",
+    "конечные числовые поля",
+    "неприводимые многочлены",
+    "функция мёбиуса"
+  ],
+  "en_or_language_neutral": [
+    "wolfram mathematica",
+    "quadratic field extension",
+    "number fields",
+    "field extensions",
+    "irreducible polynomials",
+    "moebius function"
+  ]
+}

@@ -1,0 +1,1063 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:01.672 --> 00:00:04.694
+Hello, everyone! Welcome to "Mathematical Experiments".
+
+00:00:04.694 --> 00:00:09.321
+Today, we're diving into combinatorics, specifically Catalan numbers.
+
+00:00:09.321 --> 00:00:11.803
+It's not a very complicated topic.
+
+00:00:11.803 --> 00:00:18.000
+But with some effort, we can explore more advanced concepts, like prime number distribution,
+
+00:00:18.000 --> 00:00:20.588
+which is what I'm doing.
+
+00:00:20.588 --> 00:00:25.880
+This problem really inspired me a lot back when I was in school.
+
+00:00:25.880 --> 00:00:33.676
+I was amazed that there were such fascinating programming challenges.
+
+00:00:33.676 --> 00:00:35.851
+So, let's dive into this challenge:
+
+00:00:35.851 --> 00:00:39.578
+You're given a string of parentheses.
+
+00:00:39.578 --> 00:00:43.995
+Your task is to determine whether it's a valid parenthetical expression or not.
+
+00:00:43.995 --> 00:00:47.127
+Here, you can see some valid parenthetical expressions.
+
+00:00:47.127 --> 00:00:49.375
+Here parentheses are balanced.
+
+00:00:49.375 --> 00:00:54.000
+And here are some examples of invalid parenthetical expressions.
+
+00:00:54.000 --> 00:01:01.102
+In valid parenthetical expressions, it's not just about having an equal number of opening and closing parentheses.
+
+00:01:01.102 --> 00:01:05.176
+For example, here, the counts are equal, but it's still incorrect.
+
+00:01:05.176 --> 00:01:15.962
+Similarly, in this case, the counts match, but there are two closing parentheses while only one is open.
+
+00:01:15.962 --> 00:01:22.632
+So, this closing parenthesis makes the entire expression invalid.
+
+00:01:22.632 --> 00:01:25.644
+There are three problems related to this topic.
+
+00:01:25.644 --> 00:01:29.853
+In each combinatorial problem, there are three programming tasks.
+
+00:01:29.853 --> 00:01:34.864
+First, check if the object belongs to the set you're studying.
+
+00:01:34.864 --> 00:01:38.492
+Second, count the objects of a specific size.
+
+00:01:38.492 --> 00:01:43.797
+And third, learn how to generate objects of a given size.
+
+00:01:43.797 --> 00:01:50.852
+These three tasks serve as a test, whether you enjoy programming or not.
+
+00:01:50.852 --> 00:01:57.785
+There's 1 valid parenthetical expression of length 2 (one pair of parentheses).
+
+00:01:57.785 --> 00:02:01.598
+There are 2 valid expressions with two pairs of parentheses.
+
+00:02:01.598 --> 00:02:05.659
+For three pairs of parentheses, there are 5 valid expressions.
+
+00:02:05.659 --> 00:02:06.903
+And so on, reaching 14.
+
+00:02:06.903 --> 00:02:11.398
+Try listing all 14 valid parenthetical expressions of length 6 on your own.
+
+00:02:11.398 --> 00:02:16.787
+As I mentioned, the initial part will be straightforward, but later, we'll delve into more complex concepts.
+
+00:02:16.787 --> 00:02:22.675
+We'll explore how Catalan numbers can help us estimate prime number distribution.
+
+00:02:22.675 --> 00:02:28.341
+I'll also introduce you to fractal functions, as I like to call them.
+
+00:02:28.341 --> 00:02:34.386
+The idea is to associate each parenthetical expression with a path of arrows.
+
+00:02:34.386 --> 00:02:36.954
+An opening parenthesis corresponds to an upward arrow (↑).
+
+00:02:36.954 --> 00:02:41.307
+A closing parenthesis corresponds to a downward arrow (↓).
+
+00:02:41.307 --> 00:02:45.846
+Now, let me show you the grid we'll use for this.
+
+00:02:45.846 --> 00:02:49.474
+Here's the grid, and we'll navigate it using these arrows.
+
+00:02:49.474 --> 00:02:56.322
+However, I'll draw it without arrows to keep the illustration clean.
+
+00:02:56.322 --> 00:02:59.790
+It'll become clear in a moment.
+
+00:03:01.122 --> 00:03:08.536
+This function generates a path on the grid from a parenthetical expression.
+
+00:03:08.536 --> 00:03:12.723
+You can only move right, either up or down, but always to the right.
+
+00:03:15.479 --> 00:03:20.157
+Here we go. A parenthetical expression like this.
+
+00:03:20.157 --> 00:03:24.838
+transforms into a bold path on this grid.
+
+00:03:24.838 --> 00:03:27.639
+An opening parenthesis leads to an upward step.
+
+00:03:27.639 --> 00:03:30.492
+Another opening parenthesis, another upward step.
+
+00:03:30.492 --> 00:03:33.748
+Then, two closing parentheses lead to two downward steps.
+
+00:03:33.748 --> 00:03:36.708
+Opening, closing.
+
+00:03:36.708 --> 00:03:39.128
+Well... you got the idea.
+
+00:03:39.128 --> 00:03:45.485
+Let's see how paths look for different parenthetical expressions.
+
+00:03:45.485 --> 00:03:51.232
+And this correspondence between paths in the graph and valid objects...
+
+00:03:51.232 --> 00:03:56.687
+I was genuinely thrilled when I discovered this in school.
+
+00:03:56.687 --> 00:04:01.788
+Here's an example of a bad string of parentheses.
+
+00:04:01.788 --> 00:04:05.158
+Here, we go below ground level.
+
+00:04:05.158 --> 00:04:11.573
+See? Three closing parentheses come after two opening ones.
+
+00:04:11.573 --> 00:04:16.130
+And we end up below ground level.
+
+00:04:16.130 --> 00:04:24.805
+A parenthetical expression is correct when it never dips below ground level.
+
+00:04:24.805 --> 00:04:28.316
+Here's another example of a bad parenthetical expression.
+
+00:04:28.316 --> 00:04:34.451
+So, the IsCorrect function, which checks for valid parenthetical expressions, is quite simple.
+
+00:04:34.451 --> 00:04:40.530
+We move along this grid, ensuring we never go below ground level.
+
+00:04:40.530 --> 00:04:44.932
+In the end, we must be at ground level.
+
+00:04:44.932 --> 00:04:48.603
+The Split function breaks the string into individual characters.
+
+00:04:48.603 --> 00:04:51.733
+We count how many characters there are.
+
+00:04:51.733 --> 00:04:58.541
+Then, we check that we're above ground level (on the Y-axis),
+
+00:04:58.541 --> 00:05:00.531
+and that we haven't reached the end.
+
+00:05:00.531 --> 00:05:05.490
+X is our horizontal axis, and Y is our vertical axis.
+
+00:05:05.490 --> 00:05:08.963
+We take the next symbol "c".
+
+00:05:08.963 --> 00:05:12.312
+If it opens, we step up.
+
+00:05:12.312 --> 00:05:16.449
+If it closes, we step down.
+
+00:05:16.449 --> 00:05:20.500
+And x always increases by 1 with each symbol.
+
+00:05:20.500 --> 00:05:24.561
+In the end, we check if y equals 0 or not.
+
+00:05:24.561 --> 00:05:30.000
+If we find ourselves below zero during the process,
+
+00:05:30.000 --> 00:05:32.699
+we exit the loop based on this condition.
+
+00:05:32.699 --> 00:05:35.738
+And here's False.
+
+00:05:35.738 --> 00:05:41.846
+But if we reach the end, we must ensure that y = 0.
+
+00:05:45.438 --> 00:05:47.473
+Seems to be working...
+
+00:05:47.473 --> 00:05:49.451
+Next up is some complex code.
+
+00:05:49.451 --> 00:05:53.110
+When you have two types of brackets.
+
+00:05:54.844 --> 00:05:57.214
+This is where the concept of "Stack" comes in.
+
+00:05:57.214 --> 00:06:00.000
+Maybe I should show an illustration first...
+
+00:06:00.000 --> 00:06:06.229
+The idea is simple: we color the path with two colors.
+
+00:06:06.229 --> 00:06:08.308
+Square brackets are blue.
+
+00:06:08.308 --> 00:06:11.465
+Round brackets are orange.
+
+00:06:11.465 --> 00:06:17.293
+And we ensure that the closing bracket has the correct color.
+
+00:06:17.293 --> 00:06:24.884
+So, on the same horizontal level, the arrows are the same color.
+
+00:06:24.884 --> 00:06:30.424
+Here, we open round brackets three times, moving with orange arrows.
+
+00:06:30.424 --> 00:06:37.509
+Then blue - we open square brackets. And we close with blue as well.
+
+00:06:37.509 --> 00:06:41.396
+Then we close three times with orange.
+
+00:06:41.396 --> 00:06:46.386
+We introduce the concept of a "Stack". We remember unclosed brackets.
+
+00:06:46.386 --> 00:06:52.708
+In this illustration, if we reach this point, our stack should consist of three objects:
+
+00:06:52.708 --> 00:06:58.623
+an orange bracket, a blue bracket, and another orange one.
+
+00:07:00.543 --> 00:07:08.965
+When we step down, we must take the top item from the stack and check if the color matches.
+
+00:07:08.965 --> 00:07:11.319
+Let's look at the code.
+
+00:07:11.319 --> 00:07:15.446
+Again, we split the string into individual characters.
+
+00:07:15.446 --> 00:07:19.012
+And as long as we haven't reached the end and everything is okay,
+
+00:07:19.012 --> 00:07:22.204
+we take the next character "c".
+
+00:07:22.204 --> 00:07:30.322
+If it's an opening bracket, we put it in the stack to remember that we need to close it.
+
+00:07:30.322 --> 00:07:34.185
+The stack is just a list, and we add it to the end of the list.
+
+00:07:34.185 --> 00:07:38.587
+If a closing bracket arrives,
+
+00:07:38.587 --> 00:07:42.000
+we check if something is in the stack that needs to be closed.
+
+00:07:42.000 --> 00:07:43.739
+If it's empty, it's an error.
+
+00:07:43.739 --> 00:07:48.822
+We're trying to close a bracket, but there's nothing to close.
+
+00:07:48.822 --> 00:07:53.376
+If it's empty, we immediately raise an error.
+
+00:07:53.376 --> 00:07:59.512
+Otherwise, if it's not empty, we take the last bracket from the stack,
+
+00:07:59.512 --> 00:08:01.368
+remove it from there,
+
+00:08:01.368 --> 00:08:03.757
+and check if it's of the same type.
+
+00:08:03.757 --> 00:08:12.155
+We take "cs" from the stack and check if its type matches the incoming bracket.
+
+00:08:12.155 --> 00:08:15.256
+If it doesn't match, we raise an error.
+
+00:08:15.256 --> 00:08:20.820
+Finally, at the end of each iteration, we step to the right. x increases by 1.
+
+00:08:20.820 --> 00:08:25.451
+At the end, we just check that everything is okay. And that's the result.
+
+00:08:25.451 --> 00:08:26.952
+That's how it works.
+
+00:08:30.000 --> 00:08:37.056
+You can accordingly write a program that calculates the number of bracket expressions.
+
+00:08:37.056 --> 00:08:41.680
+I'll do it for just one type of bracket.
+
+00:08:41.680 --> 00:08:43.976
+Here's how it's done.
+
+00:08:43.976 --> 00:08:51.047
+Instead of solving one specific problem (calculating the number of correct bracket expressions of length 2n),
+
+00:08:51.047 --> 00:08:58.057
+I'll embed my problem in a set of parameterized problems x, y.
+
+00:08:58.057 --> 00:09:01.902
+And I'll solve a larger set of problems.
+
+00:09:01.902 --> 00:09:08.995
+Namely, I'll count the number of paths to any point [x, y] on this grid.
+
+00:09:08.995 --> 00:09:15.242
+The number of paths to point [x, y] is a sum of two numbers.
+
+00:09:15.242 --> 00:09:17.856
+We can reach this point in two ways.
+
+00:09:17.856 --> 00:09:20.926
+Either reach this point somehow and then take a step,
+
+00:09:20.926 --> 00:09:25.761
+or somehow reach this point and then step up.
+
+00:09:25.761 --> 00:09:27.991
+So, knowing the number of paths to this point
+
+00:09:27.991 --> 00:09:28.956
+and to this one,
+
+00:09:28.956 --> 00:09:30.956
+we know the number of paths to this point.
+
+00:09:30.956 --> 00:09:34.986
+Just by adding these two numbers.
+
+00:09:34.986 --> 00:09:36.856
+It's a simple idea.
+
+00:09:36.856 --> 00:09:42.961
+You can fill in these numbers on a piece of paper yourself.
+
+00:09:42.961 --> 00:09:49.035
+Opposite each intersection write down how many ways to get to it.
+
+00:09:49.035 --> 00:09:51.898
+Here, there will be 1s.
+
+00:09:51.898 --> 00:09:53.203
+Here too, 1.
+
+00:09:53.203 --> 00:09:56.971
+I haven't done that; please do it yourself.
+
+00:09:56.971 --> 00:10:01.776
+In the end, the code becomes simple.
+
+00:10:02.736 --> 00:10:12.206
+The number of paths to [x, y] is the sum of the number of paths to [x - 1, y - 1] and [x - 1, y + 1].
+
+00:10:12.206 --> 00:10:16.453
+But we need to check that we haven't gone below the ground.
+
+00:10:16.453 --> 00:10:20.762
+Here, for example, this vertex lacks one term.
+
+00:10:20.762 --> 00:10:22.315
+This one.
+
+00:10:23.430 --> 00:10:27.797
+And this vertex lacks an upper term.
+
+00:10:27.797 --> 00:10:31.982
+That's why I have two "if" statements here.
+
+00:10:31.982 --> 00:10:35.218
+Besides, I'm using memoization here.
+
+00:10:35.218 --> 00:10:37.580
+Once I've computed something for [x, y],
+
+00:10:37.580 --> 00:10:48.220
+I store it in the symbol CountPaths as a mapping [x, y] to the final answer.
+
+00:10:48.220 --> 00:10:51.082
+This technique is called memoization.
+
+00:10:51.082 --> 00:10:55.515
+In the end, what I'm doing here is called dynamic programming.
+
+00:10:55.515 --> 00:10:59.368
+The idea of immersing my problem in a parameterized set of problems
+
+00:10:59.368 --> 00:11:04.575
+and then sequentially calculating all the problems.
+
+00:11:04.575 --> 00:11:13.168
+It turns out that we have dynamic programming from the top. A recurrence formula with memoization.
+
+00:11:13.168 --> 00:11:14.568
+Checking...
+
+00:11:14.568 --> 00:11:20.653
+Indeed, 5 bracket expressions of length 3 pairs.
+
+00:11:20.653 --> 00:11:24.538
+Here we see the first 10 Catalan numbers for the first time.
+
+00:11:24.538 --> 00:11:29.188
+These are called Catalan numbers.
+
+00:11:29.188 --> 00:11:34.774
+For Catalan numbers, there is a recurrence formula that allows you to calculate them faster
+
+00:11:34.774 --> 00:11:39.035
+than using this algorithm.
+
+00:11:39.035 --> 00:11:41.449
+Look at this idea.
+
+00:11:41.449 --> 00:11:50.725
+We can divide all paths from point A to point B into groups like this.
+
+00:11:50.725 --> 00:11:56.087
+A group where the first touch happens at this point.
+
+00:11:56.087 --> 00:12:00.000
+And in general, we can choose any point for the first touch.
+
+00:12:00.000 --> 00:12:06.000
+And consider a group of paths where the first touch happens at a specific given point.
+
+00:12:06.000 --> 00:12:08.992
+The first touch to the ground.
+
+00:12:08.992 --> 00:12:11.815
+Let's say, for example, the first touch to the ground happens here.
+
+00:12:11.815 --> 00:12:17.188
+Then the set of paths of this type is made up of the set of paths
+
+00:12:17.188 --> 00:12:20.743
+where anything can happen in the orange triangle,
+
+00:12:20.743 --> 00:12:25.437
+and anything can happen in the blue triangle.
+
+00:12:25.437 --> 00:12:27.069
+Here we step up.
+
+00:12:27.069 --> 00:12:28.932
+Here we step down.
+
+00:12:28.932 --> 00:12:32.223
+And in the orange triangle, we have a valid bracket expression
+
+00:12:32.223 --> 00:12:36.811
+that doesn't drop below the orange line.
+
+00:12:36.811 --> 00:12:45.549
+So, specifically, this group of paths is made up of the product of paths of length 3 pairs
+
+00:12:45.549 --> 00:12:47.814
+and paths of length 6 pairs.
+
+00:12:50.013 --> 00:12:58.019
+Accordingly, if we had moved this touch point here, it would have been C2 * C7.
+
+00:12:58.019 --> 00:13:03.222
+Why multiplication? Because any path here
+
+00:13:03.222 --> 00:13:06.850
+can be combined with any path here.
+
+00:13:06.850 --> 00:13:10.529
+The recursive formula looks like this.
+
+00:13:12.387 --> 00:13:14.137
+Writing...
+
+00:13:14.137 --> 00:13:16.501
+Again, we use memoization.
+
+00:13:16.501 --> 00:13:18.456
+We call the function "c".
+
+00:13:18.456 --> 00:13:21.556
+We fix some value.
+
+00:13:21.556 --> 00:13:23.140
+Checking...
+
+00:13:23.140 --> 00:13:24.321
+It works!
+
+00:13:24.321 --> 00:13:28.007
+5, 14, 42, 132, ...
+
+00:13:28.007 --> 00:13:29.412
+Perfect!
+
+00:13:30.000 --> 00:13:36.609
+We look at the logarithm of the Catalan numbers and see that the logarithm grows approximately linearly.
+
+00:13:36.609 --> 00:13:37.655
+Good...
+
+00:13:37.655 --> 00:13:39.703
+Interesting observation.
+
+00:13:41.716 --> 00:13:44.606
+We look closely at the numbers...
+
+00:13:48.446 --> 00:13:50.699
+Notice:
+
+00:13:50.699 --> 00:13:58.383
+here is a series of numbers that are divisible by 5.
+
+00:13:58.383 --> 00:14:01.246
+Many consecutive numbers that are divisible by 5,
+
+00:14:01.246 --> 00:14:03.949
+but then it breaks.
+
+00:14:03.949 --> 00:14:09.938
+Let's look at the remainder when dividing the first 70 Catalan numbers by 5.
+
+00:14:09.938 --> 00:14:14.651
+Yes, such subsequences of zeros appear right here.
+
+00:14:14.651 --> 00:14:17.171
+Interesting. Is this the same for 7?
+
+00:14:17.171 --> 00:14:18.155
+Yes!
+
+00:14:18.155 --> 00:14:20.823
+For seven, it's the same.
+
+00:14:20.823 --> 00:14:28.012
+Long sequences of consecutive Catalan numbers that are divisible by 7 appear.
+
+00:14:28.012 --> 00:14:37.007
+Furthermore, you can study where the numbers that have a nonzero remainder appear.
+
+00:14:37.007 --> 00:14:40.969
+And here's one observation of mine.
+
+00:14:40.969 --> 00:14:45.651
+For powers of 3 (when we take n as a power of 3),
+
+00:14:45.651 --> 00:14:48.949
+c[n] turns out to be not divisible by three.
+
+00:14:48.949 --> 00:14:53.041
+Moreover, it has a fixed remainder of 2.
+
+00:14:53.041 --> 00:14:57.187
+The same is true for 5 and 7.
+
+00:14:57.187 --> 00:14:58.957
+An interesting hypothesis.
+
+00:14:58.957 --> 00:15:02.678
+We'll have to try to prove it someday.
+
+00:15:02.678 --> 00:15:05.402
+Let's move on to the explicit formula.
+
+00:15:07.402 --> 00:15:10.114
+It exists.
+
+00:15:10.114 --> 00:15:12.627
+And it's expressed in terms of factorials.
+
+00:15:14.764 --> 00:15:18.000
+How can we arrive at this formula?
+
+00:15:18.000 --> 00:15:22.154
+Actually, I don't know how to derive this formula directly.
+
+00:15:22.154 --> 00:15:25.472
+I know how to get to it through generating functions.
+
+00:15:25.472 --> 00:15:31.204
+Generating functions are a powerful tool for analyzing asymptotics
+
+00:15:31.204 --> 00:15:36.598
+and geting explicit formulas for various sequences.
+
+00:15:36.598 --> 00:15:41.795
+For example, for the Fibonacci sequence, you can write a generating function
+
+00:15:41.795 --> 00:15:42.980
+like this.
+
+00:15:42.980 --> 00:15:52.148
+It's the sum of an infinite series where the coefficients are Catalan numbers.
+
+00:15:52.148 --> 00:15:56.921
+And now, we're going to study this function.
+
+00:15:56.921 --> 00:16:04.203
+We'll derive a formula for it and deduce an explicit formula for Catalan numbers.
+
+00:16:04.203 --> 00:16:08.491
+We'll do this using our recurrence formula.
+
+00:16:08.491 --> 00:16:12.963
+These identities were derived together.
+
+00:16:12.963 --> 00:16:15.861
+And it's interesting how this works.
+
+00:16:15.861 --> 00:16:18.467
+In this sum,
+
+00:16:18.467 --> 00:16:20.558
+the sum of indices is 3.
+
+00:16:20.558 --> 00:16:26.353
+1 + 2 = 3, 2 + 1 = 3, 3 + 0 = 3.
+
+00:16:27.747 --> 00:16:31.932
+And this suggests taking this product.
+
+00:16:31.932 --> 00:16:35.095
+We take the product...
+
+00:16:35.095 --> 00:16:37.112
+And look...
+
+00:16:37.112 --> 00:16:40.637
+With x^3, we get this thing,
+
+00:16:40.637 --> 00:16:42.898
+which is precisely this quantity.
+
+00:16:42.898 --> 00:16:46.711
+So here, we have C4.
+
+00:16:46.711 --> 00:16:48.000
+The same here.
+
+00:16:48.000 --> 00:16:49.955
+This expression...
+
+00:16:49.955 --> 00:16:53.458
+is this thing.
+
+00:16:53.458 --> 00:16:56.324
+And so on...
+
+00:16:56.324 --> 00:16:58.837
+Let's write it with numbers.
+
+00:16:58.837 --> 00:17:05.716
+We took an infinite series with Catalan numbers as coefficients.
+
+00:17:05.716 --> 00:17:10.613
+Squared it, and we get another series with Catalan numbers as coefficients.
+
+00:17:10.613 --> 00:17:13.033
+Only, previously, there was a 14 with x^4,
+
+00:17:13.033 --> 00:17:15.838
+now it's with x^3.
+
+00:17:18.000 --> 00:17:24.600
+So, we'll multiply the result of squaring by x.
+
+00:17:24.600 --> 00:17:27.216
+We get x + 2x^2.
+
+00:17:27.216 --> 00:17:33.197
+Add 1, and we get what we had before. It's f[x] again.
+
+00:17:33.197 --> 00:17:40.076
+Next is another identity. It's like a functional identity for the generating function of Catalan numbers.
+
+00:17:40.076 --> 00:17:41.736
+We calculate it...
+
+00:17:41.736 --> 00:17:47.810
+And see that the answer we get indeed fits.
+
+00:17:47.810 --> 00:17:54.186
+The coefficients in the Taylor series expansion are Catalan numbers.
+
+00:17:54.186 --> 00:17:59.610
+You can take a closer look at this component.
+
+00:17:59.610 --> 00:18:03.795
+Here, we almost have the answer, just the minus signs and 1/2 is extra.
+
+00:18:03.795 --> 00:18:08.692
+And here, we're removing this 1/2.
+
+00:18:08.692 --> 00:18:16.717
+This function has an explicit formula for the coefficients in the Taylor series.
+
+00:18:18.327 --> 00:18:22.212
+And those who've studied analysis know this formula.
+
+00:18:22.212 --> 00:18:25.996
+You can watch a video about it on my channel.
+
+00:18:25.996 --> 00:18:27.222
+This video here.
+
+00:18:27.222 --> 00:18:32.030
+Links to all interesting and useful things will be in the description.
+
+00:18:32.030 --> 00:18:36.518
+We'll deal with the analysis of this formula later.
+
+00:18:36.518 --> 00:18:44.915
+Now, let's quickly write a function to generate all valid bracket structures of a given length.
+
+00:18:44.915 --> 00:18:46.265
+Here we go...
+
+00:18:46.265 --> 00:18:50.698
+A function that returns all bracket expressions of a given length.
+
+00:18:50.698 --> 00:18:54.520
+4 represents 4 pairs of brackets.
+
+00:18:54.520 --> 00:18:59.008
+The generation function is based on the recurrence formula.
+
+00:18:59.008 --> 00:19:03.750
+So, we iterate through "i" in a loop.
+
+00:19:03.750 --> 00:19:06.604
+Generate a bracket expression of length "i".
+
+00:19:06.604 --> 00:19:11.594
+And generate a bracket expression of length n - i - 1.
+
+00:19:11.594 --> 00:19:14.612
+Then, we take the direct product of these two sets.
+
+00:19:14.612 --> 00:19:17.859
+The direct product in Mathematica is denoted by Tuples.
+
+00:19:17.859 --> 00:19:22.193
+We create a set of pairs, where the first element is from here,
+
+00:19:22.193 --> 00:19:25.142
+and the second element is from here.
+
+00:19:25.142 --> 00:19:28.243
+p is the prefix, and s is the suffix.
+
+00:19:28.243 --> 00:19:32.676
+We surround the prefix with brackets like this.
+
+00:19:32.676 --> 00:19:38.846
+This operation in Mathematica denotes string concatenation.
+
+00:19:40.797 --> 00:19:45.634
+And we get a new bracket expression from the prefix and suffix.
+
+00:19:45.634 --> 00:19:52.594
+This idea is illustrated by this picture.
+
+00:19:52.594 --> 00:19:57.313
+The prefix is some orange path in this orange triangle,
+
+00:19:57.313 --> 00:20:00.136
+and the suffix is some blue path.
+
+00:20:00.136 --> 00:20:03.423
+So, we start with an opening parenthesis,
+
+00:20:03.423 --> 00:20:05.626
+then a prefix path,
+
+00:20:05.626 --> 00:20:07.767
+then the closing parenthesis,
+
+00:20:07.767 --> 00:20:10.868
+and then the suffix path.
+
+00:20:12.138 --> 00:20:13.627
+Okay...
+
+00:20:19.789 --> 00:20:23.242
+Now, what else do we have here of interest...
+
+00:20:23.242 --> 00:20:30.449
+Catalan numbers can give us another formula for calculating Pi.
+
+00:20:30.449 --> 00:20:37.245
+We've already realized that the logarithms of Catalan numbers grow approximately linearly.
+
+00:20:37.245 --> 00:20:41.275
+Let's try to understand this linear relationship.
+
+00:20:41.275 --> 00:20:50.611
+First: it turns out that the coefficient when we approximate the logarithm of Catalan numbers,
+
+00:20:50.611 --> 00:20:52.732
+it equals the logarithm of four.
+
+00:20:52.732 --> 00:20:58.992
+So, Catalan numbers are approximately equal to 4^n.
+
+00:20:58.992 --> 00:21:04.687
+Let's divide the logarithm of Catalan numbers by n and by the logarithm of 4.
+
+00:21:04.687 --> 00:21:09.306
+We get something that tends to 1.
+
+00:21:09.306 --> 00:21:10.487
+Alright...
+
+00:21:10.487 --> 00:21:15.973
+Next, I'm here doing my classic thing.
+
+00:21:15.973 --> 00:21:21.896
+Trying to extract components in terms of the logarithm of Catalan numbers.
+
+00:21:21.896 --> 00:21:23.418
+And I get this answer.
+
+00:21:23.418 --> 00:21:31.102
+That the logarithm of Catalan numbers is, firstly, Log[4] times n,
+
+00:21:31.102 --> 00:21:36.385
+then minus 3/2Log[n]
+
+00:21:36.385 --> 00:21:38.774
+and some constant.
+
+00:21:38.774 --> 00:21:45.171
+I adjusted this constant here to make the graph asymptotically approach zero.
+
+00:21:45.171 --> 00:21:47.157
+You can take larger n.
+
+00:21:47.157 --> 00:21:50.684
+The formula allows for 100 million and a billion.
+
+00:21:50.684 --> 00:21:53.290
+Well... I won't bother with that here.
+
+00:21:53.290 --> 00:21:57.816
+In general, this residue is related to the number Pi.
+
+00:21:57.816 --> 00:22:01.134
+It equals 1/√Pi.
+
+00:22:01.134 --> 00:22:04.806
+Mathematica knows this limit perfectly.
+
+00:22:04.806 --> 00:22:09.301
+So, there's this approximate formula for Catalan numbers,
+
+00:22:09.301 --> 00:22:13.517
+where √Pi is involved.
+
+00:22:13.517 --> 00:22:16.967
+The first main component is 4^n.
+
+00:22:16.967 --> 00:22:19.449
+Then you need to divide by n^(3/2).
+
+00:22:19.449 --> 00:22:22.829
+And also divide by √Pi.
+
+00:22:22.829 --> 00:22:26.323
+This formula arises from the explicit formula
+
+00:22:26.323 --> 00:22:29.115
+and Stirling's formula.
+
+00:22:29.115 --> 00:22:33.300
+Try it out for yourself.
+
+00:22:33.300 --> 00:22:38.025
+Now, the formula for approximating Pi.
+
+00:22:38.025 --> 00:22:42.217
+This converges very slowly.
+
+00:22:42.217 --> 00:22:45.938
+Just for fun, so to speak.
+
+00:22:45.938 --> 00:22:53.468
+To get 12 correct digits,
+
+00:22:53.468 --> 00:22:59.112
+you need to take something exponentially dependent on the number 12.
+
+00:22:59.112 --> 00:23:06.903
+The number of correct digits of Pi in this formula logarithmically depends on n.
+
+00:23:06.903 --> 00:23:12.000
+Moreover, to get the n-th Catalan number, for example, using the recurrence formula,
+
+00:23:12.000 --> 00:23:16.685
+you need to compute all the previous n Catalan numbers.
+
+00:23:16.685 --> 00:23:19.812
+For the n-th Catalan number, n operations are required.
+
+00:23:19.812 --> 00:23:23.400
+There, you end up with a cubic formula,
+
+00:23:23.400 --> 00:23:27.647
+But the numbers themselves are long; they have n digits.
+
+00:23:27.647 --> 00:23:39.592
+So, you get a cubic formula overall if you implement Catalan number calculations using the recurrence formula and arbitrary-precision arithmetic.
+
+00:23:39.592 --> 00:23:46.874
+But you can do it faster by using the explicit formula involving factorials.
+
+00:23:46.874 --> 00:23:51.692
+In any case, you could calculate Pi directly from Stirling's formula.
+
+00:23:51.692 --> 00:23:56.404
+I tried it here. And there's also a logarithmic dependence
+
+00:23:56.404 --> 00:24:01.036
+on the accuracy of the gotten value of Pi.
+
+00:24:01.036 --> 00:24:01.955
+Alright...
+
+00:24:01.955 --> 00:24:03.955
+So,
+
+00:24:03.955 --> 00:24:08.009
+we've got several formulas for calculating Catalan numbers.
+
+00:24:08.009 --> 00:24:09.593
+Three of them.
+
+00:24:09.593 --> 00:24:15.172
+Through the number of paths, through the recurrence formula, and through the explicit formula.
+
+00:24:15.172 --> 00:24:19.755
+We've seen the asymptotics, that it's approximately 4^n.
+
+00:24:19.755 --> 00:24:27.006
+And I've told you about a more precise formula based on Stirling's approximation.
+
+00:24:27.006 --> 00:24:32.752
+We got the explicit formula involving factorials using generating functions.
+
+00:24:32.752 --> 00:24:36.504
+Generating functions are a very cool tool.
+
+00:24:36.504 --> 00:24:44.046
+In general, when you start doing something with a generating function, you don't want to do it any other way.
+
+00:24:44.046 --> 00:24:49.872
+We've also discovered an interesting behavior for the residues of division by p.
+
+00:24:49.872 --> 00:24:55.079
+There are large ranges of numbers divisible by the prime number p.
+
+00:24:55.079 --> 00:24:57.379
+For any prime number.
+
+00:24:57.379 --> 00:25:02.648
+We'll study this in the bonus part. Right here.
+
+00:25:02.648 --> 00:25:11.107
+And we'll get different estimates for the distribution of prime numbers.
+
+00:25:11.107 --> 00:25:16.249
+Lastly, I'd like to say that these three combinatorial problems:
+
+00:25:16.249 --> 00:25:18.000
+calculating the number of objects,
+
+00:25:18.000 --> 00:25:19.801
+checking the correctness of an object,
+
+00:25:19.801 --> 00:25:22.299
+and generating all correct objects,
+
+00:25:22.299 --> 00:25:27.427
+are wonderful problems to introduce someone to programming in general.
+
+00:25:27.427 --> 00:25:34.908
+And if your child's eyes light up when they encounter these three problems
+
+00:25:34.908 --> 00:25:36.925
+using parenthetical expressions as an example,
+
+00:25:36.925 --> 00:25:42.225
+that's a sign that child have some inclination toward programming.
+
+00:25:42.225 --> 00:25:45.130
+And it's not so important whether child will solve them or not.
+
+00:25:45.130 --> 00:25:47.364
+What's important is whether child finds them interesting.
+
+00:25:47.364 --> 00:25:52.571
+Whether child is willing to spend an hour or more thinking about these problems?
+
+00:25:52.571 --> 00:25:54.879
+It is all for today.
+
+00:25:54.879 --> 00:25:57.020
+Watch the bonus video.
+
+00:25:57.020 --> 00:26:02.196
+In the description, I usually provide various interesting and useful links for studying.
+
+00:26:02.196 --> 00:26:07.873
+Leave comments. What's interesting, what's not. What topics interest you.
+
+00:26:07.873 --> 00:26:09.134
+Goodbye!
+

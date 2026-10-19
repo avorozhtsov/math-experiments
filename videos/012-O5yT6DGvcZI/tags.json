@@ -1,0 +1,23 @@
+{
+  "scope": "YouTube tags are video-wide, not independently localized. This list is the exact current global tag list.",
+  "tags": [
+    "wolfram",
+    "wolfram mathematica",
+    "dzeta-function",
+    "дзета-функция",
+    "математика",
+    "math",
+    "приближения синуса"
+  ],
+  "ru_or_mixed": [
+    "дзета-функция",
+    "математика",
+    "приближения синуса"
+  ],
+  "en_or_language_neutral": [
+    "wolfram",
+    "wolfram mathematica",
+    "dzeta-function",
+    "math"
+  ]
+}

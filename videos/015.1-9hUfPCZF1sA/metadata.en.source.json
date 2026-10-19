@@ -1,0 +1,4 @@
+{
+  "title": "15. Euler-Maclaurin formula and the ζ(z) function (English subtitles)",
+  "description": "In this video, we will discover that Bernoulli polynomials are a special case of the Euler-Maclaurin formula. We will go through the derivation of Bernoulli polynomials and observe the connection between the coefficients in these polynomials and the analytic continuation of the sum of reciprocals of s-th powers of natural numbers. This continuation is called the Zeta function ζ(z).\n\n2:09 - Explicit formula for the polynomials\n7:57 - How the formula for Bernoulli polynomials was discovered\n12:45 - ...through matrices\n15:27 - Trick #1: replacing Zeta[-k] with z^k"
+}

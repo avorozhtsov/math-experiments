@@ -1,0 +1,822 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-10-19T13:53:08.276180+00:00",
+  "scope": "The 20 videos selected for English Cedar dubbing; not the complete channel.",
+  "repository": "https://github.com/avorozhtsov/math-experiments",
+  "videos": [
+    {
+      "number": "001",
+      "video_id": "2bCv1CFKGr4",
+      "youtube_url": "https://www.youtube.com/watch?v=2bCv1CFKGr4",
+      "directory": "videos/001-2bCv1CFKGr4",
+      "locales": {
+        "ru": {
+          "title": "1. Знакомство с Wolfram Mathematica. \"Галопом по Европе\" (English subtitles)",
+          "metadata_file": "metadata.ru.json",
+          "title_file": "title.ru.txt",
+          "description_file": "description.ru.md",
+          "captions_file": "captions/ru.vtt",
+          "thumbnail_file": "thumbnails/ru.jpg"
+        },
+        "en": {
+          "title": "1. Introduction to Wolfram Mathematica (English subtitles)",
+          "metadata_file": "metadata.en.json",
+          "title_file": "title.en.txt",
+          "description_file": "description.en.md",
+          "captions_file": "captions/en.vtt",
+          "thumbnail_file": "thumbnails/en.jpg"
+        }
+      },
+      "tags_file": "tags.json",
+      "notebooks": [
+        {
+          "path": "yt-channel/001-review.nb",
+          "relationship": "primary"
+        }
+      ],
+      "exact_notebook_source_found": true,
+      "thumbnail_editable_sources": [],
+      "metadata_source": "YouTube Data API videos.list; actual existing ru/en localizations; fetched 2026-10-19T13:37:26.821577+00:00",
+      "english_thumbnail_method": "Image generation edit of the original, with explicit translation and style preservation",
+      "description_link_status": "prepared; YouTube application tracked separately"
+    },
+    {
+      "number": "017",
+      "video_id": "p4r1qaUxXgA",
+      "youtube_url": "https://www.youtube.com/watch?v=p4r1qaUxXgA",
+      "directory": "videos/017-p4r1qaUxXgA",
+      "locales": {
+        "ru": {
+          "title": "17. Распределение простых чисел и Гипотеза Римана (English subtitles)",
+          "metadata_file": "metadata.ru.json",
+          "title_file": "title.ru.txt",
+          "description_file": "description.ru.md",
+          "captions_file": "captions/ru.vtt",
+          "thumbnail_file": "thumbnails/ru.jpg"
+        },
+        "en": {
+          "title": "17. Distribution of prime number and Riemann Hypothesis (English subtitles)",
+          "metadata_file": "metadata.en.json",
+          "title_file": "title.en.txt",
+          "description_file": "description.en.md",
+          "captions_file": "captions/en.vtt",
+          "thumbnail_file": "thumbnails/en.jpg"
+        }
+      },
+      "tags_file": "tags.json",
+      "notebooks": [
+        {
+          "path": "yt-channel/017-prime_pi.nb",
+          "relationship": "primary"
+        }
+      ],
+      "exact_notebook_source_found": true,
+      "thumbnail_editable_sources": [
+        {
+          "path": "thumbnail-sources/017.ru.key",
+          "kind": "Keynote",
+          "language": "ru"
+        }
+      ],
+      "metadata_source": "YouTube Data API videos.list; actual existing ru/en localizations; fetched 2026-10-19T13:37:26.821577+00:00",
+      "english_thumbnail_method": "Image generation edit of the original, with explicit translation and style preservation",
+      "description_link_status": "prepared; YouTube application tracked separately"
+    },
+    {
+      "number": "016",
+      "video_id": "Ou5Su_TIE-U",
+      "youtube_url": "https://www.youtube.com/watch?v=Ou5Su_TIE-U",
+      "directory": "videos/016-Ou5Su_TIE-U",
+      "locales": {
+        "ru": {
+          "title": "16. Приближение многочленами. Многочлены Чёбышева (English subtitles)",
+          "metadata_file": "metadata.ru.json",
+          "title_file": "title.ru.txt",
+          "description_file": "description.ru.md",
+          "captions_file": "captions/ru.vtt",
+          "thumbnail_file": "thumbnails/ru.jpg"
+        },
+        "en": {
+          "title": "16. Polynomial Approximation. Chebyshev Polynomials (English subtitles)",
+          "metadata_file": "metadata.en.json",
+          "title_file": "title.en.txt",
+          "description_file": "description.en.md",
+          "captions_file": "captions/en.vtt",
+          "thumbnail_file": "thumbnails/en.jpg"
+        }
+      },
+      "tags_file": "tags.json",
+      "notebooks": [
+        {
+          "path": "yt-channel/016-chebyshev.nb",
+          "relationship": "primary"
+        }
+      ],
+      "exact_notebook_source_found": true,
+      "thumbnail_editable_sources": [
+        {
+          "path": "thumbnail-sources/016.ru.key",
+          "kind": "Keynote",
+          "language": "ru"
+        }
+      ],
+      "metadata_source": "YouTube Data API videos.list; actual existing ru/en localizations; fetched 2026-10-19T13:37:26.821577+00:00",
+      "english_thumbnail_method": "Image generation edit of the original, with explicit translation and style preservation",
+      "description_link_status": "prepared; YouTube application tracked separately"
+    },
+    {
+      "number": "008",
+      "video_id": "knsPidrHZDo",
+      "youtube_url": "https://www.youtube.com/watch?v=knsPidrHZDo",
+      "directory": "videos/008-knsPidrHZDo",
+      "locales": {
+        "ru": {
+          "title": "8. От треугольника Паскаля до Дзета-функции (English subtitles)",
+          "metadata_file": "metadata.ru.json",
+          "title_file": "title.ru.txt",
+          "description_file": "description.ru.md",
+          "captions_file": "captions/ru.vtt",
+          "thumbnail_file": "thumbnails/ru.jpg"
+        },
+        "en": {
+          "title": "8. From Pascal's Triangle to Zeta-function (English subtitles)",
+          "metadata_file": "metadata.en.json",
+          "title_file": "title.en.txt",
+          "description_file": "description.en.md",
+          "captions_file": "captions/en.vtt",
+          "thumbnail_file": "thumbnails/en.jpg"
+        }
+      },
+      "tags_file": "tags.json",
+      "notebooks": [
+        {
+          "path": "yt-channel/012-sin-zeta.nb",
+          "relationship": "related_companion_not_exact_video_source"
+        }
+      ],
+      "exact_notebook_source_found": false,
+      "thumbnail_editable_sources": [
+        {
+          "path": "thumbnail-sources/pictures-4.ru.pptx",
+          "slide": 3,
+          "kind": "PowerPoint",
+          "language": "ru"
+        }
+      ],
+      "metadata_source": "YouTube Data API videos.list; actual existing ru/en localizations; fetched 2026-10-19T13:37:26.821577+00:00",
+      "english_thumbnail_method": "Image generation edit of the original, with explicit translation and style preservation",
+      "description_link_status": "prepared; YouTube application tracked separately"
+    },
+    {
+      "number": "002.1",
+      "video_id": "ELpyQEgRlME",
+      "youtube_url": "https://www.youtube.com/watch?v=ELpyQEgRlME",
+      "directory": "videos/002.1-ELpyQEgRlME",
+      "locales": {
+        "ru": {
+          "title": "2. БОНУС 1. Числа Фибоначчи через матрицы (English subtitles)",
+          "metadata_file": "metadata.ru.json",
+          "title_file": "title.ru.txt",
+          "description_file": "description.ru.md",
+          "captions_file": "captions/ru.vtt",
+          "thumbnail_file": "thumbnails/ru.jpg"
+        },
+        "en": {
+          "title": "2. BONUS 1. Fibonacci Numbers through Matrices (English subtitles)",
+          "metadata_file": "metadata.en.json",
+          "title_file": "title.en.txt",
+          "description_file": "description.en.md",
+          "captions_file": "captions/en.vtt",
+          "thumbnail_file": "thumbnails/en.jpg"
+        }
+      },
+      "tags_file": "tags.json",
+      "notebooks": [
+        {
+          "path": "yt-channel/002-fib.nb",
+          "relationship": "primary"
+        }
+      ],
+      "exact_notebook_source_found": true,
+      "thumbnail_editable_sources": [],
+      "metadata_source": "YouTube Data API videos.list; actual existing ru/en localizations; fetched 2026-10-19T13:37:26.821577+00:00",
+      "english_thumbnail_method": "Image generation edit of the original, with explicit translation and style preservation",
+      "description_link_status": "prepared; YouTube application tracked separately"
+    },
+    {
+      "number": "018.1",
+      "video_id": "ohLAFE6Hg3g",
+      "youtube_url": "https://www.youtube.com/watch?v=ohLAFE6Hg3g",
+      "directory": "videos/018.1-ohLAFE6Hg3g",
+      "locales": {
+        "ru": {
+          "title": "18. Первый ноль ζ – функции. Суммы по степеням простых чисел",
+          "metadata_file": "metadata.ru.json",
+          "title_file": "title.ru.txt",
+          "description_file": "description.ru.md",
+          "captions_file": "captions/ru.vtt",
+          "thumbnail_file": "thumbnails/ru.jpg"
+        },
+        "en": {
+          "title": "18. The First Zero of the ζ–function. Sums of Prime Powers (English subtitles)",
+          "metadata_file": "metadata.en.json",
+          "title_file": "title.en.txt",
+          "description_file": "description.en.md",
+          "captions_file": "captions/en.vtt",
+          "thumbnail_file": "thumbnails/en.jpg"
+        }
+      },
+      "tags_file": "tags.json",
+      "notebooks": [
+        {
+          "path": "yt-channel/018-sum_primes.nb",
+          "relationship": "primary"
+        }
+      ],
+      "exact_notebook_source_found": true,
+      "thumbnail_editable_sources": [
+        {
+          "path": "thumbnail-sources/018.1.ru.key",
+          "kind": "Keynote",
+          "language": "ru"
+        }
+      ],
+      "metadata_source": "YouTube Data API videos.list; actual existing ru/en localizations; fetched 2026-10-19T13:37:26.821577+00:00",
+      "english_thumbnail_method": "Image generation edit of the original, with explicit translation and style preservation",
+      "description_link_status": "prepared; YouTube application tracked separately"
+    },
+    {
+      "number": "023",
+      "video_id": "Nl3nYVMnn44",
+      "youtube_url": "https://www.youtube.com/watch?v=Nl3nYVMnn44",
+      "directory": "videos/023-Nl3nYVMnn44",
+      "locales": {
+        "ru": {
+          "title": "23. Geometric Algebra.  Уравнения Максвелла в одну строчку (English Subtitles)",
+          "metadata_file": "metadata.ru.json",
+          "title_file": "title.ru.txt",
+          "description_file": "description.ru.md",
+          "captions_file": "captions/ru.vtt",
+          "thumbnail_file": "thumbnails/ru.jpg"
+        },
+        "en": {
+          "title": "23. Geometric Algebra.  Maxwell equation in one line (English Subtitles)",
+          "metadata_file": "metadata.en.json",
+          "title_file": "title.en.txt",
+          "description_file": "description.en.md",
+          "captions_file": "captions/en.vtt",
+          "thumbnail_file": "thumbnails/en.jpg"
+        }
+      },
+      "tags_file": "tags.json",
+      "notebooks": [
+        {
+          "path": "yt-channel/023-geometric_algebra.nb",
+          "relationship": "primary"
+        },
+        {
+          "path": "yt-channel/GA.nb",
+          "relationship": "primary"
+        }
+      ],
+      "exact_notebook_source_found": true,
+      "thumbnail_editable_sources": [
+        {
+          "path": "thumbnail-sources/023.ru.key",
+          "kind": "Keynote",
+          "language": "ru"
+        }
+      ],
+      "metadata_source": "YouTube Data API videos.list; actual existing ru/en localizations; fetched 2026-10-19T13:37:26.821577+00:00",
+      "english_thumbnail_method": "Image generation edit of the original, with explicit translation and style preservation",
+      "description_link_status": "prepared; YouTube application tracked separately"
+    },
+    {
+      "number": "019.1",
+      "video_id": "XZZqAepfsbI",
+      "youtube_url": "https://www.youtube.com/watch?v=XZZqAepfsbI",
+      "directory": "videos/019.1-XZZqAepfsbI",
+      "locales": {
+        "ru": {
+          "title": "19. Конечные поля. Часть 1 – основные свойства, малая теорема Ферма, символ Лежандра (eng. subs)",
+          "metadata_file": "metadata.ru.json",
+          "title_file": "title.ru.txt",
+          "description_file": "description.ru.md",
+          "captions_file": "captions/ru.vtt",
+          "thumbnail_file": "thumbnails/ru.jpg"
+        },
+        "en": {
+          "title": "19.1. Finite Fields, Fundamental Properties, Fermat's Little Theorem, Legendre Symbol (English sub)",
+          "metadata_file": "metadata.en.json",
+          "title_file": "title.en.txt",
+          "description_file": "description.en.md",
+          "captions_file": "captions/en.vtt",
+          "thumbnail_file": "thumbnails/en.jpg"
+        }
+      },
+      "tags_file": "tags.json",
+      "notebooks": [
+        {
+          "path": "yt-channel/019-finite_fields.nb",
+          "relationship": "primary"
+        }
+      ],
+      "exact_notebook_source_found": true,
+      "thumbnail_editable_sources": [
+        {
+          "path": "thumbnail-sources/019.1.ru.key",
+          "kind": "Keynote",
+          "language": "ru"
+        }
+      ],
+      "metadata_source": "YouTube Data API videos.list; actual existing ru/en localizations; fetched 2026-10-19T13:37:26.821577+00:00",
+      "english_thumbnail_method": "Image generation edit of the original, with explicit translation and style preservation",
+      "description_link_status": "prepared; YouTube application tracked separately"
+    },
+    {
+      "number": "015.1",
+      "video_id": "9hUfPCZF1sA",
+      "youtube_url": "https://www.youtube.com/watch?v=9hUfPCZF1sA",
+      "directory": "videos/015.1-9hUfPCZF1sA",
+      "locales": {
+        "ru": {
+          "title": "15. Формула Эйлера-Маклорена и ζ(z) функция (English subtitles)",
+          "metadata_file": "metadata.ru.json",
+          "title_file": "title.ru.txt",
+          "description_file": "description.ru.md",
+          "captions_file": "captions/ru.vtt",
+          "thumbnail_file": "thumbnails/ru.jpg"
+        },
+        "en": {
+          "title": "15. Euler-Maclaurin formula and the ζ(z) function (English subtitles)",
+          "metadata_file": "metadata.en.json",
+          "title_file": "title.en.txt",
+          "description_file": "description.en.md",
+          "captions_file": "captions/en.vtt",
+          "thumbnail_file": "thumbnails/en.jpg"
+        }
+      },
+      "tags_file": "tags.json",
+      "notebooks": [
+        {
+          "path": "yt-channel/012-sin-zeta.nb",
+          "relationship": "related_companion_not_exact_video_source"
+        }
+      ],
+      "exact_notebook_source_found": false,
+      "thumbnail_editable_sources": [
+        {
+          "path": "thumbnail-sources/pictures-4.ru.pptx",
+          "slide": 8,
+          "kind": "PowerPoint",
+          "language": "ru"
+        }
+      ],
+      "metadata_source": "YouTube Data API videos.list; actual existing ru/en localizations; fetched 2026-10-19T13:37:26.821577+00:00",
+      "english_thumbnail_method": "Image generation edit of the original, with explicit translation and style preservation",
+      "description_link_status": "prepared; YouTube application tracked separately"
+    },
+    {
+      "number": "019.3",
+      "video_id": "udATFsg3BDU",
+      "youtube_url": "https://www.youtube.com/watch?v=udATFsg3BDU",
+      "directory": "videos/019.3-udATFsg3BDU",
+      "locales": {
+        "ru": {
+          "title": "19. Часть 3. Расширения конечных полей. Число неприводимых многочленов (English subtitles)",
+          "metadata_file": "metadata.ru.json",
+          "title_file": "title.ru.txt",
+          "description_file": "description.ru.md",
+          "captions_file": "captions/ru.vtt",
+          "thumbnail_file": "thumbnails/ru.jpg"
+        },
+        "en": {
+          "title": "19. Part 3. Extensions of Finite Fields. Number of Irreducible Polynomials (English subtitles)",
+          "metadata_file": "metadata.en.json",
+          "title_file": "title.en.txt",
+          "description_file": "description.en.md",
+          "captions_file": "captions/en.vtt",
+          "thumbnail_file": "thumbnails/en.jpg"
+        }
+      },
+      "tags_file": "tags.json",
+      "notebooks": [
+        {
+          "path": "yt-channel/019-finite_fields.nb",
+          "relationship": "primary"
+        }
+      ],
+      "exact_notebook_source_found": true,
+      "thumbnail_editable_sources": [
+        {
+          "path": "thumbnail-sources/019.3.ru.key",
+          "kind": "Keynote",
+          "language": "ru"
+        }
+      ],
+      "metadata_source": "YouTube Data API videos.list; actual existing ru/en localizations; fetched 2026-10-19T13:37:26.821577+00:00",
+      "english_thumbnail_method": "Image generation edit of the original, with explicit translation and style preservation",
+      "description_link_status": "prepared; YouTube application tracked separately"
+    },
+    {
+      "number": "021",
+      "video_id": "zNNWmJF46rE",
+      "youtube_url": "https://www.youtube.com/watch?v=zNNWmJF46rE",
+      "directory": "videos/021-zNNWmJF46rE",
+      "locales": {
+        "ru": {
+          "title": "21. Числа Каталана. Тестируем страсть к программированию (English subtitles)",
+          "metadata_file": "metadata.ru.json",
+          "title_file": "title.ru.txt",
+          "description_file": "description.ru.md",
+          "captions_file": "captions/ru.vtt",
+          "thumbnail_file": "thumbnails/ru.jpg"
+        },
+        "en": {
+          "title": "21. Catalan Numbers. Testing the Passion for Programming (English subtitles)",
+          "metadata_file": "metadata.en.json",
+          "title_file": "title.en.txt",
+          "description_file": "description.en.md",
+          "captions_file": "captions/en.vtt",
+          "thumbnail_file": "thumbnails/en.jpg"
+        }
+      },
+      "tags_file": "tags.json",
+      "notebooks": [
+        {
+          "path": "yt-channel/021-catalan_numbers.nb",
+          "relationship": "primary"
+        }
+      ],
+      "exact_notebook_source_found": true,
+      "thumbnail_editable_sources": [
+        {
+          "path": "thumbnail-sources/021.ru.key",
+          "kind": "Keynote",
+          "language": "ru"
+        }
+      ],
+      "metadata_source": "YouTube Data API videos.list; actual existing ru/en localizations; fetched 2026-10-19T13:37:26.821577+00:00",
+      "english_thumbnail_method": "Image generation edit of the original, with explicit translation and style preservation",
+      "description_link_status": "prepared; YouTube application tracked separately"
+    },
+    {
+      "number": "022",
+      "video_id": "VeLbvkEJrn0",
+      "youtube_url": "https://www.youtube.com/watch?v=VeLbvkEJrn0",
+      "directory": "videos/022-VeLbvkEJrn0",
+      "locales": {
+        "ru": {
+          "title": "22.  Распределение простых чисел и числа Каталана. Неравенства Чёбышева (English subtitles)",
+          "metadata_file": "metadata.ru.json",
+          "title_file": "title.ru.txt",
+          "description_file": "description.ru.md",
+          "captions_file": "captions/ru.vtt",
+          "thumbnail_file": "thumbnails/ru.jpg"
+        },
+        "en": {
+          "title": "22.  Distribution of Prime Numbers and Catalan Numbers. Chebyshev's Inequalities (English subtitles)",
+          "metadata_file": "metadata.en.json",
+          "title_file": "title.en.txt",
+          "description_file": "description.en.md",
+          "captions_file": "captions/en.vtt",
+          "thumbnail_file": "thumbnails/en.jpg"
+        }
+      },
+      "tags_file": "tags.json",
+      "notebooks": [
+        {
+          "path": "yt-channel/022-catalan_chebychev.nb",
+          "relationship": "primary"
+        }
+      ],
+      "exact_notebook_source_found": true,
+      "thumbnail_editable_sources": [
+        {
+          "path": "thumbnail-sources/022.ru.key",
+          "kind": "Keynote",
+          "language": "ru"
+        }
+      ],
+      "metadata_source": "YouTube Data API videos.list; actual existing ru/en localizations; fetched 2026-10-19T13:37:26.821577+00:00",
+      "english_thumbnail_method": "Image generation edit of the original, with explicit translation and style preservation",
+      "description_link_status": "prepared; YouTube application tracked separately"
+    },
+    {
+      "number": "002",
+      "video_id": "27JhblBozNk",
+      "youtube_url": "https://www.youtube.com/watch?v=27JhblBozNk",
+      "directory": "videos/002-27JhblBozNk",
+      "locales": {
+        "ru": {
+          "title": "2: Числа Фибоначчи. Нельзя объять необъятное (English subtitles)",
+          "metadata_file": "metadata.ru.json",
+          "title_file": "title.ru.txt",
+          "description_file": "description.ru.md",
+          "captions_file": "captions/ru.vtt",
+          "thumbnail_file": "thumbnails/ru.jpg"
+        },
+        "en": {
+          "title": "2. Fibonacci Numbers (English subtitles)",
+          "metadata_file": "metadata.en.json",
+          "title_file": "title.en.txt",
+          "description_file": "description.en.md",
+          "captions_file": "captions/en.vtt",
+          "thumbnail_file": "thumbnails/en.jpg"
+        }
+      },
+      "tags_file": "tags.json",
+      "notebooks": [
+        {
+          "path": "yt-channel/002-fib.nb",
+          "relationship": "primary"
+        }
+      ],
+      "exact_notebook_source_found": true,
+      "thumbnail_editable_sources": [],
+      "metadata_source": "YouTube Data API videos.list; actual existing ru/en localizations; fetched 2026-10-19T13:37:26.821577+00:00",
+      "english_thumbnail_method": "Image generation edit of the original, with explicit translation and style preservation",
+      "description_link_status": "prepared; YouTube application tracked separately"
+    },
+    {
+      "number": "002.2",
+      "video_id": "tG8PWeDY_0g",
+      "youtube_url": "https://www.youtube.com/watch?v=tG8PWeDY_0g",
+      "directory": "videos/002.2-tG8PWeDY_0g",
+      "locales": {
+        "ru": {
+          "title": "2. Бонус 2. Комплексные числа и преобразования плоскости. Красота – страшная сила (English subs)",
+          "metadata_file": "metadata.ru.json",
+          "title_file": "title.ru.txt",
+          "description_file": "description.ru.md",
+          "captions_file": "captions/ru.vtt",
+          "thumbnail_file": "thumbnails/ru.jpg"
+        },
+        "en": {
+          "title": "2: BONUS 2. Complex Numbers and Plane Transformations. Beauty rules (English subtitles)",
+          "metadata_file": "metadata.en.json",
+          "title_file": "title.en.txt",
+          "description_file": "description.en.md",
+          "captions_file": "captions/en.vtt",
+          "thumbnail_file": "thumbnails/en.jpg"
+        }
+      },
+      "tags_file": "tags.json",
+      "notebooks": [
+        {
+          "path": "yt-channel/002-fib.nb",
+          "relationship": "primary"
+        }
+      ],
+      "exact_notebook_source_found": true,
+      "thumbnail_editable_sources": [],
+      "metadata_source": "YouTube Data API videos.list; actual existing ru/en localizations; fetched 2026-10-19T13:37:26.821577+00:00",
+      "english_thumbnail_method": "Image generation edit of the original, with explicit translation and style preservation",
+      "description_link_status": "prepared; YouTube application tracked separately"
+    },
+    {
+      "number": "006",
+      "video_id": "dB6OrpgN78s",
+      "youtube_url": "https://www.youtube.com/watch?v=dB6OrpgN78s",
+      "directory": "videos/006-dB6OrpgN78s",
+      "locales": {
+        "ru": {
+          "title": "6. \"Положительные\" числа в модульной арифметике. Символ Якоби. Квадратичное расширение (eng. subs.)",
+          "metadata_file": "metadata.ru.json",
+          "title_file": "title.ru.txt",
+          "description_file": "description.ru.md",
+          "captions_file": "captions/ru.vtt",
+          "thumbnail_file": "thumbnails/ru.jpg"
+        },
+        "en": {
+          "title": "6. \"Positive\" numbers in modular arithmetic. Jacobi symbol. Quadratic extension (English subtitles)",
+          "metadata_file": "metadata.en.json",
+          "title_file": "title.en.txt",
+          "description_file": "description.en.md",
+          "captions_file": "captions/en.vtt",
+          "thumbnail_file": "thumbnails/en.jpg"
+        }
+      },
+      "tags_file": "tags.json",
+      "notebooks": [
+        {
+          "path": "yt-channel/005-legendre.nb",
+          "relationship": "related_companion_not_exact_video_source"
+        }
+      ],
+      "exact_notebook_source_found": false,
+      "thumbnail_editable_sources": [],
+      "metadata_source": "YouTube Data API videos.list; actual existing ru/en localizations; fetched 2026-10-19T13:37:26.821577+00:00",
+      "english_thumbnail_method": "Image generation edit of the original, with explicit translation and style preservation",
+      "description_link_status": "prepared; YouTube application tracked separately"
+    },
+    {
+      "number": "005",
+      "video_id": "UCnFfPdVKhU",
+      "youtube_url": "https://www.youtube.com/watch?v=UCnFfPdVKhU",
+      "directory": "videos/005-UCnFfPdVKhU",
+      "locales": {
+        "ru": {
+          "title": "5. Символ Лежандра и чётность перестановок (English subtitles)",
+          "metadata_file": "metadata.ru.json",
+          "title_file": "title.ru.txt",
+          "description_file": "description.ru.md",
+          "captions_file": "captions/ru.vtt",
+          "thumbnail_file": "thumbnails/ru.jpg"
+        },
+        "en": {
+          "title": "5. Legendre Symbol and parity of permutation (English subtitles)",
+          "metadata_file": "metadata.en.json",
+          "title_file": "title.en.txt",
+          "description_file": "description.en.md",
+          "captions_file": "captions/en.vtt",
+          "thumbnail_file": "thumbnails/en.jpg"
+        }
+      },
+      "tags_file": "tags.json",
+      "notebooks": [
+        {
+          "path": "yt-channel/005-legendre.nb",
+          "relationship": "primary"
+        }
+      ],
+      "exact_notebook_source_found": true,
+      "thumbnail_editable_sources": [],
+      "metadata_source": "YouTube Data API videos.list; actual existing ru/en localizations; fetched 2026-10-19T13:37:26.821577+00:00",
+      "english_thumbnail_method": "Image generation edit of the original, with explicit translation and style preservation",
+      "description_link_status": "prepared; YouTube application tracked separately"
+    },
+    {
+      "number": "003.1",
+      "video_id": "HSlG4S5G3r8",
+      "youtube_url": "https://www.youtube.com/watch?v=HSlG4S5G3r8",
+      "directory": "videos/003.1-HSlG4S5G3r8",
+      "locales": {
+        "ru": {
+          "title": "3:  Картинки про умножение. Умножение \"по модулю\" (English subtitles)",
+          "metadata_file": "metadata.ru.json",
+          "title_file": "title.ru.txt",
+          "description_file": "description.ru.md",
+          "captions_file": "captions/ru.vtt",
+          "thumbnail_file": "thumbnails/ru.jpg"
+        },
+        "en": {
+          "title": "3: Multiplication visualisations. Modular arithmetic (English subtitles)",
+          "metadata_file": "metadata.en.json",
+          "title_file": "title.en.txt",
+          "description_file": "description.en.md",
+          "captions_file": "captions/en.vtt",
+          "thumbnail_file": "thumbnails/en.jpg"
+        }
+      },
+      "tags_file": "tags.json",
+      "notebooks": [
+        {
+          "path": "yt-channel/003-mod.nb",
+          "relationship": "primary"
+        },
+        {
+          "path": "yt-channel/004-mod_inv.nb",
+          "relationship": "primary"
+        }
+      ],
+      "exact_notebook_source_found": true,
+      "thumbnail_editable_sources": [],
+      "metadata_source": "YouTube Data API videos.list; actual existing ru/en localizations; fetched 2026-10-19T13:37:26.821577+00:00",
+      "english_thumbnail_method": "Image generation edit of the original, with explicit translation and style preservation",
+      "description_link_status": "prepared; YouTube application tracked separately"
+    },
+    {
+      "number": "009",
+      "video_id": "Mc1wxCzegdg",
+      "youtube_url": "https://www.youtube.com/watch?v=Mc1wxCzegdg",
+      "directory": "videos/009-Mc1wxCzegdg",
+      "locales": {
+        "ru": {
+          "title": "9. Формула суммы корней √ 1 + √ 2 + √ 3 + ... Дзета функция в дробных точках (English subtitles)",
+          "metadata_file": "metadata.ru.json",
+          "title_file": "title.ru.txt",
+          "description_file": "description.ru.md",
+          "captions_file": "captions/ru.vtt",
+          "thumbnail_file": "thumbnails/ru.jpg"
+        },
+        "en": {
+          "title": "9. The formula for the sum of roots √ 1 + √ 2 + √ 3 + ... Zeta function at fractional points",
+          "metadata_file": "metadata.en.json",
+          "title_file": "title.en.txt",
+          "description_file": "description.en.md",
+          "captions_file": "captions/en.vtt",
+          "thumbnail_file": "thumbnails/en.jpg"
+        }
+      },
+      "tags_file": "tags.json",
+      "notebooks": [
+        {
+          "path": "yt-channel/012-sin-zeta.nb",
+          "relationship": "related_companion_not_exact_video_source"
+        }
+      ],
+      "exact_notebook_source_found": false,
+      "thumbnail_editable_sources": [
+        {
+          "path": "thumbnail-sources/pictures-4.ru.pptx",
+          "slide": 4,
+          "kind": "PowerPoint",
+          "language": "ru"
+        }
+      ],
+      "metadata_source": "YouTube Data API videos.list; actual existing ru/en localizations; fetched 2026-10-19T13:37:26.821577+00:00",
+      "english_thumbnail_method": "Image generation edit of the original, with explicit translation and style preservation",
+      "description_link_status": "prepared; YouTube application tracked separately"
+    },
+    {
+      "number": "019.2",
+      "video_id": "5LbcZXEbPZo",
+      "youtube_url": "https://www.youtube.com/watch?v=5LbcZXEbPZo",
+      "directory": "videos/019.2-5LbcZXEbPZo",
+      "locales": {
+        "ru": {
+          "title": "19. Часть 2. ML в теории чисел? Открываем квадратичный закон взаимности.",
+          "metadata_file": "metadata.ru.json",
+          "title_file": "title.ru.txt",
+          "description_file": "description.ru.md",
+          "captions_file": "captions/ru.vtt",
+          "thumbnail_file": "thumbnails/ru.jpg"
+        },
+        "en": {
+          "title": "Part 2. Machine Learning in Number Theory? The Quadratic Reciprocity Law (English subtitles)",
+          "metadata_file": "metadata.en.json",
+          "title_file": "title.en.txt",
+          "description_file": "description.en.md",
+          "captions_file": "captions/en.vtt",
+          "thumbnail_file": "thumbnails/en.jpg"
+        }
+      },
+      "tags_file": "tags.json",
+      "notebooks": [
+        {
+          "path": "yt-channel/019.1-finite_fields_qreciprocity.nb",
+          "relationship": "primary"
+        },
+        {
+          "path": "yt-channel/019-finite_fields.nb",
+          "relationship": "primary"
+        }
+      ],
+      "exact_notebook_source_found": true,
+      "thumbnail_editable_sources": [
+        {
+          "path": "thumbnail-sources/019.2.ru.key",
+          "kind": "Keynote",
+          "language": "ru"
+        }
+      ],
+      "metadata_source": "YouTube Data API videos.list; actual existing ru/en localizations; fetched 2026-10-19T13:37:26.821577+00:00",
+      "english_thumbnail_method": "Image generation edit of the original, with explicit translation and style preservation",
+      "description_link_status": "prepared; YouTube application tracked separately"
+    },
+    {
+      "number": "012",
+      "video_id": "O5yT6DGvcZI",
+      "youtube_url": "https://www.youtube.com/watch?v=O5yT6DGvcZI",
+      "directory": "videos/012-O5yT6DGvcZI",
+      "locales": {
+        "ru": {
+          "title": "12. От sin(x) до значений дзета функции ζ(-1), ζ(-2), ... (часть 1)",
+          "metadata_file": "metadata.ru.json",
+          "title_file": "title.ru.txt",
+          "description_file": "description.ru.md",
+          "captions_file": "captions/ru.vtt",
+          "thumbnail_file": "thumbnails/ru.jpg"
+        },
+        "en": {
+          "title": "12. From sin(x) to the values of the zeta function ζ(-1), ζ(-2), ... (English subtitles)",
+          "metadata_file": "metadata.en.json",
+          "title_file": "title.en.txt",
+          "description_file": "description.en.md",
+          "captions_file": "captions/en.vtt",
+          "thumbnail_file": "thumbnails/en.jpg"
+        }
+      },
+      "tags_file": "tags.json",
+      "notebooks": [
+        {
+          "path": "yt-channel/012-sin-zeta.nb",
+          "relationship": "primary"
+        }
+      ],
+      "exact_notebook_source_found": true,
+      "thumbnail_editable_sources": [
+        {
+          "path": "thumbnail-sources/pictures-4.ru.pptx",
+          "slide": 5,
+          "kind": "PowerPoint",
+          "language": "ru"
+        }
+      ],
+      "metadata_source": "YouTube Data API videos.list; actual existing ru/en localizations; fetched 2026-10-19T13:37:26.821577+00:00",
+      "english_thumbnail_method": "Image generation edit of the original, with explicit translation and style preservation",
+      "description_link_status": "prepared; YouTube application tracked separately"
+    }
+  ]
+}

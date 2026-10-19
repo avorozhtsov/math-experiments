@@ -1,0 +1,23 @@
+{
+  "scope": "YouTube tags are video-wide, not independently localized. This list is the exact current global tag list.",
+  "tags": [
+    "wolfram mathematica",
+    "geometric algebra",
+    "clifford algebra",
+    "maxwell's equations",
+    "геометрическое произведение",
+    "алгебра клиффорда",
+    "exterior aglebra"
+  ],
+  "ru_or_mixed": [
+    "геометрическое произведение",
+    "алгебра клиффорда"
+  ],
+  "en_or_language_neutral": [
+    "wolfram mathematica",
+    "geometric algebra",
+    "clifford algebra",
+    "maxwell's equations",
+    "exterior aglebra"
+  ]
+}

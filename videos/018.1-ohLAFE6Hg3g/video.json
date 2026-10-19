@@ -1,0 +1,42 @@
+{
+  "number": "018.1",
+  "video_id": "ohLAFE6Hg3g",
+  "youtube_url": "https://www.youtube.com/watch?v=ohLAFE6Hg3g",
+  "directory": "videos/018.1-ohLAFE6Hg3g",
+  "locales": {
+    "ru": {
+      "title": "18. Первый ноль ζ – функции. Суммы по степеням простых чисел",
+      "metadata_file": "metadata.ru.json",
+      "title_file": "title.ru.txt",
+      "description_file": "description.ru.md",
+      "captions_file": "captions/ru.vtt",
+      "thumbnail_file": "thumbnails/ru.jpg"
+    },
+    "en": {
+      "title": "18. The First Zero of the ζ–function. Sums of Prime Powers (English subtitles)",
+      "metadata_file": "metadata.en.json",
+      "title_file": "title.en.txt",
+      "description_file": "description.en.md",
+      "captions_file": "captions/en.vtt",
+      "thumbnail_file": "thumbnails/en.jpg"
+    }
+  },
+  "tags_file": "tags.json",
+  "notebooks": [
+    {
+      "path": "yt-channel/018-sum_primes.nb",
+      "relationship": "primary"
+    }
+  ],
+  "exact_notebook_source_found": true,
+  "thumbnail_editable_sources": [
+    {
+      "path": "thumbnail-sources/018.1.ru.key",
+      "kind": "Keynote",
+      "language": "ru"
+    }
+  ],
+  "metadata_source": "YouTube Data API videos.list; actual existing ru/en localizations; fetched 2026-10-19T13:37:26.821577+00:00",
+  "english_thumbnail_method": "Image generation edit of the original, with explicit translation and style preservation",
+  "description_link_status": "prepared; YouTube application tracked separately"
+}

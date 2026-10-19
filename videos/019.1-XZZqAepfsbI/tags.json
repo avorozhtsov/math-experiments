@@ -1,0 +1,21 @@
+{
+  "scope": "YouTube tags are video-wide, not independently localized. This list is the exact current global tag list.",
+  "tags": [
+    "wolfram mathematica",
+    "finite fields",
+    "modular arithmetics",
+    "legendre symbol",
+    "fermat theorem",
+    "теорема ферма"
+  ],
+  "ru_or_mixed": [
+    "теорема ферма"
+  ],
+  "en_or_language_neutral": [
+    "wolfram mathematica",
+    "finite fields",
+    "modular arithmetics",
+    "legendre symbol",
+    "fermat theorem"
+  ]
+}

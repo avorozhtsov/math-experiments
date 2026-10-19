@@ -1,0 +1,15 @@
+{
+  "scope": "YouTube tags are video-wide, not independently localized. This list is the exact current global tag list.",
+  "tags": [
+    "Wolfram Mathematica",
+    "математика",
+    "числа фибоначчи"
+  ],
+  "ru_or_mixed": [
+    "математика",
+    "числа фибоначчи"
+  ],
+  "en_or_language_neutral": [
+    "Wolfram Mathematica"
+  ]
+}

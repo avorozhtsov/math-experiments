@@ -1,0 +1,36 @@
+{
+  "number": "006",
+  "video_id": "dB6OrpgN78s",
+  "youtube_url": "https://www.youtube.com/watch?v=dB6OrpgN78s",
+  "directory": "videos/006-dB6OrpgN78s",
+  "locales": {
+    "ru": {
+      "title": "6. \"Положительные\" числа в модульной арифметике. Символ Якоби. Квадратичное расширение (eng. subs.)",
+      "metadata_file": "metadata.ru.json",
+      "title_file": "title.ru.txt",
+      "description_file": "description.ru.md",
+      "captions_file": "captions/ru.vtt",
+      "thumbnail_file": "thumbnails/ru.jpg"
+    },
+    "en": {
+      "title": "6. \"Positive\" numbers in modular arithmetic. Jacobi symbol. Quadratic extension (English subtitles)",
+      "metadata_file": "metadata.en.json",
+      "title_file": "title.en.txt",
+      "description_file": "description.en.md",
+      "captions_file": "captions/en.vtt",
+      "thumbnail_file": "thumbnails/en.jpg"
+    }
+  },
+  "tags_file": "tags.json",
+  "notebooks": [
+    {
+      "path": "yt-channel/005-legendre.nb",
+      "relationship": "related_companion_not_exact_video_source"
+    }
+  ],
+  "exact_notebook_source_found": false,
+  "thumbnail_editable_sources": [],
+  "metadata_source": "YouTube Data API videos.list; actual existing ru/en localizations; fetched 2026-10-19T13:37:26.821577+00:00",
+  "english_thumbnail_method": "Image generation edit of the original, with explicit translation and style preservation",
+  "description_link_status": "prepared; YouTube application tracked separately"
+}

@@ -1,0 +1,19 @@
+{
+  "scope": "YouTube tags are video-wide, not independently localized. This list is the exact current global tag list.",
+  "tags": [
+    "wolfram mathematica",
+    "математика",
+    "комплексные числа",
+    "complex number",
+    "inversion transform"
+  ],
+  "ru_or_mixed": [
+    "математика",
+    "комплексные числа"
+  ],
+  "en_or_language_neutral": [
+    "wolfram mathematica",
+    "complex number",
+    "inversion transform"
+  ]
+}

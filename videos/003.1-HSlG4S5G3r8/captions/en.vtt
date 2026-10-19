@@ -1,0 +1,1149 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:01.033 --> 00:00:02.026
+Hello!
+
+00:00:02.026 --> 00:00:04.220
+This is the "Mathematical Experiments" podcast.
+
+00:00:04.220 --> 00:00:06.569
+Today we will experiment with multiplication.
+
+00:00:06.569 --> 00:00:08.436
+We'll draw these beautiful pictures.
+
+00:00:08.436 --> 00:00:12.398
+This picture is the multiplication table of 141 x 141.
+
+00:00:12.398 --> 00:00:13.709
+This is multiplication by 2.
+
+00:00:13.709 --> 00:00:15.126
+This is multiplication by 3.
+
+00:00:15.126 --> 00:00:16.251
+By 6.
+
+00:00:16.251 --> 00:00:18.128
+This is some other number.
+
+00:00:18.128 --> 00:00:20.469
+And this seems to be multiplication by -2.
+
+00:00:21.583 --> 00:00:25.877
+Let me explain how we got this picture.
+
+00:00:25.877 --> 00:00:28.388
+Take n points on a circle.
+
+00:00:28.388 --> 00:00:30.837
+Here, I took 41 points.
+
+00:00:30.837 --> 00:00:35.024
+Let's number them 0, 1, 2, 3, 4, and so on.
+
+00:00:35.024 --> 00:00:37.876
+Let's do a simple action:
+
+00:00:37.876 --> 00:00:39.425
+connect 1 with 3,
+
+00:00:39.425 --> 00:00:41.636
+2 with 6.
+
+00:00:41.636 --> 00:00:45.545
+And let's connect point "x" with point "3x".
+
+00:00:45.545 --> 00:00:47.545
+3 connects with 9,
+
+00:00:47.545 --> 00:00:49.636
+4 with 12,
+
+00:00:49.636 --> 00:00:52.034
+5 with 15, and so on.
+
+00:00:52.034 --> 00:00:54.871
+12 connects with the number 36,
+
+00:00:54.871 --> 00:00:57.428
+13 with the number 39,
+
+00:00:57.428 --> 00:01:01.390
+and we need to connect 14 with the number 42,
+
+00:01:01.390 --> 00:01:04.106
+but there is no number 42 here.
+
+00:01:04.106 --> 00:01:09.950
+You probably guessed it. We need to take the number 1 because 42 locates in the number 1.
+
+00:01:09.950 --> 00:01:11.138
+We are kind of numbering further
+
+00:01:11.138 --> 00:01:12.000
+40,
+
+00:01:12.000 --> 00:01:19.012
+41, 42, 43, 44, 45, 46, and so on around the circle.
+
+00:01:19.012 --> 00:01:23.584
+Think that all natural numbers locate on this circle.
+
+00:01:23.584 --> 00:01:30.922
+This picture is different from the one on the right because it has 141 instead of 41.
+
+00:01:32.062 --> 00:01:34.666
+Now things get interesting.
+
+00:01:34.666 --> 00:01:38.443
+If you've seen the pictures above somewhere before,
+
+00:01:38.443 --> 00:01:41.557
+you're likely seeing these pictures for the first time.
+
+00:01:41.557 --> 00:01:46.260
+Okay... Let me try to explain in detail how to get these pictures.
+
+00:01:46.260 --> 00:01:50.611
+Let's draw them and take a look.
+
+00:01:50.611 --> 00:01:52.232
+Here's a big mouse.
+
+00:01:52.232 --> 00:01:54.000
+Here's a weirdo.
+
+00:01:54.000 --> 00:01:55.708
+Here's a star.
+
+00:01:55.708 --> 00:01:57.230
+And here's an eared one.
+
+00:01:57.230 --> 00:02:00.344
+It's some kind of coat of arms pattern.
+
+00:02:00.344 --> 00:02:01.923
+They are obtained in a similar way,
+
+00:02:01.923 --> 00:02:09.438
+only we connect not "x" and "3x", but two points x and y such that their product is 1.
+
+00:02:09.438 --> 00:02:15.597
+Let's do it. 3 * 14 = 42, and 42 locates in unity.
+
+00:02:15.597 --> 00:02:20.274
+2 * 21 also gives 42 and so on.
+
+00:02:20.274 --> 00:02:28.452
+Here all the segments are connected with pairs of x and y such that their product is 1.
+
+00:02:28.452 --> 00:02:31.721
+And here the same thing is done for the number 70,
+
+00:02:31.721 --> 00:02:39.686
+when we put 70 points on a circle and connect pairs whose product locates in the point 1.
+
+00:02:41.542 --> 00:02:45.103
+Here we have some unusual "whiskers"... let me explain.
+
+00:02:45.103 --> 00:02:48.705
+Some pairs of x and y consist of the same number x, that is x, x.
+
+00:02:48.705 --> 00:02:52.716
+For example, 1.
+1*1 equals 1.
+
+00:02:52.716 --> 00:03:00.693
+Here, 40 * 40 also equals 1, because it's like -1 * -1.
+
+00:03:03.424 --> 00:03:04.559
+Moving on.
+
+00:03:04.559 --> 00:03:08.817
+So we got these segments that connect inverse elements.
+
+00:03:08.817 --> 00:03:10.260
+What do we do next?
+
+00:03:10.260 --> 00:03:18.252
+Next, we simply move along the circle and take these segments as they appear.
+
+00:03:18.252 --> 00:03:21.869
+First, we take the segment that connects 2 and 21.
+
+00:03:21.869 --> 00:03:23.710
+This segment is here.
+
+00:03:23.710 --> 00:03:26.958
+Then we take the segment that connects 3 and 14.
+
+00:03:26.958 --> 00:03:27.746
+This segment is here.
+
+00:03:27.746 --> 00:03:29.534
+It's like very reduced here.
+
+00:03:29.534 --> 00:03:33.072
+Here it's big, and here it's small.
+
+00:03:34.345 --> 00:03:37.856
+Then we come to the number 4.
+
+00:03:37.856 --> 00:03:40.636
+From 4, the segment goes to 31.
+
+00:03:40.636 --> 00:03:41.666
+This segment here.
+
+00:03:41.666 --> 00:03:42.744
+And so on.
+
+00:03:42.744 --> 00:03:44.867
+So we move along the circle,
+
+00:03:44.867 --> 00:03:47.727
+encounter the end of the segment and draw it,
+
+00:03:47.727 --> 00:03:50.257
+starting from the point where we are at the moment.
+
+00:03:50.959 --> 00:03:55.372
+As a result, we get this closed curve.
+
+00:03:55.372 --> 00:03:57.293
+A closed broken line.
+
+00:03:57.293 --> 00:03:59.552
+Why is it closed?
+
+00:03:59.552 --> 00:04:00.347
+It's very simple here.
+
+00:04:00.347 --> 00:04:04.495
+We take each segment twice, first in one direction, then in the other.
+
+00:04:04.495 --> 00:04:08.245
+And that's why in the end we will end up in the same point where we started.
+
+00:04:09.147 --> 00:04:11.796
+Well, here... look.
+
+00:04:11.796 --> 00:04:14.512
+First comes this segment.
+
+00:04:14.512 --> 00:04:15.982
+Here it is.
+
+00:04:15.982 --> 00:04:18.168
+Then this segment.
+
+00:04:18.168 --> 00:04:20.168
+Here it is.
+
+00:04:20.168 --> 00:04:25.581
+The next segment from 11 to some number (not visible here).
+
+00:04:25.581 --> 00:04:26.971
+Here it is.
+
+00:04:26.971 --> 00:04:28.766
+And so on.
+
+00:04:32.186 --> 00:04:35.274
+And here is the image for the number 213.
+
+00:04:36.547 --> 00:04:39.646
+Next, I want to show the code that can generate all of this.
+
+00:04:39.646 --> 00:04:42.680
+You can quickly look through it without stopping,
+
+00:04:42.680 --> 00:04:47.332
+and then, if desired, go back and meditate on individual pieces of code.
+
+00:04:48.419 --> 00:04:50.419
+This is how you can draw a circle.
+
+00:04:50.419 --> 00:04:54.911
+If desired, you can specify the center and radius of the circle.
+
+00:04:54.911 --> 00:04:57.598
+By default, it has the value [{0, 0}, 1].
+
+00:04:58.553 --> 00:05:01.456
+I draw the points using the ListPlot function,
+
+00:05:01.456 --> 00:05:03.907
+and the coordinate pairs using the Table function.
+
+00:05:03.907 --> 00:05:07.321
+And a pair of coordinates on the circle is the cosine and sine.
+
+00:05:07.321 --> 00:05:10.090
+In fact, this is the definition of the cosine and sine functions.
+
+00:05:10.090 --> 00:05:13.409
+These are the coordinates of a point on the circle,
+
+00:05:13.409 --> 00:05:19.598
+where φ is the length of the rope that we tied to the point on the far right.
+
+00:05:19.598 --> 00:05:21.598
+We stretched this rope along the circle.
+
+00:05:21.598 --> 00:05:29.894
+We stopped when the rope ran out, and looked at the coordinates of the points - these are the coordinates of cos(φ) and sin(φ).
+
+00:05:29.894 --> 00:05:36.000
+Here below is a visualization of this idea using ParametricPlot.
+
+00:05:36.000 --> 00:05:41.182
+The length of the rope is controlled by a slider here.
+
+00:05:41.182 --> 00:05:47.026
+For clarity, the radius is constantly slightly increasing.
+
+00:05:47.026 --> 00:05:49.544
+And we see individual coils.
+
+00:05:49.544 --> 00:05:54.000
+But in reality, imagine that the rope is infinitely thin and is wound directly on the circle.
+
+00:05:55.352 --> 00:05:58.308
+The next point...
+
+00:05:58.308 --> 00:06:03.516
+Well, this is also a visualization of how points gradually appear as we move the slider.
+
+00:06:03.516 --> 00:06:08.256
+If desired, you can put labels on each point.
+
+00:06:08.256 --> 00:06:12.496
+This is done using the Labeled function.
+
+00:06:12.496 --> 00:06:17.307
+So we're gradually moving forward...
+
+00:06:19.746 --> 00:06:22.495
+Here's a trick, like this.
+
+00:06:22.495 --> 00:06:27.226
+If you remove it, you get the following picture...
+
+00:06:28.499 --> 00:06:32.077
+We'll keep moving, moving...
+
+00:06:33.588 --> 00:06:38.796
+And on the second loop, new labels won't appear, but old ones will disappear.
+
+00:06:38.796 --> 00:06:44.959
+The thing is, points are drawn on top of each other and it doesn't know which label to draw.
+
+00:06:44.959 --> 00:06:51.590
+To prevent this, we slightly change the coordinates of the points that belong to the second loop.
+
+00:06:51.590 --> 00:06:55.075
+And it turns out well.
+
+00:06:58.045 --> 00:07:02.322
+It somehow chooses the location of these labels in a less than ideal way.
+
+00:07:02.322 --> 00:07:06.608
+The Mod function is responsible for calculating the remainder of division in Mathematica.
+
+00:07:06.608 --> 00:07:10.676
+Mod[m, n] gives the remainder of dividing m by n.
+
+00:07:10.676 --> 00:07:13.578
+Let's take a look at these remainders.
+
+00:07:18.817 --> 00:07:21.378
+The remainder of dividing 17 by 5.
+
+00:07:21.378 --> 00:07:28.655
+It's like finding the nearest number that is divisible by 5 (which is 15) and seeing how much needs to be added to 15 to get 17.
+
+00:07:28.655 --> 00:07:31.555
+2. Answer: 2.
+
+00:07:31.555 --> 00:07:36.000
+When you want to see what the remainder of dividing the product of two numbers is,
+
+00:07:36.000 --> 00:07:37.814
+you can do this trick,
+
+00:07:37.814 --> 00:07:44.834
+instead of the original (larger) numbers, take the remainders of division and multiply the remainders themselves.
+
+00:07:44.834 --> 00:07:49.102
+They are usually smaller and therefore require less computation.
+
+00:07:49.102 --> 00:07:50.851
+The same answer will be obtained.
+
+00:07:50.851 --> 00:07:58.790
+So instead of the actual numbers, we could take their remainders when divided by 5.
+
+00:07:58.790 --> 00:08:06.631
+This is especially clear when you act in modular arithmetic modulo 1000 or 100.
+
+00:08:06.631 --> 00:08:12.249
+The thing is, the remainder of division by 100 is the last two digits of the decimal representation.
+
+00:08:12.249 --> 00:08:15.014
+1000 is the last three digits.
+
+00:08:15.014 --> 00:08:20.706
+And most people know that to find the last three digits of a product,
+
+00:08:20.706 --> 00:08:25.554
+you just need to take the last three digits of each number and multiply them.
+
+00:08:25.554 --> 00:08:27.804
+Here are two large numbers.
+
+00:08:27.804 --> 00:08:31.008
+We multiplied them and took the remainder of division by 1000.
+
+00:08:31.008 --> 00:08:35.010
+Then we multiplied the remainders of division by 1000.
+
+00:08:35.010 --> 00:08:38.981
+And took the remainder of division of the product of remainders.
+
+00:08:38.981 --> 00:08:43.046
+All four expressions end in 236.
+
+00:08:43.046 --> 00:08:46.704
+Let's write this out in words.
+
+00:08:46.704 --> 00:08:51.498
+Big numbers a and b, small numbers as, bs.
+
+00:08:51.498 --> 00:08:56.221
+The remainder of division of the product of big numbers is equal to the remainder of the product of small numbers.
+
+00:08:56.221 --> 00:08:59.130
+This is how you can write it.
+
+00:08:59.130 --> 00:09:00.348
+Well... clear.
+
+00:09:00.348 --> 00:09:03.099
+Here it took specific values of a, b, and p.
+
+00:09:03.099 --> 00:09:07.070
+So what it wrote as True is not that interesting.
+
+00:09:07.070 --> 00:09:08.933
+This is true for specific three numbers.
+
+00:09:08.933 --> 00:09:10.933
+But is it true in general?
+
+00:09:10.933 --> 00:09:13.402
+You can also ask such questions in Mathematica.
+
+00:09:13.402 --> 00:09:16.810
+To do this, you need to use the Reduce function.
+
+00:09:17.874 --> 00:09:21.689
+Reduce takes an expression as its first argument,
+
+00:09:21.689 --> 00:09:23.001
+then you need to specify the variables,
+
+00:09:23.001 --> 00:09:28.068
+for which you want to simplify this expression,
+
+00:09:28.068 --> 00:09:32.509
+and specify the range of numbers in which you act.
+
+00:09:32.509 --> 00:09:36.315
+I wrote Integers here, which means a and b are integers.
+
+00:09:36.315 --> 00:09:39.222
+And it gave me this answer:
+
+00:09:39.222 --> 00:09:42.442
+both a and b belong to integers.
+
+00:09:42.442 --> 00:09:45.149
+This letter "Z" means integers.
+
+00:09:45.149 --> 00:09:47.525
+This symbol is read as "belongs to".
+
+00:09:47.525 --> 00:09:50.388
+The vertical bar is an alternative.
+
+00:09:50.388 --> 00:09:52.732
+It can be read as:
+
+00:09:52.732 --> 00:09:56.891
+each of the numbers a and b belongs to the integers.
+
+00:09:56.891 --> 00:10:01.081
+This is all that is required for this identity to hold.
+
+00:10:01.081 --> 00:10:04.616
+That is, it is true for any numbers a and b.
+
+00:10:04.616 --> 00:10:11.820
+Here's an alternative way to show why it's enough to take remainders when you're computing a product's remainder.
+
+00:10:11.820 --> 00:10:13.514
+Let's say there are two numbers:
+
+00:10:13.514 --> 00:10:20.287
+one has a remainder k1, that is, this number is expressed as k1 plus something that is divisible by 5,
+
+00:10:20.287 --> 00:10:26.701
+and the other number has a remainder k2, and it is expressed as k2 plus something that is divisible by 5.
+
+00:10:26.701 --> 00:10:36.337
+Then, after we expand the brackets, it's evident that the result contains k1 * k2 plus something that is divisible by 5.
+
+00:10:36.337 --> 00:10:39.951
+And we're not interested in that. We're only interested in k1 * k2.
+
+00:10:39.951 --> 00:10:45.610
+When we want to calculate the remainder of dividing all of this expression by 5.
+
+00:10:45.610 --> 00:10:48.563
+Let's check if Reduce can help us here.
+
+00:10:48.563 --> 00:10:53.718
+Yes, Mathematica can also simplify such expressions.
+
+00:10:53.718 --> 00:10:56.301
+Finally, let's move on to the multiplication table.
+
+00:10:56.301 --> 00:10:58.301
+Let's start with the addition table.
+
+00:10:59.680 --> 00:11:03.122
+Here's the addition table modulo 5.
+
+00:11:03.122 --> 00:11:07.492
+You can put 19 here and the table will be bigger.
+
+00:11:07.492 --> 00:11:10.412
+The addition table looks very simple.
+
+00:11:10.412 --> 00:11:14.560
+The same numbers are on the diagonals.
+
+00:11:14.560 --> 00:11:18.549
+There are no numbers greater than 18 in this table.
+
+00:11:18.549 --> 00:11:20.339
+That's understandable.
+
+00:11:20.339 --> 00:11:24.901
+Now, the multiplication table.
+
+00:11:29.488 --> 00:11:31.513
+Multiplying by 0 gives 0.
+
+00:11:31.513 --> 00:11:35.581
+Multiplying by 1 leaves all numbers as they are.
+
+00:11:35.581 --> 00:11:40.854
+It can be seen that the table is symmetric with respect to the diagonal.
+
+00:11:42.636 --> 00:11:47.078
+Let me try to define a numerical field using these two tables.
+
+00:11:47.078 --> 00:11:50.144
+The addition table and the multiplication table.
+
+00:11:50.144 --> 00:11:53.004
+Let's say we have a finite set of elements.
+
+00:11:53.004 --> 00:11:56.037
+I will define a finite numerical field for them.
+
+00:11:56.037 --> 00:12:00.000
+Let's say we have some finite set of elements.
+
+00:12:00.000 --> 00:12:04.169
+And someone has provided addition and multiplication tables for them.
+
+00:12:04.169 --> 00:12:05.825
+By hand.
+
+00:12:05.825 --> 00:12:13.927
+And I say, if these tables are good enough, then this set of elements can be called a numerical field.
+
+00:12:13.927 --> 00:12:19.064
+What does that mean?
+What does "good enough" mean?
+
+00:12:19.064 --> 00:12:24.756
+First of all, both tables must be symmetric with respect to the diagonal.
+
+00:12:24.756 --> 00:12:30.000
+If we reflect with respect to this diagonal, we get the same table.
+
+00:12:31.379 --> 00:12:33.384
+The second point is:
+
+00:12:33.384 --> 00:12:36.511
+two elements must be selected: 0 and 1
+
+00:12:36.511 --> 00:12:38.229
+We will call 1 "zero",
+
+00:12:38.229 --> 00:12:40.292
+the other element we will call "one".
+
+00:12:40.292 --> 00:12:45.513
+Zero is an element that, when added to x, gives x.
+
+00:12:45.513 --> 00:12:47.205
+Let it be the first element.
+
+00:12:47.205 --> 00:12:52.740
+This means that the first row in the addition table should repeat the elements themselves,
+
+00:12:52.740 --> 00:12:58.151
+which we implicitly arranged at the top and left.
+
+00:12:58.151 --> 00:13:01.090
+The second highlighted element is one.
+
+00:13:01.090 --> 00:13:03.497
+Multiplying by one should repeat everything.
+
+00:13:03.497 --> 00:13:08.908
+Let it be the second element, which means that in the second row all the elements should be repeated,
+
+00:13:08.908 --> 00:13:12.442
+which are implicitly arranged up here.
+
+00:13:12.442 --> 00:13:15.318
+Since both tables are symmetric with respect to the diagonal,
+
+00:13:15.318 --> 00:13:22.262
+this means that the second column repeats all the elements that are here on the left.
+
+00:13:22.262 --> 00:13:24.424
+The next important property:
+
+00:13:24.424 --> 00:13:26.424
+is that multiplying by 0 gives 0.
+
+00:13:26.424 --> 00:13:33.152
+This means that the first row and column of the multiplication table are entirely zeros.
+
+00:13:33.152 --> 00:13:36.577
+Such an unusual definition for tables.
+
+00:13:36.577 --> 00:13:39.772
+Tables must be symmetric with respect to the diagonal.
+
+00:13:39.772 --> 00:13:43.837
+The multiplication table should consist of the first row of zeros,
+
+00:13:43.837 --> 00:13:46.139
+the second row repeating all elements.
+
+00:13:46.139 --> 00:13:52.050
+And the addition table should have a repetition of all elements in the first row.
+
+00:13:53.552 --> 00:13:55.518
+And that's not all.
+
+00:13:55.518 --> 00:13:59.708
+It is also necessary for each row to contain all the elements.
+
+00:13:59.708 --> 00:14:08.874
+In both the addition and multiplication tables, each row and column must contain all field's elements.
+
+00:14:08.874 --> 00:14:13.674
+There is one more important property that cannot be expressed/described using tables.
+
+00:14:13.674 --> 00:14:15.677
+This is the distributivity property.
+
+00:14:15.677 --> 00:14:18.209
+Here it is written at the bottom.
+(here is a mistake, right will be: a(b + c) = ab + ac)
+
+00:14:18.209 --> 00:14:24.882
+If addition and multiplication are such that this identity holds,
+(here is a mistake, right will be: a(b + c) = ab + ac)
+
+00:14:24.882 --> 00:14:31.951
+then, together with the previous properties, we obtain a numerical field.
+
+00:14:31.951 --> 00:14:37.354
+Let's write the addition table in color.
+
+00:14:37.354 --> 00:14:41.513
+To do this, we will use the ArrayPlot function.
+
+00:14:41.513 --> 00:14:47.612
+As we increase the value of P, we get this image.
+
+00:14:50.021 --> 00:14:52.661
+Let's recall what our addition table looked like.
+
+00:14:52.661 --> 00:14:56.873
+There was a gradual increase as we approached this diagonal,
+
+00:14:56.873 --> 00:15:03.035
+then a switch to zero and growth again.
+
+00:15:03.035 --> 00:15:06.287
+Here, our zero corresponds to white,
+
+00:15:06.287 --> 00:15:11.385
+and 18, if we live modulo 19, to black.
+
+00:15:12.699 --> 00:15:17.756
+Here are zeros, ones, twos, threes, and so on.
+
+00:15:18.663 --> 00:15:21.462
+We can do the following trick.
+
+00:15:21.462 --> 00:15:24.448
+These numbers are arranged on a circle.
+
+00:15:25.105 --> 00:15:28.560
+And the numbers 18 and 0 are very close.
+
+00:15:28.560 --> 00:15:31.655
+I would like their colors to be close as well.
+
+00:15:31.655 --> 00:15:36.468
+To do this, I use ColorFunction and define it as follows.
+
+00:15:37.692 --> 00:15:40.510
+Hold on a sec... Let me first show you the result.
+
+00:15:40.510 --> 00:15:45.817
+There. I made it so that 18 and 0 have similar colors - green.
+
+00:15:46.599 --> 00:15:48.231
+This was done as follows:
+
+00:15:48.231 --> 00:15:51.639
+I wrote that ColorFunction is RGBColor,
+
+00:15:51.639 --> 00:15:57.550
+which takes the amount of red, green, and blue components.
+
+00:15:57.550 --> 00:16:01.230
+As a hash, a number from zero to one is substituted, it seems.
+
+00:16:01.230 --> 00:16:05.264
+Zero corresponds to the minimum value, and one to the maximum.
+
+00:16:05.264 --> 00:16:09.611
+So I made that the color red is Sin[Pi#]^2,
+
+00:16:09.611 --> 00:16:13.739
+and green is Cos[2Pi#]^2.
+
+00:16:13.739 --> 00:16:17.358
+I got such a color profile.
+
+00:16:17.358 --> 00:16:24.333
+Let's fix this function and use it to get an image of multiplication.
+
+00:16:24.333 --> 00:16:27.114
+A multiplication table in color.
+
+00:16:27.114 --> 00:16:29.351
+This number is 104...
+
+00:16:29.351 --> 00:16:30.699
+105...
+
+00:16:30.699 --> 00:16:32.699
+Let's move step by step.
+
+00:16:35.046 --> 00:16:39.136
+For even numbers, we have a green cross in the center.
+
+00:16:42.265 --> 00:16:46.581
+For odd numbers, it's purple.
+
+00:16:46.581 --> 00:16:52.974
+As the number P increases, the picture becomes thinner and thinner.
+
+00:16:55.133 --> 00:16:56.561
+Okay!
+
+00:16:56.561 --> 00:17:03.246
+In addition to the addition and multiplication tables, there is one more very interesting table - the power table.
+
+00:17:03.246 --> 00:17:05.056
+Let's draw it.
+
+00:17:06.276 --> 00:17:07.558
+Here it is.
+
+00:17:08.497 --> 00:17:11.055
+It is structured as follows:
+
+00:17:11.055 --> 00:17:15.621
+at the top are numbers that correspond to points on the circle.
+
+00:17:15.621 --> 00:17:19.248
+Here we placed 13 points on the circle.
+
+00:17:19.248 --> 00:17:22.152
+And then we do the following operation:
+
+00:17:22.152 --> 00:17:25.873
+for example, the column for two.
+
+00:17:25.873 --> 00:17:30.000
+We multiply each subsequent element by 2.
+
+00:17:30.000 --> 00:17:34.317
+2 * 2 = 4, 4 * 2 = 8, 8 * 2 = 16
+
+00:17:34.317 --> 00:17:38.195
+16 on the circle, where 13 points is 3.
+
+00:17:38.195 --> 00:17:39.100
+3.
+
+00:17:39.100 --> 00:17:42.000
+Then we multiply by 2 again - 6.
+
+00:17:42.000 --> 00:17:44.470
+And so on...
+
+00:17:44.470 --> 00:17:47.401
+Here for three, it's like powers of three.
+
+00:17:48.559 --> 00:17:50.915
+Here are powers of four.
+
+00:17:51.917 --> 00:17:53.637
+What do we see?
+
+00:17:54.263 --> 00:17:55.721
+We see a pattern.
+
+00:17:55.721 --> 00:18:01.820
+In the last row, which is -1, there are all ones.
+
+00:18:01.820 --> 00:18:04.383
+And, by the way, if we continue the powers,
+
+00:18:04.383 --> 00:18:10.357
+(This j is our variable. Let's say we write +5 lines.)
+
+00:18:10.357 --> 00:18:18.188
+then we will see that it continues repeating 1, 2, 3, 4, 5, 6, 7, 8, 9, etc... The first row repeats.
+
+00:18:18.188 --> 00:18:22.435
+That's why I stopped at P - 1.
+
+00:18:22.435 --> 00:18:24.779
+There's no point in drawing further.
+
+00:18:24.779 --> 00:18:27.937
+Let's draw a power table in color.
+
+00:18:27.937 --> 00:18:30.782
+Just add a little manipulation:
+
+00:18:30.782 --> 00:18:34.879
+We multiply I^j by a and add b.
+
+00:18:34.879 --> 00:18:44.449
+When a = 1 and b = 0, it's just i^j.
+
+00:18:44.449 --> 00:18:46.324
+Here's what we see.
+
+00:18:47.857 --> 00:18:54.125
+Modulo 67, we see a picture with some structure.
+
+00:18:54.125 --> 00:18:58.487
+Here, we can see a bright green solid stripe.
+
+00:18:59.019 --> 00:19:09.525
+If we start increasing P, we get all sorts of patterns.
+
+00:19:12.000 --> 00:19:16.323
+When P is prime, the pattern is not so regular.
+
+00:19:16.323 --> 00:19:22.383
+The only thing we see for prime P is a horizontal line somewhere in the middle.
+
+00:19:22.383 --> 00:19:30.000
+But if we change "a", then sometimes we can see some additional structure.
+
+00:19:30.000 --> 00:19:31.531
+Like here.
+
+00:19:31.531 --> 00:19:37.223
+Separating horizontal lines and two vertical ones.
+
+00:19:37.223 --> 00:19:47.356
+That's to say, the multiplication by "a" somehow changes the palette and allows us to see the structure.
+
+00:19:47.356 --> 00:19:51.171
+Changing "b" is a simpler thing.
+
+00:19:51.171 --> 00:19:55.768
+It just cycles through the palette.
+
+00:19:56.977 --> 00:20:00.000
+"a" acts more complexly.
+
+00:20:03.692 --> 00:20:09.220
+It is the "a" that allows us to see the hidden structure.
+
+00:20:10.847 --> 00:20:15.182
+Let's look at our table of powers again in numbers.
+
+00:20:15.182 --> 00:20:19.041
+What is that line in the middle for prime numbers?
+
+00:20:20.762 --> 00:20:25.258
+Here it is. Here we have the numbers 1 and 18.
+
+00:20:26.854 --> 00:20:27.698
+Alright.
+
+00:20:27.698 --> 00:20:35.781
+Let's define the function Mod2, which will return -1 instead of 18.
+
+00:20:35.781 --> 00:20:43.288
+Because 18 just corresponds to moving in another direction by one segment.
+
+00:20:44.634 --> 00:20:47.169
+Let's calculate the Mod2 remainders.
+
+00:20:47.169 --> 00:20:55.170
+These are again remainders of division by 19, only instead of large remainders we see remainders with a minus sign.
+
+00:20:55.170 --> 00:20:59.079
+Mod2 chooses the remainder with the minimum absolute value.
+
+00:20:59.079 --> 00:21:01.235
+With a plus or minus sign.
+
+00:21:02.576 --> 00:21:06.782
+Let's draw a table of powers using Mod2.
+
+00:21:06.782 --> 00:21:09.470
+And here we see ones and minus ones,
+
+00:21:09.470 --> 00:21:12.000
+and here ones.
+
+00:21:12.000 --> 00:21:15.473
+Thus, we have discovered two facts:
+
+00:21:15.473 --> 00:21:22.402
+The P - 1 row in the table of powers consists of ones - this is called Fermat's Little Theorem.
+
+00:21:22.402 --> 00:21:28.671
+And the P - 1/2 row in the table of powers consists of ones and minus ones.
+
+00:21:28.671 --> 00:21:33.112
+We will come back to these statements and perhaps even prove them.
+
+00:21:34.270 --> 00:21:40.226
+The use of the Mod2 function allows us to see a simple, obvious, and in principle, regularity.
+
+00:21:40.226 --> 00:21:49.892
+If we ignore the minus signs in this table, we will see that the lower part of the table repeats the upper part.
+
+00:21:49.892 --> 00:21:53.670
+And indeed. Here are 3, 9, 8, 5.
+
+00:21:53.670 --> 00:21:58.486
+Here are -3, -9, -8, -5.
+
+00:21:58.486 --> 00:22:03.056
+These are opposite to the numbers that give -1 in the middle.
+
+00:22:03.056 --> 00:22:05.400
+And those that in the middle give one away...
+
+00:22:05.400 --> 00:22:10.936
+already, there was a repetition without discarding -1.
+
+00:22:10.936 --> 00:22:19.758
+The sequence 4, -3, 7, 9 is repeated by the sequence that follows the line P - 1/2.
+
+00:22:19.758 --> 00:22:23.481
+4, -3, 7, 9
+
+00:22:23.481 --> 00:22:26.838
+We will come back to the study of power tables later.
+
+00:22:26.838 --> 00:22:32.374
+But now let's move on to another visualization of multiplication.
+
+00:22:32.374 --> 00:22:37.597
+There is a video on YouTube: Times Tables, Mandelbrot and the Heart of Mathematics.
+
+00:22:37.597 --> 00:22:40.497
+I recommend everyone to watch it.
+
+00:22:40.497 --> 00:22:44.343
+That's where this visualization is actually shown.
+
+00:22:44.343 --> 00:22:46.969
+Let's repeat it.
+
+00:22:46.969 --> 00:22:50.303
+Let's start by visualizing the addition of three.
+
+00:22:50.303 --> 00:22:53.201
+Let's say we have a number n.
+
+00:22:53.201 --> 00:22:56.015
+It is represented by this point.
+
+00:22:56.015 --> 00:22:59.437
+Let m be equal to n + k.
+
+00:22:59.437 --> 00:23:01.656
+It is represented by this point.
+
+00:23:01.656 --> 00:23:08.481
+By the way, we didn't need to write Mod here because Cos and Sin themselves perform the mod operation.
+
+00:23:08.481 --> 00:23:10.356
+Implicitly.
+
+00:23:10.356 --> 00:23:16.422
+Next, we output the segment (p1, p2).
+p1 is a point. p2 is a point.
+
+00:23:16.422 --> 00:23:23.649
+And we perform this operation (calculating the segment (p1, p2)) for the most different values of n.
+
+00:23:23.649 --> 00:23:26.211
+This is what we get.
+
+00:23:26.211 --> 00:23:32.748
+Here's the point n. We added 3 to it and got the point m.
+
+00:23:33.655 --> 00:23:39.781
+Let's repeat this operation, but manipulate the variable k.
+
+00:23:42.000 --> 00:23:44.485
+Increase k...
+
+00:23:45.674 --> 00:23:47.395
+we get these images.
+
+00:23:48.146 --> 00:23:49.794
+We can also increase p.
+
+00:23:54.175 --> 00:23:56.315
+And this is what we get.
+
+00:23:58.474 --> 00:24:00.324
+Moving on.
+
+00:24:01.357 --> 00:24:03.205
+Next up, multiplication.
+
+00:24:04.551 --> 00:24:07.455
+We replace addition with multiplication...
+
+00:24:07.455 --> 00:24:08.860
+And draw.
+
+00:24:08.860 --> 00:24:12.832
+Here's multiplication by 3 modulo 17.
+
+00:24:15.523 --> 00:24:18.429
+We put it inside the Manipulate function.
+
+00:24:18.429 --> 00:24:25.664
+Here we allow k to be a decimal and step by 0.1 instead of 1.
+
+00:24:25.664 --> 00:24:28.040
+Let's see what we get.
+
+00:24:29.292 --> 00:24:31.023
+We increase...
+
+00:24:31.023 --> 00:24:33.399
+Gradually increase k...
+
+00:24:34.807 --> 00:24:37.267
+We see the birth of a cardioid...
+
+00:24:38.300 --> 00:24:39.719
+We got a cardioid.
+
+00:24:40.032 --> 00:24:41.719
+Move on...
+
+00:24:51.013 --> 00:24:55.196
+We went through the nephroid...
+
+00:24:57.167 --> 00:24:59.840
+Here's the curve with three petals.
+
+00:25:06.000 --> 00:25:12.000
+We can run Animate and get an animation of this process.
+
+00:25:14.065 --> 00:25:16.707
+Although it happens too fast.
+
+00:25:17.709 --> 00:25:20.793
+You can play with these pictures yourself.
+
+00:25:20.793 --> 00:25:23.200
+Check out the links in the description.
+
+00:25:28.144 --> 00:25:30.947
+Let's choose a triplet.
+
+00:25:32.418 --> 00:25:37.651
+And gradually increase p, starting with the number 10.
+
+00:25:52.076 --> 00:25:54.800
+A nephroid gradually appears.
+
+00:26:02.717 --> 00:26:05.459
+And here's the same thing but with labels.
+
+00:26:12.656 --> 00:26:17.569
+There's a video on YouTube showing an animation of gradually increasing the number k.
+
+00:26:17.569 --> 00:26:20.178
+It's very beautiful! I recommend it to everyone.
+
+00:26:20.178 --> 00:26:22.247
+The link is in the description.
+
+00:26:22.247 --> 00:26:23.844
+That's all for today.
+
+00:26:23.844 --> 00:26:27.252
+In the next video, we'll learn how to draw these pictures.
+
+00:26:27.252 --> 00:26:29.188
+We'll also learn what the inverse element is
+
+00:26:29.188 --> 00:26:34.493
+and prove that if p is prime, then there is an inverse element for any number n.
+
+00:26:34.493 --> 00:26:39.807
+We'll also get to know the Legendre symbol and learn how to compute it.
+
+00:26:39.807 --> 00:26:41.900
+Goodbye!
+
